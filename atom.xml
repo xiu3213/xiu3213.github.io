@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu3213.github.io</id>
     <title>秀儿</title>
-    <updated>2020-08-07T03:57:49.470Z</updated>
+    <updated>2020-08-07T04:27:09.555Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu3213.github.io"/>
     <link rel="self" href="https://xiu3213.github.io/atom.xml"/>
@@ -26,8 +26,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[一键安装配置高性能的CDN节点]]></title>
-        <id>https://xiu3213.github.io/yi-jian-an-zhuang-pei-zhi-gao-xing-neng-de-cdn-jie-dian/</id>
-        <link href="https://xiu3213.github.io/yi-jian-an-zhuang-pei-zhi-gao-xing-neng-de-cdn-jie-dian/">
+        <id>https://xiu3213.github.io/yjgxn/</id>
+        <link href="https://xiu3213.github.io/yjgxn/">
         </link>
         <updated>2020-08-07T02:01:31.000Z</updated>
     </entry>
