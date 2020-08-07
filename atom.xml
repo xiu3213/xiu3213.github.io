@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu3213.github.io</id>
-    <title>Gridea</title>
-    <updated>2020-08-07T01:35:51.342Z</updated>
+    <title>秀儿</title>
+    <updated>2020-08-07T01:41:50.703Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu3213.github.io"/>
     <link rel="self" href="https://xiu3213.github.io/atom.xml"/>
-    <subtitle>cesss</subtitle>
+    <subtitle>GitHub</subtitle>
     <logo>https://xiu3213.github.io/images/avatar.png</logo>
     <icon>https://xiu3213.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Gridea</rights>
+    <rights>All rights reserved 2020, 秀儿</rights>
     <entry>
         <title type="html"><![CDATA[今天这哈]]></title>
         <id>https://xiu3213.github.io/VuwSIJGBE/</id>
