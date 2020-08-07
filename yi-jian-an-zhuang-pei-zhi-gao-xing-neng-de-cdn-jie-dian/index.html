@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>秀儿</title>
+<title>一键安装配置高性能的CDN节点 | 秀儿</title>
 <meta name="description" content="GitHub">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -23,6 +23,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://xiu3213.github.io">秀儿</a></h3>
@@ -76,73 +77,57 @@
   </div>
 </nav>
 
-
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
+          <article class="article">
+            <h1>一键安装配置高性能的CDN节点</h1>
+            <p class="article-meta">
+              2020-08-07
+              
+            </p>
+            
+            <div class="post-content">
+              <p>1, 系统环境要求<br>
+目前支持Ubuntu 20.04 LTS, Debian 10, CentOS 7/8操作系统。</p>
+<p>CDN服务器正常运行时仅需要系统有500MB的内存。但是，程序第一次编译安装的时候需要1500MB左右的内存。若您的VPS内存不够，可以加一些Swap.</p>
+<p>需要注意的是，该脚本需要安装在新装的操作系统中。该程序和其他面板（比如宝塔，cPanel, Directadmin）等不兼容。毕竟，装CDN程序的节点上也不应该搭建其他程序的。</p>
+<p>2, 使用方法<br>
+因为是一键脚本，所以使用起来非常简单，只需要一行命令就可以啦！</p>
+<p>wget https://raw.githubusercontent.com/Har-Kuun/OneClickCDN/master/OneClickCDN.sh &amp;&amp; sudo bash OneClickCDN.sh<br>
+第一次运行时，程序会提示自动编译安装Traffic Server.  安装完毕后，程序会引导新建CDN网站，自动签发SSL, 等等。您需要将您网站的域名设置A记录解析到这台VPS的IP地址上。</p>
+<p>您也可以随时重新运行该脚本，用来管理您的服务器上部署的CDN网站，查看网站统计，等等。</p>
+<p>3, 管理面板<br>
+脚本执行后拥有功能丰富但简单易用的后台管理界面。</p>
+<figure data-type="image" tabindex="1"><img src="https://xiu3213.github.io/post-images/1596765735341.png" alt="" loading="lazy"></figure>
+<p>4, 实现的功能<br>
+首先，最基本的功能就是CDN.  安装后，程序就会将您的VPS变成一个高性能CDN节点，用来加速和缓存您的网站。</p>
+<p>同时，脚本支持一键设置SSL, 您可以提供您自己的SSL证书，或者也可以一键签发免费的Let’s Encrypt证书，并且开启OCSP装订。</p>
+<p>脚本还支持随时增添新的CDN网站。您只需要根据脚本引导，输入网址和源站IP地址，即可分分钟添加CDN网址。您可以使用脚本管理CDN网站，查看网站数据，清除缓存，等等。</p>
+<p>Github项目地址：https://github.com/Har-Kuun/OneClickCDN 欢迎大家加星星加叉叉<br>
+本文及程序作者为香菇肥牛，原文链接https://qing.su/article/oneclick-cdn.html, 转载需注明原文链接。谢谢！</p>
+<p>小彩蛋：稍微修改一下脚本（脚本开头有说明，可以开启反代模式）可以一键反代hostloc哦 <sup>.</sup></p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
           
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://xiu3213.github.io/yi-jian-an-zhuang-pei-zhi-gao-xing-neng-de-cdn-jie-dian/">一键安装配置高性能的CDN节点</a>
-    </h2>
-    <p class="article-meta">
-      2020-08-07
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://xiu3213.github.io/yi-jian-an-zhuang-pei-zhi-gao-xing-neng-de-cdn-jie-dian/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://xiu3213.github.io/1.html/">一键重装脚本/一键DD脚本</a>
-    </h2>
-    <p class="article-meta">
-      2020-08-07
-      
-        <a href="https://xiu3213.github.io/dd/" class="badge secondary">
-          DD
-        </a>
-      
-        <a href="https://xiu3213.github.io/jiao-ben/" class="badge warning">
-          脚本
-        </a>
-      
-        <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge success">
-          一键脚本
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://xiu3213.github.io/1.html/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://xiu3213.github.io/1.html/">
+                <h3 class="post-title">
+                  一键重装脚本/一键DD脚本
+                </h3>
+              </a>
+            </div>
+          
         </div>
         
-        <div class="row flex-edges">
-  
-  
-</div>
-
       </div>
-      
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://xiu3213.github.io/images/avatar.png?v=1596765801637" class="no-responsive avatar">
@@ -189,15 +174,15 @@
     </div>
     <div class="row">
       
-        <a href="https://xiu3213.github.io/dd/" class="badge success">
+        <a href="https://xiu3213.github.io/dd/" class="badge secondary">
           DD
         </a>
       
-        <a href="https://xiu3213.github.io/jiao-ben/" class="badge secondary">
+        <a href="https://xiu3213.github.io/jiao-ben/" class="badge success">
           脚本
         </a>
       
-        <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge warning">
+        <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge secondary">
           一键脚本
         </a>
       
@@ -208,7 +193,9 @@
   </div>
 </div>
 
+
     </div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <script type="application/javascript">
