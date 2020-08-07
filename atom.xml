@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu3213.github.io</id>
     <title>秀儿</title>
-    <updated>2020-08-07T02:54:28.157Z</updated>
+    <updated>2020-08-07T02:55:35.979Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu3213.github.io"/>
     <link rel="self" href="https://xiu3213.github.io/atom.xml"/>
-    <subtitle>GitHub</subtitle>
+    <subtitle>知难而退</subtitle>
     <logo>https://xiu3213.github.io/images/avatar.png</logo>
     <icon>https://xiu3213.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
