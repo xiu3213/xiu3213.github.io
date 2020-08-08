@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu3213.github.io</id>
     <title>秀儿</title>
-    <updated>2020-08-08T14:51:24.247Z</updated>
+    <updated>2020-08-08T15:00:31.938Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu3213.github.io"/>
     <link rel="self" href="https://xiu3213.github.io/atom.xml"/>
@@ -81,7 +81,7 @@ Via: 1.1 vegur
 <p>如果只能搭建bot推荐使用docker版</p>
 <p>准备：<br>
 1.SA配置文件（xxx.json）此步骤忽略参考（http://blog.jialezi.net/?post=153 ）<br>
-2.tgbot的api   t.me/BotFather 创建即可见<br>
+2.tgbot的api t.me/BotFather 创建即可见<br>
 3.一个可解析的域名<br>
 4.GoogleDrive文件夹的id<br>
 5.docker镜像<br>
@@ -94,26 +94,31 @@ GoogleDrive文件夹的id为1hhDZw2SKjNeuwWroHSenoY-TXiFZyDoM<br>
 bot api为13xxxx2380:AAGDPL_2-LPIA0iQ6RxxxxM9bBOFjtErFGE</p>
 <p>提前解析abc.com到你的服务器ip（用于申请ssl）<br>
 然后</p>
-<p>1.下载配置文件，按要求修改里面的参数<br>
-wget https://raw.githubusercontent.com/gdtool/gd-utils-docker/master/config.example.js -O config.js<br>
-##用SA的修改以下三项即可，其他按需修改<br>
-const DEFAULT_TARGET = '' ,// 必填，拷贝默认目的地ID，如果不指定target，则会复制到此处，建议填写团队盘ID<br>
-tg_token: '', // 你的 telegram robot 的 token，获取方法参见 https://core.telegram.org/bots#6-botfather<br>
-tg_whitelist:  [''] // 你的tg username(t.me/username)，bot只会执行这个列表里的用户所发送的指令</p>
+<p>1.下载配置文件，按要求修改里面的参数</p>
+<pre><code>`wget https://raw.githubusercontent.com/gdtool/gd-utils-docker/master/config.example.js -O config.js`
+##用SA的修改以下三项即可，其他按需修改
+const DEFAULT_TARGET = '' ,// 必填，拷贝默认目的地ID，如果不指定target，则会复制到此处，建议填写团队盘ID
+tg_token: '', // 你的 telegram robot 的 token，获取方法参见 https://core.telegram.org/bots#6-botfather
+tg_whitelist: [''] // 你的tg username(t.me/username)，bot只会执行这个列表里的用户所发送的指令
+</code></pre>
 <p>2.创建sa文件夹上传sa文件到sa文件夹（你也可以运行后再用web端的filebrowser上传）</p>
-<p>3.运行<br>
-docker run --restart=always  -idt -e USERPWD=123qwe  -p 443:443  -p 80:80   -e Domain=abc.com -v ${PWD}/sa:/gd-utils/sa  -v ${PWD}/config.js:/gd-utils/config.js   --name gd-utils jialezi/gd-utils</p>
+<p>3.运行</p>
+<pre><code>docker run --restart=always -idt -e USERPWD=123qwe -p 443:443 -p 80:80 -e Domain=abc.com -v ${PWD}/sa:/gd-utils/sa -v ${PWD}/config.js:/gd-utils/config.js --name gd-utils jialezi/gd-utils
+</code></pre>
 <p>申请ssl需要80端口<br>
-USERPWD为shellinabox密码  ||   Domain=abc.com 为自己域名，要提前解析，由caddy自动申请ssl</p>
+USERPWD为shellinabox密码 || Domain=abc.com 为自己域名，要提前解析，由caddy自动申请ssl</p>
 <p>4.对接telegram bot</p>
-<p>curl -F &quot;url=[YOUR_WEBSITE]/api/gdurl/tgbot&quot; 'https://api.telegram.org/bot[YOUR_BOT_TOKEN]/setWebhook'</p>
-<p>例如：curl -F &quot;url=https://abc.com/api/gdurl/tgbot&quot; 'https://api.telegram.org/bot1394xxx380:AAGDPL_2-LPIA0iQ6xxxxM9bBOFjtErFGE/setWebhook'<br>
-返回true ok</p>
+<pre><code>curl -F &quot;url=[YOUR_WEBSITE]/api/gdurl/tgbot&quot; 'https://api.telegram.org/bot[YOUR_BOT_TOKEN]/setWebhook'
+</code></pre>
+<p>例如：</p>
+<pre><code>curl -F &quot;url=https://abc.com/api/gdurl/tgbot&quot; 'https://api.telegram.org/bot1394xxx380:AAGDPL_2-LPIA0iQ6xxxxM9bBOFjtErFGE/setWebhook'
+</code></pre>
+<p>返回true ok</p>
 <p>访问:</p>
-<p>1）https://abc.com   #gd-utils地址</p>
-<p>2）https://abc.com/shell    #shellinabox地址，使用root需要先使用gd用登录，再切换root<br>
+<p>1）https://abc.com #gd-utils地址</p>
+<p>2）https://abc.com/shell #shellinabox地址，使用root需要先使用gd用登录，再切换root<br>
 账号gd，密码自设 USERPWD=123qwe || su root切换到root 密码自设 USERPWD=123qwe</p>
-<p>3）https://abc.com/file  #filebrowser 账号密码admin</p>
+<p>3）https://abc.com/file #filebrowser 账号密码admin</p>
 <p>如果觉得不够快，可以去使用fclone，超级暴力的项目</p>
 ]]></content>
     </entry>
@@ -125,13 +130,13 @@ USERPWD为shellinabox密码  ||   Domain=abc.com 为自己域名，要提前解�
         <updated>2020-08-08T01:26:13.000Z</updated>
         <content type="html"><![CDATA[<p>方便国内使用<br>
 不卸载内核<br>
-wget -N --no-check-certificate &quot;https://github.000060000.xyz/tcpx.sh&quot; &amp;&amp; chmod +x tcpx.sh &amp;&amp; ./tcpx.sh<br>
+<code>wget -N --no-check-certificate &quot;https://github.000060000.xyz/tcpx.sh&quot; &amp;&amp; chmod +x tcpx.sh &amp;&amp; ./tcpx.sh</code><br>
 或<br>
-wget -N &quot;https://github.000060000.xyz/tcpx.sh&quot; &amp;&amp; chmod +x tcpx.sh &amp;&amp; ./tcpx.sh<br>
+<code>wget -N &quot;https://github.000060000.xyz/tcpx.sh&quot; &amp;&amp; chmod +x tcpx.sh &amp;&amp; ./tcpx.sh</code><br>
 卸载内核<br>
-wget -N --no-check-certificate &quot;https://github.000060000.xyz/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh<br>
+<code>wget -N --no-check-certificate &quot;https://github.000060000.xyz/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh</code><br>
 或<br>
-wget -N &quot;https://github.000060000.xyz/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh</p>
+<code>wget -N &quot;https://github.000060000.xyz/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh</code></p>
 <p>bbr内核更新为5.5/5.4</p>
 <p>bbrplus降级到4.14.129 安装方法和安装的内核均和原作者一致 彻底甩锅<br>
 维持原来的支持版本 不再支持c6,c8;debian和ubuntu各版本安装问题和我无关</p>
@@ -327,14 +332,15 @@ Actions &gt; E5-Rclone-Actions</p>
         <updated>2020-08-07T02:07:14.000Z</updated>
         <content type="html"><![CDATA[<p>前言<br>
 对于新入手或重装后的 VPS 配置密钥登录需要创建 ~/.ssh 目录、把公钥写入到 ~/.ssh/authorized_keys、设置权限、禁用密码登录等操作，虽然都是很简单的基础操作，但过程麻烦且枯燥：</p>
-<p>mkdir -p ~/.ssh<br>
-curl -fsSL https://github.com/P3TERX.keys &gt;&gt; ~/.ssh/authorized_keys<br>
-chmod 700 ~/.ssh<br>
-chmod 600 ~/.ssh/authorized_keys<br>
-sudo sed -i &quot;s@.<em>(PasswordAuthentication ).</em>@\1no@&quot; /etc/ssh/sshd_config<br>
-sudo service sshd restart<br>
-SSH 密钥一键配置脚本是一套用于简化 SSH 密钥配置过程的解决方案。使用它以上操作只需要一行命令：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -g P3TERX -d<br>
+<pre><code>mkdir -p ~/.ssh
+curl -fsSL https://github.com/P3TERX.keys &gt;&gt; ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+sudo sed -i &quot;s@.*\(PasswordAuthentication \).*@\1no@&quot; /etc/ssh/sshd_config
+sudo service sshd restart
+</code></pre>
+<p>SSH 密钥一键配置脚本是一套用于简化 SSH 密钥配置过程的解决方案。使用它以上操作只需要一行命令：</p>
+<p><code>bash &lt;(curl -fsSL git.io/key.sh) -g P3TERX -d</code><br>
 语法及选项说明<br>
 bash &lt;(curl -fsSL git.io/key.sh) [选项...] &lt;参数&gt;<br>
 -o – 覆盖模式，必须写在最前面才会生效<br>
@@ -346,34 +352,34 @@ bash &lt;(curl -fsSL git.io/key.sh) [选项...] &lt;参数&gt;<br>
 使用方法<br>
 生成 SSH 密钥对<br>
 如果没有密钥需要先生成，执行以下命令后一路回车即可。</p>
-<p>ssh-keygen -t ecdsa -b 521<br>
+<p><code>ssh-keygen -t ecdsa -b 521</code><br>
 TIPS： 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Linux 发行版和 ma­cOS 自带的终端，但不仅限于这些环境。科普： 521 位的 ECDSA 密钥比起 RSA 密钥更安全且验证速度更快。</p>
 <p>操作完后会在 ~/.ssh 目录中生两个密钥文件，id_ecdsa 为私钥，id_ecdsa.pub 为公钥。公钥就是我们需要安装在远程主机上的。</p>
 <p>科普：~符号代表用户主目录，俗称家目录。其路径与当前登陆的用户有关，在 Linux 中普通用户家目录的路径是/home/用户名，而 root 用户是/root。Win­dowd 10 中路径是C:\Users\用户名。在 ma­cOS 中路径是/Users/用户名。</p>
 <p>安装公钥<br>
 从 GitHub 获取公钥<br>
 在 GitHub 密钥管理页面 添加公钥，比如我的用户名是 P3TERX，那么在主机上输入以下命令即可：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -g P3TERX<br>
+<p><code>bash &lt;(curl -fsSL git.io/key.sh) -g P3TERX</code><br>
 从 URL 获取公钥<br>
 把公钥上传到网盘，通过网盘链接获取公钥：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -u https://p3terx.com/key.pub<br>
+<p><code>bash &lt;(curl -fsSL git.io/key.sh) -u https://p3terx.com/key.pub</code><br>
 从本地文件获取公钥<br>
 通过 FTP 的方式把公钥传到 VPS 上，然后指定公钥路径：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -f ~/key.pub<br>
+<p><code>bash &lt;(curl -fsSL git.io/key.sh) -f ~/key.pub</code><br>
 覆盖模式<br>
 使用覆盖模式（-o）将覆盖 /.ssh/authorized_keys 文件，之前的密钥会被完全替换掉，选项必须写在最前面才会生效，比如：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -o -g P3TERX<br>
+<p><code>bash &lt;(curl -fsSL git.io/key.sh) -o -g P3TERX</code><br>
 或者</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -og P3TERX<br>
+<p><code>bash &lt;(curl -fsSL git.io/key.sh) -og P3TERX</code><br>
 禁用密码登录<br>
 在确定使用密钥能正常登录后禁用密码登录：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -d<br>
+<p><code>bash &lt;(curl -fsSL git.io/key.sh) -d</code><br>
 修改 SSH 端口<br>
 把 SSH 端口修改为 2222：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -p 2222<br>
+<p><code>bash &lt;(curl -fsSL git.io/key.sh) -p 2222</code><br>
 一键操作<br>
 安装密钥、修改端口、禁用密码登录一键操作：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -og P3TERX -p 2222 -d</p>
+<p><code>bash &lt;(curl -fsSL git.io/key.sh) -og P3TERX -p 2222 -d</code></p>
 ]]></content>
     </entry>
     <entry>
@@ -388,8 +394,9 @@ TIPS： 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Li
 <p>需要注意的是，该脚本需要安装在新装的操作系统中。该程序和其他面板（比如宝塔，cPanel, Directadmin）等不兼容。毕竟，装CDN程序的节点上也不应该搭建其他程序的。</p>
 <p>2, 使用方法<br>
 因为是一键脚本，所以使用起来非常简单，只需要一行命令就可以啦！</p>
-<p>wget https://raw.githubusercontent.com/Har-Kuun/OneClickCDN/master/OneClickCDN.sh &amp;&amp; sudo bash OneClickCDN.sh<br>
-第一次运行时，程序会提示自动编译安装Traffic Server.  安装完毕后，程序会引导新建CDN网站，自动签发SSL, 等等。您需要将您网站的域名设置A记录解析到这台VPS的IP地址上。</p>
+<pre><code>wget https://raw.githubusercontent.com/Har-Kuun/OneClickCDN/master/OneClickCDN.sh &amp;&amp; sudo bash OneClickCDN.sh
+</code></pre>
+<p>第一次运行时，程序会提示自动编译安装Traffic Server.  安装完毕后，程序会引导新建CDN网站，自动签发SSL, 等等。您需要将您网站的域名设置A记录解析到这台VPS的IP地址上。</p>
 <p>您也可以随时重新运行该脚本，用来管理您的服务器上部署的CDN网站，查看网站统计，等等。</p>
 <p>3, 管理面板<br>
 脚本执行后拥有功能丰富但简单易用的后台管理界面。</p>

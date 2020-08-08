@@ -7,7 +7,7 @@
 <meta name="description" content="知难而退">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://xiu3213.github.io/favicon.ico?v=1596898281925">
+<link rel="shortcut icon" href="https://xiu3213.github.io/favicon.ico?v=1596898828982">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
@@ -96,7 +96,7 @@
                   gd
                 </a>
               
-                <a href="https://xiu3213.github.io/D8rxaAl_i8/" class="badge success">
+                <a href="https://xiu3213.github.io/D8rxaAl_i8/" class="badge secondary">
                   Docker
                 </a>
               
@@ -115,7 +115,7 @@
 <p>如果只能搭建bot推荐使用docker版</p>
 <p>准备：<br>
 1.SA配置文件（xxx.json）此步骤忽略参考（http://blog.jialezi.net/?post=153 ）<br>
-2.tgbot的api   t.me/BotFather 创建即可见<br>
+2.tgbot的api t.me/BotFather 创建即可见<br>
 3.一个可解析的域名<br>
 4.GoogleDrive文件夹的id<br>
 5.docker镜像<br>
@@ -128,26 +128,31 @@ GoogleDrive文件夹的id为1hhDZw2SKjNeuwWroHSenoY-TXiFZyDoM<br>
 bot api为13xxxx2380:AAGDPL_2-LPIA0iQ6RxxxxM9bBOFjtErFGE</p>
 <p>提前解析abc.com到你的服务器ip（用于申请ssl）<br>
 然后</p>
-<p>1.下载配置文件，按要求修改里面的参数<br>
-wget https://raw.githubusercontent.com/gdtool/gd-utils-docker/master/config.example.js -O config.js<br>
-##用SA的修改以下三项即可，其他按需修改<br>
-const DEFAULT_TARGET = '' ,// 必填，拷贝默认目的地ID，如果不指定target，则会复制到此处，建议填写团队盘ID<br>
-tg_token: '', // 你的 telegram robot 的 token，获取方法参见 https://core.telegram.org/bots#6-botfather<br>
-tg_whitelist:  [''] // 你的tg username(t.me/username)，bot只会执行这个列表里的用户所发送的指令</p>
+<p>1.下载配置文件，按要求修改里面的参数</p>
+<pre><code>`wget https://raw.githubusercontent.com/gdtool/gd-utils-docker/master/config.example.js -O config.js`
+##用SA的修改以下三项即可，其他按需修改
+const DEFAULT_TARGET = '' ,// 必填，拷贝默认目的地ID，如果不指定target，则会复制到此处，建议填写团队盘ID
+tg_token: '', // 你的 telegram robot 的 token，获取方法参见 https://core.telegram.org/bots#6-botfather
+tg_whitelist: [''] // 你的tg username(t.me/username)，bot只会执行这个列表里的用户所发送的指令
+</code></pre>
 <p>2.创建sa文件夹上传sa文件到sa文件夹（你也可以运行后再用web端的filebrowser上传）</p>
-<p>3.运行<br>
-docker run --restart=always  -idt -e USERPWD=123qwe  -p 443:443  -p 80:80   -e Domain=abc.com -v ${PWD}/sa:/gd-utils/sa  -v ${PWD}/config.js:/gd-utils/config.js   --name gd-utils jialezi/gd-utils</p>
+<p>3.运行</p>
+<pre><code>docker run --restart=always -idt -e USERPWD=123qwe -p 443:443 -p 80:80 -e Domain=abc.com -v ${PWD}/sa:/gd-utils/sa -v ${PWD}/config.js:/gd-utils/config.js --name gd-utils jialezi/gd-utils
+</code></pre>
 <p>申请ssl需要80端口<br>
-USERPWD为shellinabox密码  ||   Domain=abc.com 为自己域名，要提前解析，由caddy自动申请ssl</p>
+USERPWD为shellinabox密码 || Domain=abc.com 为自己域名，要提前解析，由caddy自动申请ssl</p>
 <p>4.对接telegram bot</p>
-<p>curl -F &quot;url=[YOUR_WEBSITE]/api/gdurl/tgbot&quot; 'https://api.telegram.org/bot[YOUR_BOT_TOKEN]/setWebhook'</p>
-<p>例如：curl -F &quot;url=https://abc.com/api/gdurl/tgbot&quot; 'https://api.telegram.org/bot1394xxx380:AAGDPL_2-LPIA0iQ6xxxxM9bBOFjtErFGE/setWebhook'<br>
-返回true ok</p>
+<pre><code>curl -F &quot;url=[YOUR_WEBSITE]/api/gdurl/tgbot&quot; 'https://api.telegram.org/bot[YOUR_BOT_TOKEN]/setWebhook'
+</code></pre>
+<p>例如：</p>
+<pre><code>curl -F &quot;url=https://abc.com/api/gdurl/tgbot&quot; 'https://api.telegram.org/bot1394xxx380:AAGDPL_2-LPIA0iQ6xxxxM9bBOFjtErFGE/setWebhook'
+</code></pre>
+<p>返回true ok</p>
 <p>访问:</p>
-<p>1）https://abc.com   #gd-utils地址</p>
-<p>2）https://abc.com/shell    #shellinabox地址，使用root需要先使用gd用登录，再切换root<br>
+<p>1）https://abc.com #gd-utils地址</p>
+<p>2）https://abc.com/shell #shellinabox地址，使用root需要先使用gd用登录，再切换root<br>
 账号gd，密码自设 USERPWD=123qwe || su root切换到root 密码自设 USERPWD=123qwe</p>
-<p>3）https://abc.com/file  #filebrowser 账号密码admin</p>
+<p>3）https://abc.com/file #filebrowser 账号密码admin</p>
 <p>如果觉得不够快，可以去使用fclone，超级暴力的项目</p>
 
             </div>
@@ -180,7 +185,7 @@ USERPWD为shellinabox密码  ||   Domain=abc.com 为自己域名，要提前解�
 
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
-    <img src="https://xiu3213.github.io/images/avatar.png?v=1596898281925" class="no-responsive avatar">
+    <img src="https://xiu3213.github.io/images/avatar.png?v=1596898828982" class="no-responsive avatar">
     <div class="text-muted">知难而退</div>
     <div class="social-container">
       
@@ -282,15 +287,15 @@ USERPWD为shellinabox密码  ||   Domain=abc.com 为自己域名，要提前解�
           Git.io
         </a>
       
-        <a href="https://xiu3213.github.io/lc44XpSkGH/" class="badge secondary">
+        <a href="https://xiu3213.github.io/lc44XpSkGH/" class="badge success">
           短网址
         </a>
       
-        <a href="https://xiu3213.github.io/_WSNMvB0E/" class="badge success">
+        <a href="https://xiu3213.github.io/_WSNMvB0E/" class="badge secondary">
           gd
         </a>
       
-        <a href="https://xiu3213.github.io/D8rxaAl_i8/" class="badge success">
+        <a href="https://xiu3213.github.io/D8rxaAl_i8/" class="badge secondary">
           Docker
         </a>
       
@@ -298,27 +303,27 @@ USERPWD为shellinabox密码  ||   Domain=abc.com 为自己域名，要提前解�
           GoogleDrive
         </a>
       
-        <a href="https://xiu3213.github.io/H2393iXwm/" class="badge ">
+        <a href="https://xiu3213.github.io/H2393iXwm/" class="badge success">
           机器人
         </a>
       
-        <a href="https://xiu3213.github.io/XAL_6RxBj/" class="badge secondary">
+        <a href="https://xiu3213.github.io/XAL_6RxBj/" class="badge warning">
           bbr
         </a>
       
-        <a href="https://xiu3213.github.io/fG8QjN4lr8/" class="badge secondary">
+        <a href="https://xiu3213.github.io/fG8QjN4lr8/" class="badge ">
           锐速
         </a>
       
-        <a href="https://xiu3213.github.io/yuO8QgH2ym/" class="badge secondary">
+        <a href="https://xiu3213.github.io/yuO8QgH2ym/" class="badge ">
           源码
         </a>
       
-        <a href="https://xiu3213.github.io/dfBAXDd1L/" class="badge ">
+        <a href="https://xiu3213.github.io/dfBAXDd1L/" class="badge secondary">
           tg
         </a>
       
-        <a href="https://xiu3213.github.io/qs0W-hZf1d/" class="badge warning">
+        <a href="https://xiu3213.github.io/qs0W-hZf1d/" class="badge success">
           OneDrive
         </a>
       
@@ -326,27 +331,27 @@ USERPWD为shellinabox密码  ||   Domain=abc.com 为自己域名，要提前解�
           CDN
         </a>
       
-        <a href="https://xiu3213.github.io/mdPDxkQQ3/" class="badge secondary">
+        <a href="https://xiu3213.github.io/mdPDxkQQ3/" class="badge ">
           反代
         </a>
       
-        <a href="https://xiu3213.github.io/OkfvIeMG1b/" class="badge ">
+        <a href="https://xiu3213.github.io/OkfvIeMG1b/" class="badge success">
           防撤回
         </a>
       
-        <a href="https://xiu3213.github.io/ElTTMbrvid/" class="badge warning">
+        <a href="https://xiu3213.github.io/ElTTMbrvid/" class="badge secondary">
           插件
         </a>
       
-        <a href="https://xiu3213.github.io/bGEY5YidX/" class="badge warning">
+        <a href="https://xiu3213.github.io/bGEY5YidX/" class="badge secondary">
           ssh
         </a>
       
-        <a href="https://xiu3213.github.io/TmMPokjorb/" class="badge secondary">
+        <a href="https://xiu3213.github.io/TmMPokjorb/" class="badge warning">
           密钥
         </a>
       
-        <a href="https://xiu3213.github.io/jiao-ben/" class="badge ">
+        <a href="https://xiu3213.github.io/jiao-ben/" class="badge success">
           脚本
         </a>
       
@@ -354,7 +359,7 @@ USERPWD为shellinabox密码  ||   Domain=abc.com 为自己域名，要提前解�
           一键脚本
         </a>
       
-        <a href="https://xiu3213.github.io/dd/" class="badge warning">
+        <a href="https://xiu3213.github.io/dd/" class="badge secondary">
           DD
         </a>
       
