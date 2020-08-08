@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>一键脚本 | 秀儿</title>
+<title>用Actions每天自动使用Rclone调用OneDrive使Office E5订阅保持活跃 | 秀儿</title>
 <meta name="description" content="知难而退">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -14,6 +14,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://xiu3213.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
@@ -32,6 +38,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://xiu3213.github.io">秀儿</a></h3>
@@ -80,116 +87,69 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="current-tag">标签: 一键脚本</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://xiu3213.github.io/bkZunUpHG/">SSH 密钥一键配置脚本 使用教程</a>
-    </h2>
-    <p class="article-meta">
-      2020-08-07
-      
-        <a href="https://xiu3213.github.io/bGEY5YidX/" class="badge success">
-          ssh
-        </a>
-      
-        <a href="https://xiu3213.github.io/TmMPokjorb/" class="badge secondary">
-          密钥
-        </a>
-      
-        <a href="https://xiu3213.github.io/jiao-ben/" class="badge secondary">
-          脚本
-        </a>
-      
-        <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge success">
-          一键脚本
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://xiu3213.github.io/bkZunUpHG/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
+          <article class="article">
+            <h1>用Actions每天自动使用Rclone调用OneDrive使Office E5订阅保持活跃</h1>
+            <p class="article-meta">
+              2020-08-08
+              
+            </p>
+            
+            <div class="post-content">
+              <p>注：E5保活皆是玄学，能不能成功谁能知道呢？</p>
+<p>使用方法<br>
+零、打开Github项目地址<br>
+https://github.com/peng4740/E5-Rclone-Actions</p>
+<p>一、Fork此仓库<br>
+<img src="https://xiu3213.github.io/post-images/1596848323726.png" alt="" loading="lazy"></p>
+<p>二、设置Rclone配置<br>
+添加名为RCLONE_CONFIG的变量<br>
+值为Rclone的配置，需要你本地先生成配置，之后打开Rclone配置文件复制出OneDrive的配置<br>
+配置最前面的[od]需要改成<a href="%22od%22%E6%98%AF%E5%9C%A8%E7%94%A8Rclone%E6%B7%BB%E5%8A%A0OneDrive%E6%97%B6%E8%AE%BE%E7%BD%AE%E7%9A%84">e5</a><br>
+<img src="https://xiu3213.github.io/post-images/1596848342263.png" alt="" loading="lazy"></p>
+<p>三、启用Actions<br>
+如图所示开启Actions，之后再对你自己Fork后的仓库点击Star(不要漏看了这一句)<br>
+<img src="https://xiu3213.github.io/post-images/1596848354441.png" alt="" loading="lazy"><br>
+<img src="https://xiu3213.github.io/post-images/1596848373311.png" alt="" loading="lazy"></p>
+<p>四、查看运行结果<br>
+Actions &gt; E5-Rclone-Actions</p>
+<p>五、Rclone使用自己的API<br>
+不长篇大论一大堆了，只提基本的几个点</p>
+<p>到Azure新注册一个应用：https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade</p>
+<p>名称：随意<br>
+重定向URI：http://localhost</p>
+<p>创建完成的页面(概述)可以看到Client_ID，也就是应用程序(客户端)ID，记录下来</p>
+<p>到API权限页面添加权限：Files.Read、Files.ReadWrite、Files.Read.All、Files.ReadWrite.All、offline_access、User.Read</p>
+<p>到证书和密码页面，添加客户端密码，一年还是长期，都可以。这个就是Client_secret，也要记录下来</p>
+<p>rclone config添加配置时，填写自己的Client_ID和Client_secret按提示操作即可</p>
 
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://xiu3213.github.io/yjgxn/">一键安装配置高性能的CDN节点</a>
-    </h2>
-    <p class="article-meta">
-      2020-08-07
-      
-        <a href="https://xiu3213.github.io/cdn/" class="badge secondary">
-          CDN
-        </a>
-      
-        <a href="https://xiu3213.github.io/jiao-ben/" class="badge warning">
-          脚本
-        </a>
-      
-        <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge warning">
-          一键脚本
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://xiu3213.github.io/yjgxn/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://xiu3213.github.io/1.html/">一键重装脚本/一键DD脚本</a>
-    </h2>
-    <p class="article-meta">
-      2020-08-07
-      
-        <a href="https://xiu3213.github.io/dd/" class="badge warning">
-          DD
-        </a>
-      
-        <a href="https://xiu3213.github.io/jiao-ben/" class="badge secondary">
-          脚本
-        </a>
-      
-        <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge ">
-          一键脚本
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://xiu3213.github.io/1.html/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
-
-
+            </div>
+          </article>
         </div>
-        <div class="row flex-edges">
-  
-  
-</div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://xiu3213.github.io/PVphxlRBy/">
+                <h3 class="post-title">
+                  Telegram 本地消息防撤回插件
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
 
+          
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://xiu3213.github.io/images/avatar.png?v=1596848423762" class="no-responsive avatar">
@@ -254,15 +214,15 @@
     </div>
     <div class="row">
       
-        <a href="https://xiu3213.github.io/dfBAXDd1L/" class="badge warning">
+        <a href="https://xiu3213.github.io/dfBAXDd1L/" class="badge ">
           tg
         </a>
       
-        <a href="https://xiu3213.github.io/OkfvIeMG1b/" class="badge warning">
+        <a href="https://xiu3213.github.io/OkfvIeMG1b/" class="badge success">
           防撤回
         </a>
       
-        <a href="https://xiu3213.github.io/ElTTMbrvid/" class="badge warning">
+        <a href="https://xiu3213.github.io/ElTTMbrvid/" class="badge secondary">
           插件
         </a>
       
@@ -274,7 +234,7 @@
           密钥
         </a>
       
-        <a href="https://xiu3213.github.io/jiao-ben/" class="badge warning">
+        <a href="https://xiu3213.github.io/jiao-ben/" class="badge secondary">
           脚本
         </a>
       
@@ -282,11 +242,11 @@
           一键脚本
         </a>
       
-        <a href="https://xiu3213.github.io/cdn/" class="badge success">
+        <a href="https://xiu3213.github.io/cdn/" class="badge secondary">
           CDN
         </a>
       
-        <a href="https://xiu3213.github.io/dd/" class="badge success">
+        <a href="https://xiu3213.github.io/dd/" class="badge warning">
           DD
         </a>
       
@@ -296,6 +256,7 @@
     Powered by <a href="https://github.com/getgridea/gridea" target="_blank">GitHub</a> | <a class="rss" href="https://xiu3213.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
+
 
     </div>
 
@@ -308,6 +269,29 @@ AOS.init();
 hljs.initHighlightingOnLoad()
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'b718917f00ea669fae08',
+        clientSecret: '3f5863b3fc65b13c9e39b5914d62fb5fa121ed24',
+        repo: 'xiu3213.github.io',
+        owner: 'xiu3213',
+        admin: ['xiu3213'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 

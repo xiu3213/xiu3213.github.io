@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu3213.github.io</id>
     <title>秀儿</title>
-    <updated>2020-08-07T15:13:26.532Z</updated>
+    <updated>2020-08-08T01:00:27.417Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu3213.github.io"/>
     <link rel="self" href="https://xiu3213.github.io/atom.xml"/>
@@ -10,6 +10,40 @@
     <logo>https://xiu3213.github.io/images/avatar.png</logo>
     <icon>https://xiu3213.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[用Actions每天自动使用Rclone调用OneDrive使Office E5订阅保持活跃]]></title>
+        <id>https://xiu3213.github.io/ppkASNJMF/</id>
+        <link href="https://xiu3213.github.io/ppkASNJMF/">
+        </link>
+        <updated>2020-08-08T00:56:41.000Z</updated>
+        <content type="html"><![CDATA[<p>注：E5保活皆是玄学，能不能成功谁能知道呢？</p>
+<p>使用方法<br>
+零、打开Github项目地址<br>
+https://github.com/peng4740/E5-Rclone-Actions</p>
+<p>一、Fork此仓库<br>
+<img src="https://xiu3213.github.io/post-images/1596848323726.png" alt="" loading="lazy"></p>
+<p>二、设置Rclone配置<br>
+添加名为RCLONE_CONFIG的变量<br>
+值为Rclone的配置，需要你本地先生成配置，之后打开Rclone配置文件复制出OneDrive的配置<br>
+配置最前面的[od]需要改成<a href="%22od%22%E6%98%AF%E5%9C%A8%E7%94%A8Rclone%E6%B7%BB%E5%8A%A0OneDrive%E6%97%B6%E8%AE%BE%E7%BD%AE%E7%9A%84">e5</a><br>
+<img src="https://xiu3213.github.io/post-images/1596848342263.png" alt="" loading="lazy"></p>
+<p>三、启用Actions<br>
+如图所示开启Actions，之后再对你自己Fork后的仓库点击Star(不要漏看了这一句)<br>
+<img src="https://xiu3213.github.io/post-images/1596848354441.png" alt="" loading="lazy"><br>
+<img src="https://xiu3213.github.io/post-images/1596848373311.png" alt="" loading="lazy"></p>
+<p>四、查看运行结果<br>
+Actions &gt; E5-Rclone-Actions</p>
+<p>五、Rclone使用自己的API<br>
+不长篇大论一大堆了，只提基本的几个点</p>
+<p>到Azure新注册一个应用：https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade</p>
+<p>名称：随意<br>
+重定向URI：http://localhost</p>
+<p>创建完成的页面(概述)可以看到Client_ID，也就是应用程序(客户端)ID，记录下来</p>
+<p>到API权限页面添加权限：Files.Read、Files.ReadWrite、Files.Read.All、Files.ReadWrite.All、offline_access、User.Read</p>
+<p>到证书和密码页面，添加客户端密码，一年还是长期，都可以。这个就是Client_secret，也要记录下来</p>
+<p>rclone config添加配置时，填写自己的Client_ID和Client_secret按提示操作即可</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Telegram 本地消息防撤回插件]]></title>
         <id>https://xiu3213.github.io/PVphxlRBy/</id>
