@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>SSH 密钥一键配置脚本 使用教程 | 秀儿</title>
+<title>tg邀请码机器人源码 自动发码 数量统计 无码提醒 | 秀儿</title>
 <meta name="description" content="知难而退">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -88,78 +88,69 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>SSH 密钥一键配置脚本 使用教程</h1>
+            <h1>tg邀请码机器人源码 自动发码 数量统计 无码提醒</h1>
             <p class="article-meta">
-              2020-08-07
+              2020-08-08
               
-                <a href="https://xiu3213.github.io/bGEY5YidX/" class="badge success">
-                  ssh
+                <a href="https://xiu3213.github.io/H2393iXwm/" class="badge warning">
+                  机器人
                 </a>
               
-                <a href="https://xiu3213.github.io/TmMPokjorb/" class="badge warning">
-                  密钥
+                <a href="https://xiu3213.github.io/yuO8QgH2ym/" class="badge secondary">
+                  源码
                 </a>
               
-                <a href="https://xiu3213.github.io/jiao-ben/" class="badge warning">
-                  脚本
-                </a>
-              
-                <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge success">
-                  一键脚本
+                <a href="https://xiu3213.github.io/dfBAXDd1L/" class="badge success">
+                  tg
                 </a>
               
             </p>
             
             <div class="post-content">
-              <p>前言<br>
-对于新入手或重装后的 VPS 配置密钥登录需要创建 ~/.ssh 目录、把公钥写入到 ~/.ssh/authorized_keys、设置权限、禁用密码登录等操作，虽然都是很简单的基础操作，但过程麻烦且枯燥：</p>
-<p>mkdir -p ~/.ssh<br>
-curl -fsSL https://github.com/P3TERX.keys &gt;&gt; ~/.ssh/authorized_keys<br>
-chmod 700 ~/.ssh<br>
-chmod 600 ~/.ssh/authorized_keys<br>
-sudo sed -i &quot;s@.<em>(PasswordAuthentication ).</em>@\1no@&quot; /etc/ssh/sshd_config<br>
-sudo service sshd restart<br>
-SSH 密钥一键配置脚本是一套用于简化 SSH 密钥配置过程的解决方案。使用它以上操作只需要一行命令：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -g P3TERX -d<br>
-语法及选项说明<br>
-bash &lt;(curl -fsSL git.io/key.sh) [选项...] &lt;参数&gt;<br>
--o – 覆盖模式，必须写在最前面才会生效<br>
--g – 从 GitHub 获取公钥，参数为 GitHub 用户名<br>
--u – 从 URL 获取公钥，参数为 URL<br>
--l – 从本地文件获取公钥，参数为本地文件路径<br>
--p – 修改 SSH 端口，参数为端口号<br>
--d – 禁用密码登录<br>
-使用方法<br>
-生成 SSH 密钥对<br>
-如果没有密钥需要先生成，执行以下命令后一路回车即可。</p>
-<p>ssh-keygen -t ecdsa -b 521<br>
-TIPS： 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Linux 发行版和 ma­cOS 自带的终端，但不仅限于这些环境。科普： 521 位的 ECDSA 密钥比起 RSA 密钥更安全且验证速度更快。</p>
-<p>操作完后会在 ~/.ssh 目录中生两个密钥文件，id_ecdsa 为私钥，id_ecdsa.pub 为公钥。公钥就是我们需要安装在远程主机上的。</p>
-<p>科普：~符号代表用户主目录，俗称家目录。其路径与当前登陆的用户有关，在 Linux 中普通用户家目录的路径是/home/用户名，而 root 用户是/root。Win­dowd 10 中路径是C:\Users\用户名。在 ma­cOS 中路径是/Users/用户名。</p>
-<p>安装公钥<br>
-从 GitHub 获取公钥<br>
-在 GitHub 密钥管理页面 添加公钥，比如我的用户名是 P3TERX，那么在主机上输入以下命令即可：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -g P3TERX<br>
-从 URL 获取公钥<br>
-把公钥上传到网盘，通过网盘链接获取公钥：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -u https://p3terx.com/key.pub<br>
-从本地文件获取公钥<br>
-通过 FTP 的方式把公钥传到 VPS 上，然后指定公钥路径：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -f ~/key.pub<br>
-覆盖模式<br>
-使用覆盖模式（-o）将覆盖 /.ssh/authorized_keys 文件，之前的密钥会被完全替换掉，选项必须写在最前面才会生效，比如：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -o -g P3TERX<br>
-或者</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -og P3TERX<br>
-禁用密码登录<br>
-在确定使用密钥能正常登录后禁用密码登录：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -d<br>
-修改 SSH 端口<br>
-把 SSH 端口修改为 2222：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -p 2222<br>
-一键操作<br>
-安装密钥、修改端口、禁用密码登录一键操作：</p>
-<p>bash &lt;(curl -fsSL git.io/key.sh) -og P3TERX -p 2222 -d</p>
+              <p>简介<br>
+因为论坛和部分网站需要发送邀请码邀请注册，人工发码又太慢，于是想到tg机器人发码，但是找了很多项目都没有找到类似的开源项目，偶然间看到了teelebot开源的tgAPi框架 于是参考着示例 ，用我学了半个月的半吊子python 写出了这个暂时能用不会报错的telegram邀请码机器人</p>
+<p>目前已经到我理想状态，短期内不会进行功能更新，学习比较重要。</p>
+<p>增加功能<br>
+1.邀请码自动发码模块 并且限制领取数量（邀请码添加在invite_code目录下的code.txt 一行一个） 用户信息存储在usertext.txt文件内</p>
+<p>2.邀请码数量统计，如果邀请码用完自动给管理员发消息（需自行修改len_invite.py里面的发送id）</p>
+<p>3.补码模块已经添加 目前并不是很理想的状态但是可以用使用方法</p>
+<p>/add_code邀请码<br>
+邀请码<br>
+注意：一行一个注意换行</p>
+<p>4.删除用户信息模块，删除后用户可以再次获取邀请码指令/del用户id目前只能删除单个用户</p>
+<p>5.mps的自动补码模块 请在/plugins/updatacode/updatacode.py文件内填写网站登录信息，目前只会抓取两页邀请码，需要手动更新，后期会添加自动执行进去。</p>
+<p>开发计划<br>
+1.增加管理员添加邀请码模块</p>
+<p>2.多类邀请码模块支持</p>
+<p>3.统计需改成json数据 目前统计方式过于简易(已完成)</p>
+<p>4.管理员补码：暂定计划1，发送补码指令并跟随邀请码，格式为一行一个，然后剔除指令文本，后使用write写入code.txt文件中。 计划2:用户发送指令后开始监听，将用户发送的后续文本写入文件中，需发送特定指令来结束输入</p>
+<p>环境要求<br>
+Python版本<br>
+teelebot 只支持 Python3.x，不支持Python2.x。</p>
+<p>使用<br>
+一、源码运行<br>
+1.克隆或点击下载本项目到本地，保证本机安装有Python3.x版本和包requests（删除了多余模块不需要了）；</p>
+<p>2.config.cfg 配置文件</p>
+<p>配置文件格式:</p>
+<p>[config]<br>
+key=your key<br>
+root=your user id<br>
+debug=False<br>
+timeout=60<br>
+plugin_dir=your plugin dir   //[Optional]<br>
+Linux<br>
+在 /root 目录下创建文件夹 .teelebot ,并在其内新建配置文件 config.cfg ,按照上面的格式填写配置文件</p>
+<p>Windows<br>
+在 C:\Users&lt;username&gt; 目录下创建文件夹 .teelebot ,并在其内新建配置文件 config.cfg ,按照上面的格式填写配置文件</p>
+<p>指定配置文件<br>
+Linux 和 Windows 都可在命令行通过参数手动指定配置文件路径，命令格式：</p>
+<p>python -m teelebot -c/-C <configure file path><br>
+路径必须为绝对路径。</p>
+<p>3.运行</p>
+<p>终端下进入teelebot文件夹所在目录。</p>
+<p>对于使用程序配置文件默认路径的：输入python -m teelebot 回车,正常情况下你应该能看见屏幕提示机器人开始运行。<br>
+对于命令行手动指定配置文件路径的：输入python -m teelebot -c/-C <configure file path> 回车,正常情况下你应该能看见屏幕提示机器人开始运行。<br>
+tg邀请码机器人源码 自动发码 数量统计 无码提醒</p>
 
             </div>
           </article>
@@ -170,9 +161,9 @@ TIPS： 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Li
               <div class="next">
                 下一篇
               </div>
-              <a href="https://xiu3213.github.io/yjgxn/">
+              <a href="https://xiu3213.github.io/G7OkD-Cag/">
                 <h3 class="post-title">
-                  一键安装配置高性能的CDN节点
+                  为Onedrive套上CDN加速下载
                 </h3>
               </a>
             </div>
@@ -283,11 +274,11 @@ TIPS： 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Li
     </div>
     <div class="row">
       
-        <a href="https://xiu3213.github.io/XAL_6RxBj/" class="badge success">
+        <a href="https://xiu3213.github.io/XAL_6RxBj/" class="badge secondary">
           bbr
         </a>
       
-        <a href="https://xiu3213.github.io/fG8QjN4lr8/" class="badge warning">
+        <a href="https://xiu3213.github.io/fG8QjN4lr8/" class="badge secondary">
           锐速
         </a>
       
@@ -295,11 +286,11 @@ TIPS： 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Li
           机器人
         </a>
       
-        <a href="https://xiu3213.github.io/yuO8QgH2ym/" class="badge success">
+        <a href="https://xiu3213.github.io/yuO8QgH2ym/" class="badge ">
           源码
         </a>
       
-        <a href="https://xiu3213.github.io/dfBAXDd1L/" class="badge secondary">
+        <a href="https://xiu3213.github.io/dfBAXDd1L/" class="badge ">
           tg
         </a>
       
@@ -307,19 +298,19 @@ TIPS： 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Li
           OneDrive
         </a>
       
-        <a href="https://xiu3213.github.io/cdn/" class="badge success">
+        <a href="https://xiu3213.github.io/cdn/" class="badge warning">
           CDN
         </a>
       
-        <a href="https://xiu3213.github.io/mdPDxkQQ3/" class="badge secondary">
+        <a href="https://xiu3213.github.io/mdPDxkQQ3/" class="badge success">
           反代
         </a>
       
-        <a href="https://xiu3213.github.io/OkfvIeMG1b/" class="badge secondary">
+        <a href="https://xiu3213.github.io/OkfvIeMG1b/" class="badge warning">
           防撤回
         </a>
       
-        <a href="https://xiu3213.github.io/ElTTMbrvid/" class="badge secondary">
+        <a href="https://xiu3213.github.io/ElTTMbrvid/" class="badge ">
           插件
         </a>
       
@@ -331,11 +322,11 @@ TIPS： 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Li
           密钥
         </a>
       
-        <a href="https://xiu3213.github.io/jiao-ben/" class="badge success">
+        <a href="https://xiu3213.github.io/jiao-ben/" class="badge secondary">
           脚本
         </a>
       
-        <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge success">
+        <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge ">
           一键脚本
         </a>
       
