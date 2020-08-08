@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>文章归档 | 秀儿</title>
+<title>为Onedrive套上CDN加速下载 | 秀儿</title>
 <meta name="description" content="知难而退">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -14,6 +14,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://xiu3213.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
@@ -32,6 +38,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://xiu3213.github.io">秀儿</a></h3>
@@ -77,96 +84,71 @@
   </div>
 </nav>
 
-    
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
+          <article class="article">
+            <h1>为Onedrive套上CDN加速下载</h1>
+            <p class="article-meta">
+              2020-08-08
+              
+                <a href="https://xiu3213.github.io/qs0W-hZf1d/" class="badge secondary">
+                  OneDrive
+                </a>
+              
+                <a href="https://xiu3213.github.io/cdn/" class="badge secondary">
+                  CDN
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <p>首先推荐两种程序</p>
+<p>1.php的OneIndex修改版</p>
+<p>2.萌咖的GO版OneList</p>
+<p>这两种程序都能够直接将sharepoint域名替换为你反代的域名或者是CDN域名</p>
+<p>程序地址：</p>
+<p>OneIndex：https://github.com/caippx/oneindex-j</p>
+<p>OneList：https://github.com/MoeClub/OneList/tree/master/Rewrite</p>
+<p>使用方法<br>
+OneList：</p>
+<p>这个就很简单了，根据github中的教程 配置好配置文件之后</p>
+<p>在运行的时候使用</p>
+<p>OneList -bind 0.0.0.0 -port 80 -P &quot;xxxxx-my.sharepoint.com|domain.com&quot;<br>
+即可将你的sharepoint域名替换成domain.con</p>
+<p>OneIndex：</p>
+<p>这个版本是经过我修改的版本，在安装完成之后 直接在后台设置里面可以看到替换sharepoint域名的选项</p>
+<p>填上即可 如果留空 则不使用该功能</p>
+<p>注：sharepoint域名为你在网页版onedrive首页时的那个域名xxxxx-my.sharepoint.com</p>
+
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://xiu3213.github.io/CZWvLVqdV/">
+                <h3 class="post-title">
+                  如何反代-加速OneDrive域名
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
           
 
-          <h2 class="archives-title">文章归档</h2>
-          <div class="archives-container">
-            
-              <h3 class="year" data-aos-delay="500">2020</h3>
-              
-                
-                  <article class="post">
-                    <a href="https://xiu3213.github.io/G7OkD-Cag/">
-                      <h4 class="post-title">
-                        为Onedrive套上CDN加速下载
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xiu3213.github.io/CZWvLVqdV/">
-                      <h4 class="post-title">
-                        如何反代-加速OneDrive域名
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xiu3213.github.io/ppkASNJMF/">
-                      <h4 class="post-title">
-                        用Actions每天自动使用Rclone调用OneDrive使Office E5订阅保持活跃
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xiu3213.github.io/PVphxlRBy/">
-                      <h4 class="post-title">
-                        Telegram 本地消息防撤回插件
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xiu3213.github.io/bkZunUpHG/">
-                      <h4 class="post-title">
-                        SSH 密钥一键配置脚本 使用教程
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xiu3213.github.io/yjgxn/">
-                      <h4 class="post-title">
-                        一键安装配置高性能的CDN节点
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-                
-                  <article class="post">
-                    <a href="https://xiu3213.github.io/1.html/">
-                      <h4 class="post-title">
-                        一键重装脚本/一键DD脚本
-                      </h4>
-                    </a>
-                  </article>
-                
-              
-            
-          </div>
-        </div>
-        <div class="row flex-edges">
-  
-  
-</div>
-
+          
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://xiu3213.github.io/images/avatar.png?v=1596849072302" class="no-responsive avatar">
@@ -243,7 +225,7 @@
     </div>
     <div class="row">
       
-        <a href="https://xiu3213.github.io/qs0W-hZf1d/" class="badge secondary">
+        <a href="https://xiu3213.github.io/qs0W-hZf1d/" class="badge ">
           OneDrive
         </a>
       
@@ -263,15 +245,15 @@
           防撤回
         </a>
       
-        <a href="https://xiu3213.github.io/ElTTMbrvid/" class="badge warning">
+        <a href="https://xiu3213.github.io/ElTTMbrvid/" class="badge secondary">
           插件
         </a>
       
-        <a href="https://xiu3213.github.io/bGEY5YidX/" class="badge secondary">
+        <a href="https://xiu3213.github.io/bGEY5YidX/" class="badge warning">
           ssh
         </a>
       
-        <a href="https://xiu3213.github.io/TmMPokjorb/" class="badge secondary">
+        <a href="https://xiu3213.github.io/TmMPokjorb/" class="badge warning">
           密钥
         </a>
       
@@ -283,7 +265,7 @@
           一键脚本
         </a>
       
-        <a href="https://xiu3213.github.io/dd/" class="badge success">
+        <a href="https://xiu3213.github.io/dd/" class="badge secondary">
           DD
         </a>
       
@@ -295,6 +277,8 @@
 </div>
 
 
+    </div>
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <script type="application/javascript">
@@ -304,6 +288,29 @@ AOS.init();
 hljs.initHighlightingOnLoad()
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'b718917f00ea669fae08',
+        clientSecret: '3f5863b3fc65b13c9e39b5914d62fb5fa121ed24',
+        repo: 'xiu3213.github.io',
+        owner: 'xiu3213',
+        admin: ['xiu3213'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 

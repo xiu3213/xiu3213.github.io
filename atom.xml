@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu3213.github.io</id>
     <title>秀儿</title>
-    <updated>2020-08-08T01:00:27.417Z</updated>
+    <updated>2020-08-08T01:11:15.809Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu3213.github.io"/>
     <link rel="self" href="https://xiu3213.github.io/atom.xml"/>
@@ -10,6 +10,63 @@
     <logo>https://xiu3213.github.io/images/avatar.png</logo>
     <icon>https://xiu3213.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[为Onedrive套上CDN加速下载]]></title>
+        <id>https://xiu3213.github.io/G7OkD-Cag/</id>
+        <link href="https://xiu3213.github.io/G7OkD-Cag/">
+        </link>
+        <updated>2020-08-08T01:10:25.000Z</updated>
+        <content type="html"><![CDATA[<p>首先推荐两种程序</p>
+<p>1.php的OneIndex修改版</p>
+<p>2.萌咖的GO版OneList</p>
+<p>这两种程序都能够直接将sharepoint域名替换为你反代的域名或者是CDN域名</p>
+<p>程序地址：</p>
+<p>OneIndex：https://github.com/caippx/oneindex-j</p>
+<p>OneList：https://github.com/MoeClub/OneList/tree/master/Rewrite</p>
+<p>使用方法<br>
+OneList：</p>
+<p>这个就很简单了，根据github中的教程 配置好配置文件之后</p>
+<p>在运行的时候使用</p>
+<p>OneList -bind 0.0.0.0 -port 80 -P &quot;xxxxx-my.sharepoint.com|domain.com&quot;<br>
+即可将你的sharepoint域名替换成domain.con</p>
+<p>OneIndex：</p>
+<p>这个版本是经过我修改的版本，在安装完成之后 直接在后台设置里面可以看到替换sharepoint域名的选项</p>
+<p>填上即可 如果留空 则不使用该功能</p>
+<p>注：sharepoint域名为你在网页版onedrive首页时的那个域名xxxxx-my.sharepoint.com</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[如何反代-加速OneDrive域名]]></title>
+        <id>https://xiu3213.github.io/CZWvLVqdV/</id>
+        <link href="https://xiu3213.github.io/CZWvLVqdV/">
+        </link>
+        <updated>2020-08-08T01:08:28.000Z</updated>
+        <content type="html"><![CDATA[<p>反代OneDrive域名<br>
+利用Caddy反代OneDrive<br>
+Caddy安装方法请自行搜索</p>
+<p>domain.com {<br>
+tls admin@domain.com<br>
+timeouts none<br>
+gzip<br>
+proxy / https://xxx-my.sharepoint.com {<br>
+header_upstream Host xxx-my.sharepoint.com<br>
+header_upstream Referer https://xxx-my.sharepoint.com<br>
+header_upstream -X-Forwarded-For {remote}<br>
+header_upstream X-Real-IP {remote}<br>
+header_upstream User-Agent {&gt;User-Agent}<br>
+header_upstream Accept-Encoding identity<br>
+}</p>
+<p>写入如下配置<br>
+重启caddy然后按照上一篇文章运行onelist或者修改oneindex配置即可</p>
+<p>用CDN加速OneDrive<br>
+本文只介绍nodecache 其他CDN 操作基本差不多</p>
+<figure data-type="image" tabindex="1"><img src="https://xiu3213.github.io/post-images/1596848948187.jpg" alt="" loading="lazy"></figure>
+<p>像上面这样填写点击确认创建并修改加速域名cname至nodecache生成的xxxxxxxxx.ncname.com域名</p>
+<p>之后选择回源管理，将回源HOST 修改为xxx-my.sharepoint.com （必须</p>
+<p>再到HTTPS 栏 添加加速域名的SSL证书</p>
+<p>然后隐身模式访问加速域名 如果跳转到office登录页面 则说明成功</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[用Actions每天自动使用Rclone调用OneDrive使Office E5订阅保持活跃]]></title>
         <id>https://xiu3213.github.io/ppkASNJMF/</id>
