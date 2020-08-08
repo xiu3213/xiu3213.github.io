@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>锐速 | 秀儿</title>
+<title>自定义 git.io 短链接地址与绕过链接生成限制 | 秀儿</title>
 <meta name="description" content="知难而退">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -14,6 +14,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://xiu3213.github.io/styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
 
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
 
@@ -32,6 +38,7 @@
 
   </head>
   <body>
+  
     <nav class="navbar border fixed split-nav">
   <div class="nav-brand">
     <h3><a href="https://xiu3213.github.io">秀儿</a></h3>
@@ -80,44 +87,108 @@
     <div id="top" class="row site">
       <div class="sm-12 md-8 col">
         <div class="paper">
-          <h2 class="current-tag">标签: 锐速</h2>
-          
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://xiu3213.github.io/yzEb8qOIh/">bbr/bbrplus/bbr2/锐速内核安装脚本更新测试版</a>
-    </h2>
-    <p class="article-meta">
-      2020-08-08
-      
-        <a href="https://xiu3213.github.io/XAL_6RxBj/" class="badge warning">
-          bbr
-        </a>
-      
-        <a href="https://xiu3213.github.io/fG8QjN4lr8/" class="badge warning">
-          锐速
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://xiu3213.github.io/yzEb8qOIh/" class="readmore-link">
-        <button>
-          Read More
-        </button>
-      </a>
-    </div>
-  </article>
+          <article class="article">
+            <h1>自定义 git.io 短链接地址与绕过链接生成限制</h1>
+            <p class="article-meta">
+              2020-08-08
+              
+                <a href="https://xiu3213.github.io/566kPJTMg/" class="badge success">
+                  Github
+                </a>
+              
+                <a href="https://xiu3213.github.io/NkQVF5MYvE/" class="badge ">
+                  Git.io
+                </a>
+              
+                <a href="https://xiu3213.github.io/lc44XpSkGH/" class="badge secondary">
+                  短网址
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <p>Github 提供了 Git.io 短网址服务，用于缩短 Github 上项目的网址。</p>
+<p>官方文档：https://github.com/blog/985-git-io-github-url-shortener</p>
+<p>自定义短链接<br>
+依据官方文档，生成短链接有两个参数</p>
+<p>| 参数名  | 参数值  | 是否必须  |<br>
+|  url	源 | URL 链接  | 是  |<br>
+|  code | 自定义短链  |  否 |</p>
+<p>命令模板<br>
+<code>curl -i &quot;https://git.io&quot; -F &quot;url=长链接&quot; -F &quot;code=短链接&quot;</code><br>
+使用示例</p>
+<pre><code>$ curl -i &quot;https://git.io&quot; -F &quot;url=https://github.com/baoyun-site&quot; -F &quot;code=baoyunsite&quot;
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Tue, 14 Jul 2020 08:22:52 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/baoyunsite
+Content-Length: 30
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.026588
+X-Node: 7fa64432-805f-49cf-a4d4-6f19c50ae8f3
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur$ curl -i &quot;https://git.io&quot; -F &quot;url=https://github.com/baoyun-site&quot; -F &quot;code=baoyunsite&quot;
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Tue, 14 Jul 2020 08:22:52 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/baoyunsite
+Content-Length: 30
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.026588
+X-Node: 7fa64432-805f-49cf-a4d4-6f19c50ae8f3
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur
+</code></pre>
+<p>https://github.com/baoyun-site<br>
+绕过链接生成限制<br>
+原理<br>
+通过使用 Github Pages 中放置静态页面的功能，来进行跳转。</p>
+<p>实现<br>
+请查看 Github 仓库 renbaoshuo/git.io ，内含代码与说明。</p>
+<p>版权声明<br>
+本文作者： 宝硕<br>
+本文链接： https://baoshuo.blog/post/oKnaKLcDb/</p>
 
-
+            </div>
+          </article>
         </div>
-        <div class="row flex-edges">
-  
-  
-</div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://xiu3213.github.io/S2lYVWimz/">
+                <h3 class="post-title">
+                  【gd-utils】 Docker快速搭建GoogleDrive转存Bot  
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
 
+          
+        
       </div>
+
       <div class="sm-12 md-4 col sidebar">
   <div class="paper info-container">
     <img src="https://xiu3213.github.io/images/avatar.png?v=1596898281925" class="no-responsive avatar">
@@ -222,15 +293,15 @@
           Git.io
         </a>
       
-        <a href="https://xiu3213.github.io/lc44XpSkGH/" class="badge secondary">
+        <a href="https://xiu3213.github.io/lc44XpSkGH/" class="badge success">
           短网址
         </a>
       
-        <a href="https://xiu3213.github.io/_WSNMvB0E/" class="badge secondary">
+        <a href="https://xiu3213.github.io/_WSNMvB0E/" class="badge ">
           gd
         </a>
       
-        <a href="https://xiu3213.github.io/D8rxaAl_i8/" class="badge secondary">
+        <a href="https://xiu3213.github.io/D8rxaAl_i8/" class="badge ">
           Docker
         </a>
       
@@ -238,15 +309,15 @@
           GoogleDrive
         </a>
       
-        <a href="https://xiu3213.github.io/H2393iXwm/" class="badge ">
+        <a href="https://xiu3213.github.io/H2393iXwm/" class="badge secondary">
           机器人
         </a>
       
-        <a href="https://xiu3213.github.io/XAL_6RxBj/" class="badge secondary">
+        <a href="https://xiu3213.github.io/XAL_6RxBj/" class="badge warning">
           bbr
         </a>
       
-        <a href="https://xiu3213.github.io/fG8QjN4lr8/" class="badge secondary">
+        <a href="https://xiu3213.github.io/fG8QjN4lr8/" class="badge warning">
           锐速
         </a>
       
@@ -262,27 +333,27 @@
           OneDrive
         </a>
       
-        <a href="https://xiu3213.github.io/cdn/" class="badge ">
+        <a href="https://xiu3213.github.io/cdn/" class="badge secondary">
           CDN
         </a>
       
-        <a href="https://xiu3213.github.io/mdPDxkQQ3/" class="badge success">
+        <a href="https://xiu3213.github.io/mdPDxkQQ3/" class="badge secondary">
           反代
         </a>
       
-        <a href="https://xiu3213.github.io/OkfvIeMG1b/" class="badge success">
+        <a href="https://xiu3213.github.io/OkfvIeMG1b/" class="badge ">
           防撤回
         </a>
       
-        <a href="https://xiu3213.github.io/ElTTMbrvid/" class="badge secondary">
+        <a href="https://xiu3213.github.io/ElTTMbrvid/" class="badge success">
           插件
         </a>
       
-        <a href="https://xiu3213.github.io/bGEY5YidX/" class="badge secondary">
+        <a href="https://xiu3213.github.io/bGEY5YidX/" class="badge warning">
           ssh
         </a>
       
-        <a href="https://xiu3213.github.io/TmMPokjorb/" class="badge warning">
+        <a href="https://xiu3213.github.io/TmMPokjorb/" class="badge secondary">
           密钥
         </a>
       
@@ -290,11 +361,11 @@
           脚本
         </a>
       
-        <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge success">
+        <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge secondary">
           一键脚本
         </a>
       
-        <a href="https://xiu3213.github.io/dd/" class="badge ">
+        <a href="https://xiu3213.github.io/dd/" class="badge secondary">
           DD
         </a>
       
@@ -304,6 +375,7 @@
     Powered by <a href="https://github.com/getgridea/gridea" target="_blank">GitHub</a> | <a class="rss" href="https://xiu3213.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
+
 
     </div>
 
@@ -316,6 +388,29 @@ AOS.init();
 hljs.initHighlightingOnLoad()
 
 </script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: 'a4e6e97095f14a3285dc',
+        clientSecret: 'cb2d6f80e733586b4a1d73127d0c632595ff702f',
+        repo: 'xiu3213.github.io',
+        owner: 'xiu3213',
+        admin: ['xiu3213'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
