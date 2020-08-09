@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>一键安装配置高性能的CDN节点 | 秀儿</title>
+<title>一键制作DDWin，批处理! | 秀儿</title>
 <meta name="description" content="知难而退">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -88,45 +88,52 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>一键安装配置高性能的CDN节点</h1>
+            <h1>一键制作DDWin，批处理!</h1>
             <p class="article-meta">
-              2020-08-07
+              2020-08-09
               
-                <a href="https://xiu3213.github.io/cdn/" class="badge secondary">
-                  CDN
-                </a>
-              
-                <a href="https://xiu3213.github.io/jiao-ben/" class="badge success">
-                  脚本
-                </a>
-              
-                <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge ">
-                  一键脚本
+                <a href="https://xiu3213.github.io/dd/" class="badge secondary">
+                  DD
                 </a>
               
             </p>
             
             <div class="post-content">
-              <p>1, 系统环境要求<br>
-目前支持Ubuntu 20.04 LTS, Debian 10, CentOS 7/8操作系统。</p>
-<p>CDN服务器正常运行时仅需要系统有500MB的内存。但是，程序第一次编译安装的时候需要1500MB左右的内存。若您的VPS内存不够，可以加一些Swap.</p>
-<p>需要注意的是，该脚本需要安装在新装的操作系统中。该程序和其他面板（比如宝塔，cPanel, Directadmin）等不兼容。毕竟，装CDN程序的节点上也不应该搭建其他程序的。</p>
-<p>2, 使用方法<br>
-因为是一键脚本，所以使用起来非常简单，只需要一行命令就可以啦！</p>
-<pre><code>wget https://raw.githubusercontent.com/Har-Kuun/OneClickCDN/master/OneClickCDN.sh &amp;&amp; sudo bash OneClickCDN.sh
-</code></pre>
-<p>第一次运行时，程序会提示自动编译安装Traffic Server.  安装完毕后，程序会引导新建CDN网站，自动签发SSL, 等等。您需要将您网站的域名设置A记录解析到这台VPS的IP地址上。</p>
-<p>您也可以随时重新运行该脚本，用来管理您的服务器上部署的CDN网站，查看网站统计，等等。</p>
-<p>3, 管理面板<br>
-脚本执行后拥有功能丰富但简单易用的后台管理界面。</p>
-<figure data-type="image" tabindex="1"><img src="https://xiu3213.github.io/post-images/1596765735341.png" alt="" loading="lazy"></figure>
-<p>4, 实现的功能<br>
-首先，最基本的功能就是CDN.  安装后，程序就会将您的VPS变成一个高性能CDN节点，用来加速和缓存您的网站。</p>
-<p>同时，脚本支持一键设置SSL, 您可以提供您自己的SSL证书，或者也可以一键签发免费的Let’s Encrypt证书，并且开启OCSP装订。</p>
-<p>脚本还支持随时增添新的CDN网站。您只需要根据脚本引导，输入网址和源站IP地址，即可分分钟添加CDN网址。您可以使用脚本管理CDN网站，查看网站数据，清除缓存，等等。</p>
-<p>Github项目地址：https://github.com/Har-Kuun/OneClickCDN 欢迎大家加星星加叉叉<br>
-本文及程序作者为香菇肥牛，原文链接https://qing.su/article/oneclick-cdn.html, 转载需注明原文链接。谢谢！</p>
-<p>小彩蛋：稍微修改一下脚本（脚本开头有说明，可以开启反代模式）可以一键反代hostloc哦 <sup>.</sup></p>
+              <figure data-type="image" tabindex="1"><img src="https://xiu3213.github.io/post-images/1596983474950.png" alt="" loading="lazy"></figure>
+<p>makeddwin 工具包，使用批处理制作，代码明文，以及在包里写明依赖文件来自那里，你完全可以替换，代码查阅。</p>
+<p>不会还有杠精来喷吧？要不你写个更好的来？<br>
+至于你用上报毒与我无关！</p>
+<p>说明：<br>
+【使用前，请把所需的文件放进相应文件夹！】<br>
+目录结构：<br>
+bin 文件夹，存放用来制作的依赖程序和文件。<br>
+iso 文件夹，存放Windows ISO 系统镜像(只能放1个)<br>
+packages 文件夹，存放Windows 补丁文件<br>
+driver 文件夹，存放其他驱动文件<br>
+virtio 文件夹，存放KVM virtio ISO 驱动镜像(只能放1个)<br>
+vhd 文件夹，存放 .vhd格式 虚拟硬盘(只能放1个)<br>
+export 文件夹，输出生成的.gz、.wim、和解压的.vhd文件。<br>
+注意，只能放一个的目录务必按要求，因为放多个会导致脚本无法判断。</p>
+<p>步骤1：使用vhd.cmd批处理，生成一个大小20-30G左右的虚拟硬盘<br>
+生成后的虚拟硬盘文件会在vhd目录，虚拟硬盘大小视你安装系统后硬盘体积还剩多少。<br>
+一般安装系统后，虚拟硬盘最低要剩空闲有1G左右，后期可以再创建对应体积的虚拟硬盘作调整。</p>
+<p>步骤2：使用install.cmd批处理，选择刚才创建的已挂载的虚拟硬盘分区，自行查看[我的电脑]，你虚拟硬盘生成多少G的分区，就选择那个分区，进行下一步安装系统等其他操作。</p>
+<p>步骤3：使用dd.cmd批处理，对已经完成制作的.vhd虚拟硬盘文件进行压缩成可DD的文件或者wim文件。<br>
+压缩完成后，别忘了测试文件的完整性检查，否则是一个损坏的数据文件是无法使用的！<br>
+生成的.gz文件，可以在Linux系统下DD为此系统。<br>
+生成的.wim文件，可以在WinPE中安装到实体机系统，又或者添加生成为一个iso文件。<br>
+(注意，压缩比较慢通常是1-3小时，电脑配置越高越快！)</p>
+<p>网址：nat.ee<br>
+批处理：荣耀&amp;制作<br>
+本批处理工具仅适合Windows 7 sp1 以上的系统使用！<br>
+注意：不能放在带有空格路径的目录，否则出错。<br>
+TG交流群：https://t.me/dd_win<br>
+如在使用中有任何问题或者建议，欢迎加入交流。</p>
+<p>下载链接：https://yyingc.lanzous.com/i72Wzfei7ba<br>
+视频教程下载：https://yyingc.lanzous.com/igExyfesota</p>
+<p>视频教程：https://www.youtube.com/watch?v=LTVgPFWnnX8<br>
+哔哩哔哩：https://www.bilibili.com/video/BV1Pk4y1U7Zp/</p>
+<p>转自:https://www.hostloc.com/thread-728111-1-1.html</p>
 
             </div>
           </article>
@@ -137,9 +144,9 @@
               <div class="next">
                 下一篇
               </div>
-              <a href="https://xiu3213.github.io/1.html/">
+              <a href="https://xiu3213.github.io/MH86KLzkf/">
                 <h3 class="post-title">
-                  一键重装脚本/一键DD脚本
+                  自定义 git.io 短链接地址与绕过链接生成限制
                 </h3>
               </a>
             </div>
@@ -254,11 +261,11 @@
     </div>
     <div class="row">
       
-        <a href="https://xiu3213.github.io/dd/" class="badge success">
+        <a href="https://xiu3213.github.io/dd/" class="badge secondary">
           DD
         </a>
       
-        <a href="https://xiu3213.github.io/566kPJTMg/" class="badge success">
+        <a href="https://xiu3213.github.io/566kPJTMg/" class="badge warning">
           Github
         </a>
       
@@ -266,11 +273,11 @@
           Git.io
         </a>
       
-        <a href="https://xiu3213.github.io/lc44XpSkGH/" class="badge warning">
+        <a href="https://xiu3213.github.io/lc44XpSkGH/" class="badge secondary">
           短网址
         </a>
       
-        <a href="https://xiu3213.github.io/_WSNMvB0E/" class="badge secondary">
+        <a href="https://xiu3213.github.io/_WSNMvB0E/" class="badge ">
           gd
         </a>
       
@@ -278,11 +285,11 @@
           Docker
         </a>
       
-        <a href="https://xiu3213.github.io/YErFmkNbEE/" class="badge success">
+        <a href="https://xiu3213.github.io/YErFmkNbEE/" class="badge secondary">
           GoogleDrive
         </a>
       
-        <a href="https://xiu3213.github.io/H2393iXwm/" class="badge success">
+        <a href="https://xiu3213.github.io/H2393iXwm/" class="badge warning">
           机器人
         </a>
       
@@ -290,31 +297,31 @@
           bbr
         </a>
       
-        <a href="https://xiu3213.github.io/fG8QjN4lr8/" class="badge warning">
+        <a href="https://xiu3213.github.io/fG8QjN4lr8/" class="badge secondary">
           锐速
         </a>
       
-        <a href="https://xiu3213.github.io/yuO8QgH2ym/" class="badge success">
+        <a href="https://xiu3213.github.io/yuO8QgH2ym/" class="badge secondary">
           源码
         </a>
       
-        <a href="https://xiu3213.github.io/dfBAXDd1L/" class="badge warning">
+        <a href="https://xiu3213.github.io/dfBAXDd1L/" class="badge ">
           tg
         </a>
       
-        <a href="https://xiu3213.github.io/qs0W-hZf1d/" class="badge ">
+        <a href="https://xiu3213.github.io/qs0W-hZf1d/" class="badge warning">
           OneDrive
         </a>
       
-        <a href="https://xiu3213.github.io/cdn/" class="badge ">
+        <a href="https://xiu3213.github.io/cdn/" class="badge success">
           CDN
         </a>
       
-        <a href="https://xiu3213.github.io/mdPDxkQQ3/" class="badge warning">
+        <a href="https://xiu3213.github.io/mdPDxkQQ3/" class="badge ">
           反代
         </a>
       
-        <a href="https://xiu3213.github.io/OkfvIeMG1b/" class="badge secondary">
+        <a href="https://xiu3213.github.io/OkfvIeMG1b/" class="badge success">
           防撤回
         </a>
       
@@ -322,15 +329,15 @@
           插件
         </a>
       
-        <a href="https://xiu3213.github.io/bGEY5YidX/" class="badge secondary">
+        <a href="https://xiu3213.github.io/bGEY5YidX/" class="badge warning">
           ssh
         </a>
       
-        <a href="https://xiu3213.github.io/TmMPokjorb/" class="badge ">
+        <a href="https://xiu3213.github.io/TmMPokjorb/" class="badge warning">
           密钥
         </a>
       
-        <a href="https://xiu3213.github.io/jiao-ben/" class="badge warning">
+        <a href="https://xiu3213.github.io/jiao-ben/" class="badge secondary">
           脚本
         </a>
       

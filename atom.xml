@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu3213.github.io</id>
     <title>秀儿</title>
-    <updated>2020-08-08T15:18:59.029Z</updated>
+    <updated>2020-08-09T14:34:03.450Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu3213.github.io"/>
     <link rel="self" href="https://xiu3213.github.io/atom.xml"/>
@@ -10,6 +10,49 @@
     <logo>https://xiu3213.github.io/images/avatar.png</logo>
     <icon>https://xiu3213.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[一键制作DDWin，批处理!]]></title>
+        <id>https://xiu3213.github.io/s9y925myV/</id>
+        <link href="https://xiu3213.github.io/s9y925myV/">
+        </link>
+        <updated>2020-08-09T14:30:40.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://xiu3213.github.io/post-images/1596983474950.png" alt="" loading="lazy"></figure>
+<p>makeddwin 工具包，使用批处理制作，代码明文，以及在包里写明依赖文件来自那里，你完全可以替换，代码查阅。</p>
+<p>不会还有杠精来喷吧？要不你写个更好的来？<br>
+至于你用上报毒与我无关！</p>
+<p>说明：<br>
+【使用前，请把所需的文件放进相应文件夹！】<br>
+目录结构：<br>
+bin 文件夹，存放用来制作的依赖程序和文件。<br>
+iso 文件夹，存放Windows ISO 系统镜像(只能放1个)<br>
+packages 文件夹，存放Windows 补丁文件<br>
+driver 文件夹，存放其他驱动文件<br>
+virtio 文件夹，存放KVM virtio ISO 驱动镜像(只能放1个)<br>
+vhd 文件夹，存放 .vhd格式 虚拟硬盘(只能放1个)<br>
+export 文件夹，输出生成的.gz、.wim、和解压的.vhd文件。<br>
+注意，只能放一个的目录务必按要求，因为放多个会导致脚本无法判断。</p>
+<p>步骤1：使用vhd.cmd批处理，生成一个大小20-30G左右的虚拟硬盘<br>
+生成后的虚拟硬盘文件会在vhd目录，虚拟硬盘大小视你安装系统后硬盘体积还剩多少。<br>
+一般安装系统后，虚拟硬盘最低要剩空闲有1G左右，后期可以再创建对应体积的虚拟硬盘作调整。</p>
+<p>步骤2：使用install.cmd批处理，选择刚才创建的已挂载的虚拟硬盘分区，自行查看[我的电脑]，你虚拟硬盘生成多少G的分区，就选择那个分区，进行下一步安装系统等其他操作。</p>
+<p>步骤3：使用dd.cmd批处理，对已经完成制作的.vhd虚拟硬盘文件进行压缩成可DD的文件或者wim文件。<br>
+压缩完成后，别忘了测试文件的完整性检查，否则是一个损坏的数据文件是无法使用的！<br>
+生成的.gz文件，可以在Linux系统下DD为此系统。<br>
+生成的.wim文件，可以在WinPE中安装到实体机系统，又或者添加生成为一个iso文件。<br>
+(注意，压缩比较慢通常是1-3小时，电脑配置越高越快！)</p>
+<p>网址：nat.ee<br>
+批处理：荣耀&amp;制作<br>
+本批处理工具仅适合Windows 7 sp1 以上的系统使用！<br>
+注意：不能放在带有空格路径的目录，否则出错。<br>
+TG交流群：https://t.me/dd_win<br>
+如在使用中有任何问题或者建议，欢迎加入交流。</p>
+<p>下载链接：https://yyingc.lanzous.com/i72Wzfei7ba<br>
+视频教程下载：https://yyingc.lanzous.com/igExyfesota</p>
+<p>视频教程：https://www.youtube.com/watch?v=LTVgPFWnnX8<br>
+哔哩哔哩：https://www.bilibili.com/video/BV1Pk4y1U7Zp/</p>
+<p>转自:https://www.hostloc.com/thread-728111-1-1.html</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[自定义 git.io 短链接地址与绕过链接生成限制]]></title>
         <id>https://xiu3213.github.io/MH86KLzkf/</id>
@@ -380,34 +423,6 @@ TIPS： 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Li
 一键操作<br>
 安装密钥、修改端口、禁用密码登录一键操作：</p>
 <p><code>bash &lt;(curl -fsSL git.io/key.sh) -og P3TERX -p 2222 -d</code></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[一键安装配置高性能的CDN节点]]></title>
-        <id>https://xiu3213.github.io/yjgxn/</id>
-        <link href="https://xiu3213.github.io/yjgxn/">
-        </link>
-        <updated>2020-08-07T02:01:31.000Z</updated>
-        <content type="html"><![CDATA[<p>1, 系统环境要求<br>
-目前支持Ubuntu 20.04 LTS, Debian 10, CentOS 7/8操作系统。</p>
-<p>CDN服务器正常运行时仅需要系统有500MB的内存。但是，程序第一次编译安装的时候需要1500MB左右的内存。若您的VPS内存不够，可以加一些Swap.</p>
-<p>需要注意的是，该脚本需要安装在新装的操作系统中。该程序和其他面板（比如宝塔，cPanel, Directadmin）等不兼容。毕竟，装CDN程序的节点上也不应该搭建其他程序的。</p>
-<p>2, 使用方法<br>
-因为是一键脚本，所以使用起来非常简单，只需要一行命令就可以啦！</p>
-<pre><code>wget https://raw.githubusercontent.com/Har-Kuun/OneClickCDN/master/OneClickCDN.sh &amp;&amp; sudo bash OneClickCDN.sh
-</code></pre>
-<p>第一次运行时，程序会提示自动编译安装Traffic Server.  安装完毕后，程序会引导新建CDN网站，自动签发SSL, 等等。您需要将您网站的域名设置A记录解析到这台VPS的IP地址上。</p>
-<p>您也可以随时重新运行该脚本，用来管理您的服务器上部署的CDN网站，查看网站统计，等等。</p>
-<p>3, 管理面板<br>
-脚本执行后拥有功能丰富但简单易用的后台管理界面。</p>
-<figure data-type="image" tabindex="1"><img src="https://xiu3213.github.io/post-images/1596765735341.png" alt="" loading="lazy"></figure>
-<p>4, 实现的功能<br>
-首先，最基本的功能就是CDN.  安装后，程序就会将您的VPS变成一个高性能CDN节点，用来加速和缓存您的网站。</p>
-<p>同时，脚本支持一键设置SSL, 您可以提供您自己的SSL证书，或者也可以一键签发免费的Let’s Encrypt证书，并且开启OCSP装订。</p>
-<p>脚本还支持随时增添新的CDN网站。您只需要根据脚本引导，输入网址和源站IP地址，即可分分钟添加CDN网址。您可以使用脚本管理CDN网站，查看网站数据，清除缓存，等等。</p>
-<p>Github项目地址：https://github.com/Har-Kuun/OneClickCDN 欢迎大家加星星加叉叉<br>
-本文及程序作者为香菇肥牛，原文链接https://qing.su/article/oneclick-cdn.html, 转载需注明原文链接。谢谢！</p>
-<p>小彩蛋：稍微修改一下脚本（脚本开头有说明，可以开启反代模式）可以一键反代hostloc哦 <sup>.</sup></p>
 ]]></content>
     </entry>
 </feed>
