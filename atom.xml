@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://xiu3213.github.io</id>
     <title>秀儿</title>
-    <updated>2020-08-10T01:12:40.841Z</updated>
+    <updated>2020-08-10T01:40:06.009Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="https://xiu3213.github.io"/>
+    <link rel="self" href="https://xiu3213.github.io/atom.xml"/>
     <subtitle>知难而退</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>https://xiu3213.github.io/images/avatar.png</logo>
+    <icon>https://xiu3213.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
     <entry>
         <title type="html"><![CDATA[一键制作DDWin，批处理!]]></title>
-        <id>http://localhost:4000/s9y925myV/</id>
-        <link href="http://localhost:4000/s9y925myV/">
+        <id>https://xiu3213.github.io/s9y925myV/</id>
+        <link href="https://xiu3213.github.io/s9y925myV/">
         </link>
         <updated>2020-08-09T14:30:40.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1596983474950.png" alt="" loading="lazy"></figure>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://xiu3213.github.io/post-images/1596983474950.png" alt="" loading="lazy"></figure>
 <p>makeddwin 工具包，使用批处理制作，代码明文，以及在包里写明依赖文件来自那里，你完全可以替换，代码查阅。</p>
 <p>不会还有杠精来喷吧？要不你写个更好的来？<br>
 至于你用上报毒与我无关！</p>
@@ -55,8 +55,8 @@ TG交流群：https://t.me/dd_win<br>
     </entry>
     <entry>
         <title type="html"><![CDATA[自定义 git.io 短链接地址与绕过链接生成限制]]></title>
-        <id>http://localhost:4000/MH86KLzkf/</id>
-        <link href="http://localhost:4000/MH86KLzkf/">
+        <id>https://xiu3213.github.io/MH86KLzkf/</id>
+        <link href="https://xiu3213.github.io/MH86KLzkf/">
         </link>
         <updated>2020-08-08T14:39:16.000Z</updated>
         <content type="html"><![CDATA[<p>Github 提供了 Git.io 短网址服务，用于缩短 Github 上项目的网址。</p>
@@ -116,11 +116,11 @@ Via: 1.1 vegur
     </entry>
     <entry>
         <title type="html"><![CDATA[【gd-utils】 Docker快速搭建GoogleDrive转存Bot  ]]></title>
-        <id>http://localhost:4000/S2lYVWimz/</id>
-        <link href="http://localhost:4000/S2lYVWimz/">
+        <id>https://xiu3213.github.io/S2lYVWimz/</id>
+        <link href="https://xiu3213.github.io/S2lYVWimz/">
         </link>
         <updated>2020-08-08T01:30:52.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1596850275326.gif" alt="" loading="lazy"></figure>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://xiu3213.github.io/post-images/1596850275326.gif" alt="" loading="lazy"></figure>
 <p>如果只能搭建bot推荐使用docker版</p>
 <p>准备：<br>
 1.SA配置文件（xxx.json）此步骤忽略参考（http://blog.jialezi.net/?post=153 ）<br>
@@ -167,8 +167,8 @@ USERPWD为shellinabox密码 || Domain=abc.com 为自己域名，要提前解析�
     </entry>
     <entry>
         <title type="html"><![CDATA[bbr/bbrplus/bbr2/锐速内核安装脚本更新测试版]]></title>
-        <id>http://localhost:4000/yzEb8qOIh/</id>
-        <link href="http://localhost:4000/yzEb8qOIh/">
+        <id>https://xiu3213.github.io/yzEb8qOIh/</id>
+        <link href="https://xiu3213.github.io/yzEb8qOIh/">
         </link>
         <updated>2020-08-08T01:26:13.000Z</updated>
         <content type="html"><![CDATA[<p>方便国内使用<br>
@@ -196,13 +196,13 @@ https://github.com/ylx2016/Linux-NetSpeed/releases</p>
 <p>原作者<br>
 https://github.com/cx9208/Linux-NetSpeed<br>
 https://github.com/chiakge/Linux-NetSpeed</p>
-<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1596850093008.webp" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://xiu3213.github.io/post-images/1596850093008.webp" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[tg邀请码机器人源码 自动发码 数量统计 无码提醒]]></title>
-        <id>http://localhost:4000/NbSNPnGXz/</id>
-        <link href="http://localhost:4000/NbSNPnGXz/">
+        <id>https://xiu3213.github.io/NbSNPnGXz/</id>
+        <link href="https://xiu3213.github.io/NbSNPnGXz/">
         </link>
         <updated>2020-08-08T01:12:06.000Z</updated>
         <content type="html"><![CDATA[<p>简介<br>
@@ -253,8 +253,8 @@ tg邀请码机器人源码 自动发码 数量统计 无码提醒</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[为Onedrive套上CDN加速下载]]></title>
-        <id>http://localhost:4000/G7OkD-Cag/</id>
-        <link href="http://localhost:4000/G7OkD-Cag/">
+        <id>https://xiu3213.github.io/G7OkD-Cag/</id>
+        <link href="https://xiu3213.github.io/G7OkD-Cag/">
         </link>
         <updated>2020-08-08T01:10:25.000Z</updated>
         <content type="html"><![CDATA[<p>首先推荐两种程序</p>
@@ -278,8 +278,8 @@ OneList：</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[如何反代-加速OneDrive域名]]></title>
-        <id>http://localhost:4000/CZWvLVqdV/</id>
-        <link href="http://localhost:4000/CZWvLVqdV/">
+        <id>https://xiu3213.github.io/CZWvLVqdV/</id>
+        <link href="https://xiu3213.github.io/CZWvLVqdV/">
         </link>
         <updated>2020-08-08T01:08:28.000Z</updated>
         <content type="html"><![CDATA[<p>反代OneDrive域名<br>
@@ -301,7 +301,7 @@ header_upstream Accept-Encoding identity<br>
 重启caddy然后按照上一篇文章运行onelist或者修改oneindex配置即可</p>
 <p>用CDN加速OneDrive<br>
 本文只介绍nodecache 其他CDN 操作基本差不多</p>
-<figure data-type="image" tabindex="1"><img src="http://localhost:4000/post-images/1596848948187.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://xiu3213.github.io/post-images/1596848948187.jpg" alt="" loading="lazy"></figure>
 <p>像上面这样填写点击确认创建并修改加速域名cname至nodecache生成的xxxxxxxxx.ncname.com域名</p>
 <p>之后选择回源管理，将回源HOST 修改为xxx-my.sharepoint.com （必须</p>
 <p>再到HTTPS 栏 添加加速域名的SSL证书</p>
@@ -310,8 +310,8 @@ header_upstream Accept-Encoding identity<br>
     </entry>
     <entry>
         <title type="html"><![CDATA[用Actions每天自动使用Rclone调用OneDrive使Office E5订阅保持活跃]]></title>
-        <id>http://localhost:4000/ppkASNJMF/</id>
-        <link href="http://localhost:4000/ppkASNJMF/">
+        <id>https://xiu3213.github.io/ppkASNJMF/</id>
+        <link href="https://xiu3213.github.io/ppkASNJMF/">
         </link>
         <updated>2020-08-08T00:56:41.000Z</updated>
         <content type="html"><![CDATA[<p>注：E5保活皆是玄学，能不能成功谁能知道呢？</p>
@@ -319,16 +319,16 @@ header_upstream Accept-Encoding identity<br>
 零、打开Github项目地址<br>
 https://github.com/peng4740/E5-Rclone-Actions</p>
 <p>一、Fork此仓库<br>
-<img src="http://localhost:4000/post-images/1596848323726.png" alt="" loading="lazy"></p>
+<img src="https://xiu3213.github.io/post-images/1596848323726.png" alt="" loading="lazy"></p>
 <p>二、设置Rclone配置<br>
 添加名为RCLONE_CONFIG的变量<br>
 值为Rclone的配置，需要你本地先生成配置，之后打开Rclone配置文件复制出OneDrive的配置<br>
 配置最前面的[od]需要改成<a href="%22od%22%E6%98%AF%E5%9C%A8%E7%94%A8Rclone%E6%B7%BB%E5%8A%A0OneDrive%E6%97%B6%E8%AE%BE%E7%BD%AE%E7%9A%84">e5</a><br>
-<img src="http://localhost:4000/post-images/1596848342263.png" alt="" loading="lazy"></p>
+<img src="https://xiu3213.github.io/post-images/1596848342263.png" alt="" loading="lazy"></p>
 <p>三、启用Actions<br>
 如图所示开启Actions，之后再对你自己Fork后的仓库点击Star(不要漏看了这一句)<br>
-<img src="http://localhost:4000/post-images/1596848354441.png" alt="" loading="lazy"><br>
-<img src="http://localhost:4000/post-images/1596848373311.png" alt="" loading="lazy"></p>
+<img src="https://xiu3213.github.io/post-images/1596848354441.png" alt="" loading="lazy"><br>
+<img src="https://xiu3213.github.io/post-images/1596848373311.png" alt="" loading="lazy"></p>
 <p>四、查看运行结果<br>
 Actions &gt; E5-Rclone-Actions</p>
 <p>五、Rclone使用自己的API<br>
@@ -344,12 +344,12 @@ Actions &gt; E5-Rclone-Actions</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[Telegram 本地消息防撤回插件]]></title>
-        <id>http://localhost:4000/PVphxlRBy/</id>
-        <link href="http://localhost:4000/PVphxlRBy/">
+        <id>https://xiu3213.github.io/PVphxlRBy/</id>
+        <link href="https://xiu3213.github.io/PVphxlRBy/">
         </link>
         <updated>2020-08-07T03:34:05.000Z</updated>
         <content type="html"><![CDATA[<p>🔍 预览</p>
-<p><img src="http://localhost:4000/post-images/1596771304759.gif" alt="" loading="lazy"><br>
+<p><img src="https://xiu3213.github.io/post-images/1596771304759.gif" alt="" loading="lazy"><br>
 ✨ 特性<br>
 阻止本地消息被服务器撤回。<br>
 被撤回的消息将被标记上 “已删除” 。<br>
@@ -369,8 +369,8 @@ Actions &gt; E5-Rclone-Actions</p>
     </entry>
     <entry>
         <title type="html"><![CDATA[SSH 密钥一键配置脚本 使用教程]]></title>
-        <id>http://localhost:4000/bkZunUpHG/</id>
-        <link href="http://localhost:4000/bkZunUpHG/">
+        <id>https://xiu3213.github.io/bkZunUpHG/</id>
+        <link href="https://xiu3213.github.io/bkZunUpHG/">
         </link>
         <updated>2020-08-07T02:07:14.000Z</updated>
         <content type="html"><![CDATA[<p>前言<br>
