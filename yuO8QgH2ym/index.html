@@ -1,330 +1,1263 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" >
 
-<title>源码 | 秀儿</title>
+<head>
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="知难而退">
+<meta name="theme-color" content="#000">
+<title>秀儿</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1597021954677">
+<link rel="stylesheet" href="/media/css/pisces.css">
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link
+  href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="shortcut icon" href="https://xiu3213.github.io/favicon.ico?v=1596983606794">
+<link href="/media/hljs/styles/default.css"
+  rel="stylesheet">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-<link rel="stylesheet" href="https://xiu3213.github.io/styles/main.css">
+<link rel="stylesheet" href="/styles/main.css">
 
-
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174922501-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-174922501-1');
-</script>
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
 
 
-  </head>
-  <body>
-    <nav class="navbar border fixed split-nav">
-  <div class="nav-brand">
-    <h3><a href="https://xiu3213.github.io">秀儿</a></h3>
-  </div>
-  <div class="collapsible">
-    <input id="collapsible1" type="checkbox" name="collapsible1">
-    <button>
-      <label for="collapsible1">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </label>
-    </button>
-    <div class="collapsible-body">
-      <ul class="inline">
-        
-          <li>
-            
-              <a href="/" class="menu">
-                首页
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/archives" class="menu">
-                归档
-              </a>
-            
-          </li>
-        
-          <li>
-            
-              <a href="/tags" class="menu">
-                标签
-              </a>
-            
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
 
-    <div id="top" class="row site">
-      <div class="sm-12 md-8 col">
-        <div class="paper">
-          <h2 class="current-tag">标签: 源码</h2>
+
+
+
+
+</head>
+
+<body>
+  <div class="head-top-line"></div>
+  <div class="header-box">
+    
+<div class="pisces">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
           
-  <article class="article">
-    <h2 class="article-title">
-      <a href="https://xiu3213.github.io/NbSNPnGXz/">tg邀请码机器人源码 自动发码 数量统计 无码提醒</a>
-    </h2>
-    <p class="article-meta">
-      2020-08-08
-      
-        <a href="https://xiu3213.github.io/H2393iXwm/" class="badge secondary">
-          机器人
-        </a>
-      
-        <a href="https://xiu3213.github.io/yuO8QgH2ym/" class="badge warning">
-          源码
-        </a>
-      
-        <a href="https://xiu3213.github.io/dfBAXDd1L/" class="badge secondary">
-          tg
-        </a>
-      
-    </p>
-    <p class="text-lead">
-      
-    </p>
-    <div class="row">
-      <a href="https://xiu3213.github.io/NbSNPnGXz/" class="readmore-link">
-        <button>
-          Read More
-        </button>
+            <a href="/" class="brand">
+              <span>秀儿</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">精于心，简于形</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/archives/" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/tags/" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友情链接
+                  
+                </a>
+              </li>
+            
+          
+          
+            <li id="fa_search" class="nav-item">
+              <a href="javascript:void(0);">
+                <i class="fa fa-search"></i> <span class="language" data-lan="search">搜索</span>
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+  </div>
+  <div class="main-continer">
+    
+    <div
+      class="section-layout  pisces">
+      <div class="section-layout-wrapper">
+        <div id="sidebarMeta" class="sidebar">
+    
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="/images/avatar.png"/>
+    <p class="site-author-name">适用 Gemini,Pisces 布局,版权说明需配置</p>
+    
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">12</span>
+        <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
-  </article>
-
-
-        </div>
-        <div class="row flex-edges">
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">21</span>
+        <span class="site-item-stat-name language" data-lan="category">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">21</span>
+        <span class="site-item-stat-name language" data-lan="tag">标签</span>
+      </a>
+    </div>
+  </div>
   
-  
-</div>
-
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="http://localhost:4000/atom.xml" target="_blank">RSS</a>
+        </span>
       </div>
-      <div class="sm-12 md-4 col sidebar">
-  <div class="paper info-container">
-    <img src="https://xiu3213.github.io/images/avatar.png?v=1596983606794" class="no-responsive avatar">
-    <div class="text-muted">知难而退</div>
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      最新文章
-    </div>
-    <div class="row">
-      <ul>
-        
-          
-            <li>
-              <a href="https://xiu3213.github.io/s9y925myV/">一键制作DDWin，批处理!</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://xiu3213.github.io/MH86KLzkf/">自定义 git.io 短链接地址与绕过链接生成限制</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://xiu3213.github.io/S2lYVWimz/">【gd-utils】 Docker快速搭建GoogleDrive转存Bot  </a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://xiu3213.github.io/yzEb8qOIh/">bbr/bbrplus/bbr2/锐速内核安装脚本更新测试版</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://xiu3213.github.io/NbSNPnGXz/">tg邀请码机器人源码 自动发码 数量统计 无码提醒</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://xiu3213.github.io/G7OkD-Cag/">为Onedrive套上CDN加速下载</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://xiu3213.github.io/CZWvLVqdV/">如何反代-加速OneDrive域名</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://xiu3213.github.io/ppkASNJMF/">用Actions每天自动使用Rclone调用OneDrive使Office E5订阅保持活跃</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://xiu3213.github.io/PVphxlRBy/">Telegram 本地消息防撤回插件</a>
-            </li>
-          
-        
-          
-            <li>
-              <a href="https://xiu3213.github.io/bkZunUpHG/">SSH 密钥一键配置脚本 使用教程</a>
-            </li>
-          
-        
-          
-        
-          
-        
-      </ul>
-    </div>
-  </div>
-  <div class="paper">
-    <div class="sidebar-title">
-      标签列表
-    </div>
-    <div class="row">
-      
-        <a href="https://xiu3213.github.io/dd/" class="badge ">
-          DD
-        </a>
-      
-        <a href="https://xiu3213.github.io/566kPJTMg/" class="badge warning">
-          Github
-        </a>
-      
-        <a href="https://xiu3213.github.io/NkQVF5MYvE/" class="badge secondary">
-          Git.io
-        </a>
-      
-        <a href="https://xiu3213.github.io/lc44XpSkGH/" class="badge ">
-          短网址
-        </a>
-      
-        <a href="https://xiu3213.github.io/_WSNMvB0E/" class="badge secondary">
-          gd
-        </a>
-      
-        <a href="https://xiu3213.github.io/D8rxaAl_i8/" class="badge success">
-          Docker
-        </a>
-      
-        <a href="https://xiu3213.github.io/YErFmkNbEE/" class="badge warning">
-          GoogleDrive
-        </a>
-      
-        <a href="https://xiu3213.github.io/H2393iXwm/" class="badge warning">
-          机器人
-        </a>
-      
-        <a href="https://xiu3213.github.io/XAL_6RxBj/" class="badge secondary">
-          bbr
-        </a>
-      
-        <a href="https://xiu3213.github.io/fG8QjN4lr8/" class="badge warning">
-          锐速
-        </a>
-      
-        <a href="https://xiu3213.github.io/yuO8QgH2ym/" class="badge secondary">
+    
+  
+  
+
+
+
+</div>
+</div>
+<script>
+  let sidebarMeta = document.querySelector('#sidebarMeta');
+  let scheme = 'pisces';
+  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
+  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
+    document.addEventListener('scroll', function(e) {
+      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
+        sidebarWrapper.classList.add('home-sidebar-fixed')
+      } else {
+        sidebarWrapper.classList.remove('home-sidebar-fixed')
+      }
+    });
+  }
+  </script>
+        <div class="section-box tag-line box-shadow-wrapper">
+          <section class="section tags-section posts-expand bg-color">
+            <div class="padding-wrapper">
+  <div class="tag-timeline-box">
+    <div class="tag-timeline-wrapper">
+      <div class="tag-timeline-title">
+        <h2>
           源码
-        </a>
+          <small class="language" data-lan="tag">标签</small>
+        </h2>
+      </div>
       
-        <a href="https://xiu3213.github.io/dfBAXDd1L/" class="badge success">
-          tg
-        </a>
       
-        <a href="https://xiu3213.github.io/qs0W-hZf1d/" class="badge secondary">
-          OneDrive
-        </a>
       
-        <a href="https://xiu3213.github.io/cdn/" class="badge success">
-          CDN
-        </a>
       
-        <a href="https://xiu3213.github.io/mdPDxkQQ3/" class="badge ">
-          反代
-        </a>
       
-        <a href="https://xiu3213.github.io/OkfvIeMG1b/" class="badge warning">
-          防撤回
-        </a>
       
-        <a href="https://xiu3213.github.io/ElTTMbrvid/" class="badge secondary">
-          插件
-        </a>
       
-        <a href="https://xiu3213.github.io/bGEY5YidX/" class="badge secondary">
-          ssh
-        </a>
       
-        <a href="https://xiu3213.github.io/TmMPokjorb/" class="badge ">
-          密钥
-        </a>
       
-        <a href="https://xiu3213.github.io/jiao-ben/" class="badge secondary">
-          脚本
-        </a>
       
-        <a href="https://xiu3213.github.io/yi-jian-jiao-ben/" class="badge ">
-          一键脚本
-        </a>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <a href="http://localhost:4000/NbSNPnGXz/">
+        <div class="motion-warpper">
+          <div class="tag-post-node">
+            <h1>
+              08-08
+              <small>tg邀请码机器人源码 自动发码 数量统计 无码提醒</small>
+            </h1>
+          </div>
+        </div>
+      </a>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
     </div>
-  </div>
-  <div class="paper">
-    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">GitHub</a> | <a class="rss" href="https://xiu3213.github.io/atom.xml" target="_blank">RSS</a>
   </div>
 </div>
-
+          </section>
+        </div>
+      </div>
     </div>
+    <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By <a
+        href="https://github.com/hsxyhao/gridea-theme-next" target="_blank">HsxyHao</a>
+    </div>
+    <div class="poweredby">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">GitHub</a>
+    </div>
+  </footer>
+  
+  
+  <div class="pisces back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+  
+  
+</div>
+<script>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+    back2TopText = document.querySelector('#back_to_top_text'),
+    drawerBox = document.querySelector('#drawer_box'),
+    rightSideBar = document.querySelector('.sidebar'),
+    viewport = document.querySelector('body');
 
-<script type="application/javascript">
+  function scrollAnimation(currentY, targetY) {
 
-AOS.init();
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
 
-hljs.initHighlightingOnLoad()
+  back2Top.addEventListener("click", function (e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
 
+  window.addEventListener('scroll', function (e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+
+  let hasCacu = false;
+  window.onresize = function () {
+    calcuHeight();
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function () {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, transitionDir, {});
+          }
+        })
+        window.Velocity(viewport, openProp, {
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp, {
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 链接跳转
+  let newWindow = 'false'
+  if (newWindow === 'true') {
+    let links = document.querySelectorAll('.post-body a')
+    links.forEach(item => {
+      if (!item.classList.contains('btn')) {
+        item.setAttribute("target", "_blank");
+      }
+    })
+  }
+
+  let faSearch = document.querySelector('#fa_search');
+  faSearch.addEventListener('click', function () {
+    document.querySelector('#search_mask').style = ''
+  })
+
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+  
+  // 离开当前页title变化
+  var leaveTitle = "";
+  if (leaveTitle) {
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = leaveTitle;
+      } else {
+        document.title = normal_title;
+      }
+    });
+  }
+
+</script>
+  </div>
+</body>
+
+<div class="search-mask" id="search_mask" style="display: none;">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input id="search" type="text" class="language" data-lan="search" placeholder="搜索">
+      </div>
+      <i id="close" class="fa fa-times-circle"></i>
+    </div>
+    <div class="stat-box">
+      <span id="stat_count">0</span><span class="language" data-lan="stat">条相关条目，使用了</span><span id="stat_times">0</span><span class="language" data-lan="stat-time">毫秒</span>
+      <hr>
+    </div>
+    <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/s9y925myV/"" data-c="
+          &lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1596983474950.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;makeddwin 工具包，使用批处理制作，代码明文，以及在包里写明依赖文件来自那里，你完全可以替换，代码查阅。&lt;/p&gt;
+&lt;p&gt;不会还有杠精来喷吧？要不你写个更好的来？&lt;br&gt;
+至于你用上报毒与我无关！&lt;/p&gt;
+&lt;p&gt;说明：&lt;br&gt;
+【使用前，请把所需的文件放进相应文件夹！】&lt;br&gt;
+目录结构：&lt;br&gt;
+bin 文件夹，存放用来制作的依赖程序和文件。&lt;br&gt;
+iso 文件夹，存放Windows ISO 系统镜像(只能放1个)&lt;br&gt;
+packages 文件夹，存放Windows 补丁文件&lt;br&gt;
+driver 文件夹，存放其他驱动文件&lt;br&gt;
+virtio 文件夹，存放KVM virtio ISO 驱动镜像(只能放1个)&lt;br&gt;
+vhd 文件夹，存放 .vhd格式 虚拟硬盘(只能放1个)&lt;br&gt;
+export 文件夹，输出生成的.gz、.wim、和解压的.vhd文件。&lt;br&gt;
+注意，只能放一个的目录务必按要求，因为放多个会导致脚本无法判断。&lt;/p&gt;
+&lt;p&gt;步骤1：使用vhd.cmd批处理，生成一个大小20-30G左右的虚拟硬盘&lt;br&gt;
+生成后的虚拟硬盘文件会在vhd目录，虚拟硬盘大小视你安装系统后硬盘体积还剩多少。&lt;br&gt;
+一般安装系统后，虚拟硬盘最低要剩空闲有1G左右，后期可以再创建对应体积的虚拟硬盘作调整。&lt;/p&gt;
+&lt;p&gt;步骤2：使用install.cmd批处理，选择刚才创建的已挂载的虚拟硬盘分区，自行查看[我的电脑]，你虚拟硬盘生成多少G的分区，就选择那个分区，进行下一步安装系统等其他操作。&lt;/p&gt;
+&lt;p&gt;步骤3：使用dd.cmd批处理，对已经完成制作的.vhd虚拟硬盘文件进行压缩成可DD的文件或者wim文件。&lt;br&gt;
+压缩完成后，别忘了测试文件的完整性检查，否则是一个损坏的数据文件是无法使用的！&lt;br&gt;
+生成的.gz文件，可以在Linux系统下DD为此系统。&lt;br&gt;
+生成的.wim文件，可以在WinPE中安装到实体机系统，又或者添加生成为一个iso文件。&lt;br&gt;
+(注意，压缩比较慢通常是1-3小时，电脑配置越高越快！)&lt;/p&gt;
+&lt;p&gt;网址：nat.ee&lt;br&gt;
+批处理：荣耀&amp;amp;制作&lt;br&gt;
+本批处理工具仅适合Windows 7 sp1 以上的系统使用！&lt;br&gt;
+注意：不能放在带有空格路径的目录，否则出错。&lt;br&gt;
+TG交流群：https://t.me/dd_win&lt;br&gt;
+如在使用中有任何问题或者建议，欢迎加入交流。&lt;/p&gt;
+&lt;p&gt;下载链接：https://yyingc.lanzous.com/i72Wzfei7ba&lt;br&gt;
+视频教程下载：https://yyingc.lanzous.com/igExyfesota&lt;/p&gt;
+&lt;p&gt;视频教程：https://www.youtube.com/watch?v=LTVgPFWnnX8&lt;br&gt;
+哔哩哔哩：https://www.bilibili.com/video/BV1Pk4y1U7Zp/&lt;/p&gt;
+&lt;p&gt;转自:https://www.hostloc.com/thread-728111-1-1.html&lt;/p&gt;
+">一键制作DDWin，批处理!</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/MH86KLzkf/"" data-c="
+          &lt;p&gt;Github 提供了 Git.io 短网址服务，用于缩短 Github 上项目的网址。&lt;/p&gt;
+&lt;p&gt;官方文档：https://github.com/blog/985-git-io-github-url-shortener&lt;/p&gt;
+&lt;p&gt;自定义短链接&lt;br&gt;
+依据官方文档，生成短链接有两个参数&lt;/p&gt;
+&lt;p&gt;| 参数名  | 参数值  | 是否必须  |&lt;br&gt;
+|  url	源 | URL 链接  | 是  |&lt;br&gt;
+|  code | 自定义短链  |  否 |&lt;/p&gt;
+&lt;p&gt;命令模板&lt;br&gt;
+&lt;code&gt;curl -i &amp;quot;https://git.io&amp;quot; -F &amp;quot;url=长链接&amp;quot; -F &amp;quot;code=短链接&amp;quot;&lt;/code&gt;&lt;br&gt;
+使用示例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ curl -i &amp;quot;https://git.io&amp;quot; -F &amp;quot;url=https://github.com/baoyun-site&amp;quot; -F &amp;quot;code=baoyunsite&amp;quot;
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Tue, 14 Jul 2020 08:22:52 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/baoyunsite
+Content-Length: 30
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.026588
+X-Node: 7fa64432-805f-49cf-a4d4-6f19c50ae8f3
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur$ curl -i &amp;quot;https://git.io&amp;quot; -F &amp;quot;url=https://github.com/baoyun-site&amp;quot; -F &amp;quot;code=baoyunsite&amp;quot;
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Tue, 14 Jul 2020 08:22:52 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/baoyunsite
+Content-Length: 30
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.026588
+X-Node: 7fa64432-805f-49cf-a4d4-6f19c50ae8f3
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;https://github.com/baoyun-site&lt;br&gt;
+绕过链接生成限制&lt;br&gt;
+原理&lt;br&gt;
+通过使用 Github Pages 中放置静态页面的功能，来进行跳转。&lt;/p&gt;
+&lt;p&gt;实现&lt;br&gt;
+请查看 Github 仓库 renbaoshuo/git.io ，内含代码与说明。&lt;/p&gt;
+&lt;p&gt;版权声明&lt;br&gt;
+本文作者： 宝硕&lt;br&gt;
+本文链接： https://baoshuo.blog/post/oKnaKLcDb/&lt;/p&gt;
+">自定义 git.io 短链接地址与绕过链接生成限制</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/S2lYVWimz/"" data-c="
+          &lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1596850275326.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;如果只能搭建bot推荐使用docker版&lt;/p&gt;
+&lt;p&gt;准备：&lt;br&gt;
+1.SA配置文件（xxx.json）此步骤忽略参考（http://blog.jialezi.net/?post=153 ）&lt;br&gt;
+2.tgbot的api t.me/BotFather 创建即可见&lt;br&gt;
+3.一个可解析的域名&lt;br&gt;
+4.GoogleDrive文件夹的id&lt;br&gt;
+5.docker镜像&lt;br&gt;
+（我自用的小修改版 https://hub.docker.com/r/jialezi/gd-utils）&lt;br&gt;
+原版：https://github.com/gdtool/gd-utils-docker/&lt;/p&gt;
+&lt;p&gt;搭建&lt;br&gt;
+示例：&lt;br&gt;
+域名为abc.com&lt;br&gt;
+GoogleDrive文件夹的id为1hhDZw2SKjNeuwWroHSenoY-TXiFZyDoM&lt;br&gt;
+bot api为13xxxx2380:AAGDPL_2-LPIA0iQ6RxxxxM9bBOFjtErFGE&lt;/p&gt;
+&lt;p&gt;提前解析abc.com到你的服务器ip（用于申请ssl）&lt;br&gt;
+然后&lt;/p&gt;
+&lt;p&gt;1.下载配置文件，按要求修改里面的参数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;`wget https://raw.githubusercontent.com/gdtool/gd-utils-docker/master/config.example.js -O config.js`
+##用SA的修改以下三项即可，其他按需修改
+const DEFAULT_TARGET = &#39;&#39; ,// 必填，拷贝默认目的地ID，如果不指定target，则会复制到此处，建议填写团队盘ID
+tg_token: &#39;&#39;, // 你的 telegram robot 的 token，获取方法参见 https://core.telegram.org/bots#6-botfather
+tg_whitelist: [&#39;&#39;] // 你的tg username(t.me/username)，bot只会执行这个列表里的用户所发送的指令
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2.创建sa文件夹上传sa文件到sa文件夹（你也可以运行后再用web端的filebrowser上传）&lt;/p&gt;
+&lt;p&gt;3.运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker run --restart=always -idt -e USERPWD=123qwe -p 443:443 -p 80:80 -e Domain=abc.com -v ${PWD}/sa:/gd-utils/sa -v ${PWD}/config.js:/gd-utils/config.js --name gd-utils jialezi/gd-utils
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;申请ssl需要80端口&lt;br&gt;
+USERPWD为shellinabox密码 || Domain=abc.com 为自己域名，要提前解析，由caddy自动申请ssl&lt;/p&gt;
+&lt;p&gt;4.对接telegram bot&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -F &amp;quot;url=[YOUR_WEBSITE]/api/gdurl/tgbot&amp;quot; &#39;https://api.telegram.org/bot[YOUR_BOT_TOKEN]/setWebhook&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -F &amp;quot;url=https://abc.com/api/gdurl/tgbot&amp;quot; &#39;https://api.telegram.org/bot1394xxx380:AAGDPL_2-LPIA0iQ6xxxxM9bBOFjtErFGE/setWebhook&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;返回true ok&lt;/p&gt;
+&lt;p&gt;访问:&lt;/p&gt;
+&lt;p&gt;1）https://abc.com #gd-utils地址&lt;/p&gt;
+&lt;p&gt;2）https://abc.com/shell #shellinabox地址，使用root需要先使用gd用登录，再切换root&lt;br&gt;
+账号gd，密码自设 USERPWD=123qwe || su root切换到root 密码自设 USERPWD=123qwe&lt;/p&gt;
+&lt;p&gt;3）https://abc.com/file #filebrowser 账号密码admin&lt;/p&gt;
+&lt;p&gt;如果觉得不够快，可以去使用fclone，超级暴力的项目&lt;/p&gt;
+">【gd-utils】 Docker快速搭建GoogleDrive转存Bot  </a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/yzEb8qOIh/"" data-c="
+          &lt;p&gt;方便国内使用&lt;br&gt;
+不卸载内核&lt;br&gt;
+&lt;code&gt;wget -N --no-check-certificate &amp;quot;https://github.000060000.xyz/tcpx.sh&amp;quot; &amp;amp;&amp;amp; chmod +x tcpx.sh &amp;amp;&amp;amp; ./tcpx.sh&lt;/code&gt;&lt;br&gt;
+或&lt;br&gt;
+&lt;code&gt;wget -N &amp;quot;https://github.000060000.xyz/tcpx.sh&amp;quot; &amp;amp;&amp;amp; chmod +x tcpx.sh &amp;amp;&amp;amp; ./tcpx.sh&lt;/code&gt;&lt;br&gt;
+卸载内核&lt;br&gt;
+&lt;code&gt;wget -N --no-check-certificate &amp;quot;https://github.000060000.xyz/tcp.sh&amp;quot; &amp;amp;&amp;amp; chmod +x tcp.sh &amp;amp;&amp;amp; ./tcp.sh&lt;/code&gt;&lt;br&gt;
+或&lt;br&gt;
+&lt;code&gt;wget -N &amp;quot;https://github.000060000.xyz/tcp.sh&amp;quot; &amp;amp;&amp;amp; chmod +x tcp.sh &amp;amp;&amp;amp; ./tcp.sh&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;bbr内核更新为5.5/5.4&lt;/p&gt;
+&lt;p&gt;bbrplus降级到4.14.129 安装方法和安装的内核均和原作者一致 彻底甩锅&lt;br&gt;
+维持原来的支持版本 不再支持c6,c8;debian和ubuntu各版本安装问题和我无关&lt;/p&gt;
+&lt;p&gt;不支持32位系统&lt;br&gt;
+锐速内核稍微更新&lt;/p&gt;
+&lt;p&gt;去掉魔改版 增加xanmod 5.5.1版本&lt;br&gt;
+xanmod 只添加了centos7,8 debian9,10&lt;/p&gt;
+&lt;p&gt;5.5内核支持cake队列 5.4未测试&lt;/p&gt;
+&lt;p&gt;测试版本，建议先用不卸载内核版本测试，然后再用正常版本&lt;br&gt;
+不卸载内核表示不会去卸载现有的内核&lt;/p&gt;
+&lt;p&gt;测试分支&lt;br&gt;
+https://github.com/ylx2016/Linux-NetSpeed/tree/2020.2.3&lt;br&gt;
+https://github.com/ylx2016/Linux-NetSpeed/releases&lt;/p&gt;
+&lt;p&gt;原作者&lt;br&gt;
+https://github.com/cx9208/Linux-NetSpeed&lt;br&gt;
+https://github.com/chiakge/Linux-NetSpeed&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1596850093008.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">bbr/bbrplus/bbr2/锐速内核安装脚本更新测试版</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/NbSNPnGXz/"" data-c="
+          &lt;p&gt;简介&lt;br&gt;
+因为论坛和部分网站需要发送邀请码邀请注册，人工发码又太慢，于是想到tg机器人发码，但是找了很多项目都没有找到类似的开源项目，偶然间看到了teelebot开源的tgAPi框架 于是参考着示例 ，用我学了半个月的半吊子python 写出了这个暂时能用不会报错的telegram邀请码机器人&lt;/p&gt;
+&lt;p&gt;目前已经到我理想状态，短期内不会进行功能更新，学习比较重要。&lt;/p&gt;
+&lt;p&gt;增加功能&lt;br&gt;
+1.邀请码自动发码模块 并且限制领取数量（邀请码添加在invite_code目录下的code.txt 一行一个） 用户信息存储在usertext.txt文件内&lt;/p&gt;
+&lt;p&gt;2.邀请码数量统计，如果邀请码用完自动给管理员发消息（需自行修改len_invite.py里面的发送id）&lt;/p&gt;
+&lt;p&gt;3.补码模块已经添加 目前并不是很理想的状态但是可以用使用方法&lt;/p&gt;
+&lt;p&gt;/add_code邀请码&lt;br&gt;
+邀请码&lt;br&gt;
+注意：一行一个注意换行&lt;/p&gt;
+&lt;p&gt;4.删除用户信息模块，删除后用户可以再次获取邀请码指令/del用户id目前只能删除单个用户&lt;/p&gt;
+&lt;p&gt;5.mps的自动补码模块 请在/plugins/updatacode/updatacode.py文件内填写网站登录信息，目前只会抓取两页邀请码，需要手动更新，后期会添加自动执行进去。&lt;/p&gt;
+&lt;p&gt;开发计划&lt;br&gt;
+1.增加管理员添加邀请码模块&lt;/p&gt;
+&lt;p&gt;2.多类邀请码模块支持&lt;/p&gt;
+&lt;p&gt;3.统计需改成json数据 目前统计方式过于简易(已完成)&lt;/p&gt;
+&lt;p&gt;4.管理员补码：暂定计划1，发送补码指令并跟随邀请码，格式为一行一个，然后剔除指令文本，后使用write写入code.txt文件中。 计划2:用户发送指令后开始监听，将用户发送的后续文本写入文件中，需发送特定指令来结束输入&lt;/p&gt;
+&lt;p&gt;环境要求&lt;br&gt;
+Python版本&lt;br&gt;
+teelebot 只支持 Python3.x，不支持Python2.x。&lt;/p&gt;
+&lt;p&gt;使用&lt;br&gt;
+一、源码运行&lt;br&gt;
+1.克隆或点击下载本项目到本地，保证本机安装有Python3.x版本和包requests（删除了多余模块不需要了）；&lt;/p&gt;
+&lt;p&gt;2.config.cfg 配置文件&lt;/p&gt;
+&lt;p&gt;配置文件格式:&lt;/p&gt;
+&lt;p&gt;[config]&lt;br&gt;
+key=your key&lt;br&gt;
+root=your user id&lt;br&gt;
+debug=False&lt;br&gt;
+timeout=60&lt;br&gt;
+plugin_dir=your plugin dir   //[Optional]&lt;br&gt;
+Linux&lt;br&gt;
+在 /root 目录下创建文件夹 .teelebot ,并在其内新建配置文件 config.cfg ,按照上面的格式填写配置文件&lt;/p&gt;
+&lt;p&gt;Windows&lt;br&gt;
+在 C:\Users&amp;lt;username&amp;gt; 目录下创建文件夹 .teelebot ,并在其内新建配置文件 config.cfg ,按照上面的格式填写配置文件&lt;/p&gt;
+&lt;p&gt;指定配置文件&lt;br&gt;
+Linux 和 Windows 都可在命令行通过参数手动指定配置文件路径，命令格式：&lt;/p&gt;
+&lt;p&gt;python -m teelebot -c/-C &lt;configure file path&gt;&lt;br&gt;
+路径必须为绝对路径。&lt;/p&gt;
+&lt;p&gt;3.运行&lt;/p&gt;
+&lt;p&gt;终端下进入teelebot文件夹所在目录。&lt;/p&gt;
+&lt;p&gt;对于使用程序配置文件默认路径的：输入python -m teelebot 回车,正常情况下你应该能看见屏幕提示机器人开始运行。&lt;br&gt;
+对于命令行手动指定配置文件路径的：输入python -m teelebot -c/-C &lt;configure file path&gt; 回车,正常情况下你应该能看见屏幕提示机器人开始运行。&lt;br&gt;
+tg邀请码机器人源码 自动发码 数量统计 无码提醒&lt;/p&gt;
+">tg邀请码机器人源码 自动发码 数量统计 无码提醒</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/G7OkD-Cag/"" data-c="
+          &lt;p&gt;首先推荐两种程序&lt;/p&gt;
+&lt;p&gt;1.php的OneIndex修改版&lt;/p&gt;
+&lt;p&gt;2.萌咖的GO版OneList&lt;/p&gt;
+&lt;p&gt;这两种程序都能够直接将sharepoint域名替换为你反代的域名或者是CDN域名&lt;/p&gt;
+&lt;p&gt;程序地址：&lt;/p&gt;
+&lt;p&gt;OneIndex：https://github.com/caippx/oneindex-j&lt;/p&gt;
+&lt;p&gt;OneList：https://github.com/MoeClub/OneList/tree/master/Rewrite&lt;/p&gt;
+&lt;p&gt;使用方法&lt;br&gt;
+OneList：&lt;/p&gt;
+&lt;p&gt;这个就很简单了，根据github中的教程 配置好配置文件之后&lt;/p&gt;
+&lt;p&gt;在运行的时候使用&lt;/p&gt;
+&lt;p&gt;OneList -bind 0.0.0.0 -port 80 -P &amp;quot;xxxxx-my.sharepoint.com|domain.com&amp;quot;&lt;br&gt;
+即可将你的sharepoint域名替换成domain.con&lt;/p&gt;
+&lt;p&gt;OneIndex：&lt;/p&gt;
+&lt;p&gt;这个版本是经过我修改的版本，在安装完成之后 直接在后台设置里面可以看到替换sharepoint域名的选项&lt;/p&gt;
+&lt;p&gt;填上即可 如果留空 则不使用该功能&lt;/p&gt;
+&lt;p&gt;注：sharepoint域名为你在网页版onedrive首页时的那个域名xxxxx-my.sharepoint.com&lt;/p&gt;
+">为Onedrive套上CDN加速下载</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/CZWvLVqdV/"" data-c="
+          &lt;p&gt;反代OneDrive域名&lt;br&gt;
+利用Caddy反代OneDrive&lt;br&gt;
+Caddy安装方法请自行搜索&lt;/p&gt;
+&lt;p&gt;domain.com {&lt;br&gt;
+tls admin@domain.com&lt;br&gt;
+timeouts none&lt;br&gt;
+gzip&lt;br&gt;
+proxy / https://xxx-my.sharepoint.com {&lt;br&gt;
+header_upstream Host xxx-my.sharepoint.com&lt;br&gt;
+header_upstream Referer https://xxx-my.sharepoint.com&lt;br&gt;
+header_upstream -X-Forwarded-For {remote}&lt;br&gt;
+header_upstream X-Real-IP {remote}&lt;br&gt;
+header_upstream User-Agent {&amp;gt;User-Agent}&lt;br&gt;
+header_upstream Accept-Encoding identity&lt;br&gt;
+}&lt;/p&gt;
+&lt;p&gt;写入如下配置&lt;br&gt;
+重启caddy然后按照上一篇文章运行onelist或者修改oneindex配置即可&lt;/p&gt;
+&lt;p&gt;用CDN加速OneDrive&lt;br&gt;
+本文只介绍nodecache 其他CDN 操作基本差不多&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1596848948187.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;像上面这样填写点击确认创建并修改加速域名cname至nodecache生成的xxxxxxxxx.ncname.com域名&lt;/p&gt;
+&lt;p&gt;之后选择回源管理，将回源HOST 修改为xxx-my.sharepoint.com （必须&lt;/p&gt;
+&lt;p&gt;再到HTTPS 栏 添加加速域名的SSL证书&lt;/p&gt;
+&lt;p&gt;然后隐身模式访问加速域名 如果跳转到office登录页面 则说明成功&lt;/p&gt;
+">如何反代-加速OneDrive域名</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/ppkASNJMF/"" data-c="
+          &lt;p&gt;注：E5保活皆是玄学，能不能成功谁能知道呢？&lt;/p&gt;
+&lt;p&gt;使用方法&lt;br&gt;
+零、打开Github项目地址&lt;br&gt;
+https://github.com/peng4740/E5-Rclone-Actions&lt;/p&gt;
+&lt;p&gt;一、Fork此仓库&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1596848323726.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;二、设置Rclone配置&lt;br&gt;
+添加名为RCLONE_CONFIG的变量&lt;br&gt;
+值为Rclone的配置，需要你本地先生成配置，之后打开Rclone配置文件复制出OneDrive的配置&lt;br&gt;
+配置最前面的[od]需要改成&lt;a href=&#34;%22od%22%E6%98%AF%E5%9C%A8%E7%94%A8Rclone%E6%B7%BB%E5%8A%A0OneDrive%E6%97%B6%E8%AE%BE%E7%BD%AE%E7%9A%84&#34;&gt;e5&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1596848342263.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;三、启用Actions&lt;br&gt;
+如图所示开启Actions，之后再对你自己Fork后的仓库点击Star(不要漏看了这一句)&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1596848354441.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;http://localhost:4000/post-images/1596848373311.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;四、查看运行结果&lt;br&gt;
+Actions &amp;gt; E5-Rclone-Actions&lt;/p&gt;
+&lt;p&gt;五、Rclone使用自己的API&lt;br&gt;
+不长篇大论一大堆了，只提基本的几个点&lt;/p&gt;
+&lt;p&gt;到Azure新注册一个应用：https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade&lt;/p&gt;
+&lt;p&gt;名称：随意&lt;br&gt;
+重定向URI：http://localhost&lt;/p&gt;
+&lt;p&gt;创建完成的页面(概述)可以看到Client_ID，也就是应用程序(客户端)ID，记录下来&lt;/p&gt;
+&lt;p&gt;到API权限页面添加权限：Files.Read、Files.ReadWrite、Files.Read.All、Files.ReadWrite.All、offline_access、User.Read&lt;/p&gt;
+&lt;p&gt;到证书和密码页面，添加客户端密码，一年还是长期，都可以。这个就是Client_secret，也要记录下来&lt;/p&gt;
+&lt;p&gt;rclone config添加配置时，填写自己的Client_ID和Client_secret按提示操作即可&lt;/p&gt;
+">用Actions每天自动使用Rclone调用OneDrive使Office E5订阅保持活跃</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/PVphxlRBy/"" data-c="
+          &lt;p&gt;🔍 预览&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:4000/post-images/1596771304759.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+✨ 特性&lt;br&gt;
+阻止本地消息被服务器撤回。&lt;br&gt;
+被撤回的消息将被标记上 “已删除” 。&lt;br&gt;
+插件具有极好的兼容性。&lt;br&gt;
+标记的内容支持多语言自动识别。&lt;br&gt;
+目前已支持自动识别：&lt;br&gt;
+英语、简体中文语、繁体中文语、日语、韩语&lt;br&gt;
+🍅 兼容性&lt;br&gt;
+目前仅兼容 Windows Telegram v1.9.0 ~ v2.2.0 或更高。&lt;br&gt;
+如果您正在使用 Telegram beta，请下载最新预览版本。&lt;/p&gt;
+&lt;p&gt;🍔 用法&lt;br&gt;
+1.前往 发行页面 下载最新版本插件。&lt;br&gt;
+2.关闭正在运行的 Telegram 进程。&lt;br&gt;
+3.复制 version.dll 文件到 Telegram 根目录。&lt;br&gt;
+4.运行 Telegram 程序。&lt;/p&gt;
+">Telegram 本地消息防撤回插件</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/bkZunUpHG/"" data-c="
+          &lt;p&gt;前言&lt;br&gt;
+对于新入手或重装后的 VPS 配置密钥登录需要创建 ~/.ssh 目录、把公钥写入到 ~/.ssh/authorized_keys、设置权限、禁用密码登录等操作，虽然都是很简单的基础操作，但过程麻烦且枯燥：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir -p ~/.ssh
+curl -fsSL https://github.com/P3TERX.keys &amp;gt;&amp;gt; ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+sudo sed -i &amp;quot;s@.*\(PasswordAuthentication \).*@\1no@&amp;quot; /etc/ssh/sshd_config
+sudo service sshd restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;SSH 密钥一键配置脚本是一套用于简化 SSH 密钥配置过程的解决方案。使用它以上操作只需要一行命令：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -g P3TERX -d&lt;/code&gt;&lt;br&gt;
+语法及选项说明&lt;br&gt;
+bash &amp;lt;(curl -fsSL git.io/key.sh) [选项...] &amp;lt;参数&amp;gt;&lt;br&gt;
+-o – 覆盖模式，必须写在最前面才会生效&lt;br&gt;
+-g – 从 GitHub 获取公钥，参数为 GitHub 用户名&lt;br&gt;
+-u – 从 URL 获取公钥，参数为 URL&lt;br&gt;
+-l – 从本地文件获取公钥，参数为本地文件路径&lt;br&gt;
+-p – 修改 SSH 端口，参数为端口号&lt;br&gt;
+-d – 禁用密码登录&lt;br&gt;
+使用方法&lt;br&gt;
+生成 SSH 密钥对&lt;br&gt;
+如果没有密钥需要先生成，执行以下命令后一路回车即可。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen -t ecdsa -b 521&lt;/code&gt;&lt;br&gt;
+TIPS： 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Linux 发行版和 ma­cOS 自带的终端，但不仅限于这些环境。科普： 521 位的 ECDSA 密钥比起 RSA 密钥更安全且验证速度更快。&lt;/p&gt;
+&lt;p&gt;操作完后会在 ~/.ssh 目录中生两个密钥文件，id_ecdsa 为私钥，id_ecdsa.pub 为公钥。公钥就是我们需要安装在远程主机上的。&lt;/p&gt;
+&lt;p&gt;科普：~符号代表用户主目录，俗称家目录。其路径与当前登陆的用户有关，在 Linux 中普通用户家目录的路径是/home/用户名，而 root 用户是/root。Win­dowd 10 中路径是C:\Users\用户名。在 ma­cOS 中路径是/Users/用户名。&lt;/p&gt;
+&lt;p&gt;安装公钥&lt;br&gt;
+从 GitHub 获取公钥&lt;br&gt;
+在 GitHub 密钥管理页面 添加公钥，比如我的用户名是 P3TERX，那么在主机上输入以下命令即可：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -g P3TERX&lt;/code&gt;&lt;br&gt;
+从 URL 获取公钥&lt;br&gt;
+把公钥上传到网盘，通过网盘链接获取公钥：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -u https://p3terx.com/key.pub&lt;/code&gt;&lt;br&gt;
+从本地文件获取公钥&lt;br&gt;
+通过 FTP 的方式把公钥传到 VPS 上，然后指定公钥路径：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -f ~/key.pub&lt;/code&gt;&lt;br&gt;
+覆盖模式&lt;br&gt;
+使用覆盖模式（-o）将覆盖 /.ssh/authorized_keys 文件，之前的密钥会被完全替换掉，选项必须写在最前面才会生效，比如：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -o -g P3TERX&lt;/code&gt;&lt;br&gt;
+或者&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -og P3TERX&lt;/code&gt;&lt;br&gt;
+禁用密码登录&lt;br&gt;
+在确定使用密钥能正常登录后禁用密码登录：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -d&lt;/code&gt;&lt;br&gt;
+修改 SSH 端口&lt;br&gt;
+把 SSH 端口修改为 2222：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -p 2222&lt;/code&gt;&lt;br&gt;
+一键操作&lt;br&gt;
+安装密钥、修改端口、禁用密码登录一键操作：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -og P3TERX -p 2222 -d&lt;/code&gt;&lt;/p&gt;
+">SSH 密钥一键配置脚本 使用教程</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/yjgxn/"" data-c="
+          &lt;p&gt;1, 系统环境要求&lt;br&gt;
+目前支持Ubuntu 20.04 LTS, Debian 10, CentOS 7/8操作系统。&lt;/p&gt;
+&lt;p&gt;CDN服务器正常运行时仅需要系统有500MB的内存。但是，程序第一次编译安装的时候需要1500MB左右的内存。若您的VPS内存不够，可以加一些Swap.&lt;/p&gt;
+&lt;p&gt;需要注意的是，该脚本需要安装在新装的操作系统中。该程序和其他面板（比如宝塔，cPanel, Directadmin）等不兼容。毕竟，装CDN程序的节点上也不应该搭建其他程序的。&lt;/p&gt;
+&lt;p&gt;2, 使用方法&lt;br&gt;
+因为是一键脚本，所以使用起来非常简单，只需要一行命令就可以啦！&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/Har-Kuun/OneClickCDN/master/OneClickCDN.sh &amp;amp;&amp;amp; sudo bash OneClickCDN.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一次运行时，程序会提示自动编译安装Traffic Server.  安装完毕后，程序会引导新建CDN网站，自动签发SSL, 等等。您需要将您网站的域名设置A记录解析到这台VPS的IP地址上。&lt;/p&gt;
+&lt;p&gt;您也可以随时重新运行该脚本，用来管理您的服务器上部署的CDN网站，查看网站统计，等等。&lt;/p&gt;
+&lt;p&gt;3, 管理面板&lt;br&gt;
+脚本执行后拥有功能丰富但简单易用的后台管理界面。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1596765735341.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;4, 实现的功能&lt;br&gt;
+首先，最基本的功能就是CDN.  安装后，程序就会将您的VPS变成一个高性能CDN节点，用来加速和缓存您的网站。&lt;/p&gt;
+&lt;p&gt;同时，脚本支持一键设置SSL, 您可以提供您自己的SSL证书，或者也可以一键签发免费的Let’s Encrypt证书，并且开启OCSP装订。&lt;/p&gt;
+&lt;p&gt;脚本还支持随时增添新的CDN网站。您只需要根据脚本引导，输入网址和源站IP地址，即可分分钟添加CDN网址。您可以使用脚本管理CDN网站，查看网站数据，清除缓存，等等。&lt;/p&gt;
+&lt;p&gt;Github项目地址：https://github.com/Har-Kuun/OneClickCDN 欢迎大家加星星加叉叉&lt;br&gt;
+本文及程序作者为香菇肥牛，原文链接https://qing.su/article/oneclick-cdn.html, 转载需注明原文链接。谢谢！&lt;/p&gt;
+&lt;p&gt;小彩蛋：稍微修改一下脚本（脚本开头有说明，可以开启反代模式）可以一键反代hostloc哦 &lt;sup&gt;.&lt;/sup&gt;&lt;/p&gt;
+">一键安装配置高性能的CDN节点</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="http://localhost:4000/1.html/"" data-c="
+          &lt;p&gt;支持重装的系统：&lt;br&gt;
+Debian 9/10&lt;br&gt;
+Ubuntu 18.04/16.04&lt;br&gt;
+CentOS 6/7&lt;br&gt;
+自定义DD镜像&lt;/p&gt;
+&lt;p&gt;特性/优化：&lt;br&gt;
+自动获取IP地址、网关、子网掩码&lt;br&gt;
+自动判断网络环境，选择国内/外镜像，再也不用担心卡半天了&lt;br&gt;
+超级懒人一键化，无需复杂的命令&lt;br&gt;
+解决萌咖脚本中一些导致安装错误的问题&lt;br&gt;
+CentOS 7 镜像抛弃LVM，回归ext4，减少不稳定因素&lt;/p&gt;
+&lt;p&gt;使用方法：非常简单&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget --no-check-certificate -O AutoReinstall.sh https://git.io/AutoReinstall.sh &amp;amp;&amp;amp; bash AutoReinstall.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;http://localhost:4000/post-images/1596765505850.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">一键重装脚本/一键DD脚本</a>
+      </div>
+      
+    </div>
+    <div class="page">
+      <div id="page_ul"></div>
+    </div>
+  </div>
+</div>
+<script>
+  !function () {
+    let searchMask = document.querySelector('#search_mask');
+    let result = document.querySelector('#result');
+    let items = document.querySelectorAll('.item');
+    let searchBox = document.querySelector('#search');
+    let statCount = document.querySelector('#stat_count');
+    let statTimes = document.querySelector('#stat_times');
+    let pageUl = document.querySelector('#page_ul');
+    let close = document.querySelector('#close');
+    
+    close.addEventListener('click', function() {
+      searchMask.style = 'display: none;'
+    })
+
+    let finds = [];
+    let contents = [];
+    let pageSize = 10;
+    items.forEach(item => {
+      let a = item.querySelector('a');
+      contents.push({
+        title: a.innerText,
+        details: a.dataset.c,
+        link: a.href
+      })
+      item.remove();
+    })
+
+    function insertStr(soure, start, count) {
+      let newStr = soure.substr(start, count);
+      return soure.slice(0, start) + '<em>' + newStr + '</em>' + soure.slice(start + count);
+    }
+
+    pageUl.addEventListener('click', function(event) {
+      let target = event.target;
+      if (target.__proto__ === HTMLSpanElement.prototype) {
+        appendResults(parseInt(target.dataset.i));
+      }
+    })
+
+    function appendResults(index) {
+      let htmlResult = '';
+      let start = index || 0;
+      let end = Math.min(start + pageSize, finds.length);
+      for (let i = start; i < end; i++) {
+        const current = finds[i];
+        let html = current.title;
+        let sum = 0;
+        let positions = current.positions;
+        positions.forEach(position => {
+          html = insertStr(html, position.start + sum, position.count);
+          sum += 9;
+        })
+        htmlResult += `<div class="item"><a class="result-title" href="${current.link}">${html}</a></div>`;
+      }
+      result.innerHTML = htmlResult;
+      pageUl.innerHTML = '';
+      let count = finds.length / pageSize;
+      let lis = '';
+      if (start !== 0) {
+        lis += `<span class="fa fa-angle-left" data-i='${start - 1}'></span>`;
+      }
+      for (let i = 0; i < count; i++) {
+        lis += `<span class='${i === start?'current':''}' data-i='${i}'>${i+1}</span>`;     
+      }
+      if (start+1 < count) {
+        lis += `<span class="fa fa-angle-right" data-i='${start+1}'></span>`;  
+      }
+      pageUl.innerHTML = lis;
+    }
+
+    function search(delay) {
+      let timer = null
+      return function () {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          let start = Date.now();
+          let segments = searchBox.value.split(' ').filter(c => c != '');
+          if (segments.length <= 0) {
+            return;
+          }
+          finds = [];
+          let htmlResult = '';
+          contents.forEach(content => {
+            let title = content.title;
+            let positions = [];
+            let find = false;
+            segments.forEach((segment) => {
+              if (content.title.includes(segment)) {
+                find = true;
+                positions.push({
+                  start: content.title.indexOf(segment),
+                  count: segment.length
+                })
+              } else if (content.details.includes(segment)) {
+                find = true;
+              }
+            });
+            if (find) {
+              finds.push({
+                title: content.title,
+                link: content.link,
+                positions
+              });
+            }
+          })
+          appendResults(0);
+          statCount.textContent = finds.length;
+          statTimes.textContent = Date.now() - start;
+        }, delay)
+      }
+    }
+    searchBox.addEventListener('input', search(200));
+  }()
+</script>
+
+<input hidden id="copy" />
+<script>
+  !function () {
+    let times = document.querySelectorAll('.publish-time');
+    for (let i = 0; i < times.length; i++) {
+      let date = times[i].dataset.t;
+      let time = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
+      if (time < 60) {
+        str = time + '秒之前';
+      } else if (time < 3600) {
+        str = Math.floor(time / 60) + '分钟之前';
+      } else if (time >= 3600 && time < 86400) {
+        str = Math.floor(time / 3600) + '小时之前';
+      } else if (time >= 86400 && time < 259200) {
+        str = Math.floor(time / 86400) + '天之前';
+      } else {
+        str = times[i].textContent;
+      }
+      times[i].textContent = str;
+    }
+  }();
+</script>
+
+<script>
+  let language = '';
+  if (language !== '') {
+    let map = new Map();
+    if (language === 'en') {
+      map.set('search', 'Search');
+      map.set('category', 'Categories');
+      map.set('article', 'Articles');
+      map.set('tag', 'Tags');
+      map.set('top', 'Top');
+      map.set('publish', 'published');
+      map.set('minute', ' minutes');
+      map.set('read-more', 'Read More');
+      map.set('view', 'View');
+      map.set('words', ' words');
+      map.set('category-in', 'category in');
+      map.set('preview', 'Meta');
+      map.set('index', 'Toc');
+      map.set('no-archives', "You haven't created yet");
+      map.set('archives', " articles in total");
+      map.set('cloud-tags', " tags in total");
+      map.set('copyright', "Copyright: ");
+      map.set('author', "Author: ");
+      map.set('link', "Link: ");
+      map.set('leave-message', "Leave a message");
+      map.set('format', "Links Format");
+      map.set('site-name', "Name: ");
+      map.set('site-link', "Link: ");
+      map.set('site-desc', "Desc: ");
+      map.set('stat', " related results, taking ");
+      map.set('stat-time', " ms");
+      map.set('site-img', "Image: ");
+    }
+
+    if (map.size > 0) {
+      let lanElems = document.querySelectorAll('.language');
+      lanElems.forEach(elem => {
+        let lan = elem.dataset.lan, text = map.get(lan);
+        if (elem.__proto__ === HTMLInputElement.prototype) {
+          elem.placeholder = text
+        } else {
+          if (elem.dataset.count) {
+            text = elem.dataset.count + text;
+          }
+          elem.textContent = text;
+        }
+      })
+    }
+  }
+  //拿来主义(真香)^_^，Clipboard 实现摘自掘金 https://juejin.im/post/5aefeb6e6fb9a07aa43c20af
+  window.Clipboard = (function (window, document, navigator) {
+    var textArea,
+      copy;
+
+    // 判断是不是ios端
+    function isOS() {
+      return navigator.userAgent.match(/ipad|iphone/i);
+    }
+    //创建文本元素
+    function createTextArea(text) {
+      textArea = document.createElement('textArea');
+      textArea.value = text;
+      textArea.style.width = 0;
+      textArea.style.height = 0;
+      textArea.clientHeight = 0;
+      textArea.clientWidth = 0;
+      document.body.appendChild(textArea);
+    }
+    //选择内容
+    function selectText() {
+      var range,
+        selection;
+
+      if (isOS()) {
+        range = document.createRange();
+        range.selectNodeContents(textArea);
+        selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
+      }
+    }
+
+    //复制到剪贴板
+    function copyToClipboard() {
+      try {
+        document.execCommand("Copy")
+      } catch (err) {
+        alert("复制错误！请手动复制！")
+      }
+      document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+      createTextArea(text);
+      selectText();
+      copyToClipboard();
+    };
+
+    return {
+      copy: copy
+    };
+  })(window, document, navigator);
+
+  function copyCode(e) {
+    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
+      let code = e.currentTarget.querySelector('code');
+      var text = code.innerText;
+      if (e.srcElement.textContent === '复制成功') {
+        return;
+      }
+      e.srcElement.textContent = '复制成功';
+      (function (elem) {
+        setTimeout(() => {
+          if (elem.textContent === '复制成功') {
+            elem.textContent = '复制代码'
+          }
+        }, 1000);
+      })(e.srcElement)
+      Clipboard.copy(text);
+    }
+  }
+
+  let pres = document.querySelectorAll('pre');
+  pres.forEach(pre => {
+    let code = pre.querySelector('code');
+    let copyElem = document.createElement('span');
+    copyElem.classList.add('copy-code');
+    copyElem.textContent = '复制代码';
+    pre.appendChild(copyElem);
+    pre.onclick = copyCode
+  })
+
+</script>
+<script src="/media/js/motion.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 200
+  });
 </script>
 
 
+<script src="/media/js/mouse/love.js"></script>
 
 
-  </body>
+
+
+
 </html>
