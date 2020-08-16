@@ -2074,19 +2074,19 @@ body {
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
       background: #eeeeeefe;
     }h1, h2, h3, h4, h5, h6 {
-      color: #555;
+      color: #0c8599;
     }
     
     .archive-timeline-title::before {
-      background-color: #555;
+      background-color: #0c8599;
     }
     
     .post-title-link::before {
-      background-color: #555;
+      background-color: #0c8599;
     }
     
     .node-title::before {
-      background-color: #555;
+      background-color: #0c8599;
     }a {
       color: #555;
     }
@@ -2135,29 +2135,29 @@ body {
       transition-duration: 59s;
       transition-timing-function: cubic-bezier(.34,0,.84,1);
     }.markdownIt-TOC a {
-      color: #eee;
-      border-bottom-color: #eee;
+      color: #212529;
+      border-bottom-color: #212529;
     }.markdownIt-TOC a:hover {
-      color: #fff;
-      border-bottom-color: #fff;
+      color: #212529;
+      border-bottom-color: #212529;
     }.active-current > a {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #e03131 !important;
+      border-bottom-color: #e03131 !important;
     }
     .sidebar-title-active {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #e03131;
+      border-bottom-color: #e03131;
     }
     .sidebar-title-item:hover {
-      color: #fc6423 !important;
+      color: #e03131 !important;
     }
     .active-show > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #e03131;
+      border-bottom-color: #e03131;
     }
     .active-hidden > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #e03131;
+      border-bottom-color: #e03131;
     }.bg-color {
       background-color: #fffffffe;
     }
@@ -2171,10 +2171,10 @@ body {
       background: #000000fe;
     }
     .main-title, .brand {
-      color: #FFF !important;
+      color: #1098ad !important;
     }
     .mist .site-title i {
-      background: #FFFFFFfe;
+      background: #1098adfe;
     }.box-shadow-wrapper {
       box-shadow: none !important;
     }body {
