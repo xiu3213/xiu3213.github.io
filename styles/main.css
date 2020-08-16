@@ -2074,19 +2074,19 @@ body {
     .archive-timeline-box::after, .tag-timeline-wrapper::after {
       background: #eeeeeefe;
     }h1, h2, h3, h4, h5, h6 {
-      color: #0c8599;
+      color: #555;
     }
     
     .archive-timeline-title::before {
-      background-color: #0c8599;
+      background-color: #555;
     }
     
     .post-title-link::before {
-      background-color: #0c8599;
+      background-color: #555;
     }
     
     .node-title::before {
-      background-color: #0c8599;
+      background-color: #555;
     }a {
       color: #555;
     }
@@ -2135,29 +2135,29 @@ body {
       transition-duration: 59s;
       transition-timing-function: cubic-bezier(.34,0,.84,1);
     }.markdownIt-TOC a {
-      color: #212529;
-      border-bottom-color: #212529;
+      color: #e03131;
+      border-bottom-color: #e03131;
     }.markdownIt-TOC a:hover {
-      color: #212529;
-      border-bottom-color: #212529;
+      color: #e03131;
+      border-bottom-color: #e03131;
     }.active-current > a {
-      color: #e03131 !important;
-      border-bottom-color: #e03131 !important;
+      color: #0c8599 !important;
+      border-bottom-color: #0c8599 !important;
     }
     .sidebar-title-active {
-      color: #e03131;
-      border-bottom-color: #e03131;
+      color: #0c8599;
+      border-bottom-color: #0c8599;
     }
     .sidebar-title-item:hover {
-      color: #e03131 !important;
+      color: #0c8599 !important;
     }
     .active-show > a {
-      color: #e03131;
-      border-bottom-color: #e03131;
+      color: #0c8599;
+      border-bottom-color: #0c8599;
     }
     .active-hidden > a {
-      color: #e03131;
-      border-bottom-color: #e03131;
+      color: #0c8599;
+      border-bottom-color: #0c8599;
     }.bg-color {
       background-color: #fffffffe;
     }
