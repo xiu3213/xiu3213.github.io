@@ -9,7 +9,7 @@
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
 <title>秀儿</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1597582983907">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1597590264447">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -181,19 +181,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">13</span>
+        <span class="site-item-stat-count">14</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">24</span>
+        <span class="site-item-stat-count">28</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">24</span>
+        <span class="site-item-stat-count">28</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -256,6 +256,18 @@
           <small class="language" data-lan="tag">标签</small>
         </h2>
       </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
       
       
@@ -598,6 +610,59 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/mZNa6VHVE/"" data-c="
+          &lt;p&gt;此项目是一个基于API的 Microsoft 365 管理平台, 支持订阅查询，用户管理（查询，新增，删除，分配许可证等），支持批量创建用户，批量删除用户. 支持多账户管理.&lt;/p&gt;
+&lt;p&gt;后端基于SpringBoot，使用 msal4j 和 microsoft-graph sdk 开发完成&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;支持 微软 A1/A1P/A3/E3/E5/E3Y等&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;系统功能&#34;&gt;系统功能&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;总览：订阅数，许可证数，可用许可证数，用户数，允许登陆用户数，禁止登陆用户数等信息展示
+许可查询：查询每个订阅的许可证信息
+用户管理：查询，新增，删除，分配许可证等
+多账户切换
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;注意：出现执行新增/删除账户，启用禁用账户，授权账户等操作后，查询结果不变，请右上角点击刷新缓存，或列表中搜索该用户&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;原因：调用微软API比较耗时，第一次查询时将需要的数据拉取到本地缓存（暂无自定义缓存失效功能，默认用户1天，域名1天，订阅30天）。&lt;/p&gt;
+&lt;p&gt;具体功能查看关于界面【操作教程】&lt;/p&gt;
+&lt;h1 id=&#34;运行&#34;&gt;运行&lt;/h1&gt;
+&lt;p&gt;下载最新版本的额jar包，然后在同目录新建config目录，下载 application-dev.yml文件放到该目录。&lt;/p&gt;
+&lt;p&gt;按照格式修改配置文件&lt;/p&gt;
+&lt;p&gt;java -jar microsoft-0.0.1-SNAPSHOT.jar 启动，端口：8099&lt;/p&gt;
+&lt;h1 id=&#34;界面&#34;&gt;界面&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E9%A6%96%E9%A1%B5.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E8%AE%A2%E9%98%85%E7%AE%A1%E7%90%86.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E5%85%B3%E4%BA%8E.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;api接口&#34;&gt;Api接口&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/6mb/Microsoft-365-Admin/blob/master/Microsoft%20365%20Admin.md&#34; title=&#34;接口文档&#34;&gt;接口文档&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Microsoft 365 首页&lt;br&gt;
+首页展示&lt;br&gt;
+刷新缓存&lt;/li&gt;
+&lt;li&gt;Microsoft 365 订阅管理&lt;br&gt;
+许可统计&lt;br&gt;
+许可证列表查询&lt;/li&gt;
+&lt;li&gt;Microsoft 365 用户管理&lt;br&gt;
+查询用户统计&lt;br&gt;
+查询用户信息列表&lt;br&gt;
+查询用户信息详情&lt;br&gt;
+查询绑定域名&lt;br&gt;
+添加账号&lt;br&gt;
+删除账户&lt;br&gt;
+添加订阅&lt;br&gt;
+取消订阅&lt;br&gt;
+启用账户&lt;br&gt;
+禁用账户&lt;br&gt;
+批量创建用户信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;postman-接口&#34;&gt;Postman 接口&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/6mb/Microsoft-365-Admin/master/.github/Microsoft%20365%20Admin.postman_collection.json&#34; title=&#34;点击下载&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;请自行设置 .evn {host} 和 {port}&lt;br&gt;
+&lt;img src=&#34;https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E6%8E%A5%E5%8F%A3.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/6mb/Microsoft-365-Admin&#34; title=&#34;项目地址&#34;&gt;项目地址&lt;/a&gt;&lt;/p&gt;
+">微软 A1/A1P/A3/E3/E5/E3Y API管理面板</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://xiu.pw/YiDh0GLhL/"" data-c="

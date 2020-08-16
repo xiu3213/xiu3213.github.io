@@ -8,7 +8,7 @@
 <meta name="keywords" content="网页制作|运维开发|游戏娱乐|资源分享|生活随写|技术分享">
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
-<title>一键安装配置高性能的CDN节点 | 秀儿</title>
+<title>微软 A1/A1P/A3/E3/E5/E3Y API管理面板 | 秀儿</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1597590264447">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
@@ -48,8 +48,8 @@
 
 
 
-  <meta name="description" content="一键安装配置高性能的CDN节点" />
-  <meta name="keywords" content="CDN,脚本,一键脚本" />
+  <meta name="description" content="微软 A1/A1P/A3/E3/E5/E3Y API管理面板" />
+  <meta name="keywords" content="微软,API,API管理面板,开源,OneDrive" />
 </head>
 
 <body>
@@ -187,7 +187,8 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/images/avatar.png"/>
@@ -247,6 +248,195 @@
 
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD">系统功能</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C">运行</a></li>
+<li><a href="#%E7%95%8C%E9%9D%A2">界面</a></li>
+<li><a href="#api%E6%8E%A5%E5%8F%A3">Api接口</a></li>
+<li><a href="#postman-%E6%8E%A5%E5%8F%A3">Postman 接口</a></li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -334,8 +524,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://xiu.pw/yjgxn/">
-      一键安装配置高性能的CDN节点
+    <a class="post-title-link" href="https://xiu.pw/mZNa6VHVE/">
+      微软 A1/A1P/A3/E3/E5/E3Y API管理面板
     </a>
   </h1>
   <div class="post-meta">
@@ -343,7 +533,7 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-08-07 10:01:31">2020-08-07</span>
+      <span class="publish-time" data-t="2020-08-16 22:57:18">2020-08-16</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -352,20 +542,32 @@
       <span class="pc-show language" data-lan="category-in">分类于</span>
       
       
-      <a href="https://xiu.pw/cdn/">
-        <span>CDN</span>
+      <a href="https://xiu.pw/EMSj60G8c/">
+        <span>微软</span>
       </a>、
       
       
       
-      <a href="https://xiu.pw/jiao-ben/">
-        <span>脚本</span>
+      <a href="https://xiu.pw/K2ckrqwav7/">
+        <span>API</span>
       </a>、
       
       
       
-      <a href="https://xiu.pw/yi-jian-jiao-ben/">
-        <span>一键脚本</span>
+      <a href="https://xiu.pw/Yf9pr776SJ/">
+        <span>API管理面板</span>
+      </a>、
+      
+      
+      
+      <a href="https://xiu.pw/TNTjy8Vt8g/">
+        <span>开源</span>
+      </a>、
+      
+      
+      
+      <a href="https://xiu.pw/qs0W-hZf1d/">
+        <span>OneDrive</span>
       </a>
       
       
@@ -374,17 +576,17 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>3<span class="language" data-lan="minute">分钟</span></span>
+      <span>2<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>571<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>466<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/yjgxn/" data-flag-title="一键安装配置高性能的CDN节点" class="meta-item pc-show leancloud_visitors">
+    <span id="/mZNa6VHVE/" data-flag-title="微软 A1/A1P/A3/E3/E5/E3Y API管理面板" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -393,26 +595,54 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>1, 系统环境要求<br>
-目前支持Ubuntu 20.04 LTS, Debian 10, CentOS 7/8操作系统。</p>
-<p>CDN服务器正常运行时仅需要系统有500MB的内存。但是，程序第一次编译安装的时候需要1500MB左右的内存。若您的VPS内存不够，可以加一些Swap.</p>
-<p>需要注意的是，该脚本需要安装在新装的操作系统中。该程序和其他面板（比如宝塔，cPanel, Directadmin）等不兼容。毕竟，装CDN程序的节点上也不应该搭建其他程序的。</p>
-<p>2, 使用方法<br>
-因为是一键脚本，所以使用起来非常简单，只需要一行命令就可以啦！</p>
-<pre><code>wget https://raw.githubusercontent.com/Har-Kuun/OneClickCDN/master/OneClickCDN.sh &amp;&amp; sudo bash OneClickCDN.sh
+              <p>此项目是一个基于API的 Microsoft 365 管理平台, 支持订阅查询，用户管理（查询，新增，删除，分配许可证等），支持批量创建用户，批量删除用户. 支持多账户管理.</p>
+<p>后端基于SpringBoot，使用 msal4j 和 microsoft-graph sdk 开发完成</p>
+<p><strong>支持 微软 A1/A1P/A3/E3/E5/E3Y等</strong></p>
+<h1 id="系统功能">系统功能</h1>
+<pre><code>总览：订阅数，许可证数，可用许可证数，用户数，允许登陆用户数，禁止登陆用户数等信息展示
+许可查询：查询每个订阅的许可证信息
+用户管理：查询，新增，删除，分配许可证等
+多账户切换
 </code></pre>
-<p>第一次运行时，程序会提示自动编译安装Traffic Server.  安装完毕后，程序会引导新建CDN网站，自动签发SSL, 等等。您需要将您网站的域名设置A记录解析到这台VPS的IP地址上。</p>
-<p>您也可以随时重新运行该脚本，用来管理您的服务器上部署的CDN网站，查看网站统计，等等。</p>
-<p>3, 管理面板<br>
-脚本执行后拥有功能丰富但简单易用的后台管理界面。</p>
-<figure data-type="image" tabindex="1"><img src="https://xiu.pw/post-images/1596765735341.png" alt="" loading="lazy"></figure>
-<p>4, 实现的功能<br>
-首先，最基本的功能就是CDN.  安装后，程序就会将您的VPS变成一个高性能CDN节点，用来加速和缓存您的网站。</p>
-<p>同时，脚本支持一键设置SSL, 您可以提供您自己的SSL证书，或者也可以一键签发免费的Let’s Encrypt证书，并且开启OCSP装订。</p>
-<p>脚本还支持随时增添新的CDN网站。您只需要根据脚本引导，输入网址和源站IP地址，即可分分钟添加CDN网址。您可以使用脚本管理CDN网站，查看网站数据，清除缓存，等等。</p>
-<p>Github项目地址：https://github.com/Har-Kuun/OneClickCDN 欢迎大家加星星加叉叉<br>
-本文及程序作者为香菇肥牛，原文链接https://qing.su/article/oneclick-cdn.html, 转载需注明原文链接。谢谢！</p>
-<p>小彩蛋：稍微修改一下脚本（脚本开头有说明，可以开启反代模式）可以一键反代hostloc哦 <sup>.</sup></p>
+<p><em><strong>注意：出现执行新增/删除账户，启用禁用账户，授权账户等操作后，查询结果不变，请右上角点击刷新缓存，或列表中搜索该用户</strong></em></p>
+<p>原因：调用微软API比较耗时，第一次查询时将需要的数据拉取到本地缓存（暂无自定义缓存失效功能，默认用户1天，域名1天，订阅30天）。</p>
+<p>具体功能查看关于界面【操作教程】</p>
+<h1 id="运行">运行</h1>
+<p>下载最新版本的额jar包，然后在同目录新建config目录，下载 application-dev.yml文件放到该目录。</p>
+<p>按照格式修改配置文件</p>
+<p>java -jar microsoft-0.0.1-SNAPSHOT.jar 启动，端口：8099</p>
+<h1 id="界面">界面</h1>
+<p><img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E9%A6%96%E9%A1%B5.png" alt="" loading="lazy"><br>
+<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E8%AE%A2%E9%98%85%E7%AE%A1%E7%90%86.png" alt="" loading="lazy"><br>
+<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.png" alt="" loading="lazy"><br>
+<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E5%85%B3%E4%BA%8E.png" alt="" loading="lazy"></p>
+<h1 id="api接口">Api接口</h1>
+<p><a href="https://github.com/6mb/Microsoft-365-Admin/blob/master/Microsoft%20365%20Admin.md" title="接口文档">接口文档</a></p>
+<ul>
+<li>Microsoft 365 首页<br>
+首页展示<br>
+刷新缓存</li>
+<li>Microsoft 365 订阅管理<br>
+许可统计<br>
+许可证列表查询</li>
+<li>Microsoft 365 用户管理<br>
+查询用户统计<br>
+查询用户信息列表<br>
+查询用户信息详情<br>
+查询绑定域名<br>
+添加账号<br>
+删除账户<br>
+添加订阅<br>
+取消订阅<br>
+启用账户<br>
+禁用账户<br>
+批量创建用户信息</li>
+</ul>
+<h1 id="postman-接口">Postman 接口</h1>
+<p><a href="https://raw.githubusercontent.com/6mb/Microsoft-365-Admin/master/.github/Microsoft%20365%20Admin.postman_collection.json" title="点击下载">点击下载</a></p>
+<p>请自行设置 .evn {host} 和 {port}<br>
+<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E6%8E%A5%E5%8F%A3.png" alt="" loading="lazy"></p>
+<p><a href="https://github.com/6mb/Microsoft-365-Admin" title="项目地址">项目地址</a></p>
 
             </div>
             
@@ -425,7 +655,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://xiu.pw/yjgxn/" title="一键安装配置高性能的CDN节点">https://xiu.pw/yjgxn/</a>
+      <a href="https://xiu.pw/mZNa6VHVE/" title="微软 A1/A1P/A3/E3/E5/E3Y API管理面板">https://xiu.pw/mZNa6VHVE/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -434,25 +664,25 @@
   </ul>
   <div class="tags">
     
-      <a href="https://xiu.pw/cdn/"># CDN</a>
+      <a href="https://xiu.pw/EMSj60G8c/"># 微软</a>
     
-      <a href="https://xiu.pw/jiao-ben/"># 脚本</a>
+      <a href="https://xiu.pw/K2ckrqwav7/"># API</a>
     
-      <a href="https://xiu.pw/yi-jian-jiao-ben/"># 一键脚本</a>
+      <a href="https://xiu.pw/Yf9pr776SJ/"># API管理面板</a>
+    
+      <a href="https://xiu.pw/TNTjy8Vt8g/"># 开源</a>
+    
+      <a href="https://xiu.pw/qs0W-hZf1d/"># OneDrive</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="SSH 密钥一键配置脚本 使用教程" href="https://xiu.pw/bkZunUpHG/">SSH 密钥一键配置脚本 使用教程</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="SSH 密钥一键配置脚本 使用教程" href="https://xiu.pw/bkZunUpHG/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="一键重装脚本/一键DD脚本" href="https://xiu.pw/1.html/">一键重装脚本/一键DD脚本</a>
-        <a class="nav-mobile-next" title="一键重装脚本/一键DD脚本" href="https://xiu.pw/1.html/">下一篇</a>
+        <a class="nav-pc-next" title="免费对象云存储Backblaze" href="https://xiu.pw/YiDh0GLhL/">免费对象云存储Backblaze</a>
+        <a class="nav-mobile-next" title="免费对象云存储Backblaze" href="https://xiu.pw/YiDh0GLhL/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

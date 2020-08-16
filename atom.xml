@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-08-16T13:03:50.090Z</updated>
+    <updated>2020-08-16T15:04:31.473Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,62 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[微软 A1/A1P/A3/E3/E5/E3Y API管理面板]]></title>
+        <id>https://xiu.pw/mZNa6VHVE/</id>
+        <link href="https://xiu.pw/mZNa6VHVE/">
+        </link>
+        <updated>2020-08-16T14:57:18.000Z</updated>
+        <content type="html"><![CDATA[<p>此项目是一个基于API的 Microsoft 365 管理平台, 支持订阅查询，用户管理（查询，新增，删除，分配许可证等），支持批量创建用户，批量删除用户. 支持多账户管理.</p>
+<p>后端基于SpringBoot，使用 msal4j 和 microsoft-graph sdk 开发完成</p>
+<p><strong>支持 微软 A1/A1P/A3/E3/E5/E3Y等</strong></p>
+<h1 id="系统功能">系统功能</h1>
+<pre><code>总览：订阅数，许可证数，可用许可证数，用户数，允许登陆用户数，禁止登陆用户数等信息展示
+许可查询：查询每个订阅的许可证信息
+用户管理：查询，新增，删除，分配许可证等
+多账户切换
+</code></pre>
+<p><em><strong>注意：出现执行新增/删除账户，启用禁用账户，授权账户等操作后，查询结果不变，请右上角点击刷新缓存，或列表中搜索该用户</strong></em></p>
+<p>原因：调用微软API比较耗时，第一次查询时将需要的数据拉取到本地缓存（暂无自定义缓存失效功能，默认用户1天，域名1天，订阅30天）。</p>
+<p>具体功能查看关于界面【操作教程】</p>
+<h1 id="运行">运行</h1>
+<p>下载最新版本的额jar包，然后在同目录新建config目录，下载 application-dev.yml文件放到该目录。</p>
+<p>按照格式修改配置文件</p>
+<p>java -jar microsoft-0.0.1-SNAPSHOT.jar 启动，端口：8099</p>
+<h1 id="界面">界面</h1>
+<p><img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E9%A6%96%E9%A1%B5.png" alt="" loading="lazy"><br>
+<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E8%AE%A2%E9%98%85%E7%AE%A1%E7%90%86.png" alt="" loading="lazy"><br>
+<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.png" alt="" loading="lazy"><br>
+<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E5%85%B3%E4%BA%8E.png" alt="" loading="lazy"></p>
+<h1 id="api接口">Api接口</h1>
+<p><a href="https://github.com/6mb/Microsoft-365-Admin/blob/master/Microsoft%20365%20Admin.md" title="接口文档">接口文档</a></p>
+<ul>
+<li>Microsoft 365 首页<br>
+首页展示<br>
+刷新缓存</li>
+<li>Microsoft 365 订阅管理<br>
+许可统计<br>
+许可证列表查询</li>
+<li>Microsoft 365 用户管理<br>
+查询用户统计<br>
+查询用户信息列表<br>
+查询用户信息详情<br>
+查询绑定域名<br>
+添加账号<br>
+删除账户<br>
+添加订阅<br>
+取消订阅<br>
+启用账户<br>
+禁用账户<br>
+批量创建用户信息</li>
+</ul>
+<h1 id="postman-接口">Postman 接口</h1>
+<p><a href="https://raw.githubusercontent.com/6mb/Microsoft-365-Admin/master/.github/Microsoft%20365%20Admin.postman_collection.json" title="点击下载">点击下载</a></p>
+<p>请自行设置 .evn {host} 和 {port}<br>
+<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E6%8E%A5%E5%8F%A3.png" alt="" loading="lazy"></p>
+<p><a href="https://github.com/6mb/Microsoft-365-Admin" title="项目地址">项目地址</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[免费对象云存储Backblaze]]></title>
         <id>https://xiu.pw/YiDh0GLhL/</id>
@@ -382,31 +438,6 @@ Actions &gt; E5-Rclone-Actions</p>
 <p>到API权限页面添加权限：Files.Read、Files.ReadWrite、Files.Read.All、Files.ReadWrite.All、offline_access、User.Read</p>
 <p>到证书和密码页面，添加客户端密码，一年还是长期，都可以。这个就是Client_secret，也要记录下来</p>
 <p>rclone config添加配置时，填写自己的Client_ID和Client_secret按提示操作即可</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Telegram 本地消息防撤回插件]]></title>
-        <id>https://xiu.pw/PVphxlRBy/</id>
-        <link href="https://xiu.pw/PVphxlRBy/">
-        </link>
-        <updated>2020-08-07T03:34:05.000Z</updated>
-        <content type="html"><![CDATA[<p>🔍 预览</p>
-<p><img src="https://xiu.pw/post-images/1596771304759.gif" alt="" loading="lazy"><br>
-✨ 特性<br>
-阻止本地消息被服务器撤回。<br>
-被撤回的消息将被标记上 “已删除” 。<br>
-插件具有极好的兼容性。<br>
-标记的内容支持多语言自动识别。<br>
-目前已支持自动识别：<br>
-英语、简体中文语、繁体中文语、日语、韩语<br>
-🍅 兼容性<br>
-目前仅兼容 Windows Telegram v1.9.0 ~ v2.2.0 或更高。<br>
-如果您正在使用 Telegram beta，请下载最新预览版本。</p>
-<p>🍔 用法<br>
-1.前往 发行页面 下载最新版本插件。<br>
-2.关闭正在运行的 Telegram 进程。<br>
-3.复制 version.dll 文件到 Telegram 根目录。<br>
-4.运行 Telegram 程序。</p>
 ]]></content>
     </entry>
 </feed>
