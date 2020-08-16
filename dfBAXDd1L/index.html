@@ -9,7 +9,7 @@
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
 <title>秀儿</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1597592538795">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1597592885060">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -181,19 +181,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">15</span>
+        <span class="site-item-stat-count">16</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">33</span>
+        <span class="site-item-stat-count">36</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">33</span>
+        <span class="site-item-stat-count">36</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -256,6 +256,16 @@
           <small class="language" data-lan="tag">标签</small>
         </h2>
       </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
       
       
@@ -611,6 +621,48 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/9oEjY-emU/"" data-c="
+          &lt;p&gt;今天，我们来介绍一下我自己写的一个一键shell脚本。使用此脚本，您可以在您的Linux服务器上一键搭建一个可以随时随地用浏览器访问的Linux桌面环境，让您便捷地管理服务器。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Har-Kuun/OneClickDesktop/&#34; title=&#34;Github项目地址&#34;&gt;Github项目地址&lt;/a&gt; 欢迎大家星星叉叉&lt;/p&gt;
+&lt;h1 id=&#34;1-脚本特色&#34;&gt;1, 脚本特色&lt;/h1&gt;
+&lt;p&gt;从源码编译安装Guacamole服务器&lt;br&gt;
+配置Guacamole Web APP&lt;br&gt;
+安装Tomcat 9, TigerVNC, XFCE4桌面环境，火狐浏览器&lt;br&gt;
+一键安装配置Let’s Encrypt安全证书，开启OCSP装订&lt;br&gt;
+安装Nginx反代Tomcat&lt;br&gt;
+安装完毕后，您可以使用任意浏览器访问远程桌面，无需再使用VNC客户端&lt;/p&gt;
+&lt;h1 id=&#34;2-安装系统需求&#34;&gt;2, 安装系统需求&lt;/h1&gt;
+&lt;p&gt;目前，本程序仅支持在Ubuntu 18.04/20.04 LTS以及Debian 10的64位操作系统上运行。您的服务器或者VPS最好是全新安装的系统，不带LAMP/LEMP等组件或cPanel/DirectAdmin/宝塔等用户面板。&lt;/p&gt;
+&lt;p&gt;您的服务器需要有外网IP地址。在安装之前，您需要解析一个域名（可以用三级域名或者一个免费域名）到您的服务器上。安装桌面环境需要至少1 GB的内存。&lt;/p&gt;
+&lt;h1 id=&#34;3-安装教程&#34;&gt;3, 安装教程&lt;/h1&gt;
+&lt;p&gt;您可以使用sudo权限用户或root用户(不建议)登录服务器SSH，然后执行下面的命令即可。&lt;/p&gt;
+&lt;p&gt;英文版：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/Har-Kuun/OneClickDesktop/master/OneClickDesktop.sh &amp;amp;&amp;amp; sudo bash OneClickDesktop.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;中文版：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/Har-Kuun/OneClickDesktop/master/OneClickDesktop_zh-CN.sh &amp;amp;&amp;amp; sudo bash OneClickDesktop_zh-CN.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;程序将自动安装需要的各部分组件，并引导您设置用户名，密码以及域名。&lt;/p&gt;
+&lt;p&gt;如果安装过程中有报错，您可以检查同目录下的OneClickDesktop.log日志文件。同时建议您在这里留言汇报一下错误信息，或者在Github上提交issue, 这样我就可以即时更新脚本，修复问题。&lt;/p&gt;
+&lt;p&gt;4, 安装示例&lt;br&gt;
+安装好后，我们可以可以直接从浏览器里访问服务器上搭建的桌面程序，如下图。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://qing.su/wp-content/uploads/2020/08/browser-1-1024x560.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;综上，使用OneClickDesktop一键脚本，您可以自由方便地在Linux服务器上搭建随时随地用浏览器即可访问的桌面环境，让您便捷地管理您的Linux服务器，无需再使用繁琐的命令行。&lt;/p&gt;
+&lt;p&gt;作者为香菇肥牛，&lt;a href=&#34;https://qing.su/article/oneclick-desktop.html&#34; title=&#34;原文链接&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注1：添加中文支持&lt;/strong&gt;&lt;br&gt;
+1, 重新配置系统locales&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo dpkg-reconfigure locales
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2, 安装亚洲语言包&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install language-pack-ja language-pack-zh* language-pack-ko
+sudo apt-get install japan* chinese* korean*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3, 安装亚洲语言字体&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install fonts-arphic-ukai fonts-arphic-uming fonts-ipafont-mincho fonts-ipafon&lt;/code&gt;&lt;/pre&gt;
+">一键安装可以使用浏览器访问的Linux桌面环境</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://xiu.pw/w1QhXJg1k/"" data-c="

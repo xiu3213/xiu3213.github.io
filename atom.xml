@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-08-16T15:42:26.714Z</updated>
+    <updated>2020-08-16T15:48:54.143Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,51 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[一键安装可以使用浏览器访问的Linux桌面环境]]></title>
+        <id>https://xiu.pw/9oEjY-emU/</id>
+        <link href="https://xiu.pw/9oEjY-emU/">
+        </link>
+        <updated>2020-08-16T15:46:48.000Z</updated>
+        <content type="html"><![CDATA[<p>今天，我们来介绍一下我自己写的一个一键shell脚本。使用此脚本，您可以在您的Linux服务器上一键搭建一个可以随时随地用浏览器访问的Linux桌面环境，让您便捷地管理服务器。</p>
+<p><a href="https://github.com/Har-Kuun/OneClickDesktop/" title="Github项目地址">Github项目地址</a> 欢迎大家星星叉叉</p>
+<h1 id="1-脚本特色">1, 脚本特色</h1>
+<p>从源码编译安装Guacamole服务器<br>
+配置Guacamole Web APP<br>
+安装Tomcat 9, TigerVNC, XFCE4桌面环境，火狐浏览器<br>
+一键安装配置Let’s Encrypt安全证书，开启OCSP装订<br>
+安装Nginx反代Tomcat<br>
+安装完毕后，您可以使用任意浏览器访问远程桌面，无需再使用VNC客户端</p>
+<h1 id="2-安装系统需求">2, 安装系统需求</h1>
+<p>目前，本程序仅支持在Ubuntu 18.04/20.04 LTS以及Debian 10的64位操作系统上运行。您的服务器或者VPS最好是全新安装的系统，不带LAMP/LEMP等组件或cPanel/DirectAdmin/宝塔等用户面板。</p>
+<p>您的服务器需要有外网IP地址。在安装之前，您需要解析一个域名（可以用三级域名或者一个免费域名）到您的服务器上。安装桌面环境需要至少1 GB的内存。</p>
+<h1 id="3-安装教程">3, 安装教程</h1>
+<p>您可以使用sudo权限用户或root用户(不建议)登录服务器SSH，然后执行下面的命令即可。</p>
+<p>英文版：</p>
+<pre><code>wget https://raw.githubusercontent.com/Har-Kuun/OneClickDesktop/master/OneClickDesktop.sh &amp;&amp; sudo bash OneClickDesktop.sh
+</code></pre>
+<p>中文版：</p>
+<pre><code>wget https://raw.githubusercontent.com/Har-Kuun/OneClickDesktop/master/OneClickDesktop_zh-CN.sh &amp;&amp; sudo bash OneClickDesktop_zh-CN.sh
+</code></pre>
+<p>程序将自动安装需要的各部分组件，并引导您设置用户名，密码以及域名。</p>
+<p>如果安装过程中有报错，您可以检查同目录下的OneClickDesktop.log日志文件。同时建议您在这里留言汇报一下错误信息，或者在Github上提交issue, 这样我就可以即时更新脚本，修复问题。</p>
+<p>4, 安装示例<br>
+安装好后，我们可以可以直接从浏览器里访问服务器上搭建的桌面程序，如下图。</p>
+<figure data-type="image" tabindex="1"><img src="https://qing.su/wp-content/uploads/2020/08/browser-1-1024x560.png" alt="" loading="lazy"></figure>
+<p>综上，使用OneClickDesktop一键脚本，您可以自由方便地在Linux服务器上搭建随时随地用浏览器即可访问的桌面环境，让您便捷地管理您的Linux服务器，无需再使用繁琐的命令行。</p>
+<p>作者为香菇肥牛，<a href="https://qing.su/article/oneclick-desktop.html" title="原文链接">原文链接</a></p>
+<p><strong>注1：添加中文支持</strong><br>
+1, 重新配置系统locales</p>
+<pre><code>sudo dpkg-reconfigure locales
+</code></pre>
+<p>2, 安装亚洲语言包</p>
+<pre><code>sudo apt-get install language-pack-ja language-pack-zh* language-pack-ko
+sudo apt-get install japan* chinese* korean*
+</code></pre>
+<p>3, 安装亚洲语言字体</p>
+<pre><code>sudo apt-get install fonts-arphic-ukai fonts-arphic-uming fonts-ipafont-mincho fonts-ipafon</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[如何正确使用17ce对WordPress进行压力测试]]></title>
         <id>https://xiu.pw/w1QhXJg1k/</id>
@@ -394,38 +439,6 @@ OneList：</p>
 <p>这个版本是经过我修改的版本，在安装完成之后 直接在后台设置里面可以看到替换sharepoint域名的选项</p>
 <p>填上即可 如果留空 则不使用该功能</p>
 <p>注：sharepoint域名为你在网页版onedrive首页时的那个域名xxxxx-my.sharepoint.com</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何反代-加速OneDrive域名]]></title>
-        <id>https://xiu.pw/CZWvLVqdV/</id>
-        <link href="https://xiu.pw/CZWvLVqdV/">
-        </link>
-        <updated>2020-08-08T01:08:28.000Z</updated>
-        <content type="html"><![CDATA[<p>反代OneDrive域名<br>
-利用Caddy反代OneDrive<br>
-Caddy安装方法请自行搜索</p>
-<p>domain.com {<br>
-tls admin@domain.com<br>
-timeouts none<br>
-gzip<br>
-proxy / https://xxx-my.sharepoint.com {<br>
-header_upstream Host xxx-my.sharepoint.com<br>
-header_upstream Referer https://xxx-my.sharepoint.com<br>
-header_upstream -X-Forwarded-For {remote}<br>
-header_upstream X-Real-IP {remote}<br>
-header_upstream User-Agent {&gt;User-Agent}<br>
-header_upstream Accept-Encoding identity<br>
-}</p>
-<p>写入如下配置<br>
-重启caddy然后按照上一篇文章运行onelist或者修改oneindex配置即可</p>
-<p>用CDN加速OneDrive<br>
-本文只介绍nodecache 其他CDN 操作基本差不多</p>
-<figure data-type="image" tabindex="1"><img src="https://xiu.pw/post-images/1596848948187.jpg" alt="" loading="lazy"></figure>
-<p>像上面这样填写点击确认创建并修改加速域名cname至nodecache生成的xxxxxxxxx.ncname.com域名</p>
-<p>之后选择回源管理，将回源HOST 修改为xxx-my.sharepoint.com （必须</p>
-<p>再到HTTPS 栏 添加加速域名的SSL证书</p>
-<p>然后隐身模式访问加速域名 如果跳转到office登录页面 则说明成功</p>
 ]]></content>
     </entry>
 </feed>
