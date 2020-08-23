@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-08-18T11:29:13.515Z</updated>
+    <updated>2020-08-23T08:40:40.306Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[BT 一键脚本]]></title>
+        <id>https://xiu.pw/2Zg9OkH6z/</id>
+        <link href="https://xiu.pw/2Zg9OkH6z/">
+        </link>
+        <updated>2020-08-23T08:34:31.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://www.moec.top/wp-content/uploads/2020/08/1598170539-b984e330f41792e6.png" alt="" loading="lazy"></figure>
+<h1 id="请提前安装curl">请提前安装curl</h1>
+<h1 id="一键变傻">一键变傻</h1>
+<pre><code class="language-java">wget https://raw.githubusercontent.com/laoxong/lxongOther/master/Bash/bt.sh | bash
+
+sh bt.sh
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[魔法上网业成本内幕揭秘]]></title>
         <id>https://xiu.pw/qOGDU8Zke/</id>
@@ -621,58 +636,6 @@ https://github.com/ylx2016/Linux-NetSpeed/releases</p>
 https://github.com/cx9208/Linux-NetSpeed<br>
 https://github.com/chiakge/Linux-NetSpeed</p>
 <figure data-type="image" tabindex="1"><img src="https://xiu.pw/post-images/1596850093008.webp" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[tg邀请码机器人源码 自动发码 数量统计 无码提醒]]></title>
-        <id>https://xiu.pw/NbSNPnGXz/</id>
-        <link href="https://xiu.pw/NbSNPnGXz/">
-        </link>
-        <updated>2020-08-08T01:12:06.000Z</updated>
-        <content type="html"><![CDATA[<p>简介<br>
-因为论坛和部分网站需要发送邀请码邀请注册，人工发码又太慢，于是想到tg机器人发码，但是找了很多项目都没有找到类似的开源项目，偶然间看到了teelebot开源的tgAPi框架 于是参考着示例 ，用我学了半个月的半吊子python 写出了这个暂时能用不会报错的telegram邀请码机器人</p>
-<p>目前已经到我理想状态，短期内不会进行功能更新，学习比较重要。</p>
-<p>增加功能<br>
-1.邀请码自动发码模块 并且限制领取数量（邀请码添加在invite_code目录下的code.txt 一行一个） 用户信息存储在usertext.txt文件内</p>
-<p>2.邀请码数量统计，如果邀请码用完自动给管理员发消息（需自行修改len_invite.py里面的发送id）</p>
-<p>3.补码模块已经添加 目前并不是很理想的状态但是可以用使用方法</p>
-<p>/add_code邀请码<br>
-邀请码<br>
-注意：一行一个注意换行</p>
-<p>4.删除用户信息模块，删除后用户可以再次获取邀请码指令/del用户id目前只能删除单个用户</p>
-<p>5.mps的自动补码模块 请在/plugins/updatacode/updatacode.py文件内填写网站登录信息，目前只会抓取两页邀请码，需要手动更新，后期会添加自动执行进去。</p>
-<p>开发计划<br>
-1.增加管理员添加邀请码模块</p>
-<p>2.多类邀请码模块支持</p>
-<p>3.统计需改成json数据 目前统计方式过于简易(已完成)</p>
-<p>4.管理员补码：暂定计划1，发送补码指令并跟随邀请码，格式为一行一个，然后剔除指令文本，后使用write写入code.txt文件中。 计划2:用户发送指令后开始监听，将用户发送的后续文本写入文件中，需发送特定指令来结束输入</p>
-<p>环境要求<br>
-Python版本<br>
-teelebot 只支持 Python3.x，不支持Python2.x。</p>
-<p>使用<br>
-一、源码运行<br>
-1.克隆或点击下载本项目到本地，保证本机安装有Python3.x版本和包requests（删除了多余模块不需要了）；</p>
-<p>2.config.cfg 配置文件</p>
-<p>配置文件格式:</p>
-<p>[config]<br>
-key=your key<br>
-root=your user id<br>
-debug=False<br>
-timeout=60<br>
-plugin_dir=your plugin dir   //[Optional]<br>
-Linux<br>
-在 /root 目录下创建文件夹 .teelebot ,并在其内新建配置文件 config.cfg ,按照上面的格式填写配置文件</p>
-<p>Windows<br>
-在 C:\Users&lt;username&gt; 目录下创建文件夹 .teelebot ,并在其内新建配置文件 config.cfg ,按照上面的格式填写配置文件</p>
-<p>指定配置文件<br>
-Linux 和 Windows 都可在命令行通过参数手动指定配置文件路径，命令格式：</p>
-<p>python -m teelebot -c/-C <configure file path><br>
-路径必须为绝对路径。</p>
-<p>3.运行</p>
-<p>终端下进入teelebot文件夹所在目录。</p>
-<p>对于使用程序配置文件默认路径的：输入python -m teelebot 回车,正常情况下你应该能看见屏幕提示机器人开始运行。<br>
-对于命令行手动指定配置文件路径的：输入python -m teelebot -c/-C <configure file path> 回车,正常情况下你应该能看见屏幕提示机器人开始运行。<br>
-tg邀请码机器人源码 自动发码 数量统计 无码提醒</p>
 ]]></content>
     </entry>
 </feed>
