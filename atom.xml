@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-08-27T04:38:50.405Z</updated>
+    <updated>2020-08-27T12:31:24.341Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,135 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[vps测速整合脚本]]></title>
+        <id>https://xiu.pw/E-ilBDDMb/</id>
+        <link href="https://xiu.pw/E-ilBDDMb/">
+        </link>
+        <updated>2020-08-27T12:24:18.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="使用方法">使用方法:</h1>
+<pre><code class="language-bash">wget vpstest.cn/it &amp;&amp; bash it
+</code></pre>
+<p>或</p>
+<pre><code class="language-bash">wget git.io/vpstest &amp;&amp; bash vpstest
+</code></pre>
+<p>或</p>
+<pre><code class="language-bash">wget -O it vpstest.cn &amp;&amp; bash it
+</code></pre>
+<h1 id="效果图">效果图</h1>
+<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/08/25/d2msj1.png" alt="" loading="lazy"></figure>
+<pre><code>整合了
+1. bench.sh
+2. LemonBench
+3. superspeed
+4. superbench修复版
+5. 91yuntest
+6. ZBench
+7. superbench修复+多节点版
+8. UnixBench
+9. GeekBench5
+10.kos回程测试
+11.超内存测试
+12.sysbench测试---感谢云筏大佬的分享
+路由测试
+（注：脚本收集自互联网）
+已修复kos测试
+已更新删除残留文件
+修复了一些已知bug
+已经修复脚本4、7（有待测试）
+请删除脚本残余文件
+添加sysbench-cpu测试
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[监测IP是否被阻断]]></title>
+        <id>https://xiu.pw/uxQvbeATH/</id>
+        <link href="https://xiu.pw/uxQvbeATH/">
+        </link>
+        <updated>2020-08-27T12:19:33.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="监测ip是否被阻断">监测IP是否被阻断</h1>
+<p>利用 PHP socket 去监测指定 域名/IP 的 TCP 和 ICMP 是否开放.</p>
+<p>请开启 exec() 函数.</p>
+<p>测试环境为:宝塔面板 PHP7.0+ nginx1.15</p>
+<p>请安装 PHP socket 扩展(宝塔面板默认是安装的),否则无法使用哦</p>
+<pre><code>已知问题在Linux下 socket 检测 icmp,会没有权限.现只能用 exec() 函数
+</code></pre>
+<h1 id="部署方法">部署方法</h1>
+<p>把 check.php 分别放到国内服务器和国外服务器.</p>
+<p>修改 index.html 的GET 请求地址即可.<br>
+<img src="https://mjj.today/temp/1910/ec034efc07983847.png" alt="" loading="lazy"></p>
+<h1 id="预览">预览</h1>
+<figure data-type="image" tabindex="1"><img src="https://cdn.u1.huluxia.com/g3/M01/E9/0A/wKgBOV2b8heARHU7AAAvxkpyM1M813.png" alt="" loading="lazy"></figure>
+<h1 id="项目地址"><a href="https://gitee.com/KIENG_S/jianchaipshifouzuduan" title="项目地址">项目地址</a></h1>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用Github Action定时重启IBM cloud foundry]]></title>
+        <id>https://xiu.pw/ZfBq1liZd/</id>
+        <link href="https://xiu.pw/ZfBq1liZd/">
+        </link>
+        <updated>2020-08-26T06:26:20.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>本文简单介绍了Github Action的用法，并使用Gihub Action定时重启IBM cloud foundry容器。</strong></p>
+<h1 id="摘要">摘要</h1>
+<p><strong>GitHub Actions是GitHub自家的持续集成及自动化工作流服务，它使用起来非常简单，只要在你的仓库根目录建立.github/workflows文件夹，将你的工作流配置(YML文件)放到这个目录下，就能启用GitHub Actions服务。</strong></p>
+<h1 id="关键字">关键字</h1>
+<p><strong>Github Action，IBM cloud foundry</strong></p>
+<h1 id="yml配置文件">yml配置文件</h1>
+<pre><code class="language-php">name: IBM Cloud Auto Restart
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: '0 0 * * *'      # 根据自己的需要设置何时重启
+
+jobs:
+  ibm-cloud-restart:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Init
+      run: |
+        wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+        echo &quot;deb https://packages.cloudfoundry.org/debian stable main&quot; | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+        sudo apt-get update
+        sudo apt-get install cf-cli
+    - name: Login IBM Cloud
+      env:
+        IBM_ACCOUNT: ${{ secrets.IBM_ACCOUNT }}
+        IBM_PASSWORD: ${{ secrets.IBM_PASSWORD }}
+      run: |
+        cf login -a https://api.us-south.cf.cloud.ibm.com -u $IBM_ACCOUNT &lt;&lt; EOF
+        $IBM_PASSWORD
+        EOF
+    - name: Get IBM Cloud Apps
+      run: |
+        cf a
+    - name: Restart IBM Cloud
+      env:
+        IBM_APP_NAME: ${{ secrets.IBM_APP_NAME }}
+      run: |
+        cf restart $IBM_APP_NAME
+</code></pre>
+<h1 id="使用方法">使用方法</h1>
+<p>fork仓库：https://github.com/wf09/IBMWorkflow</p>
+<h1 id="设置环境变量">设置环境变量</h1>
+<pre><code>IBM_ACCOUNT：账户邮箱
+
+IBM_APP_NAME：app的名字
+
+IBM_PASSWORD：密码
+</code></pre>
+<p><strong>设置完环境变量以后记得commit一下yml文件触发Action。</strong></p>
+<h1 id="效果图">效果图</h1>
+<figure data-type="image" tabindex="1"><img src="https://ftp.fly97.cn/image/image-20200827193322808.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[BT 一键脚本]]></title>
         <id>https://xiu.pw/2Zg9OkH6z/</id>
@@ -486,156 +615,6 @@ TG交流群：https://t.me/dd_win<br>
 <p>视频教程：https://www.youtube.com/watch?v=LTVgPFWnnX8<br>
 哔哩哔哩：https://www.bilibili.com/video/BV1Pk4y1U7Zp/</p>
 <p>转自:https://www.hostloc.com/thread-728111-1-1.html</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[自定义 git.io 短链接地址与绕过链接生成限制]]></title>
-        <id>https://xiu.pw/MH86KLzkf/</id>
-        <link href="https://xiu.pw/MH86KLzkf/">
-        </link>
-        <updated>2020-08-08T14:39:16.000Z</updated>
-        <content type="html"><![CDATA[<p>Github 提供了 Git.io 短网址服务，用于缩短 Github 上项目的网址。</p>
-<p>官方文档：https://github.com/blog/985-git-io-github-url-shortener</p>
-<p>自定义短链接<br>
-依据官方文档，生成短链接有两个参数</p>
-<p>| 参数名  | 参数值  | 是否必须  |<br>
-|  url	源 | URL 链接  | 是  |<br>
-|  code | 自定义短链  |  否 |</p>
-<p>命令模板<br>
-<code>curl -i &quot;https://git.io&quot; -F &quot;url=长链接&quot; -F &quot;code=短链接&quot;</code><br>
-使用示例</p>
-<pre><code>$ curl -i &quot;https://git.io&quot; -F &quot;url=https://github.com/baoyun-site&quot; -F &quot;code=baoyunsite&quot;
-HTTP/1.1 201 Created
-Server: Cowboy
-Connection: keep-alive
-Date: Tue, 14 Jul 2020 08:22:52 GMT
-Status: 201 Created
-Content-Type: text/html;charset=utf-8
-Location: https://git.io/baoyunsite
-Content-Length: 30
-X-Xss-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-Runtime: 0.026588
-X-Node: 7fa64432-805f-49cf-a4d4-6f19c50ae8f3
-X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-Via: 1.1 vegur$ curl -i &quot;https://git.io&quot; -F &quot;url=https://github.com/baoyun-site&quot; -F &quot;code=baoyunsite&quot;
-HTTP/1.1 201 Created
-Server: Cowboy
-Connection: keep-alive
-Date: Tue, 14 Jul 2020 08:22:52 GMT
-Status: 201 Created
-Content-Type: text/html;charset=utf-8
-Location: https://git.io/baoyunsite
-Content-Length: 30
-X-Xss-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-Runtime: 0.026588
-X-Node: 7fa64432-805f-49cf-a4d4-6f19c50ae8f3
-X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
-Strict-Transport-Security: max-age=31536000; includeSubDomains
-Via: 1.1 vegur
-</code></pre>
-<p>https://github.com/baoyun-site<br>
-绕过链接生成限制<br>
-原理<br>
-通过使用 Github Pages 中放置静态页面的功能，来进行跳转。</p>
-<p>实现<br>
-请查看 Github 仓库 renbaoshuo/git.io ，内含代码与说明。</p>
-<p>版权声明<br>
-本文作者： 宝硕<br>
-本文链接： https://baoshuo.blog/post/oKnaKLcDb/</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【gd-utils】 Docker快速搭建GoogleDrive转存Bot  ]]></title>
-        <id>https://xiu.pw/S2lYVWimz/</id>
-        <link href="https://xiu.pw/S2lYVWimz/">
-        </link>
-        <updated>2020-08-08T01:30:52.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://xiu.pw/post-images/1596850275326.gif" alt="" loading="lazy"></figure>
-<p>如果只能搭建bot推荐使用docker版</p>
-<p>准备：<br>
-1.SA配置文件（xxx.json）此步骤忽略参考（http://blog.jialezi.net/?post=153 ）<br>
-2.tgbot的api t.me/BotFather 创建即可见<br>
-3.一个可解析的域名<br>
-4.GoogleDrive文件夹的id<br>
-5.docker镜像<br>
-（我自用的小修改版 https://hub.docker.com/r/jialezi/gd-utils）<br>
-原版：https://github.com/gdtool/gd-utils-docker/</p>
-<p>搭建<br>
-示例：<br>
-域名为abc.com<br>
-GoogleDrive文件夹的id为1hhDZw2SKjNeuwWroHSenoY-TXiFZyDoM<br>
-bot api为13xxxx2380:AAGDPL_2-LPIA0iQ6RxxxxM9bBOFjtErFGE</p>
-<p>提前解析abc.com到你的服务器ip（用于申请ssl）<br>
-然后</p>
-<p>1.下载配置文件，按要求修改里面的参数</p>
-<pre><code>`wget https://raw.githubusercontent.com/gdtool/gd-utils-docker/master/config.example.js -O config.js`
-##用SA的修改以下三项即可，其他按需修改
-const DEFAULT_TARGET = '' ,// 必填，拷贝默认目的地ID，如果不指定target，则会复制到此处，建议填写团队盘ID
-tg_token: '', // 你的 telegram robot 的 token，获取方法参见 https://core.telegram.org/bots#6-botfather
-tg_whitelist: [''] // 你的tg username(t.me/username)，bot只会执行这个列表里的用户所发送的指令
-</code></pre>
-<p>2.创建sa文件夹上传sa文件到sa文件夹（你也可以运行后再用web端的filebrowser上传）</p>
-<p>3.运行</p>
-<pre><code>docker run --restart=always -idt -e USERPWD=123qwe -p 443:443 -p 80:80 -e Domain=abc.com -v ${PWD}/sa:/gd-utils/sa -v ${PWD}/config.js:/gd-utils/config.js --name gd-utils jialezi/gd-utils
-</code></pre>
-<p>申请ssl需要80端口<br>
-USERPWD为shellinabox密码 || Domain=abc.com 为自己域名，要提前解析，由caddy自动申请ssl</p>
-<p>4.对接telegram bot</p>
-<pre><code>curl -F &quot;url=[YOUR_WEBSITE]/api/gdurl/tgbot&quot; 'https://api.telegram.org/bot[YOUR_BOT_TOKEN]/setWebhook'
-</code></pre>
-<p>例如：</p>
-<pre><code>curl -F &quot;url=https://abc.com/api/gdurl/tgbot&quot; 'https://api.telegram.org/bot1394xxx380:AAGDPL_2-LPIA0iQ6xxxxM9bBOFjtErFGE/setWebhook'
-</code></pre>
-<p>返回true ok</p>
-<p>访问:</p>
-<p>1）https://abc.com #gd-utils地址</p>
-<p>2）https://abc.com/shell #shellinabox地址，使用root需要先使用gd用登录，再切换root<br>
-账号gd，密码自设 USERPWD=123qwe || su root切换到root 密码自设 USERPWD=123qwe</p>
-<p>3）https://abc.com/file #filebrowser 账号密码admin</p>
-<p>如果觉得不够快，可以去使用fclone，超级暴力的项目</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[bbr/bbrplus/bbr2/锐速内核安装脚本更新测试版]]></title>
-        <id>https://xiu.pw/yzEb8qOIh/</id>
-        <link href="https://xiu.pw/yzEb8qOIh/">
-        </link>
-        <updated>2020-08-08T01:26:13.000Z</updated>
-        <content type="html"><![CDATA[<p>方便国内使用<br>
-不卸载内核</p>
-<pre><code class="language-shell">wget -N --no-check-certificate &quot;https://github.000060000.xyz/tcpx.sh&quot; &amp;&amp; chmod +x tcpx.sh &amp;&amp; ./tcpx.sh
-</code></pre>
-<p>或</p>
-<pre><code class="language-shell">wget -N &quot;https://github.000060000.xyz/tcpx.sh&quot; &amp;&amp; chmod +x tcpx.sh &amp;&amp; ./tcpx.sh
-</code></pre>
-<p>卸载内核</p>
-<pre><code class="language-shell">wget -N --no-check-certificate &quot;https://github.000060000.xyz/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh
-</code></pre>
-<p>或</p>
-<pre><code class="language-shell">wget -N &quot;https://github.000060000.xyz/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh
-</code></pre>
-<p>bbr内核更新为5.5/5.4</p>
-<p>bbrplus降级到4.14.129 安装方法和安装的内核均和原作者一致 彻底甩锅<br>
-维持原来的支持版本 不再支持c6,c8;debian和ubuntu各版本安装问题和我无关</p>
-<p>不支持32位系统<br>
-锐速内核稍微更新</p>
-<p>去掉魔改版 增加xanmod 5.5.1版本<br>
-xanmod 只添加了centos7,8 debian9,10</p>
-<p>5.5内核支持cake队列 5.4未测试</p>
-<p>测试版本，建议先用不卸载内核版本测试，然后再用正常版本<br>
-不卸载内核表示不会去卸载现有的内核</p>
-<p>测试分支<br>
-https://github.com/ylx2016/Linux-NetSpeed/tree/2020.2.3<br>
-https://github.com/ylx2016/Linux-NetSpeed/releases</p>
-<p>原作者<br>
-https://github.com/cx9208/Linux-NetSpeed<br>
-https://github.com/chiakge/Linux-NetSpeed</p>
-<figure data-type="image" tabindex="1"><img src="https://xiu.pw/post-images/1596850093008.webp" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
