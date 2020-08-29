@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-08-27T12:31:24.341Z</updated>
+    <updated>2020-08-29T13:17:16.016Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,84 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[INFO-SPIDER 是一个帮助用户拿回自己的数据的爬虫工具箱]]></title>
+        <id>https://xiu.pw/UM09GDy1m/</id>
+        <link href="https://xiu.pw/UM09GDy1m/">
+        </link>
+        <updated>2020-08-29T13:14:31.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>一个神奇的工具箱，拿回你的个人信息。</strong></p>
+<h1 id="what-is-info-spider">What is INFO-SPIDER</h1>
+<p>INFO-SPIDER 是一个集众多数据源于一身的爬虫工具箱，旨在安全快捷的帮助用户拿回自己的数据，工具代码开源，流程透明。并提供数据分析功能，基于用户数据生成图表文件，使得用户更直观、深入了解自己的信息。 目前支持数据源包括GitHub、QQ邮箱、网易邮箱、阿里邮箱、新浪邮箱、Hotmail邮箱、Outlook邮箱、京东、淘宝、支付宝、中国移动、中国联通、中国电信、知乎、哔哩哔哩、网易云音乐、QQ好友、QQ群、生成朋友圈相册、浏览器浏览历史、12306、博客园、CSDN博客、开源中国博客、简书。</p>
+<h1 id="features">Features</h1>
+<p>安全可靠：本项目为开源项目，代码简洁，所有源码可见，本地运行，安全可靠。<br>
+使用简单：提供 GUI 界面，只需点击所需获取的数据源并根据提示操作即可。<br>
+结构清晰：本项目的所有数据源相互独立，可移植性高，所有爬虫脚本在项目的 Spiders 文件下。<br>
+数据源丰富：本项目目前支持多达24+个数据源，持续更新。<br>
+数据格式统一：爬取的所有数据都将存储为json格式。<br>
+个人数据丰富：本项目将尽可能多地为你爬取个人数据，后期数据处理可根据需要删减。<br>
+数据分析：本项目提供个人数据的可视化分析，目前仅部分支持。<br>
+文档丰富：本项目包含完整全面的使用说明文档和视频教程</p>
+<h1 id="quickstart">QuickStart</h1>
+<h2 id="依赖安装">依赖安装</h2>
+<p>安装python3和Chrome浏览器</p>
+<p>安装与Chrome浏览器相同版本的<a href="http://chromedriver.storage.googleapis.com/index.html" title="驱动">驱动</a></p>
+<p>安装依赖库 pip install -r requirements.txt</p>
+<h2 id="工具运行">工具运行</h2>
+<p>进入 tools 目录</p>
+<p>运行 python3 main.py</p>
+<p>在打开的窗口点击数据源按钮, 根据提示选择数据保存路径</p>
+<p>弹出的浏览器输入用户密码后会自动开始爬取数据, 爬取完成浏览器会自动关闭.</p>
+<p>在对应的目录下可以查看下载下来的数据(xxx.json), 数据分析图表(xxx.html)</p>
+<h1 id="数据源">数据源</h1>
+<p>GitHub<br>
+QQ邮箱<br>
+网易邮箱<br>
+阿里邮箱<br>
+新浪邮箱<br>
+Hotmail邮箱<br>
+Outlook邮箱<br>
+京东<br>
+淘宝<br>
+支付宝<br>
+中国移动<br>
+中国联通<br>
+中国电信<br>
+知乎<br>
+哔哩哔哩<br>
+网易云音乐<br>
+QQ好友<br>
+QQ群<br>
+生成朋友圈相册<br>
+浏览器浏览历史<br>
+12306<br>
+博客园<br>
+CSDN博客<br>
+开源中国博客<br>
+简书</p>
+<h1 id="数据分析">数据分析</h1>
+<p>博客园</p>
+<p>CSDN博客</p>
+<p>开源中国博客</p>
+<p>简书</p>
+<h1 id="计划">计划</h1>
+<p>提供web界面操作，适应多平台</p>
+<p>对爬取的个人数据进行统计分析</p>
+<p>融合机器学习技术、自然语言处理技术等对数据深入分析</p>
+<p>把分析结果绘制图表直观展示</p>
+<p>添加更多数据源...</p>
+<p>Visitors</p>
+<h1 id="developers-want-to-say">Developers want to say</h1>
+<pre><code>该项目解决了个人数据分散在各种各样的公司之间，经常形成数据孤岛，多维数据无法融合的痛点。
+作者认为该项目的最大潜力在于能把多维数据进行融合并对个人数据进行分析，是个人数据效益最大化。
+该项目使用爬虫手段获取数据，所以程序存在时效问题（需要持续维护，根据网站的更新做出修改）。
+该项目的结构清晰，所有数据源相互独立，可移植性高，所有爬虫脚本在项目的Spiders文件下，可移植到你的程序中。
+目前该项目v1.0版本仅在Windows平台上测试，Python 3.7，未适配多平台。
+计划在v2.0版本对项目进行重构，提供web端操作与数据可视化，以适配多平台。
+</code></pre>
+<p><strong>本项目<a href="https://github.com/kangvcar/InfoSpider" title="INFO-SPIDER">INFO-SPIDER</a>代码已开源，欢迎star支持。</strong></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[vps测速整合脚本]]></title>
         <id>https://xiu.pw/E-ilBDDMb/</id>
@@ -572,49 +650,6 @@ backblaze域名</p>
 <p>https://down.nicemail.ml/file/down-cangshui-net/666.jpg</p>
 <p>cloudflare的带正则参数的301规则</p>
 <p>cloudflare并不是不允许https 301 https，而是同一个子域名无法互相301 ，你设为https://down.xxxx.com 跳转到 https://down1.xxxx.com 就行了</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[一键制作DDWin，批处理!]]></title>
-        <id>https://xiu.pw/s9y925myV/</id>
-        <link href="https://xiu.pw/s9y925myV/">
-        </link>
-        <updated>2020-08-09T14:30:40.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://xiu.pw/post-images/1596983474950.png" alt="" loading="lazy"></figure>
-<p>makeddwin 工具包，使用批处理制作，代码明文，以及在包里写明依赖文件来自那里，你完全可以替换，代码查阅。</p>
-<p>不会还有杠精来喷吧？要不你写个更好的来？<br>
-至于你用上报毒与我无关！</p>
-<p>说明：<br>
-【使用前，请把所需的文件放进相应文件夹！】<br>
-目录结构：<br>
-bin 文件夹，存放用来制作的依赖程序和文件。<br>
-iso 文件夹，存放Windows ISO 系统镜像(只能放1个)<br>
-packages 文件夹，存放Windows 补丁文件<br>
-driver 文件夹，存放其他驱动文件<br>
-virtio 文件夹，存放KVM virtio ISO 驱动镜像(只能放1个)<br>
-vhd 文件夹，存放 .vhd格式 虚拟硬盘(只能放1个)<br>
-export 文件夹，输出生成的.gz、.wim、和解压的.vhd文件。<br>
-注意，只能放一个的目录务必按要求，因为放多个会导致脚本无法判断。</p>
-<p>步骤1：使用vhd.cmd批处理，生成一个大小20-30G左右的虚拟硬盘<br>
-生成后的虚拟硬盘文件会在vhd目录，虚拟硬盘大小视你安装系统后硬盘体积还剩多少。<br>
-一般安装系统后，虚拟硬盘最低要剩空闲有1G左右，后期可以再创建对应体积的虚拟硬盘作调整。</p>
-<p>步骤2：使用install.cmd批处理，选择刚才创建的已挂载的虚拟硬盘分区，自行查看[我的电脑]，你虚拟硬盘生成多少G的分区，就选择那个分区，进行下一步安装系统等其他操作。</p>
-<p>步骤3：使用dd.cmd批处理，对已经完成制作的.vhd虚拟硬盘文件进行压缩成可DD的文件或者wim文件。<br>
-压缩完成后，别忘了测试文件的完整性检查，否则是一个损坏的数据文件是无法使用的！<br>
-生成的.gz文件，可以在Linux系统下DD为此系统。<br>
-生成的.wim文件，可以在WinPE中安装到实体机系统，又或者添加生成为一个iso文件。<br>
-(注意，压缩比较慢通常是1-3小时，电脑配置越高越快！)</p>
-<p>网址：nat.ee<br>
-批处理：荣耀&amp;制作<br>
-本批处理工具仅适合Windows 7 sp1 以上的系统使用！<br>
-注意：不能放在带有空格路径的目录，否则出错。<br>
-TG交流群：https://t.me/dd_win<br>
-如在使用中有任何问题或者建议，欢迎加入交流。</p>
-<p>下载链接：https://yyingc.lanzous.com/i72Wzfei7ba<br>
-视频教程下载：https://yyingc.lanzous.com/igExyfesota</p>
-<p>视频教程：https://www.youtube.com/watch?v=LTVgPFWnnX8<br>
-哔哩哔哩：https://www.bilibili.com/video/BV1Pk4y1U7Zp/</p>
-<p>转自:https://www.hostloc.com/thread-728111-1-1.html</p>
 ]]></content>
     </entry>
 </feed>
