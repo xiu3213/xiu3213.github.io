@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-08-29T13:17:16.016Z</updated>
+    <updated>2020-08-29T13:21:12.165Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -78,14 +78,15 @@ CSDN博客<br>
 <p>添加更多数据源...</p>
 <p>Visitors</p>
 <h1 id="developers-want-to-say">Developers want to say</h1>
-<pre><code>该项目解决了个人数据分散在各种各样的公司之间，经常形成数据孤岛，多维数据无法融合的痛点。
-作者认为该项目的最大潜力在于能把多维数据进行融合并对个人数据进行分析，是个人数据效益最大化。
-该项目使用爬虫手段获取数据，所以程序存在时效问题（需要持续维护，根据网站的更新做出修改）。
-该项目的结构清晰，所有数据源相互独立，可移植性高，所有爬虫脚本在项目的Spiders文件下，可移植到你的程序中。
-目前该项目v1.0版本仅在Windows平台上测试，Python 3.7，未适配多平台。
-计划在v2.0版本对项目进行重构，提供web端操作与数据可视化，以适配多平台。
-</code></pre>
-<p><strong>本项目<a href="https://github.com/kangvcar/InfoSpider" title="INFO-SPIDER">INFO-SPIDER</a>代码已开源，欢迎star支持。</strong></p>
+<ol>
+<li>该项目解决了个人数据分散在各种各样的公司之间，经常形成数据孤岛，多维数据无法融合的痛点。</li>
+<li>作者认为该项目的最大潜力在于能把多维数据进行融合并对个人数据进行分析，是个人数据效益最大化。</li>
+<li>该项目使用爬虫手段获取数据，所以程序存在时效问题（需要持续维护，根据网站的更新做出修改）。</li>
+<li>该项目的结构清晰，所有数据源相互独立，可移植性高，所有爬虫脚本在项目的Spiders文件下，可移植到你的程序中。</li>
+<li>目前该项目v1.0版本仅在Windows平台上测试，Python 3.7，未适配多平台。</li>
+<li>计划在v2.0版本对项目进行重构，提供web端操作与数据可视化，以适配多平台。</li>
+<li><strong>本项目<a href="https://github.com/kangvcar/InfoSpider" title="INFO-SPIDER">INFO-SPIDER</a>代码已开源，欢迎star支持。</strong></li>
+</ol>
 ]]></content>
     </entry>
     <entry>
