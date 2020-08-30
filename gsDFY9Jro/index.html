@@ -8,7 +8,7 @@
 <meta name="keywords" content="网页制作|运维开发|游戏娱乐|资源分享|生活随写|技术分享">
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
-<title>秀儿</title>
+<title>利用Microsoft 365 E5开发者订阅搭建自己的邮局|设置catch-all邮箱 | 秀儿</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1598803013415">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
@@ -58,6 +58,8 @@
 </script>
 
 
+  <meta name="description" content="利用Microsoft 365 E5开发者订阅搭建自己的邮局|设置catch-all邮箱" />
+  <meta name="keywords" content="邮局,微软,免费" />
 </head>
 
 <body>
@@ -177,10 +179,17 @@
   <div class="main-continer">
     
     <div
-      class="section-layout  gemini">
+      class="section-layout gemini ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/images/avatar.png"/>
@@ -240,236 +249,291 @@
 
 
 </div>
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-        <div class="section-box tag-line box-shadow-wrapper">
-          <section class="section tags-section posts-expand bg-color">
-            <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          API管理面板
-          <small class="language" data-lan="tag">标签</small>
-        </h2>
-      </div>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://xiu.pw/mZNa6VHVE/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              08-16
-              <small>微软 A1/A1P/A3/E3/E5/E3Y API管理面板</small>
-            </h1>
-          </div>
-        </div>
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://xiu.pw/gsDFY9Jro/">
+      利用Microsoft 365 E5开发者订阅搭建自己的邮局|设置catch-all邮箱
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2020-08-30 23:55:27">2020-08-30</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">分类于</span>
+      
+      
+      <a href="https://xiu.pw/pkBmQJjZe/">
+        <span>邮局</span>
+      </a>、
+      
+      
+      
+      <a href="https://xiu.pw/EMSj60G8c/">
+        <span>微软</span>
+      </a>、
+      
+      
+      
+      <a href="https://xiu.pw/m7QB9_6MyQ/">
+        <span>免费</span>
       </a>
       
       
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>3<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>764<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+    
+    
+    <span id="/gsDFY9Jro/" data-flag-title="利用Microsoft 365 E5开发者订阅搭建自己的邮局|设置catch-all邮箱" class="meta-item pc-show leancloud_visitors">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-eye"></i>
+      <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
+    </span>
+    
+  </div>
+</section>
+            <div class="post-body next-md-body" id="post_body">
+              <p>最近看了几个服务器自建邮局的方案，很多程序服务器要求2G内存起步，搭建也比较复杂，还要各种设置避免进垃圾箱，是个技术活，害怕那步出问题搞的自己心态爆炸，感觉不太适合自己。想想还是第三方的好，之前我已经尝试过yandex/zoho/腾讯企业邮，最后选择了yandex，一直再使用感觉良好。前几天开发者试用的E5订阅又续订，于是就试了一下，设置邮局功能按照后台引导设置没有任何难度，主要是设置catch-all邮箱，这里分享一下过程。</p>
+<p>提示：文中E5订阅是指开发者试用订阅，保持活跃能自动续费。网上有很多调用api保持活跃的方法，但是博主申请完一直没使用也续费了，如何才算活跃没有具体的说法。如果没有自动续费，订阅会被取消但是数据不是马上删除，会有时间可以迁移，E5申请方法看这里： 。</p>
+<p>（本文搭建邮局不是开发行为，只是正常使用。）</p>
+<p><strong>catch-all邮箱</strong>：又叫全收邮件，就是把发给邮件服务器上不存在账户的邮件都重定向到某个邮箱，而不是直接退信。正常情况下，如发邮件给服务器上不存在的账户会直接退信给发件人。E5开发者订阅只用25用户，利用catch-all功能可以实现无限别名收邮件。</p>
+<h1 id="一添加域名到microsoft-365">一，添加域名到Microsoft 365</h1>
+<p>打开：https://admin.microsoft.com/Adminportal/Home?source=applauncher#/Domains<br>
+添加并验证域名，前两步我就不截图了。</p>
+<p><img src="http://blog.jialezi.net/admin/editor/php/upload/46231593341187.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/74411593341187.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/38461593341187.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/77251593341187.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/79951593341187.png" alt="" loading="lazy"></p>
+<h1 id="二添加两个用户用于测试">二，添加两个用户用于测试</h1>
+<p>添加用户：https://admin.microsoft.com/Adminportal/Home?source=applauncher#/users</p>
+<p>添加了i@9mail.club和aaa@9mail.club</p>
+<p><img src="http://blog.jialezi.net/admin/editor/php/upload/70031593341187.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/25201593341187.png" alt="" loading="lazy"></p>
+<h1 id="三向i9mailclub和i29mailclub不存在的用户发送邮件">三，向i@9mail.club和i2@9mail.club（不存在的用户）发送邮件</h1>
+<p>可见i2@9mail.club是退信了。<br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/30121593341188.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/81921593341188.png" alt="" loading="lazy"></p>
+<h1 id="四设置catch-all功能">四，设置Catch-all功能。</h1>
+<p>1）打开Exchange 管理中心：https://outlook.office365.com/ecp/</p>
+<figure data-type="image" tabindex="1"><img src="http://blog.jialezi.net/admin/editor/php/upload/32321593341188.png" alt="" loading="lazy"></figure>
+<p>2）修改域类型</p>
+<p>邮件流——接受的域，把域类型改为内部中继。</p>
+<p><img src="http://blog.jialezi.net/admin/editor/php/upload/48211593341188.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/86391593341188.png" alt="" loading="lazy"></p>
+<p>3）创建一个动态通讯组，用于存放已有的用户。</p>
+<p>收件人——组——新建Office 365组——动态通讯组列表——仅以下收件人类型——具有Exchange邮箱用户</p>
+<p>（我这里动态通讯组名称设置为 exchange）</p>
+<figure data-type="image" tabindex="2"><img src="http://blog.jialezi.net/admin/editor/php/upload/68331593341188.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="http://blog.jialezi.net/admin/editor/php/upload/63721593341188.png" alt="" loading="lazy"></figure>
+<p>4）创建规则，用于把不存在有的邮件重定向到指定邮箱</p>
+<p>邮件流——规则——创建新规则</p>
+<p>名称:随意——规则：发件人位于 组织外部 ——执行：邮件重定向 指定邮箱（i@9mail.club）</p>
+<p>除非：收件人为以下组成员 exchange（第三步设置的动态通讯组） PS：如果看不到除非选项，请滑动到底部点击下面的高级</p>
+<figure data-type="image" tabindex="4"><img src="http://blog.jialezi.net/admin/editor/php/upload/35851593341188.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="http://blog.jialezi.net/admin/editor/php/upload/60301593341188.png" alt="" loading="lazy"></figure>
+<h1 id="五测试">五，测试</h1>
+<p>向aaa@9mail.club和xxx@9mail.club（不存在）发送邮件</p>
+<p>aaa@9mail.club正常收到邮件</p>
+<p>xxx@9mail.club的邮件重定向到了i@9mail.club</p>
+<p>设置成功。</p>
+<figure data-type="image" tabindex="6"><img src="http://blog.jialezi.net/admin/editor/php/upload/1401593341188.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="http://blog.jialezi.net/admin/editor/php/upload/14001593341189.png" alt="" loading="lazy"></figure>
+<p>转自:<a href="http://blog.jialezi.net/?post=158" title="http://blog.jialezi.net/?post=158">http://blog.jialezi.net/?post=158</a></p>
+
+            </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      秀儿
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://xiu.pw/gsDFY9Jro/" title="利用Microsoft 365 E5开发者订阅搭建自己的邮局|设置catch-all邮箱">https://xiu.pw/gsDFY9Jro/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://xiu.pw/pkBmQJjZe/"># 邮局</a>
+    
+      <a href="https://xiu.pw/EMSj60G8c/"># 微软</a>
+    
+      <a href="https://xiu.pw/m7QB9_6MyQ/"># 免费</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
       
+    </div>
+    <div class="nav-next">
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+        <a class="nav-pc-next" title="Onedrive+OneManager+Heroku+CFWorkers免费的OD列表" href="https://xiu.pw/KB2M1bDsU/">Onedrive+OneManager+Heroku+CFWorkers免费的OD列表</a>
+        <a class="nav-mobile-next" title="Onedrive+OneManager+Heroku+CFWorkers免费的OD列表" href="https://xiu.pw/KB2M1bDsU/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
 </div>
-          </section>
+            
+            
+  <script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+
+<style>
+  .v .veditor {
+    min-height: 10rem;
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: none;
+  }
+
+  .v .vwrap {
+    border: 1px solid #000 !important;
+  }
+
+  .v .vbtn {
+    padding: .4rem 1.2rem !important;
+    border-color: #fff !important;
+    background-color: #49b1f5 !important;
+    color: #fff !important;
+    font-size: .7rem !important;
+  }
+
+  .v .vcards .vcard .vh .vmeta .vat {
+    padding: 0 .8rem !important;
+    border: 1px solid #00c4b6 !important;
+    border-radius: 5px !important;
+    color: #00c4b6 !important;
+  }
+</style>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yzCuU6WMEwyMe7X9L7GKmJXj-gzGzoHsz',
+    appKey: '28AUNpdY1kwW7iHLcrMCvQIs',
+    avatar: '',
+    placeholder: '',
+    pageSize: '',
+    lang: 'zh-cn',
+    enableQQ: 'true' === 'false',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+  });
+</script>
+
+          </div>
         </div>
       </div>
     </div>
@@ -665,6 +729,253 @@
   }
 
 </script>
+    <div class="light-box" id="light_box"></div>
+<script>
+  let imgs = document.querySelectorAll('.post-body img');
+  let lightBox = document.querySelector('#light_box');
+  lightBox.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
+  lightBox.addEventListener('mousewheel', (e) => {
+    e.preventDefault()
+  })
+  let width = window.innerWidth * 0.8;
+  lightBox.onclick = () => {
+    let img = lightBox.querySelector('img');
+    lightBox.style = '';
+    img && img.remove();
+  }
+  imgs.forEach(item => {
+    item.onclick = function (e) {
+      let lightImg = document.createElement('img');
+      lightImg.src = this.src;
+      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
+      lightImg.style = `width: ${width}px;border-radius: 2px;`;
+      lightImg.onclick = function () {
+        lightBox.style = '';
+        this.remove();
+      }
+      lightBox.append(lightImg);
+    }
+  })
+</script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
   </div>
 </body>
 
@@ -2169,7 +2480,6 @@ CentOS 7 镜像抛弃LVM，回归ext4，减少不稳定因素&lt;/p&gt;
 
 
 <script src="/media/js/mouse/love.js"></script>
-
 
 
 

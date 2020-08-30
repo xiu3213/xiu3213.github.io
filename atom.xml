@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-08-30T01:44:04.972Z</updated>
+    <updated>2020-08-30T15:57:54.084Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,61 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[利用Microsoft 365 E5开发者订阅搭建自己的邮局|设置catch-all邮箱]]></title>
+        <id>https://xiu.pw/gsDFY9Jro/</id>
+        <link href="https://xiu.pw/gsDFY9Jro/">
+        </link>
+        <updated>2020-08-30T15:55:27.000Z</updated>
+        <content type="html"><![CDATA[<p>最近看了几个服务器自建邮局的方案，很多程序服务器要求2G内存起步，搭建也比较复杂，还要各种设置避免进垃圾箱，是个技术活，害怕那步出问题搞的自己心态爆炸，感觉不太适合自己。想想还是第三方的好，之前我已经尝试过yandex/zoho/腾讯企业邮，最后选择了yandex，一直再使用感觉良好。前几天开发者试用的E5订阅又续订，于是就试了一下，设置邮局功能按照后台引导设置没有任何难度，主要是设置catch-all邮箱，这里分享一下过程。</p>
+<p>提示：文中E5订阅是指开发者试用订阅，保持活跃能自动续费。网上有很多调用api保持活跃的方法，但是博主申请完一直没使用也续费了，如何才算活跃没有具体的说法。如果没有自动续费，订阅会被取消但是数据不是马上删除，会有时间可以迁移，E5申请方法看这里： 。</p>
+<p>（本文搭建邮局不是开发行为，只是正常使用。）</p>
+<p><strong>catch-all邮箱</strong>：又叫全收邮件，就是把发给邮件服务器上不存在账户的邮件都重定向到某个邮箱，而不是直接退信。正常情况下，如发邮件给服务器上不存在的账户会直接退信给发件人。E5开发者订阅只用25用户，利用catch-all功能可以实现无限别名收邮件。</p>
+<h1 id="一添加域名到microsoft-365">一，添加域名到Microsoft 365</h1>
+<p>打开：https://admin.microsoft.com/Adminportal/Home?source=applauncher#/Domains<br>
+添加并验证域名，前两步我就不截图了。</p>
+<p><img src="http://blog.jialezi.net/admin/editor/php/upload/46231593341187.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/74411593341187.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/38461593341187.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/77251593341187.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/79951593341187.png" alt="" loading="lazy"></p>
+<h1 id="二添加两个用户用于测试">二，添加两个用户用于测试</h1>
+<p>添加用户：https://admin.microsoft.com/Adminportal/Home?source=applauncher#/users</p>
+<p>添加了i@9mail.club和aaa@9mail.club</p>
+<p><img src="http://blog.jialezi.net/admin/editor/php/upload/70031593341187.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/25201593341187.png" alt="" loading="lazy"></p>
+<h1 id="三向i9mailclub和i29mailclub不存在的用户发送邮件">三，向i@9mail.club和i2@9mail.club（不存在的用户）发送邮件</h1>
+<p>可见i2@9mail.club是退信了。<br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/30121593341188.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/81921593341188.png" alt="" loading="lazy"></p>
+<h1 id="四设置catch-all功能">四，设置Catch-all功能。</h1>
+<p>1）打开Exchange 管理中心：https://outlook.office365.com/ecp/</p>
+<figure data-type="image" tabindex="1"><img src="http://blog.jialezi.net/admin/editor/php/upload/32321593341188.png" alt="" loading="lazy"></figure>
+<p>2）修改域类型</p>
+<p>邮件流——接受的域，把域类型改为内部中继。</p>
+<p><img src="http://blog.jialezi.net/admin/editor/php/upload/48211593341188.png" alt="" loading="lazy"><br>
+<img src="http://blog.jialezi.net/admin/editor/php/upload/86391593341188.png" alt="" loading="lazy"></p>
+<p>3）创建一个动态通讯组，用于存放已有的用户。</p>
+<p>收件人——组——新建Office 365组——动态通讯组列表——仅以下收件人类型——具有Exchange邮箱用户</p>
+<p>（我这里动态通讯组名称设置为 exchange）</p>
+<figure data-type="image" tabindex="2"><img src="http://blog.jialezi.net/admin/editor/php/upload/68331593341188.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="http://blog.jialezi.net/admin/editor/php/upload/63721593341188.png" alt="" loading="lazy"></figure>
+<p>4）创建规则，用于把不存在有的邮件重定向到指定邮箱</p>
+<p>邮件流——规则——创建新规则</p>
+<p>名称:随意——规则：发件人位于 组织外部 ——执行：邮件重定向 指定邮箱（i@9mail.club）</p>
+<p>除非：收件人为以下组成员 exchange（第三步设置的动态通讯组） PS：如果看不到除非选项，请滑动到底部点击下面的高级</p>
+<figure data-type="image" tabindex="4"><img src="http://blog.jialezi.net/admin/editor/php/upload/35851593341188.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="http://blog.jialezi.net/admin/editor/php/upload/60301593341188.png" alt="" loading="lazy"></figure>
+<h1 id="五测试">五，测试</h1>
+<p>向aaa@9mail.club和xxx@9mail.club（不存在）发送邮件</p>
+<p>aaa@9mail.club正常收到邮件</p>
+<p>xxx@9mail.club的邮件重定向到了i@9mail.club</p>
+<p>设置成功。</p>
+<figure data-type="image" tabindex="6"><img src="http://blog.jialezi.net/admin/editor/php/upload/1401593341188.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="http://blog.jialezi.net/admin/editor/php/upload/14001593341189.png" alt="" loading="lazy"></figure>
+<p>转自:<a href="http://blog.jialezi.net/?post=158" title="http://blog.jialezi.net/?post=158">http://blog.jialezi.net/?post=158</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Onedrive+OneManager+Heroku+CFWorkers免费的OD列表]]></title>
         <id>https://xiu.pw/KB2M1bDsU/</id>
@@ -651,62 +706,6 @@ sudo apt-get install japan* chinese* korean*
 <h1 id="3-关于typecho">3, 关于Typecho</h1>
 <p>Typecho和WordPress类似，只要构造一个搜索链接即可进行测试。Typecho的搜索链接格式为https://example.com/search/xxxxx 如果您使用的是Typecho, 则在17ce上提交这样的地址即可做到压力测试。</p>
 <p>作者为香菇肥牛，<a href="https://qing.su/article/162.html" title="原文链接">原文链接</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[微软 A1/A1P/A3/E3/E5/E3Y API管理面板]]></title>
-        <id>https://xiu.pw/mZNa6VHVE/</id>
-        <link href="https://xiu.pw/mZNa6VHVE/">
-        </link>
-        <updated>2020-08-16T14:57:18.000Z</updated>
-        <content type="html"><![CDATA[<p>此项目是一个基于API的 Microsoft 365 管理平台, 支持订阅查询，用户管理（查询，新增，删除，分配许可证等），支持批量创建用户，批量删除用户. 支持多账户管理.</p>
-<p>后端基于SpringBoot，使用 msal4j 和 microsoft-graph sdk 开发完成</p>
-<p><strong>支持 微软 A1/A1P/A3/E3/E5/E3Y等</strong></p>
-<h1 id="系统功能">系统功能</h1>
-<pre><code>总览：订阅数，许可证数，可用许可证数，用户数，允许登陆用户数，禁止登陆用户数等信息展示
-许可查询：查询每个订阅的许可证信息
-用户管理：查询，新增，删除，分配许可证等
-多账户切换
-</code></pre>
-<p><em><strong>注意：出现执行新增/删除账户，启用禁用账户，授权账户等操作后，查询结果不变，请右上角点击刷新缓存，或列表中搜索该用户</strong></em></p>
-<p>原因：调用微软API比较耗时，第一次查询时将需要的数据拉取到本地缓存（暂无自定义缓存失效功能，默认用户1天，域名1天，订阅30天）。</p>
-<p>具体功能查看关于界面【操作教程】</p>
-<h1 id="运行">运行</h1>
-<p>下载最新版本的额jar包，然后在同目录新建config目录，下载 application-dev.yml文件放到该目录。</p>
-<p>按照格式修改配置文件</p>
-<p>java -jar microsoft-0.0.1-SNAPSHOT.jar 启动，端口：8099</p>
-<h1 id="界面">界面</h1>
-<p><img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E9%A6%96%E9%A1%B5.png" alt="" loading="lazy"><br>
-<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E8%AE%A2%E9%98%85%E7%AE%A1%E7%90%86.png" alt="" loading="lazy"><br>
-<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.png" alt="" loading="lazy"><br>
-<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E5%85%B3%E4%BA%8E.png" alt="" loading="lazy"></p>
-<h1 id="api接口">Api接口</h1>
-<p><a href="https://github.com/6mb/Microsoft-365-Admin/blob/master/Microsoft%20365%20Admin.md" title="接口文档">接口文档</a></p>
-<ul>
-<li>Microsoft 365 首页<br>
-首页展示<br>
-刷新缓存</li>
-<li>Microsoft 365 订阅管理<br>
-许可统计<br>
-许可证列表查询</li>
-<li>Microsoft 365 用户管理<br>
-查询用户统计<br>
-查询用户信息列表<br>
-查询用户信息详情<br>
-查询绑定域名<br>
-添加账号<br>
-删除账户<br>
-添加订阅<br>
-取消订阅<br>
-启用账户<br>
-禁用账户<br>
-批量创建用户信息</li>
-</ul>
-<h1 id="postman-接口">Postman 接口</h1>
-<p><a href="https://raw.githubusercontent.com/6mb/Microsoft-365-Admin/master/.github/Microsoft%20365%20Admin.postman_collection.json" title="点击下载">点击下载</a></p>
-<p>请自行设置 .evn {host} 和 {port}<br>
-<img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E6%8E%A5%E5%8F%A3.png" alt="" loading="lazy"></p>
-<p><a href="https://github.com/6mb/Microsoft-365-Admin" title="项目地址">项目地址</a></p>
 ]]></content>
     </entry>
 </feed>
