@@ -9,7 +9,7 @@
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
 <title>【gd-utils】 Docker快速搭建GoogleDrive转存Bot   | 秀儿</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1598707266383">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1598751796810">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -200,7 +200,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">22</span>
+        <span class="site-item-stat-count">23</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -1001,6 +1001,101 @@ USERPWD为shellinabox密码 || Domain=abc.com 为自己域名，要提前解析�
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/KB2M1bDsU/"" data-c="
+          &lt;p&gt;&lt;strong&gt;网站下载链接直接是xxx.com/abc.jpg，没有302跳到微软xxx.sharepoint.com，也没有反代xxx.sharepoint.com那样后面一长串。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;准备工作&#34;&gt;准备工作：&lt;/h1&gt;
+&lt;p&gt;1，        Onedrive，或Sharepoint&lt;br&gt;
+这个大家有的，各种A1，E3，E5，世纪。（Sharepoint默认25T）&lt;br&gt;
+2，        OneManager，Github地址：https://github.com/qkqpttgf/OneManager-php&lt;br&gt;
+基于各种无服务器的平台，比如Heroku、腾讯SCF、阿里FC、华为FG、百度CFC，配置都保存在其环境变量中，当然也可以装在VPS与空间里，不过为了一致，程序不固定储存onedrive的目录结构，缓存最多1小时&lt;br&gt;
+3，        Heroku，最好需要注册2个帐号，注册与登录时需要魔法，平时操作时不需要&lt;br&gt;
+OneManager配置是保存在环境变量中的，所以不需要一直监控保活，Heroku免费套餐每月550小时，550小时/30天=18.33小时，每天只要访问时间段空出来24-18=6小时没有人访问，这一个月其实就足够使用了，但有些人的网站可能访问人比较多所以还没到月底就用光了。&lt;br&gt;
+当然，heroku也可绑卡达到1000小时，同时还能自定义域名。但，SSL却比较麻烦。&lt;br&gt;
+4，        CF workers，免费的就好&lt;/p&gt;
+&lt;h1 id=&#34;部署程序-安装程序-绑定网盘&#34;&gt;部署程序、安装程序、绑定网盘：&lt;/h1&gt;
+&lt;p&gt;1，        将OneManager一键部署到Heroku&lt;br&gt;
+2，        访问给定的herokuapp域名，正式安装好程序&lt;br&gt;
+3，        安装好后登录，在设置中绑定Onedrive或Sharepoint&lt;br&gt;
+4，        在设置中做些设定&lt;br&gt;
+5，        换一个Heroku帐号再安装一次（时长够用就无所谓）&lt;/p&gt;
+&lt;h1 id=&#34;重点&#34;&gt;重点：&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;在CF Workers中填入以下代码&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;// 单日
+const SingleDay = &#39;111.herokuapp.com&#39;
+// 双日
+const DoubleDay = &#39;222.herokuapp.com&#39;
+// 一切给CF代理，true/false
+const CFproxy = true
+
+// 由于heroku不绑卡不能自定义域名，就算绑卡后https也不方便
+// 另外免费套餐每月550小时，有些人不够用
+// 于是在CF Workers使用此代码，分单双日拉取不同heroku帐号下的相同网页
+// 只改上面，下面不用动
+
+addEventListener(&#39;fetch&#39;, event =&amp;gt; {
+    let nd = new Date();
+    if (nd.getDate()%2) {
+        host = SingleDay
+    } else {
+        host = DoubleDay
+    }
+    if (!CFproxy) {
+        let url=new URL(event.request.url);
+        if (url.protocol == &#39;http:&#39;) {
+            url.protocol = &#39;https:&#39;
+            response = Response.redirect(url.href);
+            event.respondWith( response );
+        } else {
+            url.hostname=host;
+            let request=new Request(url,event.request);
+            event.respondWith( fetch(request) )
+        }
+    } else {
+        event.respondWith( fetchAndApply(event.request) );
+    }
+})
+
+async function fetchAndApply(request) {
+    let response = null;
+    let url = new URL(request.url);
+    if (url.protocol == &#39;http:&#39;) {
+        url.protocol = &#39;https:&#39;
+        response = Response.redirect(url.href);
+        return response;
+    }
+    url.host = host;
+
+    let method = request.method;
+    let body = request.body;
+    let request_headers = request.headers;
+    let new_request_headers = new Headers(request_headers);
+
+    new_request_headers.set(&#39;Host&#39;, url.host);
+    new_request_headers.set(&#39;Referer&#39;, request.url);
+
+    let original_response = await fetch(url.href, {
+        method: method,
+        body: body,
+        headers: new_request_headers
+    });
+
+    response = new Response(original_response.body, {
+        status: original_response.status,
+        headers: original_response.headers
+    })
+
+    return response;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;单双日分别填入不同的heroku帐号下的网站（当然2个网站要设置得一模一样），这样每个heroku帐号每个月都只访问15或16天，就算24小时有人访问也才360或384小时。&lt;br&gt;
+最后，给workers加上自定义域名的路由！&lt;/p&gt;
+&lt;p&gt;从头到尾都可以是Free的，不看网站页面，光从下载过程来看，可以完全假装CF套在了大盘鸡上,谁也看不出我没服务器。&lt;/p&gt;
+">Onedrive+OneManager+Heroku+CFWorkers免费的OD列表</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://xiu.pw/UM09GDy1m/"" data-c="

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-08-29T13:21:12.165Z</updated>
+    <updated>2020-08-30T01:44:04.972Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,104 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[Onedrive+OneManager+Heroku+CFWorkers免费的OD列表]]></title>
+        <id>https://xiu.pw/KB2M1bDsU/</id>
+        <link href="https://xiu.pw/KB2M1bDsU/">
+        </link>
+        <updated>2020-08-30T01:39:37.000Z</updated>
+        <content type="html"><![CDATA[<p><strong>网站下载链接直接是xxx.com/abc.jpg，没有302跳到微软xxx.sharepoint.com，也没有反代xxx.sharepoint.com那样后面一长串。</strong></p>
+<h1 id="准备工作">准备工作：</h1>
+<p>1，        Onedrive，或Sharepoint<br>
+这个大家有的，各种A1，E3，E5，世纪。（Sharepoint默认25T）<br>
+2，        OneManager，Github地址：https://github.com/qkqpttgf/OneManager-php<br>
+基于各种无服务器的平台，比如Heroku、腾讯SCF、阿里FC、华为FG、百度CFC，配置都保存在其环境变量中，当然也可以装在VPS与空间里，不过为了一致，程序不固定储存onedrive的目录结构，缓存最多1小时<br>
+3，        Heroku，最好需要注册2个帐号，注册与登录时需要魔法，平时操作时不需要<br>
+OneManager配置是保存在环境变量中的，所以不需要一直监控保活，Heroku免费套餐每月550小时，550小时/30天=18.33小时，每天只要访问时间段空出来24-18=6小时没有人访问，这一个月其实就足够使用了，但有些人的网站可能访问人比较多所以还没到月底就用光了。<br>
+当然，heroku也可绑卡达到1000小时，同时还能自定义域名。但，SSL却比较麻烦。<br>
+4，        CF workers，免费的就好</p>
+<h1 id="部署程序-安装程序-绑定网盘">部署程序、安装程序、绑定网盘：</h1>
+<p>1，        将OneManager一键部署到Heroku<br>
+2，        访问给定的herokuapp域名，正式安装好程序<br>
+3，        安装好后登录，在设置中绑定Onedrive或Sharepoint<br>
+4，        在设置中做些设定<br>
+5，        换一个Heroku帐号再安装一次（时长够用就无所谓）</p>
+<h1 id="重点">重点：</h1>
+<p><strong>在CF Workers中填入以下代码</strong></p>
+<hr>
+<pre><code>// 单日
+const SingleDay = '111.herokuapp.com'
+// 双日
+const DoubleDay = '222.herokuapp.com'
+// 一切给CF代理，true/false
+const CFproxy = true
+
+// 由于heroku不绑卡不能自定义域名，就算绑卡后https也不方便
+// 另外免费套餐每月550小时，有些人不够用
+// 于是在CF Workers使用此代码，分单双日拉取不同heroku帐号下的相同网页
+// 只改上面，下面不用动
+
+addEventListener('fetch', event =&gt; {
+    let nd = new Date();
+    if (nd.getDate()%2) {
+        host = SingleDay
+    } else {
+        host = DoubleDay
+    }
+    if (!CFproxy) {
+        let url=new URL(event.request.url);
+        if (url.protocol == 'http:') {
+            url.protocol = 'https:'
+            response = Response.redirect(url.href);
+            event.respondWith( response );
+        } else {
+            url.hostname=host;
+            let request=new Request(url,event.request);
+            event.respondWith( fetch(request) )
+        }
+    } else {
+        event.respondWith( fetchAndApply(event.request) );
+    }
+})
+
+async function fetchAndApply(request) {
+    let response = null;
+    let url = new URL(request.url);
+    if (url.protocol == 'http:') {
+        url.protocol = 'https:'
+        response = Response.redirect(url.href);
+        return response;
+    }
+    url.host = host;
+
+    let method = request.method;
+    let body = request.body;
+    let request_headers = request.headers;
+    let new_request_headers = new Headers(request_headers);
+
+    new_request_headers.set('Host', url.host);
+    new_request_headers.set('Referer', request.url);
+
+    let original_response = await fetch(url.href, {
+        method: method,
+        body: body,
+        headers: new_request_headers
+    });
+
+    response = new Response(original_response.body, {
+        status: original_response.status,
+        headers: original_response.headers
+    })
+
+    return response;
+}
+</code></pre>
+<hr>
+<p>单双日分别填入不同的heroku帐号下的网站（当然2个网站要设置得一模一样），这样每个heroku帐号每个月都只访问15或16天，就算24小时有人访问也才360或384小时。<br>
+最后，给workers加上自定义域名的路由！</p>
+<p>从头到尾都可以是Free的，不看网站页面，光从下载过程来看，可以完全假装CF套在了大盘鸡上,谁也看不出我没服务器。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[INFO-SPIDER 是一个帮助用户拿回自己的数据的爬虫工具箱]]></title>
         <id>https://xiu.pw/UM09GDy1m/</id>
@@ -609,48 +707,6 @@ sudo apt-get install japan* chinese* korean*
 <p>请自行设置 .evn {host} 和 {port}<br>
 <img src="https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E6%8E%A5%E5%8F%A3.png" alt="" loading="lazy"></p>
 <p><a href="https://github.com/6mb/Microsoft-365-Admin" title="项目地址">项目地址</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[免费对象云存储Backblaze]]></title>
-        <id>https://xiu.pw/YiDh0GLhL/</id>
-        <link href="https://xiu.pw/YiDh0GLhL/">
-        </link>
-        <updated>2020-08-16T12:55:50.000Z</updated>
-        <content type="html"><![CDATA[<p>Backblaze前10 GB的存储空间是免费的，每天能下载1G以内文件免费，上传免费，并与cloudflare合作，只要套个cloudflareCDN即可无限免费下载</p>
-<p>因此我们得到如下产品：</p>
-<p>10G存储空间免费</p>
-<p>上行免费</p>
-<p>下行免费</p>
-<p>全球最可靠的云存储服务之一</p>
-<p>全球最强的CDN云分发服务之一<br>
-<img src="https://cangshui.net/wp-content/uploads/2019/05/0190504003548.jpg" alt="" loading="lazy"><br>
-<img src="https://cangshui.net/wp-content/uploads/2019/05/20190504004004.jpg" alt="" loading="lazy"></p>
-<p>链接<br>
-<a href="https://www.backblaze.com/b2/cloud-storage.html" title="backblaze云存储 ">backblaze云存储 </a>注册一个账号</p>
-<p>进入<br>
-<a href="https://secure.backblaze.com/user_signin.htm" title="backblaze的B2云存储控制面板">backblaze的B2云存储控制面板</a></p>
-<p><img src="https://cangshui.net/wp-content/uploads/2019/05/20190503234926-1024x667.jpg" alt="" loading="lazy"><br>
-<img src="https://cangshui.net/wp-content/uploads/2019/05/20190503235043.jpg" alt="" loading="lazy"><br>
-然后随便上传一个文件，什么都行<br>
-<img src="https://cangshui.net/wp-content/uploads/2019/05/20190503235157-1024x608.jpg" alt="" loading="lazy"></p>
-<p>点击我们刚刚上传的图片，得到了一个链接<br>
-<img src="https://cangshui.net/wp-content/uploads/2019/05/20190503235326.jpg" alt="" loading="lazy"></p>
-<p>于是知道了backblaze给我们分配的域名是 f002.backblazeb2.com</p>
-<p>注册一个cloudflare账号：传送门</p>
-<p>已经有账户的接入自己的域名到cloudflare，然后添加dns，填上我们刚刚得到的<br>
-backblaze域名</p>
-<p>由于 backblaze的域名是https的，因此我们需要将cloudflare的ssl设置为full<br>
-<img src="https://cangshui.net/wp-content/uploads/2019/05/20190504000530-1024x501.jpg" alt="" loading="lazy"></p>
-<p>这样就可以用自己的域名走cloudflare的流量访问文件了:<br>
-<img src="https://cangshui.net/wp-content/uploads/2019/05/20190504000845.jpg" alt="" loading="lazy"></p>
-<p>当然你如果觉得文件链接不好看太长了，你也可以使用cloudflare自带的页面规则301<br>
-<img src="https://cangshui.net/wp-content/uploads/2019/05/20190504002955-1024x656.jpg" alt="" loading="lazy"></p>
-<p>这个规则的效果：</p>
-<p>打比方浏览器输入http://down.nicemail.ml/666.jpg，将会跳转到</p>
-<p>https://down.nicemail.ml/file/down-cangshui-net/666.jpg</p>
-<p>cloudflare的带正则参数的301规则</p>
-<p>cloudflare并不是不允许https 301 https，而是同一个子域名无法互相301 ，你设为https://down.xxxx.com 跳转到 https://down1.xxxx.com 就行了</p>
 ]]></content>
     </entry>
 </feed>

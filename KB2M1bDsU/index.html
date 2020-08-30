@@ -8,7 +8,7 @@
 <meta name="keywords" content="网页制作|运维开发|游戏娱乐|资源分享|生活随写|技术分享">
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
-<title>秀儿</title>
+<title>Onedrive+OneManager+Heroku+CFWorkers免费的OD列表 | 秀儿</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1598751796810">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
@@ -58,6 +58,8 @@
 </script>
 
 
+  <meta name="description" content="Onedrive+OneManager+Heroku+CFWorkers免费的OD列表" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -93,7 +95,7 @@
             
               
             
-            <li class="nav-item nav-item-active">
+            <li class="nav-item ">
               
               
                 <a href="/" target="_self">
@@ -179,8 +181,15 @@
     <div
       class="section-layout gemini ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/images/avatar.png"/>
@@ -240,30 +249,94 @@
 
 
 </div>
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-        <div class="section-box gemini">
-          <section class="section  posts-expand slide-down-in">
-            
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://xiu.pw/NbSNPnGXz/">
-      tg邀请码机器人源码 自动发码 数量统计 无码提醒
+    <a class="post-title-link" href="https://xiu.pw/KB2M1bDsU/">
+      Onedrive+OneManager+Heroku+CFWorkers免费的OD列表
     </a>
   </h1>
   <div class="post-meta">
@@ -271,34 +344,9 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-08-08 09:12:06">2020-08-08</span>
+      <span class="publish-time" data-t="2020-08-30 09:39:37">2020-08-30</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://xiu.pw/H2393iXwm/">
-        <span>机器人</span>
-      </a>、
-      
-      
-      
-      <a href="https://xiu.pw/yuO8QgH2ym/">
-        <span>源码</span>
-      </a>、
-      
-      
-      
-      <a href="https://xiu.pw/dfBAXDd1L/">
-        <span>tg</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
@@ -307,449 +355,197 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>846<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>775<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
-            
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-            
-              <p><p>简介<br>
-因为论坛和部分网站需要发送邀请码邀请注册，人工发码又太慢，于是想到tg机器人发码，但是找了很多项目都没有找到类似的开源项目，偶然间看到了teelebot开源的tgAPi框架 于是参考着示例 ，用我学了半个月的半吊子python 写出了这个暂时能用不会报错的telegram邀请码机器人</p>
-<p>目前已经到我理想状态，短期内不会进行功能更新，学习比较重要。</p>
-
-                
-              <p>
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://xiu.pw/NbSNPnGXz/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
-
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://xiu.pw/G7OkD-Cag/">
-      为Onedrive套上CDN加速下载
-    </a>
-  </h1>
-  <div class="post-meta">
     
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-08-08 09:10:25">2020-08-08</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
     
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://xiu.pw/qs0W-hZf1d/">
-        <span>OneDrive</span>
-      </a>、
-      
-      
-      
-      <a href="https://xiu.pw/cdn/">
-        <span>CDN</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
+    <span id="/KB2M1bDsU/" data-flag-title="Onedrive+OneManager+Heroku+CFWorkers免费的OD列表" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>211<span class="pc-show language" data-lan="words">字数</span></span>
+      <i class="fa fa-eye"></i>
+      <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
     </span>
     
   </div>
 </section>
-      <div class="post-body">
-        
-        
-          
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
-            
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-            
-              <p><p>首先推荐两种程序</p>
-<p>1.php的OneIndex修改版</p>
-<p>2.萌咖的GO版OneList</p>
+            <div class="post-body next-md-body" id="post_body">
+              <p><strong>网站下载链接直接是xxx.com/abc.jpg，没有302跳到微软xxx.sharepoint.com，也没有反代xxx.sharepoint.com那样后面一长串。</strong></p>
+<h1 id="准备工作">准备工作：</h1>
+<p>1，        Onedrive，或Sharepoint<br>
+这个大家有的，各种A1，E3，E5，世纪。（Sharepoint默认25T）<br>
+2，        OneManager，Github地址：https://github.com/qkqpttgf/OneManager-php<br>
+基于各种无服务器的平台，比如Heroku、腾讯SCF、阿里FC、华为FG、百度CFC，配置都保存在其环境变量中，当然也可以装在VPS与空间里，不过为了一致，程序不固定储存onedrive的目录结构，缓存最多1小时<br>
+3，        Heroku，最好需要注册2个帐号，注册与登录时需要魔法，平时操作时不需要<br>
+OneManager配置是保存在环境变量中的，所以不需要一直监控保活，Heroku免费套餐每月550小时，550小时/30天=18.33小时，每天只要访问时间段空出来24-18=6小时没有人访问，这一个月其实就足够使用了，但有些人的网站可能访问人比较多所以还没到月底就用光了。<br>
+当然，heroku也可绑卡达到1000小时，同时还能自定义域名。但，SSL却比较麻烦。<br>
+4，        CF workers，免费的就好</p>
+<h1 id="部署程序-安装程序-绑定网盘">部署程序、安装程序、绑定网盘：</h1>
+<p>1，        将OneManager一键部署到Heroku<br>
+2，        访问给定的herokuapp域名，正式安装好程序<br>
+3，        安装好后登录，在设置中绑定Onedrive或Sharepoint<br>
+4，        在设置中做些设定<br>
+5，        换一个Heroku帐号再安装一次（时长够用就无所谓）</p>
+<h1 id="重点">重点：</h1>
+<p><strong>在CF Workers中填入以下代码</strong></p>
+<hr>
+<pre><code>// 单日
+const SingleDay = '111.herokuapp.com'
+// 双日
+const DoubleDay = '222.herokuapp.com'
+// 一切给CF代理，true/false
+const CFproxy = true
 
-                
-              <p>
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://xiu.pw/G7OkD-Cag/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
+// 由于heroku不绑卡不能自定义域名，就算绑卡后https也不方便
+// 另外免费套餐每月550小时，有些人不够用
+// 于是在CF Workers使用此代码，分单双日拉取不同heroku帐号下的相同网页
+// 只改上面，下面不用动
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://xiu.pw/CZWvLVqdV/">
-      如何反代-加速OneDrive域名
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-08-08 09:08:28">2020-08-08</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://xiu.pw/mdPDxkQQ3/">
-        <span>反代</span>
-      </a>、
-      
-      
-      
-      <a href="https://xiu.pw/qs0W-hZf1d/">
-        <span>OneDrive</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>207<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
-            
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-            
-              <p><p>反代OneDrive域名<br>
-利用Caddy反代OneDrive<br>
-Caddy安装方法请自行搜索</p>
+addEventListener('fetch', event =&gt; {
+    let nd = new Date();
+    if (nd.getDate()%2) {
+        host = SingleDay
+    } else {
+        host = DoubleDay
+    }
+    if (!CFproxy) {
+        let url=new URL(event.request.url);
+        if (url.protocol == 'http:') {
+            url.protocol = 'https:'
+            response = Response.redirect(url.href);
+            event.respondWith( response );
+        } else {
+            url.hostname=host;
+            let request=new Request(url,event.request);
+            event.respondWith( fetch(request) )
+        }
+    } else {
+        event.respondWith( fetchAndApply(event.request) );
+    }
+})
 
-                
-              <p>
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://xiu.pw/CZWvLVqdV/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
+async function fetchAndApply(request) {
+    let response = null;
+    let url = new URL(request.url);
+    if (url.protocol == 'http:') {
+        url.protocol = 'https:'
+        response = Response.redirect(url.href);
+        return response;
+    }
+    url.host = host;
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://xiu.pw/ppkASNJMF/">
-      用Actions每天自动使用Rclone调用OneDrive使Office E5订阅保持活跃
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-08-08 08:56:41">2020-08-08</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>2<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>302<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
-            
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-            
-              <p><p>注：E5保活皆是玄学，能不能成功谁能知道呢？</p>
-<p>使用方法<br>
-零、打开Github项目地址<br>
+    let method = request.method;
+    let body = request.body;
+    let request_headers = request.headers;
+    let new_request_headers = new Headers(request_headers);
 
-                
-              <p>
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://xiu.pw/ppkASNJMF/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
+    new_request_headers.set('Host', url.host);
+    new_request_headers.set('Referer', request.url);
 
-  <article class="post-list-box  post box-shadow-wrapper">
-    <div class="article-wrapper bg-color">
-      <section class="post-header">
-  <h1 class="post-title">
-    <a class="post-title-link" href="https://xiu.pw/PVphxlRBy/">
-      Telegram 本地消息防撤回插件
-    </a>
-  </h1>
-  <div class="post-meta">
-    
-    <span class="meta-item pc-show">
-      <i class="fa fa-calendar-o"></i>
-      <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-08-07 11:34:05">2020-08-07</span>
-      <span class="post-meta-divider pc-show">|</span>
-    </span>
-    
-    <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://xiu.pw/dfBAXDd1L/">
-        <span>tg</span>
-      </a>、
-      
-      
-      
-      <a href="https://xiu.pw/OkfvIeMG1b/">
-        <span>防撤回</span>
-      </a>、
-      
-      
-      
-      <a href="https://xiu.pw/ElTTMbrvid/">
-        <span>插件</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
-      <i class="fa fa-clock-o"></i>
-      <span>1<span class="language" data-lan="minute">分钟</span></span>
-    </span>
-    <span class="meta-item">
-      <span class="post-meta-divider">|</span>
-      <i class="fa fa-file-word-o"></i>
-      <span>162<span class="pc-show language" data-lan="words">字数</span></span>
-    </span>
-    
-  </div>
-</section>
-      <div class="post-body">
-        
-        
-          
-            <!-- 没有手动摘要切开启了自动摘要,则根据配置筛除摘要内容 -->
-            
-            
-              
-              
-              
-            
-              
-              
-              
-            
-              
-              
-              
-            
-            
-              <p><p>🔍 预览</p>
-<p><img src="https://xiu.pw/post-images/1596771304759.gif" alt="" loading="lazy"><br>
-✨ 特性<br>
+    let original_response = await fetch(url.href, {
+        method: method,
+        body: body,
+        headers: new_request_headers
+    });
 
-                
-              <p>
-            
-          
-        
-        
-        <div class="post-button text-center">
-          <a class="btn language" data-lan="read-more" href="https://xiu.pw/PVphxlRBy/" rel="contents">
-            阅读全文 »
-          </a>
-        </div>
-        
-      </div>
-      
-    </div>
-  </article>
-  
+    response = new Response(original_response.body, {
+        status: original_response.status,
+        headers: original_response.headers
+    })
+
+    return response;
+}
+</code></pre>
+<hr>
+<p>单双日分别填入不同的heroku帐号下的网站（当然2个网站要设置得一模一样），这样每个heroku帐号每个月都只访问15或16天，就算24小时有人访问也才360或384小时。<br>
+最后，给workers加上自定义域名的路由！</p>
+<p>从头到尾都可以是Free的，不看网站页面，光从下载过程来看，可以完全假装CF套在了大盘鸡上,谁也看不出我没服务器。</p>
+
+            </div>
             
             
-<div class="page bg-color">
-  <ul class="pagination-ul">
-    
-      <li class="pagination-dir">
-        <a href="https://xiu.pw/page/3/">
-          <i class="fa fa-angle-left"></i>
-        </a>
-      </li>
-    
-    
-      
-        <li class="pagination-li ">
-            <a href="/page/../">
-              1
-            </a>
-        </li>
-      
-        <li class="pagination-li ">
-            <a href="/page/2">
-              2
-            </a>
-        </li>
-      
-        <li class="pagination-li ">
-            <a href="/page/3">
-              3
-            </a>
-        </li>
-      
-        <li class="pagination-li pagination-active">
-            <a href="/page/4">
-              4
-            </a>
-        </li>
-      
-        <li class="pagination-li ">
-            <a href="/page/5">
-              5
-            </a>
-        </li>
-      
-    
-    
-      <li class="pagination-dir">
-        <a href="/page/5">
-          <i class="fa fa-angle-right"></i>
-        </a>
-      </li>
-    
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      秀儿
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://xiu.pw/KB2M1bDsU/" title="Onedrive+OneManager+Heroku+CFWorkers免费的OD列表">https://xiu.pw/KB2M1bDsU/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
   </ul>
+  <div class="tags">
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="INFO-SPIDER 是一个帮助用户拿回自己的数据的爬虫工具箱" href="https://xiu.pw/UM09GDy1m/">INFO-SPIDER 是一个帮助用户拿回自己的数据的爬虫工具箱</a>
+        <a class="nav-mobile-next" title="INFO-SPIDER 是一个帮助用户拿回自己的数据的爬虫工具箱" href="https://xiu.pw/UM09GDy1m/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
 </div>
-          </section>
+            
+            
+  <script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+
+<style>
+  .v .veditor {
+    min-height: 10rem;
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: none;
+  }
+
+  .v .vwrap {
+    border: 1px solid #000 !important;
+  }
+
+  .v .vbtn {
+    padding: .4rem 1.2rem !important;
+    border-color: #fff !important;
+    background-color: #49b1f5 !important;
+    color: #fff !important;
+    font-size: .7rem !important;
+  }
+
+  .v .vcards .vcard .vh .vmeta .vat {
+    padding: 0 .8rem !important;
+    border: 1px solid #00c4b6 !important;
+    border-radius: 5px !important;
+    color: #00c4b6 !important;
+  }
+</style>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yzCuU6WMEwyMe7X9L7GKmJXj-gzGzoHsz',
+    appKey: '28AUNpdY1kwW7iHLcrMCvQIs',
+    avatar: '',
+    placeholder: '',
+    pageSize: '',
+    lang: 'zh-cn',
+    enableQQ: 'true' === 'false',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+  });
+</script>
+
+          </div>
         </div>
       </div>
     </div>
@@ -975,6 +771,223 @@ Caddy安装方法请自行搜索</p>
     }
   })
 </script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
   </div>
 </body>
 
@@ -2427,7 +2440,6 @@ CentOS 7 镜像抛弃LVM，回归ext4，减少不稳定因素&lt;/p&gt;
 
 
 <script src="/media/js/mouse/love.js"></script>
-
 
 
 
