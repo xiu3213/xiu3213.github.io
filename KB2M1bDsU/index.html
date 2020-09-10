@@ -9,7 +9,7 @@
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
 <title>Onedrive+OneManager+Heroku+CFWorkers免费的OD列表 | 秀儿</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1599211972527">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1599706084799">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -200,19 +200,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">26</span>
+        <span class="site-item-stat-count">27</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">51</span>
+        <span class="site-item-stat-count">52</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">51</span>
+        <span class="site-item-stat-count">52</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -1009,6 +1009,109 @@ async function fetchAndApply(request) {
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/iNkGyc0K_/"" data-c="
+          &lt;h1 id=&#34;使用方法&#34;&gt;使用方法：&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;python cfscan.py 183.201.1.1-183.201.255.255 800
+
+cfscan.py = 你保存的文件名
+
+183.201.1.1-183.201.255.255 = 你要扫的起始IP-结尾IP
+
+800 = 线程数
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;运行截图&#34;&gt;运行截图：&lt;/h1&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://i.loli.net/2020/09/10/aK6zJFCNrY4Ah9m.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;结果截图&#34;&gt;结果截图：&lt;/h1&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://i.loli.net/2020/09/10/ipcu5gzH1LDn6WY.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;脚本代码&#34;&gt;脚本代码：&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env python
+# coding=utf-8
+# python2.7 only
+
+import threading
+import requests
+import Queue
+import sys
+import re
+
+#ip to num
+def ip2num(ip):
+    ip = [int(x) for x in ip.split(&#39;.&#39;)]
+    return ip[0] &amp;lt;&amp;lt; 24 | ip[1] &amp;lt;&amp;lt; 16 | ip[2] &amp;lt;&amp;lt; 8 | ip[3]
+
+#num to ip
+def num2ip(num):
+    return &#39;%s.%s.%s.%s&#39; % ((num &amp;amp; 0xff000000) &amp;gt;&amp;gt; 24,(num &amp;amp; 0x00ff0000) &amp;gt;&amp;gt; 16,(num &amp;amp; 0x0000ff00) &amp;gt;&amp;gt; 8,num &amp;amp; 0x000000ff)
+
+#
+def ip_range(start, end):
+    return [num2ip(num) for num in range(ip2num(start), ip2num(end) + 1) if num &amp;amp; 0xff]
+
+#
+def bThread(iplist):
+   
+    threadl = []
+    queue = Queue.Queue()
+    for host in iplist:
+        queue.put(host)
+
+    for x in xrange(0, int(SETTHREAD)):
+        threadl.append(tThread(queue))
+        
+    for t in threadl:
+        t.start()
+    for t in threadl:
+        t.join()        
+
+#create thread
+class tThread(threading.Thread):
+    def __init__(self, queue):
+        threading.Thread.__init__(self)
+        self.queue = queue
+
+    def run(self):
+        
+        while not self.queue.empty():
+            host = self.queue.get()
+            try:
+                checkServer(host)
+            except:
+                continue
+
+def checkServer(host):
+    header ={&#39;user-agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36&#39;}
+    aimurl = &amp;quot;http://&amp;quot;+host+&amp;quot;:443&amp;quot;
+    response = requests.get(url=aimurl,headers=header,timeout=10)
+    serverText = response.headers[&#39;server&#39;]
+
+    if len(serverText) &amp;gt; 0:
+        print  &amp;quot;-&amp;quot;*50+&amp;quot;\n&amp;quot;+aimurl +&amp;quot;\nServer: &amp;quot;+serverText
+        if (serverText == &amp;quot;CloudFront&amp;quot;):
+            f.write(host+&amp;quot;\n&amp;quot;)
+
+
+if __name__ == &#39;__main__&#39;:
+    print &#39;\n############# Cloud Front Scan  ################&#39;
+    print &#39;                Author hostloc.com&#39;
+    print &#39;################################################\n&#39;
+
+    global SETTHREAD
+
+    try:
+        SETTHREAD = sys.argv[2]
+        f = open(&amp;quot;result.txt&amp;quot;, &amp;quot;w&amp;quot;)
+        iplist = ip_range(sys.argv[1].split(&#39;-&#39;)[0], sys.argv[1].split(&#39;-&#39;)[1])
+        
+        print &#39;\n[Note] Will scan &#39;+str(len(iplist))+&amp;quot; host...\n&amp;quot;
+
+        bThread(iplist)
+    except KeyboardInterrupt:
+        print &#39;Keyboard Interrupt!&#39;
+        sys.exit()&lt;/code&gt;&lt;/pre&gt;
+">CloudFront扫段Pyhon脚本</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://xiu.pw/73lF-bANp/"" data-c="
