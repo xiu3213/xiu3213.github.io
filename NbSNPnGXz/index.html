@@ -9,7 +9,7 @@
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
 <title>tg邀请码机器人源码 自动发码 数量统计 无码提醒 | 秀儿</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1599706084799">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1599831961740">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -200,19 +200,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">27</span>
+        <span class="site-item-stat-count">28</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">52</span>
+        <span class="site-item-stat-count">53</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">52</span>
+        <span class="site-item-stat-count">53</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -994,6 +994,64 @@ tg邀请码机器人源码 自动发码 数量统计 无码提醒</p>
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/NiGGt4ZIu/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;WordPress是一个以PHP和MySQL为平台的自由开源的博客软件和内容管理系统。WordPress具有插件架构和模板系统。截至2018年4月，排名前1000万的网站中超过30.6%使用WordPress。WordPress是最受欢迎的网站内容管理系统。全球有大约30%的网站(7亿5000个)都是使用WordPress架设网站的。WordPress是目前因特网上最流行的博客系统。WordPress在最著名的网络发布阶段中脱颖而出。如今，它被使用在超过7000万个站点上。WordPress是一个以PHP和MySQL为平台的自由开源的博客软件和内容管理系统。WordPress具有插件架构和模板系统。截至2018年4月，排名前1000万的网站中超过30.6%使用WordPress。WordPress是最受欢迎的网站内容管理系统。全球有大约30%的网站(7亿5000个)都是使用WordPress架设网站的。WordPress是目前因特网上最流行的博客系统。WordPress在最著名的网络发布阶段中脱颖而出。如今，它被使用在超过7000万个站点上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;虽然wordpress很优秀，但是当正式使用这个CMS以后，却发现很吃资源，明明博客没有多少内容，但是只要访问量一大以后，就导致WordPress打开巨慢，同时主机的使用率非常高。&lt;/p&gt;
+&lt;p&gt;这里就分享一些博主优化WordPress的方法。&lt;/p&gt;
+&lt;h1 id=&#34;分离wordpress的cssjs文件&#34;&gt;·分离WordPress的CSS/JS文件&lt;/h1&gt;
+&lt;p&gt;由于WordPress主要是基于PHP，同时又有大量的css/js文件需要加载。每次打开的时候都需要实时生成需要显示的网页内容，所以会比较吃主机资源。&lt;/p&gt;
+&lt;p&gt;这里博主推荐一款WordPress插件：commonWP&lt;/p&gt;
+&lt;p&gt;该插件将WordPress与大部分安装插件所需要的css/js文件通过jsdelivr分发。&lt;/p&gt;
+&lt;p&gt;jsdelivr目前国内是走网宿的CDN节点，国外走的CloudFlare的节点。加速效果非常明显。强烈建议该插件必备！！&lt;/p&gt;
+&lt;p&gt;直接WordPress后台插件安装界面搜索commonWP安装其他用即可，不用其他设定。&lt;/p&gt;
+&lt;p&gt;启用该插件以后，你可能会发现大部分的css/js文件都通过了jsdelivr分发，但是仍然还是有部分文件没有走jsdelivr。&lt;/p&gt;
+&lt;p&gt;那么这种情况下就需要你手动修改没有走jsdelivr相关的主题/插件文件了。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;不建议没有动手能力的站长修改！&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;博主这里简单说下如何修改又如何通过jsdelivr分发&#34;&gt;博主这里简单说下如何修改，又如何通过jsdelivr分发。&lt;/h1&gt;
+&lt;h2 id=&#34;1-修改主题或者插件引用的cssjs文件地址&#34;&gt;1、修改主题或者插件引用的css/js文件地址&lt;/h2&gt;
+&lt;p&gt;首先你需要确定你要分发的内容是那个插件所需要使用的css/js文件，然后在主机上找到该插件的文件，通过分析源码，找到加载该css/js文件的内容，修改引用链接。修改后的链接后面会说如何获取。&lt;/p&gt;
+&lt;p&gt;例如本站有使用auto-highslide，该插件就不会自动被commonWP修改成jsdelivr的地址，那么通过分析该插件的文件，找到是通过auto-highslide.php加载的相关css/js文件。&lt;/p&gt;
+&lt;p&gt;在auto-highslide.php文件里面，发现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;&#39;.get_bloginfo(&#39;wpurl&#39;).&#39;/wp-content/plugins/auto-highslide/highslide/highslide.css&amp;quot; type=&amp;quot;text/css&amp;quot; /&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;&#39;.get_bloginfo(&#39;wpurl&#39;).&#39;/wp-content/plugins/auto-highslide/highslide/highslide-with-html.packed.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;那么需要修改的就是&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;href=&amp;quot;&#39;.get_bloginfo(&#39;wpurl&#39;).&#39;/wp-content/plugins/auto-highslide/highslide/highslide.css&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;和&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;src=&amp;quot;&#39;.get_bloginfo(&#39;wpurl&#39;).&#39;/wp-content/plugins/auto-highslide/highslide/highslide-with-html.packed.js&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改成&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;href=&amp;quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@40028ba1e2ff8193194f9c1474d81ed5d26c52eb/themes/highslide.css&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;和&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;src=&amp;quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@249a403710b0739bf5173cd9d7afeefd04b12eb0/themes/highslide-with-html.packed.js&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;那么完整的代码就是：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@40028ba1e2ff8193194f9c1474d81ed5d26c52eb/themes/highslide.css&amp;quot; type=&amp;quot;text/css&amp;quot; /&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@249a403710b0739bf5173cd9d7afeefd04b12eb0/themes/highslide-with-html.packed.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其他的插件与主题修改方法与之类似，另外WP自带的函数是通过 wp_enqueue_style和wp_enqueue_scripts加载CSS和JS文件的，如果是修改主题的话，注意这两个函数。&lt;/p&gt;
+&lt;h2 id=&#34;2-手动通过jsdelivr分发文件&#34;&gt;2、手动通过jsdelivr分发文件&lt;/h2&gt;
+&lt;p&gt;该方法需要通过github来操作，在GitHub上面新建一个仓库，注意仓库设置成public。上传你需要分发的内容，然后通过jsdelivr来分发，具体操作这里不多说。&lt;/p&gt;
+&lt;p&gt;jsdelivr分发github文件的规则这里说下。&lt;/p&gt;
+&lt;p&gt;https://cdn.jsdelivr.net/gh/GitHub用户名/仓库名/文件.后缀&lt;/p&gt;
+&lt;p&gt;注意GitHub区分大小写，其他仓库名后面可以通过@来指定具体的某个release版本或者修订版本。&lt;/p&gt;
+&lt;h1 id=&#34;缓存数据库&#34;&gt;·缓存数据库&lt;/h1&gt;
+&lt;p&gt;一般现在用得较多的数据库缓存是memcached和redis，博主使用的是redis，以redis为例，由于博主是通过宝塔安装的php，所以这里也以宝塔为例。&lt;/p&gt;
+&lt;p&gt;在宝塔的php管理界面，找到安装扩展，里面有个redis，通过该路径来安装redis，然后wp后台安装上redis相关的插件。博主这里使用的是Redis Object Cache&lt;/p&gt;
+&lt;p&gt;安装好以后就启用插件，简单设置下就可以了。&lt;/p&gt;
+&lt;p&gt;（可选）然后在宝塔管理界面，选择mysql管理界面。里面有个性能调整。根据你的实际使用情况调整相关参数。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://loukky.com/wp-content/uploads/2020/08/082615014568_0QQ%E6%88%AA%E5%9B%BE20200826150049.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;通过上面设置与调整过后，那么现在你的WordPress应该是可以明显感觉到速度提升了。&lt;/p&gt;
+">优化Wordpress速度——前端使用国内免费Cdn加速Js/Css文件，后端数据库缓存</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://xiu.pw/iNkGyc0K_/"" data-c="

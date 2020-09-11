@@ -8,7 +8,7 @@
 <meta name="keywords" content="网页制作|运维开发|游戏娱乐|资源分享|生活随写|技术分享">
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
-<title>秀儿</title>
+<title>优化Wordpress速度——前端使用国内免费Cdn加速Js/Css文件，后端数据库缓存 | 秀儿</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1599831961740">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
@@ -58,6 +58,8 @@
 </script>
 
 
+  <meta name="description" content="优化Wordpress速度——前端使用国内免费Cdn加速Js/Css文件，后端数据库缓存" />
+  <meta name="keywords" content="优化,WordPress,wp,CDN" />
 </head>
 
 <body>
@@ -177,10 +179,17 @@
   <div class="main-continer">
     
     <div
-      class="section-layout  gemini">
+      class="section-layout gemini ">
       <div class="section-layout-wrapper">
-        <div id="sidebarMeta" class="sidebar">
-    
+        
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/images/avatar.png"/>
@@ -240,286 +249,305 @@
 
 
 </div>
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-        <div class="section-box tag-line box-shadow-wrapper">
-          <section class="section tags-section posts-expand bg-color">
-            <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          免费
-          <small class="language" data-lan="tag">标签</small>
-        </h2>
-      </div>
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+        <div class="section-box box-shadow-wrapper">
+          <div class="section bg-color post post-page">
+            <section class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://xiu.pw/NiGGt4ZIu/">
+      优化Wordpress速度——前端使用国内免费Cdn加速Js/Css文件，后端数据库缓存
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span class="language" data-lan="publish">发布于</span>
+      <span class="publish-time" data-t="2020-09-11 21:44:25">2020-09-11</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+    <span class="meta-item">
+      <i class="fa fa-folder-o"></i>
+      <span class="pc-show language" data-lan="category-in">分类于</span>
+      
+      
+      <a href="https://xiu.pw/q9R8XgxG_/">
+        <span>优化</span>
+      </a>、
       
       
       
+      <a href="https://xiu.pw/4lG3v2YSkb/">
+        <span>WordPress</span>
+      </a>、
       
       
       
+      <a href="https://xiu.pw/1mDmaoUqqa/">
+        <span>wp</span>
+      </a>、
       
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://xiu.pw/gsDFY9Jro/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              08-30
-              <small>利用Microsoft 365 E5开发者订阅搭建自己的邮局|设置catch-all邮箱</small>
-            </h1>
-          </div>
-        </div>
+      <a href="https://xiu.pw/cdn/">
+        <span>CDN</span>
       </a>
       
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://xiu.pw/ZfBq1liZd/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              08-26
-              <small>使用Github Action定时重启IBM cloud foundry</small>
-            </h1>
-          </div>
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      <a href="https://xiu.pw/YiDh0GLhL/">
-        <div class="motion-warpper">
-          <div class="tag-post-node">
-            <h1>
-              08-16
-              <small>免费对象云存储Backblaze</small>
-            </h1>
-          </div>
-        </div>
-      </a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+    </span>
+    <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>6<span class="language" data-lan="minute">分钟</span></span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>1384<span class="pc-show language" data-lan="words">字数</span></span>
+    </span>
+    
+    
+    
+    <span id="/NiGGt4ZIu/" data-flag-title="优化Wordpress速度——前端使用国内免费Cdn加速Js/Css文件，后端数据库缓存" class="meta-item pc-show leancloud_visitors">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-eye"></i>
+      <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
+    </span>
+    
+  </div>
+</section>
+            <div class="post-body next-md-body" id="post_body">
+              <blockquote>
+<p>WordPress是一个以PHP和MySQL为平台的自由开源的博客软件和内容管理系统。WordPress具有插件架构和模板系统。截至2018年4月，排名前1000万的网站中超过30.6%使用WordPress。WordPress是最受欢迎的网站内容管理系统。全球有大约30%的网站(7亿5000个)都是使用WordPress架设网站的。WordPress是目前因特网上最流行的博客系统。WordPress在最著名的网络发布阶段中脱颖而出。如今，它被使用在超过7000万个站点上。WordPress是一个以PHP和MySQL为平台的自由开源的博客软件和内容管理系统。WordPress具有插件架构和模板系统。截至2018年4月，排名前1000万的网站中超过30.6%使用WordPress。WordPress是最受欢迎的网站内容管理系统。全球有大约30%的网站(7亿5000个)都是使用WordPress架设网站的。WordPress是目前因特网上最流行的博客系统。WordPress在最著名的网络发布阶段中脱颖而出。如今，它被使用在超过7000万个站点上。</p>
+</blockquote>
+<p>虽然wordpress很优秀，但是当正式使用这个CMS以后，却发现很吃资源，明明博客没有多少内容，但是只要访问量一大以后，就导致WordPress打开巨慢，同时主机的使用率非常高。</p>
+<p>这里就分享一些博主优化WordPress的方法。</p>
+<h1 id="分离wordpress的cssjs文件">·分离WordPress的CSS/JS文件</h1>
+<p>由于WordPress主要是基于PHP，同时又有大量的css/js文件需要加载。每次打开的时候都需要实时生成需要显示的网页内容，所以会比较吃主机资源。</p>
+<p>这里博主推荐一款WordPress插件：commonWP</p>
+<p>该插件将WordPress与大部分安装插件所需要的css/js文件通过jsdelivr分发。</p>
+<p>jsdelivr目前国内是走网宿的CDN节点，国外走的CloudFlare的节点。加速效果非常明显。强烈建议该插件必备！！</p>
+<p>直接WordPress后台插件安装界面搜索commonWP安装其他用即可，不用其他设定。</p>
+<p>启用该插件以后，你可能会发现大部分的css/js文件都通过了jsdelivr分发，但是仍然还是有部分文件没有走jsdelivr。</p>
+<p>那么这种情况下就需要你手动修改没有走jsdelivr相关的主题/插件文件了。</p>
+<p><code>不建议没有动手能力的站长修改！</code></p>
+<h1 id="博主这里简单说下如何修改又如何通过jsdelivr分发">博主这里简单说下如何修改，又如何通过jsdelivr分发。</h1>
+<h2 id="1-修改主题或者插件引用的cssjs文件地址">1、修改主题或者插件引用的css/js文件地址</h2>
+<p>首先你需要确定你要分发的内容是那个插件所需要使用的css/js文件，然后在主机上找到该插件的文件，通过分析源码，找到加载该css/js文件的内容，修改引用链接。修改后的链接后面会说如何获取。</p>
+<p>例如本站有使用auto-highslide，该插件就不会自动被commonWP修改成jsdelivr的地址，那么通过分析该插件的文件，找到是通过auto-highslide.php加载的相关css/js文件。</p>
+<p>在auto-highslide.php文件里面，发现</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;'.get_bloginfo('wpurl').'/wp-content/plugins/auto-highslide/highslide/highslide.css&quot; type=&quot;text/css&quot; /&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;'.get_bloginfo('wpurl').'/wp-content/plugins/auto-highslide/highslide/highslide-with-html.packed.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+</code></pre>
+<p>那么需要修改的就是</p>
+<pre><code>href=&quot;'.get_bloginfo('wpurl').'/wp-content/plugins/auto-highslide/highslide/highslide.css&quot;
+</code></pre>
+<p>和</p>
+<pre><code class="language-javascript">src=&quot;'.get_bloginfo('wpurl').'/wp-content/plugins/auto-highslide/highslide/highslide-with-html.packed.js&quot;
+</code></pre>
+<p>修改成</p>
+<pre><code>href=&quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@40028ba1e2ff8193194f9c1474d81ed5d26c52eb/themes/highslide.css&quot;
+</code></pre>
+<p>和</p>
+<pre><code>src=&quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@249a403710b0739bf5173cd9d7afeefd04b12eb0/themes/highslide-with-html.packed.js&quot;
+</code></pre>
+<p>那么完整的代码就是：</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@40028ba1e2ff8193194f9c1474d81ed5d26c52eb/themes/highslide.css&quot; type=&quot;text/css&quot; /&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@249a403710b0739bf5173cd9d7afeefd04b12eb0/themes/highslide-with-html.packed.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+</code></pre>
+<p>其他的插件与主题修改方法与之类似，另外WP自带的函数是通过 wp_enqueue_style和wp_enqueue_scripts加载CSS和JS文件的，如果是修改主题的话，注意这两个函数。</p>
+<h2 id="2-手动通过jsdelivr分发文件">2、手动通过jsdelivr分发文件</h2>
+<p>该方法需要通过github来操作，在GitHub上面新建一个仓库，注意仓库设置成public。上传你需要分发的内容，然后通过jsdelivr来分发，具体操作这里不多说。</p>
+<p>jsdelivr分发github文件的规则这里说下。</p>
+<p>https://cdn.jsdelivr.net/gh/GitHub用户名/仓库名/文件.后缀</p>
+<p>注意GitHub区分大小写，其他仓库名后面可以通过@来指定具体的某个release版本或者修订版本。</p>
+<h1 id="缓存数据库">·缓存数据库</h1>
+<p>一般现在用得较多的数据库缓存是memcached和redis，博主使用的是redis，以redis为例，由于博主是通过宝塔安装的php，所以这里也以宝塔为例。</p>
+<p>在宝塔的php管理界面，找到安装扩展，里面有个redis，通过该路径来安装redis，然后wp后台安装上redis相关的插件。博主这里使用的是Redis Object Cache</p>
+<p>安装好以后就启用插件，简单设置下就可以了。</p>
+<p>（可选）然后在宝塔管理界面，选择mysql管理界面。里面有个性能调整。根据你的实际使用情况调整相关参数。</p>
+<figure data-type="image" tabindex="1"><img src="https://loukky.com/wp-content/uploads/2020/08/082615014568_0QQ%E6%88%AA%E5%9B%BE20200826150049.png" alt="" loading="lazy"></figure>
+<p>通过上面设置与调整过后，那么现在你的WordPress应该是可以明显感觉到速度提升了。</p>
+
+            </div>
+            
+            
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong class="language" data-lan="author">本文作者：</strong>
+      秀儿
+    </li>
+    <li class="post-copyright-link">
+      <strong class="language" data-lan="link">本文链接：</strong>
+      <a href="https://xiu.pw/NiGGt4ZIu/" title="优化Wordpress速度——前端使用国内免费Cdn加速Js/Css文件，后端数据库缓存">https://xiu.pw/NiGGt4ZIu/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong class="language" data-lan="copyright">版权声明： </strong>
+      本博客所有文章除特别声明外，均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i> BY-NC-SA</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://xiu.pw/q9R8XgxG_/"># 优化</a>
+    
+      <a href="https://xiu.pw/4lG3v2YSkb/"># WordPress</a>
+    
+      <a href="https://xiu.pw/1mDmaoUqqa/"># wp</a>
+    
+      <a href="https://xiu.pw/cdn/"># CDN</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="CloudFront扫段Pyhon脚本" href="https://xiu.pw/iNkGyc0K_/">CloudFront扫段Pyhon脚本</a>
+        <a class="nav-mobile-next" title="CloudFront扫段Pyhon脚本" href="https://xiu.pw/iNkGyc0K_/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
 </div>
-          </section>
+            
+            
+  <script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+
+<style>
+  .v .veditor {
+    min-height: 10rem;
+    background-image: url('');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(255, 255, 255, 0);
+    resize: none;
+  }
+
+  .v .vwrap {
+    border: 1px solid #000 !important;
+  }
+
+  .v .vbtn {
+    padding: .4rem 1.2rem !important;
+    border-color: #fff !important;
+    background-color: #49b1f5 !important;
+    color: #fff !important;
+    font-size: .7rem !important;
+  }
+
+  .v .vcards .vcard .vh .vmeta .vat {
+    padding: 0 .8rem !important;
+    border: 1px solid #00c4b6 !important;
+    border-radius: 5px !important;
+    color: #00c4b6 !important;
+  }
+</style>
+<script>
+  new Valine({
+    el: '#vcomments',
+    appId: 'yzCuU6WMEwyMe7X9L7GKmJXj-gzGzoHsz',
+    appKey: '28AUNpdY1kwW7iHLcrMCvQIs',
+    avatar: '',
+    placeholder: '',
+    pageSize: '',
+    lang: 'zh-cn',
+    enableQQ: 'true' === 'false',
+    visitor: 'true' === 'true',
+    highlight: 'true' === 'true',
+    avatarForce: 'true' === 'false',
+  });
+</script>
+
+          </div>
         </div>
       </div>
     </div>
@@ -715,6 +743,253 @@
   }
 
 </script>
+    <div class="light-box" id="light_box"></div>
+<script>
+  let imgs = document.querySelectorAll('.post-body img');
+  let lightBox = document.querySelector('#light_box');
+  lightBox.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
+  lightBox.addEventListener('mousewheel', (e) => {
+    e.preventDefault()
+  })
+  let width = window.innerWidth * 0.8;
+  lightBox.onclick = () => {
+    let img = lightBox.querySelector('img');
+    lightBox.style = '';
+    img && img.remove();
+  }
+  imgs.forEach(item => {
+    item.onclick = function (e) {
+      let lightImg = document.createElement('img');
+      lightImg.src = this.src;
+      lightBox.style = `height: 100%; opacity: 1; background-color: rgba(0, 0, 0, 0.5);cursor: zoom-out;`;
+      lightImg.style = `width: ${width}px;border-radius: 2px;`;
+      lightImg.onclick = function () {
+        lightBox.style = '';
+        this.remove();
+      }
+      lightBox.append(lightImg);
+    }
+  })
+</script>
+    <div class="reward-mask" style="display: none;">
+  <div class="reward-relative">
+    <span class="close" aria-hidden="true">x</span>
+    <div class="reward-body">
+      <h2>感谢您的支持，我会继续努力的!</h2>
+      <div class="reward-img-box">
+        <div style="position: relative; width: 140px; height: 140px;">
+          
+          
+          
+        </div>
+      </div>
+      <p class="reward-word">扫码打赏，你说多少就多少</p>
+      <p class="reward-tip">打开微信扫一扫，即可进行扫码打赏哦</p>
+    </div>
+    <div class="bottom">
+      
+      
+    </div>
+  </div>
+</div>
+<style>
+  .reward-mask {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000054;
+  }
+
+  .reward-relative {
+    position: relative;
+    width: 480px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 5px;
+    background-color: #fff;
+    top: 50%;
+    margin-top: -205px;
+  }
+
+  .reward-relative .close {
+    position: absolute;
+    right: 10px;
+    font-weight: normal;
+    font-size: 16px;
+    color: #929292;
+  }
+
+  .reward-body {
+    padding: 40px 20px 20px;
+  }
+
+  .bottom {
+    display: flex;
+  }
+
+  .reward-btn {
+    text-align: center;
+  }
+
+  .reward-btn-text {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    background-color: #ff9734;
+    color: #FFF;
+    margin-top: 20px;
+  }
+
+  .pay-text {
+    margin-top: 10px;
+    padding: 10px;
+    flex: 1;
+    transition: all .2s linear;
+  }
+
+  .pay-text:hover {
+    background-color: #a5a5a536;
+  }
+
+  .reward-body h2 {
+    padding-top: 10px;
+    text-align: center;
+    color: #a3a3a3;
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+
+  .reward-body h2:after,
+  .reward-body h2:before {
+    font-family: Arial, Helvetica, sans-serif;
+    background: 0 0;
+    width: 0;
+    height: 0;
+    font-style: normal;
+    color: #eee;
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+  }
+
+  .reward-body h2:before {
+    content: '\201c';
+    left: 50px;
+  }
+
+  .reward-body h2:after {
+    content: '\201d';
+    right: 80px;
+  }
+
+  .reward-img-box {
+    display: inline-block;
+    padding: 10px;
+    border: 6px solid #ea5f00;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+  }
+
+  .reward-img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    .reward-relative {
+      height: 100%;
+      top: 0px;
+      margin-top: 0;
+      width: auto;
+    }
+
+    .reward-relative .bottom {
+      flex-direction: column;
+    }
+
+    .reward-relative .pay-text {
+      width: 80%;
+      margin: 5px auto;
+      border: 1px solid silver;
+      padding: 6px;
+      border-radius: 4px;
+    }
+
+    .reward-body h2:after {
+      right: 40px;
+    }
+
+    .reward-body h2:after,
+    .reward-body h2:before {
+      font-size: 60px;
+    }
+
+    .reward-body h2:before {
+      left: 20px;
+    }
+  }
+</style>
+<script>
+  !function () {
+    var mask = document.querySelector('.reward-mask');
+    let close = document.querySelector('.reward-relative .close');
+    let rewardBtn = document.querySelector('.reward-btn');
+
+    let zfb = document.querySelector('#zfb'),
+      wx = document.querySelector('#wx'),
+      zfbBtn = document.querySelector('#zfbBtn'),
+      wxBtn = document.querySelector('#wxBtn');
+
+    if (zfbBtn && wxBtn) {
+      zfbBtn.addEventListener('click', () => {
+        window.Velocity(zfb, 'transition.slideLeftIn', {
+          duration: 400
+        });
+        window.Velocity(wx, 'transition.slideRightOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+
+      wxBtn.addEventListener('click', () => {
+        window.Velocity(wx, 'transition.slideRightIn', {
+          duration: 400
+        });
+        window.Velocity(zfb, 'transition.slideLeftOut', {
+          display: 'none',
+          duration: 400
+        });
+      });
+    }
+
+    rewardBtn.addEventListener('click', (e) => {
+      window.Velocity(mask, 'transition.slideDownIn', {
+        duration: 400
+      })
+    });
+
+    close.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.Velocity(mask, 'transition.slideUpOut', {
+        duration: 400
+      })
+    })
+  }()
+</script>
+
   </div>
 </body>
 
@@ -2530,7 +2805,6 @@ CentOS 7 镜像抛弃LVM，回归ext4，减少不稳定因素&lt;/p&gt;
 
 
 <script src="/media/js/mouse/love.js"></script>
-
 
 
 
