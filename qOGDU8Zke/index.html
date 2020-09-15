@@ -9,7 +9,7 @@
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
 <title>魔法上网业成本内幕揭秘 | 秀儿</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1599871636257">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1600173626968">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -200,19 +200,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">28</span>
+        <span class="site-item-stat-count">29</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">53</span>
+        <span class="site-item-stat-count">54</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">53</span>
+        <span class="site-item-stat-count">54</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -1166,6 +1166,214 @@ CPU:4 vCPU|E5-2678v3<br>
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/lVqtW9KOV/"" data-c="
+          &lt;h1 id=&#34;介绍&#34;&gt;介绍&lt;/h1&gt;
+&lt;p&gt;Gclone是一个基于Rclone的魔改版本，功能与原版Rclone相同，但增加了两个实用功能；&lt;/p&gt;
+&lt;p&gt;支持服务端直接转存他人分享的文件及文件夹&lt;br&gt;
+支持突破Google Drive单账号每日750G限制，基于Google的Service Account服务&lt;br&gt;
+GitHub项目：https://github.com/donwa/gclone&lt;/p&gt;
+&lt;h2 id=&#34;gclone&#34;&gt;Gclone&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(wget -qO- https://git.io/gclone.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;为了以后使用方便，直接将gclone改名rclone&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cp /usr/bin/gclone /usr/bin/rclone
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;参考：Rclone 常用命令参数：https://sunpma.com/864.html&lt;br&gt;
+Gclone 新增操作命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rclone copy 配置名字:{文件ID} 配置名字:网盘路径 --drive-server-side-across-configs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;说明：{文件ID}可以是分享的单独文件也可以是文件夹&lt;br&gt;
+分享链接一般是这样的：https://drive.google.com/drive/folders/XXXXXX&lt;br&gt;
+最后面的一串字符XXXXXX既是分享ID&lt;br&gt;
+关于突破750G需要使用Google的Service Account服务，过程有些复杂，如果没需求就不用弄了；&lt;br&gt;
+需要的话可以自行Google教程，Service Account的100个文件最好保存到本地，方便以后使用；&lt;/p&gt;
+&lt;h2 id=&#34;fclone&#34;&gt;Fclone&lt;/h2&gt;
+&lt;p&gt;GitHub项目：https://github.com/mawaya/rclone&lt;br&gt;
+Fclone是另一个Rclone的修改版，操作与Rclone和Gclone完全相同&lt;br&gt;
+在GitHub中选择需要的Fclone版本，然后在本地解压得到名为fclone的文件&lt;br&gt;
+然后将得到的fclone文件上传至服务器/usr/bin目录下&lt;br&gt;
+赋予Fclone权限&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;chmod +x /usr/bin/fclone
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用时命令改为fclone即可；&lt;/p&gt;
+&lt;p&gt;快速安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 下载程序
+wget -P /usr/bin https://objectstorage.ap-seoul-1.oraclecloud.com/n/cnyzzr4k2nzj/b/sunpma/o/fclone
+
+# 将Fclone改名为Rclone
+cp /usr/bin/fclone /usr/bin/rclone
+
+# 赋予权限
+chmod +x /usr/bin/rclone
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装过程&#34;&gt;安装过程&lt;/h2&gt;
+&lt;p&gt;如果有Service Account的100个文件的话，就先建立以下目录，然后上传文件到accounts目录下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir /root/AutoRclone
+mkdir /root/AutoRclone/accounts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果没有Service Account就略过，直接开始下面的安装即可；&lt;br&gt;
+脚本刚才已经下载过了，现在直接输入rclone config开始安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q&amp;gt; n   # 输入n回车，新建配置
+name&amp;gt; GD   # 新建配置的名称，自行设定
+Type of storage to configure.
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+Choose a number from below, or type in your own value
+ 1 / 1Fichier
+   \ &amp;quot;fichier&amp;quot;
+ 2 / Alias for an existing remote
+   \ &amp;quot;alias&amp;quot;
+ 3 / Amazon Drive
+   \ &amp;quot;amazon cloud drive&amp;quot;
+ 4 / Amazon S3 Compliant Storage Provider (AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, etc)
+   \ &amp;quot;s3&amp;quot;
+ 5 / Backblaze B2
+   \ &amp;quot;b2&amp;quot;
+ 6 / Box
+   \ &amp;quot;box&amp;quot;
+ 7 / Cache a remote
+   \ &amp;quot;cache&amp;quot;
+ 8 / Dropbox
+   \ &amp;quot;dropbox&amp;quot;
+ 9 / Encrypt/Decrypt a remote
+   \ &amp;quot;crypt&amp;quot;
+10 / FTP Connection
+   \ &amp;quot;ftp&amp;quot;
+11 / Google Cloud Storage (this is not Google Drive)
+   \ &amp;quot;google cloud storage&amp;quot;
+12 / Google Drive
+   \ &amp;quot;drive&amp;quot;
+13 / Google Photos
+   \ &amp;quot;google photos&amp;quot;
+14 / Hubic
+   \ &amp;quot;hubic&amp;quot;
+15 / JottaCloud
+   \ &amp;quot;jottacloud&amp;quot;
+16 / Koofr
+   \ &amp;quot;koofr&amp;quot;
+17 / Local Disk
+   \ &amp;quot;local&amp;quot;
+18 / Mega
+   \ &amp;quot;mega&amp;quot;
+19 / Microsoft Azure Blob Storage
+   \ &amp;quot;azureblob&amp;quot;
+20 / Microsoft OneDrive
+   \ &amp;quot;onedrive&amp;quot;
+21 / OpenDrive
+   \ &amp;quot;opendrive&amp;quot;
+22 / Openstack Swift (Rackspace Cloud Files, Memset Memstore, OVH)
+   \ &amp;quot;swift&amp;quot;
+23 / Pcloud
+   \ &amp;quot;pcloud&amp;quot;
+24 / Put.io
+   \ &amp;quot;putio&amp;quot;
+25 / QingCloud Object Storage
+   \ &amp;quot;qingstor&amp;quot;
+26 / SSH/SFTP Connection
+   \ &amp;quot;sftp&amp;quot;
+27 / Union merges the contents of several remotes
+   \ &amp;quot;union&amp;quot;
+28 / Webdav
+   \ &amp;quot;webdav&amp;quot;
+29 / Yandex Disk
+   \ &amp;quot;yandex&amp;quot;
+30 / http Connection
+   \ &amp;quot;http&amp;quot;
+31 / premiumize.me
+   \ &amp;quot;premiumizeme&amp;quot;
+Storage&amp;gt; 12       # 选择需要挂载的网盘类型
+** See help for drive backend at: https://rclone.org/drive/ **
+
+Google Application Client Id
+Setting your own is recommended.
+See https://rclone.org/drive/#making-your-own-client-id for how to create your own.
+If you leave this blank, it will use an internal key which is low performance.
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+client_id&amp;gt;        # 默认直接回车，或者输入自己的OAuth ID
+Google Application Client Secret
+Setting your own is recommended.
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+client_secret&amp;gt;    # 默认直接回车，或者输入自己的OAuth秘锁
+Scope that rclone should use when requesting access from drive.
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+Choose a number from below, or type in your own value
+ 1 / Full access all files, excluding Application Data Folder.
+   \ &amp;quot;drive&amp;quot;
+ 2 / Read-only access to file metadata and file contents.
+   \ &amp;quot;drive.readonly&amp;quot;
+   / Access to files created by rclone only.
+ 3 | These are visible in the drive website.
+   | File authorization is revoked when the user deauthorizes the app.
+   \ &amp;quot;drive.file&amp;quot;
+   / Allows read and write access to the Application Data folder.
+ 4 | This is not visible in the drive website.
+   \ &amp;quot;drive.appfolder&amp;quot;
+   / Allows read-only access to file metadata but
+ 5 | does not allow any access to read or download file content.
+   \ &amp;quot;drive.metadata.readonly&amp;quot;
+scope&amp;gt; 1 # 选择1然后回车
+ID of the root folder
+Leave blank normally.
+
+Fill in to access &amp;quot;Computers&amp;quot; folders (see docs), or for rclone to use
+a non root folder as its starting point.
+
+Note that if this is blank, the first time rclone runs it will fill it
+in with the ID of the root folder.
+
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+root_folder_id&amp;gt;        # 直接回车
+Service Account Credentials JSON file path 
+Leave blank normally.
+Needed only if you want use SA instead of interactive login.
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+service_account_file&amp;gt; # 直接回车，如果使用Service Account就填写其中一个文件的绝对路径即可：/root/AutoRclone/accounts/0a5af037763bdab70e3a7094d02ec4bd37f8db94.json
+Service Account Credentials JSON file path .
+
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+service_account_file_path&amp;gt; 直接回车，如果使用Service Account就填写这个路径：/root/AutoRclone/accounts/
+Edit advanced config? (y/n)
+y) Yes
+n) No (default)
+y/n&amp;gt; n                    # 选择n 不使用高级配置
+Remote config
+Configure this as a team drive?
+y) Yes
+n) No (default)
+y/n&amp;gt; y                     # 选择n不加载团队盘，选择y加载团队盘
+Fetching team drive list...
+Choose a number from below, or type in your own value
+ 1 / 网盘01
+   \ &amp;quot;0AFZFXMn1uKs2Uk9PVA&amp;quot;
+ 2 / 网盘05
+   \ &amp;quot;0AI3nH3Vf8NWIUk9PVA&amp;quot;
+ 3 / 网盘02
+   \ &amp;quot;0ADYACmKjlU3JUk9PVA&amp;quot;
+Enter a Team Drive ID&amp;gt; # 选择你的团队盘编号
+y) Yes this is OK
+e) Edit this remote
+d) Delete this remote
+y/e/d&amp;gt; y       # 选择y回车
+Current remotes:
+
+Name                 Type
+====                 ====
+网盘01             drive
+
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q&amp;gt; q   # 输入q回车，保存配置退出&lt;/code&gt;&lt;/pre&gt;
+">Gclone 一个 Rclone 的魔改版本支持分享转存突破750G限制</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://xiu.pw/NiGGt4ZIu/"" data-c="

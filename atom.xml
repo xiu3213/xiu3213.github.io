@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-09-12T00:47:26.278Z</updated>
+    <updated>2020-09-15T12:51:58.591Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,217 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[Gclone 一个 Rclone 的魔改版本支持分享转存突破750G限制]]></title>
+        <id>https://xiu.pw/lVqtW9KOV/</id>
+        <link href="https://xiu.pw/lVqtW9KOV/">
+        </link>
+        <updated>2020-09-15T12:38:29.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="介绍">介绍</h1>
+<p>Gclone是一个基于Rclone的魔改版本，功能与原版Rclone相同，但增加了两个实用功能；</p>
+<p>支持服务端直接转存他人分享的文件及文件夹<br>
+支持突破Google Drive单账号每日750G限制，基于Google的Service Account服务<br>
+GitHub项目：https://github.com/donwa/gclone</p>
+<h2 id="gclone">Gclone</h2>
+<pre><code>bash &lt;(wget -qO- https://git.io/gclone.sh)
+</code></pre>
+<p>为了以后使用方便，直接将gclone改名rclone</p>
+<pre><code>cp /usr/bin/gclone /usr/bin/rclone
+</code></pre>
+<p>参考：Rclone 常用命令参数：https://sunpma.com/864.html<br>
+Gclone 新增操作命令</p>
+<pre><code>rclone copy 配置名字:{文件ID} 配置名字:网盘路径 --drive-server-side-across-configs
+</code></pre>
+<p>说明：{文件ID}可以是分享的单独文件也可以是文件夹<br>
+分享链接一般是这样的：https://drive.google.com/drive/folders/XXXXXX<br>
+最后面的一串字符XXXXXX既是分享ID<br>
+关于突破750G需要使用Google的Service Account服务，过程有些复杂，如果没需求就不用弄了；<br>
+需要的话可以自行Google教程，Service Account的100个文件最好保存到本地，方便以后使用；</p>
+<h2 id="fclone">Fclone</h2>
+<p>GitHub项目：https://github.com/mawaya/rclone<br>
+Fclone是另一个Rclone的修改版，操作与Rclone和Gclone完全相同<br>
+在GitHub中选择需要的Fclone版本，然后在本地解压得到名为fclone的文件<br>
+然后将得到的fclone文件上传至服务器/usr/bin目录下<br>
+赋予Fclone权限</p>
+<pre><code>chmod +x /usr/bin/fclone
+</code></pre>
+<p>使用时命令改为fclone即可；</p>
+<p>快速安装</p>
+<pre><code># 下载程序
+wget -P /usr/bin https://objectstorage.ap-seoul-1.oraclecloud.com/n/cnyzzr4k2nzj/b/sunpma/o/fclone
+
+# 将Fclone改名为Rclone
+cp /usr/bin/fclone /usr/bin/rclone
+
+# 赋予权限
+chmod +x /usr/bin/rclone
+</code></pre>
+<h2 id="安装过程">安装过程</h2>
+<p>如果有Service Account的100个文件的话，就先建立以下目录，然后上传文件到accounts目录下</p>
+<pre><code>mkdir /root/AutoRclone
+mkdir /root/AutoRclone/accounts
+</code></pre>
+<p>如果没有Service Account就略过，直接开始下面的安装即可；<br>
+脚本刚才已经下载过了，现在直接输入rclone config开始安装</p>
+<pre><code>n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q&gt; n   # 输入n回车，新建配置
+name&gt; GD   # 新建配置的名称，自行设定
+Type of storage to configure.
+Enter a string value. Press Enter for the default (&quot;&quot;).
+Choose a number from below, or type in your own value
+ 1 / 1Fichier
+   \ &quot;fichier&quot;
+ 2 / Alias for an existing remote
+   \ &quot;alias&quot;
+ 3 / Amazon Drive
+   \ &quot;amazon cloud drive&quot;
+ 4 / Amazon S3 Compliant Storage Provider (AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, etc)
+   \ &quot;s3&quot;
+ 5 / Backblaze B2
+   \ &quot;b2&quot;
+ 6 / Box
+   \ &quot;box&quot;
+ 7 / Cache a remote
+   \ &quot;cache&quot;
+ 8 / Dropbox
+   \ &quot;dropbox&quot;
+ 9 / Encrypt/Decrypt a remote
+   \ &quot;crypt&quot;
+10 / FTP Connection
+   \ &quot;ftp&quot;
+11 / Google Cloud Storage (this is not Google Drive)
+   \ &quot;google cloud storage&quot;
+12 / Google Drive
+   \ &quot;drive&quot;
+13 / Google Photos
+   \ &quot;google photos&quot;
+14 / Hubic
+   \ &quot;hubic&quot;
+15 / JottaCloud
+   \ &quot;jottacloud&quot;
+16 / Koofr
+   \ &quot;koofr&quot;
+17 / Local Disk
+   \ &quot;local&quot;
+18 / Mega
+   \ &quot;mega&quot;
+19 / Microsoft Azure Blob Storage
+   \ &quot;azureblob&quot;
+20 / Microsoft OneDrive
+   \ &quot;onedrive&quot;
+21 / OpenDrive
+   \ &quot;opendrive&quot;
+22 / Openstack Swift (Rackspace Cloud Files, Memset Memstore, OVH)
+   \ &quot;swift&quot;
+23 / Pcloud
+   \ &quot;pcloud&quot;
+24 / Put.io
+   \ &quot;putio&quot;
+25 / QingCloud Object Storage
+   \ &quot;qingstor&quot;
+26 / SSH/SFTP Connection
+   \ &quot;sftp&quot;
+27 / Union merges the contents of several remotes
+   \ &quot;union&quot;
+28 / Webdav
+   \ &quot;webdav&quot;
+29 / Yandex Disk
+   \ &quot;yandex&quot;
+30 / http Connection
+   \ &quot;http&quot;
+31 / premiumize.me
+   \ &quot;premiumizeme&quot;
+Storage&gt; 12       # 选择需要挂载的网盘类型
+** See help for drive backend at: https://rclone.org/drive/ **
+
+Google Application Client Id
+Setting your own is recommended.
+See https://rclone.org/drive/#making-your-own-client-id for how to create your own.
+If you leave this blank, it will use an internal key which is low performance.
+Enter a string value. Press Enter for the default (&quot;&quot;).
+client_id&gt;        # 默认直接回车，或者输入自己的OAuth ID
+Google Application Client Secret
+Setting your own is recommended.
+Enter a string value. Press Enter for the default (&quot;&quot;).
+client_secret&gt;    # 默认直接回车，或者输入自己的OAuth秘锁
+Scope that rclone should use when requesting access from drive.
+Enter a string value. Press Enter for the default (&quot;&quot;).
+Choose a number from below, or type in your own value
+ 1 / Full access all files, excluding Application Data Folder.
+   \ &quot;drive&quot;
+ 2 / Read-only access to file metadata and file contents.
+   \ &quot;drive.readonly&quot;
+   / Access to files created by rclone only.
+ 3 | These are visible in the drive website.
+   | File authorization is revoked when the user deauthorizes the app.
+   \ &quot;drive.file&quot;
+   / Allows read and write access to the Application Data folder.
+ 4 | This is not visible in the drive website.
+   \ &quot;drive.appfolder&quot;
+   / Allows read-only access to file metadata but
+ 5 | does not allow any access to read or download file content.
+   \ &quot;drive.metadata.readonly&quot;
+scope&gt; 1 # 选择1然后回车
+ID of the root folder
+Leave blank normally.
+
+Fill in to access &quot;Computers&quot; folders (see docs), or for rclone to use
+a non root folder as its starting point.
+
+Note that if this is blank, the first time rclone runs it will fill it
+in with the ID of the root folder.
+
+Enter a string value. Press Enter for the default (&quot;&quot;).
+root_folder_id&gt;        # 直接回车
+Service Account Credentials JSON file path 
+Leave blank normally.
+Needed only if you want use SA instead of interactive login.
+Enter a string value. Press Enter for the default (&quot;&quot;).
+service_account_file&gt; # 直接回车，如果使用Service Account就填写其中一个文件的绝对路径即可：/root/AutoRclone/accounts/0a5af037763bdab70e3a7094d02ec4bd37f8db94.json
+Service Account Credentials JSON file path .
+
+Enter a string value. Press Enter for the default (&quot;&quot;).
+service_account_file_path&gt; 直接回车，如果使用Service Account就填写这个路径：/root/AutoRclone/accounts/
+Edit advanced config? (y/n)
+y) Yes
+n) No (default)
+y/n&gt; n                    # 选择n 不使用高级配置
+Remote config
+Configure this as a team drive?
+y) Yes
+n) No (default)
+y/n&gt; y                     # 选择n不加载团队盘，选择y加载团队盘
+Fetching team drive list...
+Choose a number from below, or type in your own value
+ 1 / 网盘01
+   \ &quot;0AFZFXMn1uKs2Uk9PVA&quot;
+ 2 / 网盘05
+   \ &quot;0AI3nH3Vf8NWIUk9PVA&quot;
+ 3 / 网盘02
+   \ &quot;0ADYACmKjlU3JUk9PVA&quot;
+Enter a Team Drive ID&gt; # 选择你的团队盘编号
+y) Yes this is OK
+e) Edit this remote
+d) Delete this remote
+y/e/d&gt; y       # 选择y回车
+Current remotes:
+
+Name                 Type
+====                 ====
+网盘01             drive
+
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q&gt; q   # 输入q回车，保存配置退出</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[优化Wordpress速度——前端使用国内免费Cdn加速Js/Css文件，后端数据库缓存]]></title>
         <id>https://xiu.pw/NiGGt4ZIu/</id>
@@ -626,72 +837,6 @@ CSDN博客<br>
 <h1 id="预览">预览</h1>
 <figure data-type="image" tabindex="1"><img src="https://cdn.u1.huluxia.com/g3/M01/E9/0A/wKgBOV2b8heARHU7AAAvxkpyM1M813.png" alt="" loading="lazy"></figure>
 <h1 id="项目地址"><a href="https://gitee.com/KIENG_S/jianchaipshifouzuduan" title="项目地址">项目地址</a></h1>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[使用Github Action定时重启IBM cloud foundry]]></title>
-        <id>https://xiu.pw/ZfBq1liZd/</id>
-        <link href="https://xiu.pw/ZfBq1liZd/">
-        </link>
-        <updated>2020-08-26T06:26:20.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>本文简单介绍了Github Action的用法，并使用Gihub Action定时重启IBM cloud foundry容器。</strong></p>
-<h1 id="摘要">摘要</h1>
-<p><strong>GitHub Actions是GitHub自家的持续集成及自动化工作流服务，它使用起来非常简单，只要在你的仓库根目录建立.github/workflows文件夹，将你的工作流配置(YML文件)放到这个目录下，就能启用GitHub Actions服务。</strong></p>
-<h1 id="关键字">关键字</h1>
-<p><strong>Github Action，IBM cloud foundry</strong></p>
-<h1 id="yml配置文件">yml配置文件</h1>
-<pre><code class="language-php">name: IBM Cloud Auto Restart
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-  schedule:
-    - cron: '0 0 * * *'      # 根据自己的需要设置何时重启
-
-jobs:
-  ibm-cloud-restart:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Init
-      run: |
-        wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
-        echo &quot;deb https://packages.cloudfoundry.org/debian stable main&quot; | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
-        sudo apt-get update
-        sudo apt-get install cf-cli
-    - name: Login IBM Cloud
-      env:
-        IBM_ACCOUNT: ${{ secrets.IBM_ACCOUNT }}
-        IBM_PASSWORD: ${{ secrets.IBM_PASSWORD }}
-      run: |
-        cf login -a https://api.us-south.cf.cloud.ibm.com -u $IBM_ACCOUNT &lt;&lt; EOF
-        $IBM_PASSWORD
-        EOF
-    - name: Get IBM Cloud Apps
-      run: |
-        cf a
-    - name: Restart IBM Cloud
-      env:
-        IBM_APP_NAME: ${{ secrets.IBM_APP_NAME }}
-      run: |
-        cf restart $IBM_APP_NAME
-</code></pre>
-<h1 id="使用方法">使用方法</h1>
-<p>fork仓库：https://github.com/wf09/IBMWorkflow</p>
-<h1 id="设置环境变量">设置环境变量</h1>
-<pre><code>IBM_ACCOUNT：账户邮箱
-
-IBM_APP_NAME：app的名字
-
-IBM_PASSWORD：密码
-</code></pre>
-<p><strong>设置完环境变量以后记得commit一下yml文件触发Action。</strong></p>
-<h1 id="效果图">效果图</h1>
-<figure data-type="image" tabindex="1"><img src="https://ftp.fly97.cn/image/image-20200827193322808.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
