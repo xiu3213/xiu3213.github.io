@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-09-15T12:51:58.591Z</updated>
+    <updated>2020-09-16T13:47:59.158Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,68 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[Linux系统下录制命令操作]]></title>
+        <id>https://xiu.pw/7WlZGngaW/</id>
+        <link href="https://xiu.pw/7WlZGngaW/">
+        </link>
+        <updated>2020-09-16T13:38:08.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="linux系统下录制命令操作">Linux系统下录制命令操作</h1>
+<p>通常情况下，在Windows或者Android、iOS系统下我们能借助软件进行录屏操作，而在Linux命令行模式下，如果想要录制命令操作，应该怎样进行录屏呢？**</p>
+<p>#如何安装<br>
+Centos</p>
+<pre><code>yum install asciinema -y
+</code></pre>
+<p>Debian/Ubuntu</p>
+<pre><code>apt-get install asciinema -y
+</code></pre>
+<p>#如何录制<br>
+asciinema rec <file-name><br>
+如：</p>
+<pre><code>asciinema rec demo.rec
+</code></pre>
+<p><strong>录制完成后以Ctrl+D结束，文件会保存在当前目录，如果想要保存到其他位置，使用asciinema rec /path/demo.rec即可。</strong></p>
+<p>#如何使用<br>
+嵌入网页需要调用官方的css和js，由于官方的css和js文件不在国内，调用起来非常很慢，影响用户体验。所以我把文件放在GitHub上面，使用jsDelivr来加速文件。<br>
+调用</p>
+<pre><code class="language-css">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/gh/moeik/sshrec/sshrec.css&quot; /&gt;   
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/moeik/sshrec/sshrec.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>你可以放在页面的head处，避免每次使用都去调用。<br>
+或者在需要插入视频的时候调用：</p>
+<pre><code class="language-css">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;https://cdn.jsdelivr.net/gh/moeik/sshrec/sshrec.css&quot; /&gt;   
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/moeik/sshrec/sshrec.js&quot;&gt;&lt;/script&gt;
+&lt;sshsharer-player src=&quot;/path/demo.rec&quot;&gt;&lt;/sshsharer-player&gt;
+</code></pre>
+<p>插入轻视频</p>
+<pre><code class="language-css">&lt;sshsharer-player src=&quot;/path/demo.rec&quot;&gt;&lt;/sshsharer-player&gt;
+</code></pre>
+<p>如果调用远程视频文件src处也可以换成http链接。</p>
+<h2 id="typecho使用">Typecho使用：</h2>
+<p>在写文章的时候强制转换为HTML格式即可~</p>
+<pre><code class="language-css">!!!
+&lt;sshsharer-player src=&quot;/path/demo.rec&quot;&gt;&lt;/sshsharer-player&gt;
+!!!
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Linux系统一键申请域名证书]]></title>
+        <id>https://xiu.pw/9cBkSiskQ/</id>
+        <link href="https://xiu.pw/9cBkSiskQ/">
+        </link>
+        <updated>2020-09-16T13:35:03.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="linux系统一键申请lets-encrypt域名证书">Linux系统一键申请Let's Encrypt域名证书</h1>
+<h2 id="适用于linux系统nginx环境">适用于Linux系统NGINX环境</h2>
+<h3 id="使用">使用:</h3>
+<p>申请证书前请提前解析域名到服务器</p>
+<pre><code>bash &lt;(curl -s -L git.io/dmSSL)
+</code></pre>
+<p>按照提示输入域名即可</p>
+<p>证书文件保存在/home/ssl/<domain>/路径下</p>
+<p>Github:https://github.com/moeik/domainSSL</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Gclone 一个 Rclone 的魔改版本支持分享转存突破750G限制]]></title>
         <id>https://xiu.pw/lVqtW9KOV/</id>
@@ -774,69 +836,6 @@ CSDN博客<br>
 <li>计划在v2.0版本对项目进行重构，提供web端操作与数据可视化，以适配多平台。</li>
 <li><strong>本项目<a href="https://github.com/kangvcar/InfoSpider" title="INFO-SPIDER">INFO-SPIDER</a>代码已开源，欢迎star支持。</strong></li>
 </ol>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[vps测速整合脚本]]></title>
-        <id>https://xiu.pw/E-ilBDDMb/</id>
-        <link href="https://xiu.pw/E-ilBDDMb/">
-        </link>
-        <updated>2020-08-27T12:24:18.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="使用方法">使用方法:</h1>
-<pre><code class="language-bash">wget vpstest.cn/it &amp;&amp; bash it
-</code></pre>
-<p>或</p>
-<pre><code class="language-bash">wget git.io/vpstest &amp;&amp; bash vpstest
-</code></pre>
-<p>或</p>
-<pre><code class="language-bash">wget -O it vpstest.cn &amp;&amp; bash it
-</code></pre>
-<h1 id="效果图">效果图</h1>
-<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/08/25/d2msj1.png" alt="" loading="lazy"></figure>
-<pre><code>整合了
-1. bench.sh
-2. LemonBench
-3. superspeed
-4. superbench修复版
-5. 91yuntest
-6. ZBench
-7. superbench修复+多节点版
-8. UnixBench
-9. GeekBench5
-10.kos回程测试
-11.超内存测试
-12.sysbench测试---感谢云筏大佬的分享
-路由测试
-（注：脚本收集自互联网）
-已修复kos测试
-已更新删除残留文件
-修复了一些已知bug
-已经修复脚本4、7（有待测试）
-请删除脚本残余文件
-添加sysbench-cpu测试
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[监测IP是否被阻断]]></title>
-        <id>https://xiu.pw/uxQvbeATH/</id>
-        <link href="https://xiu.pw/uxQvbeATH/">
-        </link>
-        <updated>2020-08-27T12:19:33.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="监测ip是否被阻断">监测IP是否被阻断</h1>
-<p>利用 PHP socket 去监测指定 域名/IP 的 TCP 和 ICMP 是否开放.</p>
-<p>请开启 exec() 函数.</p>
-<p>测试环境为:宝塔面板 PHP7.0+ nginx1.15</p>
-<p>请安装 PHP socket 扩展(宝塔面板默认是安装的),否则无法使用哦</p>
-<pre><code>已知问题在Linux下 socket 检测 icmp,会没有权限.现只能用 exec() 函数
-</code></pre>
-<h1 id="部署方法">部署方法</h1>
-<p>把 check.php 分别放到国内服务器和国外服务器.</p>
-<p>修改 index.html 的GET 请求地址即可.<br>
-<img src="https://mjj.today/temp/1910/ec034efc07983847.png" alt="" loading="lazy"></p>
-<h1 id="预览">预览</h1>
-<figure data-type="image" tabindex="1"><img src="https://cdn.u1.huluxia.com/g3/M01/E9/0A/wKgBOV2b8heARHU7AAAvxkpyM1M813.png" alt="" loading="lazy"></figure>
-<h1 id="项目地址"><a href="https://gitee.com/KIENG_S/jianchaipshifouzuduan" title="项目地址">项目地址</a></h1>
 ]]></content>
     </entry>
 </feed>
