@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-09-16T13:47:59.158Z</updated>
+    <updated>2020-09-18T09:54:01.107Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,231 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[DD Windows 一键脚本（包含GCP谷歌云Oracle甲骨文）]]></title>
+        <id>https://xiu.pw/TtlfXDfto/</id>
+        <link href="https://xiu.pw/TtlfXDfto/">
+        </link>
+        <updated>2020-09-18T09:45:02.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="说明">说明</h1>
+<ul>
+<li>无限制全自动dd安装Windows</li>
+<li>突破没有VNC,没有救援模式,内存比dd包小的限制</li>
+<li>使用Debian Live CD中的busybox做中间媒介,经过复杂的处理使本机的网络参数传进Windows操作系统中</li>
+<li>即使没有DHCP能够让Windows获取网络参数,也能让Windows操作系统在开机的第一时间能够连通网络</li>
+</ul>
+<p><strong>特别注意：OpenVZ构架不适用</strong></p>
+<h1 id="安装安装">安装安装</h1>
+<p>#Debian/Ubuntu:</p>
+<pre><code class="language-bash">apt-get install -y xz-utils openssl gawk file
+</code></pre>
+<p>#RedHat/CentOS:</p>
+<pre><code class="language-bash">yum install -y xz openssl gawk file
+</code></pre>
+<p>如果出现错误，请运行</p>
+<p>#Debian/Ubuntu:</p>
+<pre><code class="language-bash">apt-get update
+</code></pre>
+<p>#RedHat/CentOS:</p>
+<pre><code class="language-bash">yum update
+</code></pre>
+<h2 id="一键脚本">一键脚本</h2>
+<pre><code class="language-bash">wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd '[Windows dd包直连地址]'
+</code></pre>
+<h1 id="精简版dd包">精简版DD包</h1>
+<p>选择好版本，输入以下一键脚本即可</p>
+<pre><code class="language-bash">#DD Windows Server 2003 32位 精简版 [账户Administrator密码cxthhhhh.com]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/1j9ow8dsIA7DucsGpDI-kzJwiNW9kMceT'
+
+#DD Windows Server 2008 R2 64位 精简版 [账户Administrator密码WinSrv2008x64-Chinese]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/1DTps9WwC6RZ8szflais8YazpkCVdqdI7'
+
+#DD Windows Server 2012 R2 64位 精简版 [账户Administrator密码WinSrv2012r2x64-Chinese]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/1KTzROA2eWTHC8qWUG2Vr-onuRTwaIOSe'
+
+#DD Windows Server 2019 Datacenter 64位 精简版 [账户Administrator密码WinSrv2019dc-Chinese]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/1NbOzolHsDGbp3gJ3TeQ9_4qkmSLIuO07'
+
+#DD Windows7 32位 精简版 [账户Administrator密码Windows7x86-Chinese]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/15NkZxVdkcx2P9cFez9gxkqVEQksKMrx1'
+
+#DD Windows7 sp1 64位 旗舰精简版 自带IIS [账户Administrator密码www.nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/1KA9PDH4T2ODbxS97T6MtTk5TwifQQoIp'
+
+#DD Windows7 64位 旗舰精简版 [账户Administrator密码www.nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/1C9Y0Iu1pGX4-blb_3G49jOqv13Zeka6-'
+
+#DD Windows10 64位 企业精简版 2019LTSC [账户Administrator密码www.nat.ee]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/1pUNKV0nQvFXDZYJnfq2FzEfQNCZ3_5g7'
+</code></pre>
+<h2 id="完整版dd包">完整版DD包</h2>
+<pre><code class="language-bash">#DD Windows Server 2012 R2 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/1bfXS59h0y8Ibz5o84DvcBMfqhP0d12Ib'
+
+#DD Windows Server 2016 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/1CElbDjEXrjPIX4GpdRBwRXBWTtSHOwzi'
+
+#DD Windows Server 2019 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/1gRIT702MrVzLr8Bmk8OF-_Ckp02_tOxE'
+</code></pre>
+<h2 id="oracle甲骨文">Oracle甲骨文</h2>
+<p>此DD包仅适用于Oracle甲骨文DD Win使用</p>
+<pre><code class="language-bash">wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh -dd 'https://api.moeclub.org/GoogleDrive/1NHKdm3xfQ3HySNCGvrzgdz7RMVCI1qGy'
+</code></pre>
+<h2 id="网路参数安装">网路参数安装</h2>
+<p>比如GCP谷歌云Azure微软云OVH云服务器等需要指定网络参数安装的方式，示例为GCP谷歌云</p>
+<pre><code># 将X.X.X.X替换为自己的网络参数.
+# --ip-addr :IP Address/内网IP地址
+# --ip-mask :Netmask   /子网掩码
+# --ip-gate :Gateway   /网关
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh --ip-addr X.X.X.X --ip-mask X.X.X.X --ip-gate X.X.X.X -dd 'DD包 直链地址'
+</code></pre>
+<p>例：<br>
+DD Windows 7 64位 精简旗舰版 只需替换--ip-addr后面的X.X.X.X为你自己的内网IP即可，其他不变<br>
+在GCP谷歌云Debian Ubuntu测试成功CentOS未测试<br>
+默认账户Administrator密码www.nat.ee</p>
+<h2 id="gcp谷歌云-台湾">GCP谷歌云-台湾</h2>
+<pre><code class="language-bash">
+wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh --ip-addr X.X.X.X --ip-mask 255.255.255.0 --ip-gate 10.140.0.1 -dd 'https://api.moeclub.org/GoogleDrive/1C9Y0Iu1pGX4-blb_3G49jOqv13Zeka6-'
+</code></pre>
+<h2 id="gcp谷歌云-香港">GCP谷歌云 香港</h2>
+<pre><code class="language-bash">wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh' &amp;&amp; bash InstallNET.sh --ip-addr X.X.X.X --ip-mask 255.255.255.0 --ip-gate 10.170.0.1 -dd 'https://api.moeclub.org/GoogleDrive/1C9Y0Iu1pGX4-blb_3G49jOqv13Zeka6-'
+</code></pre>
+<p>连接上后如果遇到无法打开网页的情况，修改DNS即可</p>
+<pre><code class="language-bash">8.8.8.8
+8.8.4.4
+</code></pre>
+<h1 id="关于激活">关于激活</h1>
+<p>可以使用本博客的KMS激活</p>
+<p>如果不能使用KMS激活，可以试试下面的Key（不一定都能成功激活）<br>
+RHTBY-VWY6D-QJRJ9-JGQ3X-Q2289<br>
+H8PDJ-H4NKW-3GKH7-YHKJ7-4C2JR<br>
+右键以管理员身份运行CMD（命令提示符），依次执行下面的命令</p>
+<pre><code>slmgr.vbs -upk
+slmgr.vbs -ipk RHTBY-VWY6D-QJRJ9-JGQ3X-Q2289
+slmgr.vbs -ato
+slmgr.vbs -dlv
+</code></pre>
+<p>Windows服务器开启Ping功能<br>
+进入服务器后点击 开始 → 运行 输入如下命令：<br>
+开启Ping：</p>
+<pre><code>netsh firewall set icmpsetting 8
+</code></pre>
+<p>关闭Ping：</p>
+<pre><code>netsh firewall set icmpsetting 8 disable
+</code></pre>
+<p>备用链接<br>
+备用链接存储在Dropbox国内需要科学上网，国外机器可以直接使用；</p>
+<h1 id="精简版">精简版</h1>
+<pre><code class="language-bash">#DD Windows Server 2003 32位 精简版 [账户Administrator密码cxthhhhh.com]
+https://dl-web.dropbox.com/s/ajqa1vwxfqulazd/Win-Server-2003-X32%5BAdministrator-cxthhhhh.com%5D.gz
+
+#DD Windows Server 2008 R2 64位 精简版 [账户Administrator密码WinSrv2008x64-Chinese]
+https://dl-web.dropbox.com/s/jhxp38eeu9quu12/Win-Server-2008R2-X64%5BAdministrator-WinSrv2008x64-Chinese%5D.gz
+
+#DD Windows Server 2012 R2 64位 精简版 [账户Administrator密码WinSrv2012r2x64-Chinese]
+https://dl-web.dropbox.com/s/9r7v27hmmbytur1/Win-Server-2012R2-X64%5BAdministrator-WinSrv2012r2x64-Chinese%5D.gz
+
+#DD Windows Server 2019 Datacenter 64位 精简版 [账户Administrator密码WinSrv2019dc-Chinese]
+https://dl-web.dropbox.com/s/y675vyr04egz2xs/Win-Server2019-Datacenter-X64%5BAdministrator-WinSrv2019dc-Chinese%5D.gz
+
+#DD Windows7 32位 精简版 [账户Administrator密码Windows7x86-Chinese]
+https://dl-web.dropbox.com/s/6wqa2tf51rtojdh/Win7-X86%5BAdministrator-Windows7x86-Chinese%5D.gz
+
+#DD Windows7 sp1 64位 旗舰精简版 自带IIS [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/4ouiqrddtajk1c8/Win7%20X64%20sp1%20IIS%5BAdministrator-www.nat.ee%5D.gz
+
+#DD Windows7 64位 旗舰精简版 [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/fzoaonaj9fbxatg/Win7-X64%5BAdministrator-www.nat.ee%5D.gz
+
+#DD Windows10 64位 企业精简版 2019LTSC [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/ra7m1zm0fevjuby/Win10-2019LTSC-X64%5BAdministrator-www.nat.ee%5D.gz
+
+#Oracle专用 DD Windows7 64位 精简版 [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/x5f23j6qhp1dneq/Oracle-Win7-X64%5BAdministrator-www.nat.ee%5D.gz
+
+#OVH专用 DD Windows7 64位 精简版 [账户administrator密码www.80host.com]
+https://dl-web.dropbox.com/s/knhw80grm9o3b35/OVH-Win7-X64%5Badministrator-www.80host.com%5D.gz
+</code></pre>
+<h1 id="完整版">完整版</h1>
+<pre><code class="language-bash">#DD Windows Server 2012 R2 Datacenter 64位 完整版 [账户administrator密码Password147]
+https://dl-web.dropbox.com/s/3y3mvht0u6fm34g/cn_windows2012r2%5Badministrator-Password147%5D.gz
+
+#DD Windows Server 2016 Datacenter 64位 完整版 [账户administrator密码Password147]
+https://dl-web.dropbox.com/s/wk3zltm9kepfg99/cn_windows2016%5Badministrator-Password147%5D.gz
+
+#DD Windows Server 2019 Datacenter 64位 完整版 [账户administrator密码Password147]
+https://dl-web.dropbox.com/s/bp92z37ae4hlnd0/cn_windows2019%5Badministrator-Password147%5D.gz
+
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[一键网络重装系统 - 魔改版（适用于Linux / Windows）]]></title>
+        <id>https://xiu.pw/_aIUDU0wA/</id>
+        <link href="https://xiu.pw/_aIUDU0wA/">
+        </link>
+        <updated>2020-09-18T09:37:13.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="简介">简介</h1>
+<p>一键网络重装系统 - 魔改版，它可以通过Internet重新安装Linux和Windows以及常见的操作系统。例如：Linux（CentOS，Debian，Ubuntu、etc..），Windows（2019、2016、2012R2、2008R2、7、2003、etc..），以及其他系统（不断支持更多中）。</p>
+<p>当我们需要重装VPS/云平台/独立服务器操作系统时，通常可以通过服务商模板和ISO挂载的方式重新安装。从今天开始，你将拥有了一个全新的方式，通过网络一键式重新安装纯净操作系统，无需CD-ROM,无需VNC/IPIM/KVM。无论是Linux，还是Windows，都可以通过网络一键式完成安装，通过简单的一到两行命令开启全新而美妙的体验。</p>
+<h1 id="魔改版本及开源地址">魔改版本及开源地址</h1>
+<p>最新版本：3.1.0（2020/09/15）</p>
+<p>官方发布：https://www.cxthhhhh.com/network-reinstall-system-modify</p>
+<p>Github：Network-Reinstall-System-Modify</p>
+<p>魔改版本：CXTHHHHH (via) 原始版本：MoeClub(Vicer)</p>
+<h1 id="支持安装的系统">支持安装的系统</h1>
+<pre><code>Alpine Linux、Anarchy Linux、Arch Linux、Backbox、BlackArch Linux、Bluestar Linux、Bodhi Linux、CentOS、CoreOS、Debian、Deepin、Devuan、Elementary OS、Fedora、Feren OS、Flatcar Linux、FreeBSD、FreeDOS、Gentoo、IPFire、Kali Linux、KDE Neon、Kodachi、Linux Lite、Q4OS、Microsoft Windows、Mageia、Manjaro、Mint、MirOS、Nitrux、NixOS、OpenBSD、OpenSUSE、Oracle Linux、Parrot Security、Peppermint、Proxmox-VE、Pop OS、Red Hat Enterprise Linux、Regolith、RancherOS、Scientific Linux、Slackware、SparkyLinux、Tails、Tiny Core Linux、Ubuntu、Velt、Voyager、Zen Installer、Zorin OS、ALT Linux Rescue、Boot Repair CD、Breakin、CAINE、Clonezilla、DBAN、GParted、Grml、Memtest、Rescatux、Super Grub2 Disk、System Rescue CD、Ultimate Boot CD
+</code></pre>
+<h1 id="如何使用">如何使用</h1>
+<h2 id="1-下载脚本通过root用户执行">1、下载脚本（通过root用户执行）</h2>
+<pre><code class="language-bash">wget --no-check-certificate -qO ~/Network-Reinstall-System-Modify.sh 'https://www.cxthhhhh.com/CXT-Library/Network-Reinstall-System-Modify/Network-Reinstall-System-Modify.sh' &amp;&amp; chmod a+x ~/Network-Reinstall-System-Modify.sh
+</code></pre>
+<h2 id="2-安装系统任选其一">2、安装系统（任选其一）</h2>
+<p>【图形化UI界面选择】（推荐）</p>
+<pre><code class="language-bash">bash ~/Network-Reinstall-System-Modify.sh -UI_Options
+</code></pre>
+<h2 id="合并执行一键启动图形化ui界面选择安装系统包含下载执行">【合并执行】一键启动图形化UI界面，选择安装系统（包含下载+执行）：</h2>
+<pre><code class="language-bash">wget --no-check-certificate -qO ~/Network-Reinstall-System-Modify.sh 'https://www.cxthhhhh.com/CXT-Library/Network-Reinstall-System-Modify/Network-Reinstall-System-Modify.sh' &amp;&amp; chmod a+x ~/Network-Reinstall-System-Modify.sh &amp;&amp; bash ~/Network-Reinstall-System-Modify.sh -UI_Options
+</code></pre>
+<h2 id="安装-裸机系统部署平台推荐">【安装 裸机系统部署平台】（推荐）</h2>
+<pre><code class="language-bash">bash ~/Network-Reinstall-System-Modify.sh -CXT_Bare-metal_System_Deployment_Platform
+</code></pre>
+<h2 id="安装-linux推荐">【安装 Linux】（推荐）</h2>
+<pre><code class="language-bash">bash ~/Network-Reinstall-System-Modify.sh -CentOS_8
+bash ~/Network-Reinstall-System-Modify.sh -Debian_10
+bash ~/Network-Reinstall-System-Modify.sh -Ubuntu_20.04
+</code></pre>
+<h2 id="安装-windows推荐">【安装 Windows】（推荐）</h2>
+<pre><code class="language-bash">bash ~/Network-Reinstall-System-Modify.sh -Windows_Server_2019
+</code></pre>
+<h2 id="安装-指定自定义-dd镜像推荐">【安装 指定自定义 DD镜像】（推荐）</h2>
+<pre><code class="language-bash">bash ~/Network-Reinstall-System-Modify.sh  -DD &quot;%URL%&quot;
+</code></pre>
+<h1 id="安装-更多系统-说明">【安装 更多系统 说明】</h1>
+<p>此页面为【一键网络重装系统 - 魔改版】发布页，仅列出了常用Linux和Windows的最新稳定版系统安装命令（截至2020年9月）。<br>
+要安装其他版本，请通过【图形化UI界面选择】/【裸机系统部署平台】/【手动输入版本】/【查看更多选项】等方式安装。</p>
+<p>对于普通用户，直接一键脚本安装最方便，甚至可以直接使用（图形化UI界面选择）选项，一键安装常用系统。<br>
+对于高端用户，建议直接选择通过（裸机系统部署平台）安装任意系统。可定制化性高，但门槛相对高很多，便捷性较低。</p>
+<p>本项目仅建议您安装最新的稳定版系统。新版系统具有官方长期的技术支持，而旧版已经失去官方支持，亦或者即将失去维护。<br>
+使用旧版操作系统，您的电脑和服务器将面临比新版操作系统更多的安全隐患，甚至造成巨大的损失。</p>
+<h1 id="恭喜你已经完成了系统重装">恭喜，你已经完成了系统重装</h1>
+<h2 id="常规说明">常规说明</h2>
+<p>1、当您执行完上面的2行命令，你的服务器将开始网络重装纯净系统。在完成安装前，您将无法进行连接管理。因硬件配置和网络环境不同，安装全程需要15-60分钟，请耐心等待。安装完成即可通过IP:22(Linux SSH)/IP:3389(Windows RDP)进行连接。</p>
+<p>2、为了保证更高的兼容性。推荐重装纯净系统前，您当前的系统版本为：CentOS 7 / Debian 9 / Ubuntu 18.04 。（在您的服务商未提供以上操作系统时，您可以考虑使用其他系统）</p>
+<h2 id="默认账户">默认账户</h2>
+<p>通常，使用自带镜像，或者您的镜像作者未明确说明系统的用户名和密码的情况下。</p>
+<p>对于Microsoft Windows。<br>
+默认的用户名是：Administrator<br>
+默认的密码是：cxthhhhh.com</p>
+<p>对于Linux（CentOS / Debian / Ubuntu），裸机系统部署平台等。<br>
+默认的用户名是：root<br>
+默认的密码是：cxthhhhh.com</p>
+<h2 id="安全提示">安全提示</h2>
+<p>【提示】系统重装完成后，请您务必立刻修改系统的默认密码【cxthhhhh.com】，并做好系统更新和安全补丁工作，否则您的服务器可能面临安全隐患。（由于本站默认密码为公开网址，因此可能已经被密码字典收录）</p>
+<figure data-type="image" tabindex="1"><img src="https://www.cxthhhhh.com/wp-content/uploads/2020/09/2020091503571393-1024x534.png" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Linux系统下录制命令操作]]></title>
         <id>https://xiu.pw/7WlZGngaW/</id>
@@ -659,183 +884,6 @@ RewriteRule ^(/)?$ panyh.net/ [L]
 <figure data-type="image" tabindex="6"><img src="http://blog.jialezi.net/admin/editor/php/upload/1401593341188.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="7"><img src="http://blog.jialezi.net/admin/editor/php/upload/14001593341189.png" alt="" loading="lazy"></figure>
 <p>转自:<a href="http://blog.jialezi.net/?post=158" title="http://blog.jialezi.net/?post=158">http://blog.jialezi.net/?post=158</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Onedrive+OneManager+Heroku+CFWorkers免费的OD列表]]></title>
-        <id>https://xiu.pw/KB2M1bDsU/</id>
-        <link href="https://xiu.pw/KB2M1bDsU/">
-        </link>
-        <updated>2020-08-30T01:39:37.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>网站下载链接直接是xxx.com/abc.jpg，没有302跳到微软xxx.sharepoint.com，也没有反代xxx.sharepoint.com那样后面一长串。</strong></p>
-<h1 id="准备工作">准备工作：</h1>
-<p>1，        Onedrive，或Sharepoint<br>
-这个大家有的，各种A1，E3，E5，世纪。（Sharepoint默认25T）<br>
-2，        OneManager，Github地址：https://github.com/qkqpttgf/OneManager-php<br>
-基于各种无服务器的平台，比如Heroku、腾讯SCF、阿里FC、华为FG、百度CFC，配置都保存在其环境变量中，当然也可以装在VPS与空间里，不过为了一致，程序不固定储存onedrive的目录结构，缓存最多1小时<br>
-3，        Heroku，最好需要注册2个帐号，注册与登录时需要魔法，平时操作时不需要<br>
-OneManager配置是保存在环境变量中的，所以不需要一直监控保活，Heroku免费套餐每月550小时，550小时/30天=18.33小时，每天只要访问时间段空出来24-18=6小时没有人访问，这一个月其实就足够使用了，但有些人的网站可能访问人比较多所以还没到月底就用光了。<br>
-当然，heroku也可绑卡达到1000小时，同时还能自定义域名。但，SSL却比较麻烦。<br>
-4，        CF workers，免费的就好</p>
-<h1 id="部署程序-安装程序-绑定网盘">部署程序、安装程序、绑定网盘：</h1>
-<p>1，        将OneManager一键部署到Heroku<br>
-2，        访问给定的herokuapp域名，正式安装好程序<br>
-3，        安装好后登录，在设置中绑定Onedrive或Sharepoint<br>
-4，        在设置中做些设定<br>
-5，        换一个Heroku帐号再安装一次（时长够用就无所谓）</p>
-<h1 id="重点">重点：</h1>
-<p><strong>在CF Workers中填入以下代码</strong></p>
-<hr>
-<pre><code>// 单日
-const SingleDay = '111.herokuapp.com'
-// 双日
-const DoubleDay = '222.herokuapp.com'
-// 一切给CF代理，true/false
-const CFproxy = true
-
-// 由于heroku不绑卡不能自定义域名，就算绑卡后https也不方便
-// 另外免费套餐每月550小时，有些人不够用
-// 于是在CF Workers使用此代码，分单双日拉取不同heroku帐号下的相同网页
-// 只改上面，下面不用动
-
-addEventListener('fetch', event =&gt; {
-    let nd = new Date();
-    if (nd.getDate()%2) {
-        host = SingleDay
-    } else {
-        host = DoubleDay
-    }
-    if (!CFproxy) {
-        let url=new URL(event.request.url);
-        if (url.protocol == 'http:') {
-            url.protocol = 'https:'
-            response = Response.redirect(url.href);
-            event.respondWith( response );
-        } else {
-            url.hostname=host;
-            let request=new Request(url,event.request);
-            event.respondWith( fetch(request) )
-        }
-    } else {
-        event.respondWith( fetchAndApply(event.request) );
-    }
-})
-
-async function fetchAndApply(request) {
-    let response = null;
-    let url = new URL(request.url);
-    if (url.protocol == 'http:') {
-        url.protocol = 'https:'
-        response = Response.redirect(url.href);
-        return response;
-    }
-    url.host = host;
-
-    let method = request.method;
-    let body = request.body;
-    let request_headers = request.headers;
-    let new_request_headers = new Headers(request_headers);
-
-    new_request_headers.set('Host', url.host);
-    new_request_headers.set('Referer', request.url);
-
-    let original_response = await fetch(url.href, {
-        method: method,
-        body: body,
-        headers: new_request_headers
-    });
-
-    response = new Response(original_response.body, {
-        status: original_response.status,
-        headers: original_response.headers
-    })
-
-    return response;
-}
-</code></pre>
-<hr>
-<p>单双日分别填入不同的heroku帐号下的网站（当然2个网站要设置得一模一样），这样每个heroku帐号每个月都只访问15或16天，就算24小时有人访问也才360或384小时。<br>
-最后，给workers加上自定义域名的路由！</p>
-<p>从头到尾都可以是Free的，不看网站页面，光从下载过程来看，可以完全假装CF套在了大盘鸡上,谁也看不出我没服务器。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[INFO-SPIDER 是一个帮助用户拿回自己的数据的爬虫工具箱]]></title>
-        <id>https://xiu.pw/UM09GDy1m/</id>
-        <link href="https://xiu.pw/UM09GDy1m/">
-        </link>
-        <updated>2020-08-29T13:14:31.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>一个神奇的工具箱，拿回你的个人信息。</strong></p>
-<h1 id="what-is-info-spider">What is INFO-SPIDER</h1>
-<p>INFO-SPIDER 是一个集众多数据源于一身的爬虫工具箱，旨在安全快捷的帮助用户拿回自己的数据，工具代码开源，流程透明。并提供数据分析功能，基于用户数据生成图表文件，使得用户更直观、深入了解自己的信息。 目前支持数据源包括GitHub、QQ邮箱、网易邮箱、阿里邮箱、新浪邮箱、Hotmail邮箱、Outlook邮箱、京东、淘宝、支付宝、中国移动、中国联通、中国电信、知乎、哔哩哔哩、网易云音乐、QQ好友、QQ群、生成朋友圈相册、浏览器浏览历史、12306、博客园、CSDN博客、开源中国博客、简书。</p>
-<h1 id="features">Features</h1>
-<p>安全可靠：本项目为开源项目，代码简洁，所有源码可见，本地运行，安全可靠。<br>
-使用简单：提供 GUI 界面，只需点击所需获取的数据源并根据提示操作即可。<br>
-结构清晰：本项目的所有数据源相互独立，可移植性高，所有爬虫脚本在项目的 Spiders 文件下。<br>
-数据源丰富：本项目目前支持多达24+个数据源，持续更新。<br>
-数据格式统一：爬取的所有数据都将存储为json格式。<br>
-个人数据丰富：本项目将尽可能多地为你爬取个人数据，后期数据处理可根据需要删减。<br>
-数据分析：本项目提供个人数据的可视化分析，目前仅部分支持。<br>
-文档丰富：本项目包含完整全面的使用说明文档和视频教程</p>
-<h1 id="quickstart">QuickStart</h1>
-<h2 id="依赖安装">依赖安装</h2>
-<p>安装python3和Chrome浏览器</p>
-<p>安装与Chrome浏览器相同版本的<a href="http://chromedriver.storage.googleapis.com/index.html" title="驱动">驱动</a></p>
-<p>安装依赖库 pip install -r requirements.txt</p>
-<h2 id="工具运行">工具运行</h2>
-<p>进入 tools 目录</p>
-<p>运行 python3 main.py</p>
-<p>在打开的窗口点击数据源按钮, 根据提示选择数据保存路径</p>
-<p>弹出的浏览器输入用户密码后会自动开始爬取数据, 爬取完成浏览器会自动关闭.</p>
-<p>在对应的目录下可以查看下载下来的数据(xxx.json), 数据分析图表(xxx.html)</p>
-<h1 id="数据源">数据源</h1>
-<p>GitHub<br>
-QQ邮箱<br>
-网易邮箱<br>
-阿里邮箱<br>
-新浪邮箱<br>
-Hotmail邮箱<br>
-Outlook邮箱<br>
-京东<br>
-淘宝<br>
-支付宝<br>
-中国移动<br>
-中国联通<br>
-中国电信<br>
-知乎<br>
-哔哩哔哩<br>
-网易云音乐<br>
-QQ好友<br>
-QQ群<br>
-生成朋友圈相册<br>
-浏览器浏览历史<br>
-12306<br>
-博客园<br>
-CSDN博客<br>
-开源中国博客<br>
-简书</p>
-<h1 id="数据分析">数据分析</h1>
-<p>博客园</p>
-<p>CSDN博客</p>
-<p>开源中国博客</p>
-<p>简书</p>
-<h1 id="计划">计划</h1>
-<p>提供web界面操作，适应多平台</p>
-<p>对爬取的个人数据进行统计分析</p>
-<p>融合机器学习技术、自然语言处理技术等对数据深入分析</p>
-<p>把分析结果绘制图表直观展示</p>
-<p>添加更多数据源...</p>
-<p>Visitors</p>
-<h1 id="developers-want-to-say">Developers want to say</h1>
-<ol>
-<li>该项目解决了个人数据分散在各种各样的公司之间，经常形成数据孤岛，多维数据无法融合的痛点。</li>
-<li>作者认为该项目的最大潜力在于能把多维数据进行融合并对个人数据进行分析，是个人数据效益最大化。</li>
-<li>该项目使用爬虫手段获取数据，所以程序存在时效问题（需要持续维护，根据网站的更新做出修改）。</li>
-<li>该项目的结构清晰，所有数据源相互独立，可移植性高，所有爬虫脚本在项目的Spiders文件下，可移植到你的程序中。</li>
-<li>目前该项目v1.0版本仅在Windows平台上测试，Python 3.7，未适配多平台。</li>
-<li>计划在v2.0版本对项目进行重构，提供web端操作与数据可视化，以适配多平台。</li>
-<li><strong>本项目<a href="https://github.com/kangvcar/InfoSpider" title="INFO-SPIDER">INFO-SPIDER</a>代码已开源，欢迎star支持。</strong></li>
-</ol>
 ]]></content>
     </entry>
 </feed>

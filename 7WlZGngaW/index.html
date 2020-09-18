@@ -9,7 +9,7 @@
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
 <title>Linux系统下录制命令操作 | 秀儿</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1600263962899">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1600422826567">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -200,19 +200,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">31</span>
+        <span class="site-item-stat-count">33</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">56</span>
+        <span class="site-item-stat-count">61</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">56</span>
+        <span class="site-item-stat-count">61</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -453,6 +453,10 @@ asciinema rec <file-name><br>
   </div>
   <div class="nav">
     <div class="nav-prev">
+      
+        <i class="fa fa-chevron-left"></i>
+        <a class="nav-pc-next" title="一键网络重装系统 - 魔改版（适用于Linux / Windows）" href="https://xiu.pw/_aIUDU0wA/">一键网络重装系统 - 魔改版（适用于Linux / Windows）</a class="nav-pc-next">
+        <a class="nav-mobile-prev" title="一键网络重装系统 - 魔改版（适用于Linux / Windows）" href="https://xiu.pw/_aIUDU0wA/">上一篇</a>
       
     </div>
     <div class="nav-next">
@@ -975,6 +979,225 @@ asciinema rec <file-name><br>
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/TtlfXDfto/"" data-c="
+          &lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;无限制全自动dd安装Windows&lt;/li&gt;
+&lt;li&gt;突破没有VNC,没有救援模式,内存比dd包小的限制&lt;/li&gt;
+&lt;li&gt;使用Debian Live CD中的busybox做中间媒介,经过复杂的处理使本机的网络参数传进Windows操作系统中&lt;/li&gt;
+&lt;li&gt;即使没有DHCP能够让Windows获取网络参数,也能让Windows操作系统在开机的第一时间能够连通网络&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;特别注意：OpenVZ构架不适用&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;安装安装&#34;&gt;安装安装&lt;/h1&gt;
+&lt;p&gt;#Debian/Ubuntu:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt-get install -y xz-utils openssl gawk file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;#RedHat/CentOS:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum install -y xz openssl gawk file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果出现错误，请运行&lt;/p&gt;
+&lt;p&gt;#Debian/Ubuntu:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt-get update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;#RedHat/CentOS:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;一键脚本&#34;&gt;一键脚本&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;[Windows dd包直连地址]&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;精简版dd包&#34;&gt;精简版DD包&lt;/h1&gt;
+&lt;p&gt;选择好版本，输入以下一键脚本即可&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#DD Windows Server 2003 32位 精简版 [账户Administrator密码cxthhhhh.com]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1j9ow8dsIA7DucsGpDI-kzJwiNW9kMceT&#39;
+
+#DD Windows Server 2008 R2 64位 精简版 [账户Administrator密码WinSrv2008x64-Chinese]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1DTps9WwC6RZ8szflais8YazpkCVdqdI7&#39;
+
+#DD Windows Server 2012 R2 64位 精简版 [账户Administrator密码WinSrv2012r2x64-Chinese]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1KTzROA2eWTHC8qWUG2Vr-onuRTwaIOSe&#39;
+
+#DD Windows Server 2019 Datacenter 64位 精简版 [账户Administrator密码WinSrv2019dc-Chinese]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1NbOzolHsDGbp3gJ3TeQ9_4qkmSLIuO07&#39;
+
+#DD Windows7 32位 精简版 [账户Administrator密码Windows7x86-Chinese]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/15NkZxVdkcx2P9cFez9gxkqVEQksKMrx1&#39;
+
+#DD Windows7 sp1 64位 旗舰精简版 自带IIS [账户Administrator密码www.nat.ee]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1KA9PDH4T2ODbxS97T6MtTk5TwifQQoIp&#39;
+
+#DD Windows7 64位 旗舰精简版 [账户Administrator密码www.nat.ee]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1C9Y0Iu1pGX4-blb_3G49jOqv13Zeka6-&#39;
+
+#DD Windows10 64位 企业精简版 2019LTSC [账户Administrator密码www.nat.ee]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1pUNKV0nQvFXDZYJnfq2FzEfQNCZ3_5g7&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;完整版dd包&#34;&gt;完整版DD包&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#DD Windows Server 2012 R2 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1bfXS59h0y8Ibz5o84DvcBMfqhP0d12Ib&#39;
+
+#DD Windows Server 2016 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1CElbDjEXrjPIX4GpdRBwRXBWTtSHOwzi&#39;
+
+#DD Windows Server 2019 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1gRIT702MrVzLr8Bmk8OF-_Ckp02_tOxE&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;oracle甲骨文&#34;&gt;Oracle甲骨文&lt;/h2&gt;
+&lt;p&gt;此DD包仅适用于Oracle甲骨文DD Win使用&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1NHKdm3xfQ3HySNCGvrzgdz7RMVCI1qGy&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;网路参数安装&#34;&gt;网路参数安装&lt;/h2&gt;
+&lt;p&gt;比如GCP谷歌云Azure微软云OVH云服务器等需要指定网络参数安装的方式，示例为GCP谷歌云&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 将X.X.X.X替换为自己的网络参数.
+# --ip-addr :IP Address/内网IP地址
+# --ip-mask :Netmask   /子网掩码
+# --ip-gate :Gateway   /网关
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh --ip-addr X.X.X.X --ip-mask X.X.X.X --ip-gate X.X.X.X -dd &#39;DD包 直链地址&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;例：&lt;br&gt;
+DD Windows 7 64位 精简旗舰版 只需替换--ip-addr后面的X.X.X.X为你自己的内网IP即可，其他不变&lt;br&gt;
+在GCP谷歌云Debian Ubuntu测试成功CentOS未测试&lt;br&gt;
+默认账户Administrator密码www.nat.ee&lt;/p&gt;
+&lt;h2 id=&#34;gcp谷歌云-台湾&#34;&gt;GCP谷歌云-台湾&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh --ip-addr X.X.X.X --ip-mask 255.255.255.0 --ip-gate 10.140.0.1 -dd &#39;https://api.moeclub.org/GoogleDrive/1C9Y0Iu1pGX4-blb_3G49jOqv13Zeka6-&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;gcp谷歌云-香港&#34;&gt;GCP谷歌云 香港&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh --ip-addr X.X.X.X --ip-mask 255.255.255.0 --ip-gate 10.170.0.1 -dd &#39;https://api.moeclub.org/GoogleDrive/1C9Y0Iu1pGX4-blb_3G49jOqv13Zeka6-&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;连接上后如果遇到无法打开网页的情况，修改DNS即可&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;8.8.8.8
+8.8.4.4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;关于激活&#34;&gt;关于激活&lt;/h1&gt;
+&lt;p&gt;可以使用本博客的KMS激活&lt;/p&gt;
+&lt;p&gt;如果不能使用KMS激活，可以试试下面的Key（不一定都能成功激活）&lt;br&gt;
+RHTBY-VWY6D-QJRJ9-JGQ3X-Q2289&lt;br&gt;
+H8PDJ-H4NKW-3GKH7-YHKJ7-4C2JR&lt;br&gt;
+右键以管理员身份运行CMD（命令提示符），依次执行下面的命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;slmgr.vbs -upk
+slmgr.vbs -ipk RHTBY-VWY6D-QJRJ9-JGQ3X-Q2289
+slmgr.vbs -ato
+slmgr.vbs -dlv
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windows服务器开启Ping功能&lt;br&gt;
+进入服务器后点击 开始 → 运行 输入如下命令：&lt;br&gt;
+开启Ping：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;netsh firewall set icmpsetting 8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;关闭Ping：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;netsh firewall set icmpsetting 8 disable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;备用链接&lt;br&gt;
+备用链接存储在Dropbox国内需要科学上网，国外机器可以直接使用；&lt;/p&gt;
+&lt;h1 id=&#34;精简版&#34;&gt;精简版&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#DD Windows Server 2003 32位 精简版 [账户Administrator密码cxthhhhh.com]
+https://dl-web.dropbox.com/s/ajqa1vwxfqulazd/Win-Server-2003-X32%5BAdministrator-cxthhhhh.com%5D.gz
+
+#DD Windows Server 2008 R2 64位 精简版 [账户Administrator密码WinSrv2008x64-Chinese]
+https://dl-web.dropbox.com/s/jhxp38eeu9quu12/Win-Server-2008R2-X64%5BAdministrator-WinSrv2008x64-Chinese%5D.gz
+
+#DD Windows Server 2012 R2 64位 精简版 [账户Administrator密码WinSrv2012r2x64-Chinese]
+https://dl-web.dropbox.com/s/9r7v27hmmbytur1/Win-Server-2012R2-X64%5BAdministrator-WinSrv2012r2x64-Chinese%5D.gz
+
+#DD Windows Server 2019 Datacenter 64位 精简版 [账户Administrator密码WinSrv2019dc-Chinese]
+https://dl-web.dropbox.com/s/y675vyr04egz2xs/Win-Server2019-Datacenter-X64%5BAdministrator-WinSrv2019dc-Chinese%5D.gz
+
+#DD Windows7 32位 精简版 [账户Administrator密码Windows7x86-Chinese]
+https://dl-web.dropbox.com/s/6wqa2tf51rtojdh/Win7-X86%5BAdministrator-Windows7x86-Chinese%5D.gz
+
+#DD Windows7 sp1 64位 旗舰精简版 自带IIS [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/4ouiqrddtajk1c8/Win7%20X64%20sp1%20IIS%5BAdministrator-www.nat.ee%5D.gz
+
+#DD Windows7 64位 旗舰精简版 [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/fzoaonaj9fbxatg/Win7-X64%5BAdministrator-www.nat.ee%5D.gz
+
+#DD Windows10 64位 企业精简版 2019LTSC [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/ra7m1zm0fevjuby/Win10-2019LTSC-X64%5BAdministrator-www.nat.ee%5D.gz
+
+#Oracle专用 DD Windows7 64位 精简版 [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/x5f23j6qhp1dneq/Oracle-Win7-X64%5BAdministrator-www.nat.ee%5D.gz
+
+#OVH专用 DD Windows7 64位 精简版 [账户administrator密码www.80host.com]
+https://dl-web.dropbox.com/s/knhw80grm9o3b35/OVH-Win7-X64%5Badministrator-www.80host.com%5D.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;完整版&#34;&gt;完整版&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#DD Windows Server 2012 R2 Datacenter 64位 完整版 [账户administrator密码Password147]
+https://dl-web.dropbox.com/s/3y3mvht0u6fm34g/cn_windows2012r2%5Badministrator-Password147%5D.gz
+
+#DD Windows Server 2016 Datacenter 64位 完整版 [账户administrator密码Password147]
+https://dl-web.dropbox.com/s/wk3zltm9kepfg99/cn_windows2016%5Badministrator-Password147%5D.gz
+
+#DD Windows Server 2019 Datacenter 64位 完整版 [账户administrator密码Password147]
+https://dl-web.dropbox.com/s/bp92z37ae4hlnd0/cn_windows2019%5Badministrator-Password147%5D.gz
+
+&lt;/code&gt;&lt;/pre&gt;
+">DD Windows 一键脚本（包含GCP谷歌云Oracle甲骨文）</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/_aIUDU0wA/"" data-c="
+          &lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;
+&lt;p&gt;一键网络重装系统 - 魔改版，它可以通过Internet重新安装Linux和Windows以及常见的操作系统。例如：Linux（CentOS，Debian，Ubuntu、etc..），Windows（2019、2016、2012R2、2008R2、7、2003、etc..），以及其他系统（不断支持更多中）。&lt;/p&gt;
+&lt;p&gt;当我们需要重装VPS/云平台/独立服务器操作系统时，通常可以通过服务商模板和ISO挂载的方式重新安装。从今天开始，你将拥有了一个全新的方式，通过网络一键式重新安装纯净操作系统，无需CD-ROM,无需VNC/IPIM/KVM。无论是Linux，还是Windows，都可以通过网络一键式完成安装，通过简单的一到两行命令开启全新而美妙的体验。&lt;/p&gt;
+&lt;h1 id=&#34;魔改版本及开源地址&#34;&gt;魔改版本及开源地址&lt;/h1&gt;
+&lt;p&gt;最新版本：3.1.0（2020/09/15）&lt;/p&gt;
+&lt;p&gt;官方发布：https://www.cxthhhhh.com/network-reinstall-system-modify&lt;/p&gt;
+&lt;p&gt;Github：Network-Reinstall-System-Modify&lt;/p&gt;
+&lt;p&gt;魔改版本：CXTHHHHH (via) 原始版本：MoeClub(Vicer)&lt;/p&gt;
+&lt;h1 id=&#34;支持安装的系统&#34;&gt;支持安装的系统&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;Alpine Linux、Anarchy Linux、Arch Linux、Backbox、BlackArch Linux、Bluestar Linux、Bodhi Linux、CentOS、CoreOS、Debian、Deepin、Devuan、Elementary OS、Fedora、Feren OS、Flatcar Linux、FreeBSD、FreeDOS、Gentoo、IPFire、Kali Linux、KDE Neon、Kodachi、Linux Lite、Q4OS、Microsoft Windows、Mageia、Manjaro、Mint、MirOS、Nitrux、NixOS、OpenBSD、OpenSUSE、Oracle Linux、Parrot Security、Peppermint、Proxmox-VE、Pop OS、Red Hat Enterprise Linux、Regolith、RancherOS、Scientific Linux、Slackware、SparkyLinux、Tails、Tiny Core Linux、Ubuntu、Velt、Voyager、Zen Installer、Zorin OS、ALT Linux Rescue、Boot Repair CD、Breakin、CAINE、Clonezilla、DBAN、GParted、Grml、Memtest、Rescatux、Super Grub2 Disk、System Rescue CD、Ultimate Boot CD
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;如何使用&#34;&gt;如何使用&lt;/h1&gt;
+&lt;h2 id=&#34;1-下载脚本通过root用户执行&#34;&gt;1、下载脚本（通过root用户执行）&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget --no-check-certificate -qO ~/Network-Reinstall-System-Modify.sh &#39;https://www.cxthhhhh.com/CXT-Library/Network-Reinstall-System-Modify/Network-Reinstall-System-Modify.sh&#39; &amp;amp;&amp;amp; chmod a+x ~/Network-Reinstall-System-Modify.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;2-安装系统任选其一&#34;&gt;2、安装系统（任选其一）&lt;/h2&gt;
+&lt;p&gt;【图形化UI界面选择】（推荐）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bash ~/Network-Reinstall-System-Modify.sh -UI_Options
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;合并执行一键启动图形化ui界面选择安装系统包含下载执行&#34;&gt;【合并执行】一键启动图形化UI界面，选择安装系统（包含下载+执行）：&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget --no-check-certificate -qO ~/Network-Reinstall-System-Modify.sh &#39;https://www.cxthhhhh.com/CXT-Library/Network-Reinstall-System-Modify/Network-Reinstall-System-Modify.sh&#39; &amp;amp;&amp;amp; chmod a+x ~/Network-Reinstall-System-Modify.sh &amp;amp;&amp;amp; bash ~/Network-Reinstall-System-Modify.sh -UI_Options
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装-裸机系统部署平台推荐&#34;&gt;【安装 裸机系统部署平台】（推荐）&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bash ~/Network-Reinstall-System-Modify.sh -CXT_Bare-metal_System_Deployment_Platform
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装-linux推荐&#34;&gt;【安装 Linux】（推荐）&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bash ~/Network-Reinstall-System-Modify.sh -CentOS_8
+bash ~/Network-Reinstall-System-Modify.sh -Debian_10
+bash ~/Network-Reinstall-System-Modify.sh -Ubuntu_20.04
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装-windows推荐&#34;&gt;【安装 Windows】（推荐）&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bash ~/Network-Reinstall-System-Modify.sh -Windows_Server_2019
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装-指定自定义-dd镜像推荐&#34;&gt;【安装 指定自定义 DD镜像】（推荐）&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bash ~/Network-Reinstall-System-Modify.sh  -DD &amp;quot;%URL%&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;安装-更多系统-说明&#34;&gt;【安装 更多系统 说明】&lt;/h1&gt;
+&lt;p&gt;此页面为【一键网络重装系统 - 魔改版】发布页，仅列出了常用Linux和Windows的最新稳定版系统安装命令（截至2020年9月）。&lt;br&gt;
+要安装其他版本，请通过【图形化UI界面选择】/【裸机系统部署平台】/【手动输入版本】/【查看更多选项】等方式安装。&lt;/p&gt;
+&lt;p&gt;对于普通用户，直接一键脚本安装最方便，甚至可以直接使用（图形化UI界面选择）选项，一键安装常用系统。&lt;br&gt;
+对于高端用户，建议直接选择通过（裸机系统部署平台）安装任意系统。可定制化性高，但门槛相对高很多，便捷性较低。&lt;/p&gt;
+&lt;p&gt;本项目仅建议您安装最新的稳定版系统。新版系统具有官方长期的技术支持，而旧版已经失去官方支持，亦或者即将失去维护。&lt;br&gt;
+使用旧版操作系统，您的电脑和服务器将面临比新版操作系统更多的安全隐患，甚至造成巨大的损失。&lt;/p&gt;
+&lt;h1 id=&#34;恭喜你已经完成了系统重装&#34;&gt;恭喜，你已经完成了系统重装&lt;/h1&gt;
+&lt;h2 id=&#34;常规说明&#34;&gt;常规说明&lt;/h2&gt;
+&lt;p&gt;1、当您执行完上面的2行命令，你的服务器将开始网络重装纯净系统。在完成安装前，您将无法进行连接管理。因硬件配置和网络环境不同，安装全程需要15-60分钟，请耐心等待。安装完成即可通过IP:22(Linux SSH)/IP:3389(Windows RDP)进行连接。&lt;/p&gt;
+&lt;p&gt;2、为了保证更高的兼容性。推荐重装纯净系统前，您当前的系统版本为：CentOS 7 / Debian 9 / Ubuntu 18.04 。（在您的服务商未提供以上操作系统时，您可以考虑使用其他系统）&lt;/p&gt;
+&lt;h2 id=&#34;默认账户&#34;&gt;默认账户&lt;/h2&gt;
+&lt;p&gt;通常，使用自带镜像，或者您的镜像作者未明确说明系统的用户名和密码的情况下。&lt;/p&gt;
+&lt;p&gt;对于Microsoft Windows。&lt;br&gt;
+默认的用户名是：Administrator&lt;br&gt;
+默认的密码是：cxthhhhh.com&lt;/p&gt;
+&lt;p&gt;对于Linux（CentOS / Debian / Ubuntu），裸机系统部署平台等。&lt;br&gt;
+默认的用户名是：root&lt;br&gt;
+默认的密码是：cxthhhhh.com&lt;/p&gt;
+&lt;h2 id=&#34;安全提示&#34;&gt;安全提示&lt;/h2&gt;
+&lt;p&gt;【提示】系统重装完成后，请您务必立刻修改系统的默认密码【cxthhhhh.com】，并做好系统更新和安全补丁工作，否则您的服务器可能面临安全隐患。（由于本站默认密码为公开网址，因此可能已经被密码字典收录）&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://www.cxthhhhh.com/wp-content/uploads/2020/09/2020091503571393-1024x534.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">一键网络重装系统 - 魔改版（适用于Linux / Windows）</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://xiu.pw/7WlZGngaW/"" data-c="

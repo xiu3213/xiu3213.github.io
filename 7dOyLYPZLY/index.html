@@ -1,0 +1,3051 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="网页制作|运维开发|游戏娱乐|资源分享|生活随写|技术分享">
+<meta name="description" content="知难而退">
+<meta name="theme-color" content="#000">
+<title>秀儿</title>
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1600422826567">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
+<link
+  href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+  rel="stylesheet" type="text/css">
+
+<link href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/hljs/styles/default.css"
+  rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/styles/main.css">
+
+<script src="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+  integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+  integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"></script>
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174922501-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-174922501-1');
+</script>
+
+
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?31326283a1a19c7d79cd45d74eaa0017";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+</head>
+
+<body>
+  <div class="head-top-line"></div>
+  <div class="header-box">
+    
+<div class="gemini">
+  <header class="header  ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>秀儿</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">知难而退</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/archives/" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            
+            
+              
+            
+            <li class="nav-item ">
+              
+              
+                <a href="/tags/" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+          
+            
+              <li class="nav-item ">
+                <a href="/friends/" target="_self">
+                  
+                    <i class="fa fa-address-book"></i> 友链
+                  
+                </a>
+              </li>
+            
+          
+          
+            <li id="fa_search" class="nav-item">
+              <a href="javascript:void(0);">
+                <i class="fa fa-search"></i> <span class="language" data-lan="search">搜索</span>
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+  </div>
+  <div class="main-continer">
+    
+    <div
+      class="section-layout  gemini">
+      <div class="section-layout-wrapper">
+        <div id="sidebarMeta" class="sidebar">
+    
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/images/avatar.png"/>
+    <p class="site-author-name">秀儿</p>
+    
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">33</span>
+        <span class="site-item-stat-name language" data-lan="article">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">61</span>
+        <span class="site-item-stat-name language" data-lan="category">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">61</span>
+        <span class="site-item-stat-name language" data-lan="tag">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://xiu.pw/atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+    <div class="sidebar-item sidebar-item-social">
+      <div class="social-item">
+        
+          
+            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=573799957&amp;site=qq&amp;menu=yeshttp://wpa.qq.com/msgrd?v=3&amp;uin=573799957&amp;site=qq&amp;menu=yes">
+              <i class="fa fa-qq" title="QQ"></i>
+            </a>
+          
+            <a href="https://github.com/wx-io">
+              <i class="fa fa-github-alt" title="GitHub"></i>
+            </a>
+          
+        
+        
+      </div>
+    </div>
+  
+
+
+
+</div>
+</div>
+<script>
+  let sidebarMeta = document.querySelector('#sidebarMeta');
+  let scheme = 'gemini';
+  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
+  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
+    document.addEventListener('scroll', function(e) {
+      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
+        sidebarWrapper.classList.add('home-sidebar-fixed')
+      } else {
+        sidebarWrapper.classList.remove('home-sidebar-fixed')
+      }
+    });
+  }
+  </script>
+        <div class="section-box tag-line box-shadow-wrapper">
+          <section class="section tags-section posts-expand bg-color">
+            <div class="padding-wrapper">
+  <div class="tag-timeline-box">
+    <div class="tag-timeline-wrapper">
+      <div class="tag-timeline-title">
+        <h2>
+          Oracle
+          <small class="language" data-lan="tag">标签</small>
+        </h2>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <a href="https://xiu.pw/TtlfXDfto/">
+        <div class="motion-warpper">
+          <div class="tag-post-node">
+            <h1>
+              09-18
+              <small>DD Windows 一键脚本（包含GCP谷歌云Oracle甲骨文）</small>
+            </h1>
+          </div>
+        </div>
+      </a>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </div>
+  </div>
+</div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+
+	  
+	
+    
+    </div>
+    <div class="poweredby">
+    Powered by <a href="https://github.com" target="_blank">GitHub</a>
+    </div>
+  </footer>
+  
+  
+  <div class="gemini back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+  
+  
+  <div class="bg-img">
+    <img src="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/images/2.jpg" />
+  </div>
+  
+  
+  
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+    back2TopText = document.querySelector('#back_to_top_text'),
+    drawerBox = document.querySelector('#drawer_box'),
+    rightSideBar = document.querySelector('.sidebar'),
+    viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function (e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+
+  window.addEventListener('scroll', function (e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
+    }
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
+    }
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
+    }
+  });
+
+
+  let hasCacu = false;
+  window.onresize = function () {
+    calcuHeight();
+  }
+
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
+
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
+
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
+
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
+    }
+
+    drawerBox.onclick = function () {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, transitionDir, {});
+          }
+        })
+        window.Velocity(viewport, openProp, {
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function () {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp, {
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
+    }
+  }
+
+  // 链接跳转
+  let newWindow = 'true'
+  if (newWindow === 'true') {
+    let links = document.querySelectorAll('.post-body a')
+    links.forEach(item => {
+      if (!item.classList.contains('btn')) {
+        item.setAttribute("target", "_blank");
+      }
+    })
+  }
+
+  let faSearch = document.querySelector('#fa_search');
+  faSearch.addEventListener('click', function () {
+    document.querySelector('#search_mask').style = ''
+  })
+
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
+  
+  // 离开当前页title变化
+  var leaveTitle = "";
+  if (leaveTitle) {
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = leaveTitle;
+      } else {
+        document.title = normal_title;
+      }
+    });
+  }
+
+</script>
+  </div>
+</body>
+
+<div class="search-mask" id="search_mask" style="display: none;">
+  <div class="search-box">
+    <div class="search-title">
+      <i class="fa fa-search"></i>
+      <div class="input-box">
+        <input id="search" type="text" class="language" data-lan="search" placeholder="搜索">
+      </div>
+      <i id="close" class="fa fa-times-circle"></i>
+    </div>
+    <div class="stat-box">
+      <span id="stat_count">0</span><span class="language" data-lan="stat">条相关条目，使用了</span><span id="stat_times">0</span><span class="language" data-lan="stat-time">毫秒</span>
+      <hr>
+    </div>
+    <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/TtlfXDfto/"" data-c="
+          &lt;h1 id=&#34;说明&#34;&gt;说明&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;无限制全自动dd安装Windows&lt;/li&gt;
+&lt;li&gt;突破没有VNC,没有救援模式,内存比dd包小的限制&lt;/li&gt;
+&lt;li&gt;使用Debian Live CD中的busybox做中间媒介,经过复杂的处理使本机的网络参数传进Windows操作系统中&lt;/li&gt;
+&lt;li&gt;即使没有DHCP能够让Windows获取网络参数,也能让Windows操作系统在开机的第一时间能够连通网络&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;特别注意：OpenVZ构架不适用&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;安装安装&#34;&gt;安装安装&lt;/h1&gt;
+&lt;p&gt;#Debian/Ubuntu:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt-get install -y xz-utils openssl gawk file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;#RedHat/CentOS:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum install -y xz openssl gawk file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果出现错误，请运行&lt;/p&gt;
+&lt;p&gt;#Debian/Ubuntu:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt-get update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;#RedHat/CentOS:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;yum update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;一键脚本&#34;&gt;一键脚本&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;[Windows dd包直连地址]&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;精简版dd包&#34;&gt;精简版DD包&lt;/h1&gt;
+&lt;p&gt;选择好版本，输入以下一键脚本即可&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#DD Windows Server 2003 32位 精简版 [账户Administrator密码cxthhhhh.com]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1j9ow8dsIA7DucsGpDI-kzJwiNW9kMceT&#39;
+
+#DD Windows Server 2008 R2 64位 精简版 [账户Administrator密码WinSrv2008x64-Chinese]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1DTps9WwC6RZ8szflais8YazpkCVdqdI7&#39;
+
+#DD Windows Server 2012 R2 64位 精简版 [账户Administrator密码WinSrv2012r2x64-Chinese]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1KTzROA2eWTHC8qWUG2Vr-onuRTwaIOSe&#39;
+
+#DD Windows Server 2019 Datacenter 64位 精简版 [账户Administrator密码WinSrv2019dc-Chinese]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1NbOzolHsDGbp3gJ3TeQ9_4qkmSLIuO07&#39;
+
+#DD Windows7 32位 精简版 [账户Administrator密码Windows7x86-Chinese]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/15NkZxVdkcx2P9cFez9gxkqVEQksKMrx1&#39;
+
+#DD Windows7 sp1 64位 旗舰精简版 自带IIS [账户Administrator密码www.nat.ee]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1KA9PDH4T2ODbxS97T6MtTk5TwifQQoIp&#39;
+
+#DD Windows7 64位 旗舰精简版 [账户Administrator密码www.nat.ee]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1C9Y0Iu1pGX4-blb_3G49jOqv13Zeka6-&#39;
+
+#DD Windows10 64位 企业精简版 2019LTSC [账户Administrator密码www.nat.ee]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1pUNKV0nQvFXDZYJnfq2FzEfQNCZ3_5g7&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;完整版dd包&#34;&gt;完整版DD包&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#DD Windows Server 2012 R2 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1bfXS59h0y8Ibz5o84DvcBMfqhP0d12Ib&#39;
+
+#DD Windows Server 2016 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1CElbDjEXrjPIX4GpdRBwRXBWTtSHOwzi&#39;
+
+#DD Windows Server 2019 Datacenter 64位 完整版 [账户administrator密码Password147]
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1gRIT702MrVzLr8Bmk8OF-_Ckp02_tOxE&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;oracle甲骨文&#34;&gt;Oracle甲骨文&lt;/h2&gt;
+&lt;p&gt;此DD包仅适用于Oracle甲骨文DD Win使用&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh -dd &#39;https://api.moeclub.org/GoogleDrive/1NHKdm3xfQ3HySNCGvrzgdz7RMVCI1qGy&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;网路参数安装&#34;&gt;网路参数安装&lt;/h2&gt;
+&lt;p&gt;比如GCP谷歌云Azure微软云OVH云服务器等需要指定网络参数安装的方式，示例为GCP谷歌云&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 将X.X.X.X替换为自己的网络参数.
+# --ip-addr :IP Address/内网IP地址
+# --ip-mask :Netmask   /子网掩码
+# --ip-gate :Gateway   /网关
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh --ip-addr X.X.X.X --ip-mask X.X.X.X --ip-gate X.X.X.X -dd &#39;DD包 直链地址&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;例：&lt;br&gt;
+DD Windows 7 64位 精简旗舰版 只需替换--ip-addr后面的X.X.X.X为你自己的内网IP即可，其他不变&lt;br&gt;
+在GCP谷歌云Debian Ubuntu测试成功CentOS未测试&lt;br&gt;
+默认账户Administrator密码www.nat.ee&lt;/p&gt;
+&lt;h2 id=&#34;gcp谷歌云-台湾&#34;&gt;GCP谷歌云-台湾&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh --ip-addr X.X.X.X --ip-mask 255.255.255.0 --ip-gate 10.140.0.1 -dd &#39;https://api.moeclub.org/GoogleDrive/1C9Y0Iu1pGX4-blb_3G49jOqv13Zeka6-&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;gcp谷歌云-香港&#34;&gt;GCP谷歌云 香港&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget --no-check-certificate -qO InstallNET.sh &#39;https://moeclub.org/attachment/LinuxShell/InstallNET.sh&#39; &amp;amp;&amp;amp; bash InstallNET.sh --ip-addr X.X.X.X --ip-mask 255.255.255.0 --ip-gate 10.170.0.1 -dd &#39;https://api.moeclub.org/GoogleDrive/1C9Y0Iu1pGX4-blb_3G49jOqv13Zeka6-&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;连接上后如果遇到无法打开网页的情况，修改DNS即可&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;8.8.8.8
+8.8.4.4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;关于激活&#34;&gt;关于激活&lt;/h1&gt;
+&lt;p&gt;可以使用本博客的KMS激活&lt;/p&gt;
+&lt;p&gt;如果不能使用KMS激活，可以试试下面的Key（不一定都能成功激活）&lt;br&gt;
+RHTBY-VWY6D-QJRJ9-JGQ3X-Q2289&lt;br&gt;
+H8PDJ-H4NKW-3GKH7-YHKJ7-4C2JR&lt;br&gt;
+右键以管理员身份运行CMD（命令提示符），依次执行下面的命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;slmgr.vbs -upk
+slmgr.vbs -ipk RHTBY-VWY6D-QJRJ9-JGQ3X-Q2289
+slmgr.vbs -ato
+slmgr.vbs -dlv
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windows服务器开启Ping功能&lt;br&gt;
+进入服务器后点击 开始 → 运行 输入如下命令：&lt;br&gt;
+开启Ping：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;netsh firewall set icmpsetting 8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;关闭Ping：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;netsh firewall set icmpsetting 8 disable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;备用链接&lt;br&gt;
+备用链接存储在Dropbox国内需要科学上网，国外机器可以直接使用；&lt;/p&gt;
+&lt;h1 id=&#34;精简版&#34;&gt;精简版&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#DD Windows Server 2003 32位 精简版 [账户Administrator密码cxthhhhh.com]
+https://dl-web.dropbox.com/s/ajqa1vwxfqulazd/Win-Server-2003-X32%5BAdministrator-cxthhhhh.com%5D.gz
+
+#DD Windows Server 2008 R2 64位 精简版 [账户Administrator密码WinSrv2008x64-Chinese]
+https://dl-web.dropbox.com/s/jhxp38eeu9quu12/Win-Server-2008R2-X64%5BAdministrator-WinSrv2008x64-Chinese%5D.gz
+
+#DD Windows Server 2012 R2 64位 精简版 [账户Administrator密码WinSrv2012r2x64-Chinese]
+https://dl-web.dropbox.com/s/9r7v27hmmbytur1/Win-Server-2012R2-X64%5BAdministrator-WinSrv2012r2x64-Chinese%5D.gz
+
+#DD Windows Server 2019 Datacenter 64位 精简版 [账户Administrator密码WinSrv2019dc-Chinese]
+https://dl-web.dropbox.com/s/y675vyr04egz2xs/Win-Server2019-Datacenter-X64%5BAdministrator-WinSrv2019dc-Chinese%5D.gz
+
+#DD Windows7 32位 精简版 [账户Administrator密码Windows7x86-Chinese]
+https://dl-web.dropbox.com/s/6wqa2tf51rtojdh/Win7-X86%5BAdministrator-Windows7x86-Chinese%5D.gz
+
+#DD Windows7 sp1 64位 旗舰精简版 自带IIS [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/4ouiqrddtajk1c8/Win7%20X64%20sp1%20IIS%5BAdministrator-www.nat.ee%5D.gz
+
+#DD Windows7 64位 旗舰精简版 [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/fzoaonaj9fbxatg/Win7-X64%5BAdministrator-www.nat.ee%5D.gz
+
+#DD Windows10 64位 企业精简版 2019LTSC [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/ra7m1zm0fevjuby/Win10-2019LTSC-X64%5BAdministrator-www.nat.ee%5D.gz
+
+#Oracle专用 DD Windows7 64位 精简版 [账户Administrator密码www.nat.ee]
+https://dl-web.dropbox.com/s/x5f23j6qhp1dneq/Oracle-Win7-X64%5BAdministrator-www.nat.ee%5D.gz
+
+#OVH专用 DD Windows7 64位 精简版 [账户administrator密码www.80host.com]
+https://dl-web.dropbox.com/s/knhw80grm9o3b35/OVH-Win7-X64%5Badministrator-www.80host.com%5D.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;完整版&#34;&gt;完整版&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#DD Windows Server 2012 R2 Datacenter 64位 完整版 [账户administrator密码Password147]
+https://dl-web.dropbox.com/s/3y3mvht0u6fm34g/cn_windows2012r2%5Badministrator-Password147%5D.gz
+
+#DD Windows Server 2016 Datacenter 64位 完整版 [账户administrator密码Password147]
+https://dl-web.dropbox.com/s/wk3zltm9kepfg99/cn_windows2016%5Badministrator-Password147%5D.gz
+
+#DD Windows Server 2019 Datacenter 64位 完整版 [账户administrator密码Password147]
+https://dl-web.dropbox.com/s/bp92z37ae4hlnd0/cn_windows2019%5Badministrator-Password147%5D.gz
+
+&lt;/code&gt;&lt;/pre&gt;
+">DD Windows 一键脚本（包含GCP谷歌云Oracle甲骨文）</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/_aIUDU0wA/"" data-c="
+          &lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;
+&lt;p&gt;一键网络重装系统 - 魔改版，它可以通过Internet重新安装Linux和Windows以及常见的操作系统。例如：Linux（CentOS，Debian，Ubuntu、etc..），Windows（2019、2016、2012R2、2008R2、7、2003、etc..），以及其他系统（不断支持更多中）。&lt;/p&gt;
+&lt;p&gt;当我们需要重装VPS/云平台/独立服务器操作系统时，通常可以通过服务商模板和ISO挂载的方式重新安装。从今天开始，你将拥有了一个全新的方式，通过网络一键式重新安装纯净操作系统，无需CD-ROM,无需VNC/IPIM/KVM。无论是Linux，还是Windows，都可以通过网络一键式完成安装，通过简单的一到两行命令开启全新而美妙的体验。&lt;/p&gt;
+&lt;h1 id=&#34;魔改版本及开源地址&#34;&gt;魔改版本及开源地址&lt;/h1&gt;
+&lt;p&gt;最新版本：3.1.0（2020/09/15）&lt;/p&gt;
+&lt;p&gt;官方发布：https://www.cxthhhhh.com/network-reinstall-system-modify&lt;/p&gt;
+&lt;p&gt;Github：Network-Reinstall-System-Modify&lt;/p&gt;
+&lt;p&gt;魔改版本：CXTHHHHH (via) 原始版本：MoeClub(Vicer)&lt;/p&gt;
+&lt;h1 id=&#34;支持安装的系统&#34;&gt;支持安装的系统&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;Alpine Linux、Anarchy Linux、Arch Linux、Backbox、BlackArch Linux、Bluestar Linux、Bodhi Linux、CentOS、CoreOS、Debian、Deepin、Devuan、Elementary OS、Fedora、Feren OS、Flatcar Linux、FreeBSD、FreeDOS、Gentoo、IPFire、Kali Linux、KDE Neon、Kodachi、Linux Lite、Q4OS、Microsoft Windows、Mageia、Manjaro、Mint、MirOS、Nitrux、NixOS、OpenBSD、OpenSUSE、Oracle Linux、Parrot Security、Peppermint、Proxmox-VE、Pop OS、Red Hat Enterprise Linux、Regolith、RancherOS、Scientific Linux、Slackware、SparkyLinux、Tails、Tiny Core Linux、Ubuntu、Velt、Voyager、Zen Installer、Zorin OS、ALT Linux Rescue、Boot Repair CD、Breakin、CAINE、Clonezilla、DBAN、GParted、Grml、Memtest、Rescatux、Super Grub2 Disk、System Rescue CD、Ultimate Boot CD
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;如何使用&#34;&gt;如何使用&lt;/h1&gt;
+&lt;h2 id=&#34;1-下载脚本通过root用户执行&#34;&gt;1、下载脚本（通过root用户执行）&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget --no-check-certificate -qO ~/Network-Reinstall-System-Modify.sh &#39;https://www.cxthhhhh.com/CXT-Library/Network-Reinstall-System-Modify/Network-Reinstall-System-Modify.sh&#39; &amp;amp;&amp;amp; chmod a+x ~/Network-Reinstall-System-Modify.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;2-安装系统任选其一&#34;&gt;2、安装系统（任选其一）&lt;/h2&gt;
+&lt;p&gt;【图形化UI界面选择】（推荐）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bash ~/Network-Reinstall-System-Modify.sh -UI_Options
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;合并执行一键启动图形化ui界面选择安装系统包含下载执行&#34;&gt;【合并执行】一键启动图形化UI界面，选择安装系统（包含下载+执行）：&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget --no-check-certificate -qO ~/Network-Reinstall-System-Modify.sh &#39;https://www.cxthhhhh.com/CXT-Library/Network-Reinstall-System-Modify/Network-Reinstall-System-Modify.sh&#39; &amp;amp;&amp;amp; chmod a+x ~/Network-Reinstall-System-Modify.sh &amp;amp;&amp;amp; bash ~/Network-Reinstall-System-Modify.sh -UI_Options
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装-裸机系统部署平台推荐&#34;&gt;【安装 裸机系统部署平台】（推荐）&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bash ~/Network-Reinstall-System-Modify.sh -CXT_Bare-metal_System_Deployment_Platform
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装-linux推荐&#34;&gt;【安装 Linux】（推荐）&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bash ~/Network-Reinstall-System-Modify.sh -CentOS_8
+bash ~/Network-Reinstall-System-Modify.sh -Debian_10
+bash ~/Network-Reinstall-System-Modify.sh -Ubuntu_20.04
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装-windows推荐&#34;&gt;【安装 Windows】（推荐）&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bash ~/Network-Reinstall-System-Modify.sh -Windows_Server_2019
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装-指定自定义-dd镜像推荐&#34;&gt;【安装 指定自定义 DD镜像】（推荐）&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;bash ~/Network-Reinstall-System-Modify.sh  -DD &amp;quot;%URL%&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;安装-更多系统-说明&#34;&gt;【安装 更多系统 说明】&lt;/h1&gt;
+&lt;p&gt;此页面为【一键网络重装系统 - 魔改版】发布页，仅列出了常用Linux和Windows的最新稳定版系统安装命令（截至2020年9月）。&lt;br&gt;
+要安装其他版本，请通过【图形化UI界面选择】/【裸机系统部署平台】/【手动输入版本】/【查看更多选项】等方式安装。&lt;/p&gt;
+&lt;p&gt;对于普通用户，直接一键脚本安装最方便，甚至可以直接使用（图形化UI界面选择）选项，一键安装常用系统。&lt;br&gt;
+对于高端用户，建议直接选择通过（裸机系统部署平台）安装任意系统。可定制化性高，但门槛相对高很多，便捷性较低。&lt;/p&gt;
+&lt;p&gt;本项目仅建议您安装最新的稳定版系统。新版系统具有官方长期的技术支持，而旧版已经失去官方支持，亦或者即将失去维护。&lt;br&gt;
+使用旧版操作系统，您的电脑和服务器将面临比新版操作系统更多的安全隐患，甚至造成巨大的损失。&lt;/p&gt;
+&lt;h1 id=&#34;恭喜你已经完成了系统重装&#34;&gt;恭喜，你已经完成了系统重装&lt;/h1&gt;
+&lt;h2 id=&#34;常规说明&#34;&gt;常规说明&lt;/h2&gt;
+&lt;p&gt;1、当您执行完上面的2行命令，你的服务器将开始网络重装纯净系统。在完成安装前，您将无法进行连接管理。因硬件配置和网络环境不同，安装全程需要15-60分钟，请耐心等待。安装完成即可通过IP:22(Linux SSH)/IP:3389(Windows RDP)进行连接。&lt;/p&gt;
+&lt;p&gt;2、为了保证更高的兼容性。推荐重装纯净系统前，您当前的系统版本为：CentOS 7 / Debian 9 / Ubuntu 18.04 。（在您的服务商未提供以上操作系统时，您可以考虑使用其他系统）&lt;/p&gt;
+&lt;h2 id=&#34;默认账户&#34;&gt;默认账户&lt;/h2&gt;
+&lt;p&gt;通常，使用自带镜像，或者您的镜像作者未明确说明系统的用户名和密码的情况下。&lt;/p&gt;
+&lt;p&gt;对于Microsoft Windows。&lt;br&gt;
+默认的用户名是：Administrator&lt;br&gt;
+默认的密码是：cxthhhhh.com&lt;/p&gt;
+&lt;p&gt;对于Linux（CentOS / Debian / Ubuntu），裸机系统部署平台等。&lt;br&gt;
+默认的用户名是：root&lt;br&gt;
+默认的密码是：cxthhhhh.com&lt;/p&gt;
+&lt;h2 id=&#34;安全提示&#34;&gt;安全提示&lt;/h2&gt;
+&lt;p&gt;【提示】系统重装完成后，请您务必立刻修改系统的默认密码【cxthhhhh.com】，并做好系统更新和安全补丁工作，否则您的服务器可能面临安全隐患。（由于本站默认密码为公开网址，因此可能已经被密码字典收录）&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://www.cxthhhhh.com/wp-content/uploads/2020/09/2020091503571393-1024x534.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">一键网络重装系统 - 魔改版（适用于Linux / Windows）</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/7WlZGngaW/"" data-c="
+          &lt;h1 id=&#34;linux系统下录制命令操作&#34;&gt;Linux系统下录制命令操作&lt;/h1&gt;
+&lt;p&gt;通常情况下，在Windows或者Android、iOS系统下我们能借助软件进行录屏操作，而在Linux命令行模式下，如果想要录制命令操作，应该怎样进行录屏呢？**&lt;/p&gt;
+&lt;p&gt;#如何安装&lt;br&gt;
+Centos&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum install asciinema -y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Debian/Ubuntu&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get install asciinema -y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;#如何录制&lt;br&gt;
+asciinema rec &lt;file-name&gt;&lt;br&gt;
+如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;asciinema rec demo.rec
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;录制完成后以Ctrl+D结束，文件会保存在当前目录，如果想要保存到其他位置，使用asciinema rec /path/demo.rec即可。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;#如何使用&lt;br&gt;
+嵌入网页需要调用官方的css和js，由于官方的css和js文件不在国内，调用起来非常很慢，影响用户体验。所以我把文件放在GitHub上面，使用jsDelivr来加速文件。&lt;br&gt;
+调用&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/gh/moeik/sshrec/sshrec.css&amp;quot; /&amp;gt;   
+&amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/gh/moeik/sshrec/sshrec.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;你可以放在页面的head处，避免每次使用都去调用。&lt;br&gt;
+或者在需要插入视频的时候调用：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/gh/moeik/sshrec/sshrec.css&amp;quot; /&amp;gt;   
+&amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/gh/moeik/sshrec/sshrec.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;sshsharer-player src=&amp;quot;/path/demo.rec&amp;quot;&amp;gt;&amp;lt;/sshsharer-player&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;插入轻视频&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;&amp;lt;sshsharer-player src=&amp;quot;/path/demo.rec&amp;quot;&amp;gt;&amp;lt;/sshsharer-player&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果调用远程视频文件src处也可以换成http链接。&lt;/p&gt;
+&lt;h2 id=&#34;typecho使用&#34;&gt;Typecho使用：&lt;/h2&gt;
+&lt;p&gt;在写文章的时候强制转换为HTML格式即可~&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;!!!
+&amp;lt;sshsharer-player src=&amp;quot;/path/demo.rec&amp;quot;&amp;gt;&amp;lt;/sshsharer-player&amp;gt;
+!!!
+&lt;/code&gt;&lt;/pre&gt;
+">Linux系统下录制命令操作</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/9cBkSiskQ/"" data-c="
+          &lt;h1 id=&#34;linux系统一键申请lets-encrypt域名证书&#34;&gt;Linux系统一键申请Let&#39;s Encrypt域名证书&lt;/h1&gt;
+&lt;h2 id=&#34;适用于linux系统nginx环境&#34;&gt;适用于Linux系统NGINX环境&lt;/h2&gt;
+&lt;h3 id=&#34;使用&#34;&gt;使用:&lt;/h3&gt;
+&lt;p&gt;申请证书前请提前解析域名到服务器&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -s -L git.io/dmSSL)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照提示输入域名即可&lt;/p&gt;
+&lt;p&gt;证书文件保存在/home/ssl/&lt;domain&gt;/路径下&lt;/p&gt;
+&lt;p&gt;Github:https://github.com/moeik/domainSSL&lt;/p&gt;
+">Linux系统一键申请域名证书</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/lVqtW9KOV/"" data-c="
+          &lt;h1 id=&#34;介绍&#34;&gt;介绍&lt;/h1&gt;
+&lt;p&gt;Gclone是一个基于Rclone的魔改版本，功能与原版Rclone相同，但增加了两个实用功能；&lt;/p&gt;
+&lt;p&gt;支持服务端直接转存他人分享的文件及文件夹&lt;br&gt;
+支持突破Google Drive单账号每日750G限制，基于Google的Service Account服务&lt;br&gt;
+GitHub项目：https://github.com/donwa/gclone&lt;/p&gt;
+&lt;h2 id=&#34;gclone&#34;&gt;Gclone&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;bash &amp;lt;(wget -qO- https://git.io/gclone.sh)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;为了以后使用方便，直接将gclone改名rclone&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cp /usr/bin/gclone /usr/bin/rclone
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;参考：Rclone 常用命令参数：https://sunpma.com/864.html&lt;br&gt;
+Gclone 新增操作命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rclone copy 配置名字:{文件ID} 配置名字:网盘路径 --drive-server-side-across-configs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;说明：{文件ID}可以是分享的单独文件也可以是文件夹&lt;br&gt;
+分享链接一般是这样的：https://drive.google.com/drive/folders/XXXXXX&lt;br&gt;
+最后面的一串字符XXXXXX既是分享ID&lt;br&gt;
+关于突破750G需要使用Google的Service Account服务，过程有些复杂，如果没需求就不用弄了；&lt;br&gt;
+需要的话可以自行Google教程，Service Account的100个文件最好保存到本地，方便以后使用；&lt;/p&gt;
+&lt;h2 id=&#34;fclone&#34;&gt;Fclone&lt;/h2&gt;
+&lt;p&gt;GitHub项目：https://github.com/mawaya/rclone&lt;br&gt;
+Fclone是另一个Rclone的修改版，操作与Rclone和Gclone完全相同&lt;br&gt;
+在GitHub中选择需要的Fclone版本，然后在本地解压得到名为fclone的文件&lt;br&gt;
+然后将得到的fclone文件上传至服务器/usr/bin目录下&lt;br&gt;
+赋予Fclone权限&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;chmod +x /usr/bin/fclone
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用时命令改为fclone即可；&lt;/p&gt;
+&lt;p&gt;快速安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# 下载程序
+wget -P /usr/bin https://objectstorage.ap-seoul-1.oraclecloud.com/n/cnyzzr4k2nzj/b/sunpma/o/fclone
+
+# 将Fclone改名为Rclone
+cp /usr/bin/fclone /usr/bin/rclone
+
+# 赋予权限
+chmod +x /usr/bin/rclone
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装过程&#34;&gt;安装过程&lt;/h2&gt;
+&lt;p&gt;如果有Service Account的100个文件的话，就先建立以下目录，然后上传文件到accounts目录下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir /root/AutoRclone
+mkdir /root/AutoRclone/accounts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果没有Service Account就略过，直接开始下面的安装即可；&lt;br&gt;
+脚本刚才已经下载过了，现在直接输入rclone config开始安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;n) New remote
+s) Set configuration password
+q) Quit config
+n/s/q&amp;gt; n   # 输入n回车，新建配置
+name&amp;gt; GD   # 新建配置的名称，自行设定
+Type of storage to configure.
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+Choose a number from below, or type in your own value
+ 1 / 1Fichier
+   \ &amp;quot;fichier&amp;quot;
+ 2 / Alias for an existing remote
+   \ &amp;quot;alias&amp;quot;
+ 3 / Amazon Drive
+   \ &amp;quot;amazon cloud drive&amp;quot;
+ 4 / Amazon S3 Compliant Storage Provider (AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, etc)
+   \ &amp;quot;s3&amp;quot;
+ 5 / Backblaze B2
+   \ &amp;quot;b2&amp;quot;
+ 6 / Box
+   \ &amp;quot;box&amp;quot;
+ 7 / Cache a remote
+   \ &amp;quot;cache&amp;quot;
+ 8 / Dropbox
+   \ &amp;quot;dropbox&amp;quot;
+ 9 / Encrypt/Decrypt a remote
+   \ &amp;quot;crypt&amp;quot;
+10 / FTP Connection
+   \ &amp;quot;ftp&amp;quot;
+11 / Google Cloud Storage (this is not Google Drive)
+   \ &amp;quot;google cloud storage&amp;quot;
+12 / Google Drive
+   \ &amp;quot;drive&amp;quot;
+13 / Google Photos
+   \ &amp;quot;google photos&amp;quot;
+14 / Hubic
+   \ &amp;quot;hubic&amp;quot;
+15 / JottaCloud
+   \ &amp;quot;jottacloud&amp;quot;
+16 / Koofr
+   \ &amp;quot;koofr&amp;quot;
+17 / Local Disk
+   \ &amp;quot;local&amp;quot;
+18 / Mega
+   \ &amp;quot;mega&amp;quot;
+19 / Microsoft Azure Blob Storage
+   \ &amp;quot;azureblob&amp;quot;
+20 / Microsoft OneDrive
+   \ &amp;quot;onedrive&amp;quot;
+21 / OpenDrive
+   \ &amp;quot;opendrive&amp;quot;
+22 / Openstack Swift (Rackspace Cloud Files, Memset Memstore, OVH)
+   \ &amp;quot;swift&amp;quot;
+23 / Pcloud
+   \ &amp;quot;pcloud&amp;quot;
+24 / Put.io
+   \ &amp;quot;putio&amp;quot;
+25 / QingCloud Object Storage
+   \ &amp;quot;qingstor&amp;quot;
+26 / SSH/SFTP Connection
+   \ &amp;quot;sftp&amp;quot;
+27 / Union merges the contents of several remotes
+   \ &amp;quot;union&amp;quot;
+28 / Webdav
+   \ &amp;quot;webdav&amp;quot;
+29 / Yandex Disk
+   \ &amp;quot;yandex&amp;quot;
+30 / http Connection
+   \ &amp;quot;http&amp;quot;
+31 / premiumize.me
+   \ &amp;quot;premiumizeme&amp;quot;
+Storage&amp;gt; 12       # 选择需要挂载的网盘类型
+** See help for drive backend at: https://rclone.org/drive/ **
+
+Google Application Client Id
+Setting your own is recommended.
+See https://rclone.org/drive/#making-your-own-client-id for how to create your own.
+If you leave this blank, it will use an internal key which is low performance.
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+client_id&amp;gt;        # 默认直接回车，或者输入自己的OAuth ID
+Google Application Client Secret
+Setting your own is recommended.
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+client_secret&amp;gt;    # 默认直接回车，或者输入自己的OAuth秘锁
+Scope that rclone should use when requesting access from drive.
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+Choose a number from below, or type in your own value
+ 1 / Full access all files, excluding Application Data Folder.
+   \ &amp;quot;drive&amp;quot;
+ 2 / Read-only access to file metadata and file contents.
+   \ &amp;quot;drive.readonly&amp;quot;
+   / Access to files created by rclone only.
+ 3 | These are visible in the drive website.
+   | File authorization is revoked when the user deauthorizes the app.
+   \ &amp;quot;drive.file&amp;quot;
+   / Allows read and write access to the Application Data folder.
+ 4 | This is not visible in the drive website.
+   \ &amp;quot;drive.appfolder&amp;quot;
+   / Allows read-only access to file metadata but
+ 5 | does not allow any access to read or download file content.
+   \ &amp;quot;drive.metadata.readonly&amp;quot;
+scope&amp;gt; 1 # 选择1然后回车
+ID of the root folder
+Leave blank normally.
+
+Fill in to access &amp;quot;Computers&amp;quot; folders (see docs), or for rclone to use
+a non root folder as its starting point.
+
+Note that if this is blank, the first time rclone runs it will fill it
+in with the ID of the root folder.
+
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+root_folder_id&amp;gt;        # 直接回车
+Service Account Credentials JSON file path 
+Leave blank normally.
+Needed only if you want use SA instead of interactive login.
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+service_account_file&amp;gt; # 直接回车，如果使用Service Account就填写其中一个文件的绝对路径即可：/root/AutoRclone/accounts/0a5af037763bdab70e3a7094d02ec4bd37f8db94.json
+Service Account Credentials JSON file path .
+
+Enter a string value. Press Enter for the default (&amp;quot;&amp;quot;).
+service_account_file_path&amp;gt; 直接回车，如果使用Service Account就填写这个路径：/root/AutoRclone/accounts/
+Edit advanced config? (y/n)
+y) Yes
+n) No (default)
+y/n&amp;gt; n                    # 选择n 不使用高级配置
+Remote config
+Configure this as a team drive?
+y) Yes
+n) No (default)
+y/n&amp;gt; y                     # 选择n不加载团队盘，选择y加载团队盘
+Fetching team drive list...
+Choose a number from below, or type in your own value
+ 1 / 网盘01
+   \ &amp;quot;0AFZFXMn1uKs2Uk9PVA&amp;quot;
+ 2 / 网盘05
+   \ &amp;quot;0AI3nH3Vf8NWIUk9PVA&amp;quot;
+ 3 / 网盘02
+   \ &amp;quot;0ADYACmKjlU3JUk9PVA&amp;quot;
+Enter a Team Drive ID&amp;gt; # 选择你的团队盘编号
+y) Yes this is OK
+e) Edit this remote
+d) Delete this remote
+y/e/d&amp;gt; y       # 选择y回车
+Current remotes:
+
+Name                 Type
+====                 ====
+网盘01             drive
+
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q&amp;gt; q   # 输入q回车，保存配置退出&lt;/code&gt;&lt;/pre&gt;
+">Gclone 一个 Rclone 的魔改版本支持分享转存突破750G限制</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/NiGGt4ZIu/"" data-c="
+          &lt;blockquote&gt;
+&lt;p&gt;WordPress是一个以PHP和MySQL为平台的自由开源的博客软件和内容管理系统。WordPress具有插件架构和模板系统。截至2018年4月，排名前1000万的网站中超过30.6%使用WordPress。WordPress是最受欢迎的网站内容管理系统。全球有大约30%的网站(7亿5000个)都是使用WordPress架设网站的。WordPress是目前因特网上最流行的博客系统。WordPress在最著名的网络发布阶段中脱颖而出。如今，它被使用在超过7000万个站点上。WordPress是一个以PHP和MySQL为平台的自由开源的博客软件和内容管理系统。WordPress具有插件架构和模板系统。截至2018年4月，排名前1000万的网站中超过30.6%使用WordPress。WordPress是最受欢迎的网站内容管理系统。全球有大约30%的网站(7亿5000个)都是使用WordPress架设网站的。WordPress是目前因特网上最流行的博客系统。WordPress在最著名的网络发布阶段中脱颖而出。如今，它被使用在超过7000万个站点上。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;虽然wordpress很优秀，但是当正式使用这个CMS以后，却发现很吃资源，明明博客没有多少内容，但是只要访问量一大以后，就导致WordPress打开巨慢，同时主机的使用率非常高。&lt;/p&gt;
+&lt;p&gt;这里就分享一些博主优化WordPress的方法。&lt;/p&gt;
+&lt;h1 id=&#34;分离wordpress的cssjs文件&#34;&gt;·分离WordPress的CSS/JS文件&lt;/h1&gt;
+&lt;p&gt;由于WordPress主要是基于PHP，同时又有大量的css/js文件需要加载。每次打开的时候都需要实时生成需要显示的网页内容，所以会比较吃主机资源。&lt;/p&gt;
+&lt;p&gt;这里博主推荐一款WordPress插件：commonWP&lt;/p&gt;
+&lt;p&gt;该插件将WordPress与大部分安装插件所需要的css/js文件通过jsdelivr分发。&lt;/p&gt;
+&lt;p&gt;jsdelivr目前国内是走网宿的CDN节点，国外走的CloudFlare的节点。加速效果非常明显。强烈建议该插件必备！！&lt;/p&gt;
+&lt;p&gt;直接WordPress后台插件安装界面搜索commonWP安装其他用即可，不用其他设定。&lt;/p&gt;
+&lt;p&gt;启用该插件以后，你可能会发现大部分的css/js文件都通过了jsdelivr分发，但是仍然还是有部分文件没有走jsdelivr。&lt;/p&gt;
+&lt;p&gt;那么这种情况下就需要你手动修改没有走jsdelivr相关的主题/插件文件了。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;不建议没有动手能力的站长修改！&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;博主这里简单说下如何修改又如何通过jsdelivr分发&#34;&gt;博主这里简单说下如何修改，又如何通过jsdelivr分发。&lt;/h1&gt;
+&lt;h2 id=&#34;1-修改主题或者插件引用的cssjs文件地址&#34;&gt;1、修改主题或者插件引用的css/js文件地址&lt;/h2&gt;
+&lt;p&gt;首先你需要确定你要分发的内容是那个插件所需要使用的css/js文件，然后在主机上找到该插件的文件，通过分析源码，找到加载该css/js文件的内容，修改引用链接。修改后的链接后面会说如何获取。&lt;/p&gt;
+&lt;p&gt;例如本站有使用auto-highslide，该插件就不会自动被commonWP修改成jsdelivr的地址，那么通过分析该插件的文件，找到是通过auto-highslide.php加载的相关css/js文件。&lt;/p&gt;
+&lt;p&gt;在auto-highslide.php文件里面，发现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;&#39;.get_bloginfo(&#39;wpurl&#39;).&#39;/wp-content/plugins/auto-highslide/highslide/highslide.css&amp;quot; type=&amp;quot;text/css&amp;quot; /&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;&#39;.get_bloginfo(&#39;wpurl&#39;).&#39;/wp-content/plugins/auto-highslide/highslide/highslide-with-html.packed.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;那么需要修改的就是&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;href=&amp;quot;&#39;.get_bloginfo(&#39;wpurl&#39;).&#39;/wp-content/plugins/auto-highslide/highslide/highslide.css&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;和&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;src=&amp;quot;&#39;.get_bloginfo(&#39;wpurl&#39;).&#39;/wp-content/plugins/auto-highslide/highslide/highslide-with-html.packed.js&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改成&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;href=&amp;quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@40028ba1e2ff8193194f9c1474d81ed5d26c52eb/themes/highslide.css&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;和&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;src=&amp;quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@249a403710b0739bf5173cd9d7afeefd04b12eb0/themes/highslide-with-html.packed.js&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;那么完整的代码就是：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; href=&amp;quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@40028ba1e2ff8193194f9c1474d81ed5d26c52eb/themes/highslide.css&amp;quot; type=&amp;quot;text/css&amp;quot; /&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@249a403710b0739bf5173cd9d7afeefd04b12eb0/themes/highslide-with-html.packed.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其他的插件与主题修改方法与之类似，另外WP自带的函数是通过 wp_enqueue_style和wp_enqueue_scripts加载CSS和JS文件的，如果是修改主题的话，注意这两个函数。&lt;/p&gt;
+&lt;h2 id=&#34;2-手动通过jsdelivr分发文件&#34;&gt;2、手动通过jsdelivr分发文件&lt;/h2&gt;
+&lt;p&gt;该方法需要通过github来操作，在GitHub上面新建一个仓库，注意仓库设置成public。上传你需要分发的内容，然后通过jsdelivr来分发，具体操作这里不多说。&lt;/p&gt;
+&lt;p&gt;jsdelivr分发github文件的规则这里说下。&lt;/p&gt;
+&lt;p&gt;https://cdn.jsdelivr.net/gh/GitHub用户名/仓库名/文件.后缀&lt;/p&gt;
+&lt;p&gt;注意GitHub区分大小写，其他仓库名后面可以通过@来指定具体的某个release版本或者修订版本。&lt;/p&gt;
+&lt;h1 id=&#34;缓存数据库&#34;&gt;·缓存数据库&lt;/h1&gt;
+&lt;p&gt;一般现在用得较多的数据库缓存是memcached和redis，博主使用的是redis，以redis为例，由于博主是通过宝塔安装的php，所以这里也以宝塔为例。&lt;/p&gt;
+&lt;p&gt;在宝塔的php管理界面，找到安装扩展，里面有个redis，通过该路径来安装redis，然后wp后台安装上redis相关的插件。博主这里使用的是Redis Object Cache&lt;/p&gt;
+&lt;p&gt;安装好以后就启用插件，简单设置下就可以了。&lt;/p&gt;
+&lt;p&gt;（可选）然后在宝塔管理界面，选择mysql管理界面。里面有个性能调整。根据你的实际使用情况调整相关参数。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://loukky.com/wp-content/uploads/2020/08/082615014568_0QQ%E6%88%AA%E5%9B%BE20200826150049.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;通过上面设置与调整过后，那么现在你的WordPress应该是可以明显感觉到速度提升了。&lt;/p&gt;
+">优化Wordpress速度——前端使用国内免费Cdn加速Js/Css文件，后端数据库缓存</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/iNkGyc0K_/"" data-c="
+          &lt;h1 id=&#34;使用方法&#34;&gt;使用方法：&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;python cfscan.py 183.201.1.1-183.201.255.255 800
+
+cfscan.py = 你保存的文件名
+
+183.201.1.1-183.201.255.255 = 你要扫的起始IP-结尾IP
+
+800 = 线程数
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;运行截图&#34;&gt;运行截图：&lt;/h1&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://i.loli.net/2020/09/10/aK6zJFCNrY4Ah9m.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;结果截图&#34;&gt;结果截图：&lt;/h1&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://i.loli.net/2020/09/10/ipcu5gzH1LDn6WY.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;脚本代码&#34;&gt;脚本代码：&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env python
+# coding=utf-8
+# python2.7 only
+
+import threading
+import requests
+import Queue
+import sys
+import re
+
+#ip to num
+def ip2num(ip):
+    ip = [int(x) for x in ip.split(&#39;.&#39;)]
+    return ip[0] &amp;lt;&amp;lt; 24 | ip[1] &amp;lt;&amp;lt; 16 | ip[2] &amp;lt;&amp;lt; 8 | ip[3]
+
+#num to ip
+def num2ip(num):
+    return &#39;%s.%s.%s.%s&#39; % ((num &amp;amp; 0xff000000) &amp;gt;&amp;gt; 24,(num &amp;amp; 0x00ff0000) &amp;gt;&amp;gt; 16,(num &amp;amp; 0x0000ff00) &amp;gt;&amp;gt; 8,num &amp;amp; 0x000000ff)
+
+#
+def ip_range(start, end):
+    return [num2ip(num) for num in range(ip2num(start), ip2num(end) + 1) if num &amp;amp; 0xff]
+
+#
+def bThread(iplist):
+   
+    threadl = []
+    queue = Queue.Queue()
+    for host in iplist:
+        queue.put(host)
+
+    for x in xrange(0, int(SETTHREAD)):
+        threadl.append(tThread(queue))
+        
+    for t in threadl:
+        t.start()
+    for t in threadl:
+        t.join()        
+
+#create thread
+class tThread(threading.Thread):
+    def __init__(self, queue):
+        threading.Thread.__init__(self)
+        self.queue = queue
+
+    def run(self):
+        
+        while not self.queue.empty():
+            host = self.queue.get()
+            try:
+                checkServer(host)
+            except:
+                continue
+
+def checkServer(host):
+    header ={&#39;user-agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36&#39;}
+    aimurl = &amp;quot;http://&amp;quot;+host+&amp;quot;:443&amp;quot;
+    response = requests.get(url=aimurl,headers=header,timeout=10)
+    serverText = response.headers[&#39;server&#39;]
+
+    if len(serverText) &amp;gt; 0:
+        print  &amp;quot;-&amp;quot;*50+&amp;quot;\n&amp;quot;+aimurl +&amp;quot;\nServer: &amp;quot;+serverText
+        if (serverText == &amp;quot;CloudFront&amp;quot;):
+            f.write(host+&amp;quot;\n&amp;quot;)
+
+
+if __name__ == &#39;__main__&#39;:
+    print &#39;\n############# Cloud Front Scan  ################&#39;
+    print &#39;                Author hostloc.com&#39;
+    print &#39;################################################\n&#39;
+
+    global SETTHREAD
+
+    try:
+        SETTHREAD = sys.argv[2]
+        f = open(&amp;quot;result.txt&amp;quot;, &amp;quot;w&amp;quot;)
+        iplist = ip_range(sys.argv[1].split(&#39;-&#39;)[0], sys.argv[1].split(&#39;-&#39;)[1])
+        
+        print &#39;\n[Note] Will scan &#39;+str(len(iplist))+&amp;quot; host...\n&amp;quot;
+
+        bThread(iplist)
+    except KeyboardInterrupt:
+        print &#39;Keyboard Interrupt!&#39;
+        sys.exit()&lt;/code&gt;&lt;/pre&gt;
+">CloudFront扫段Pyhon脚本</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/73lF-bANp/"" data-c="
+          &lt;h2 id=&#34;搜索引擎优化不会消失-随着搜索越来越根深蒂固地融入到人们兴趣的问题和信息答案的方式中-但seo是很棘手的游戏总是改变从来没有简单-那么当涉及到排名时如何保持领先呢&#34;&gt;搜索引擎优化不会消失。随着搜索越来越根深蒂固地融入到人们兴趣的问题和信息答案的方式中。但SEO是很棘手的游戏，总是改变，从来没有简单。那么，当涉及到排名时，如何保持领先呢？&lt;/h2&gt;
+&lt;h2 id=&#34;seo-由两个部门组成页面外和页面&#34;&gt;SEO 由两个部门组成：页面外和页面。&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;页面外SEO是指您的网站在搜索引擎眼中拥有的权威&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;网页SEO是指网站本身的内容和结构&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;对非页面和页面搜索引擎优化的强烈关注将在网站的排名和流量方面，并将直接影响收入、销售、转化和客户的获取&lt;/em&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;页面外seo优化&#34;&gt;页面外SEO优化&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;技巧开发的内容，很容易共享。内容是 SEO 的王道。开发高质量内容，方便推荐网页的实际人员中自然生成反向链接。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;尽可能经常外联。从他们的博客中留言并申请反向链接。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;你可以从社交媒体渠道获得很多的社交信息和自然链接，以及增加来自社交引用来源的流量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多媒体来源的链接也是实现链接配置文件多样化的一个很好的方式。利用YouTube和其他视频共享网站，并在描述中添加链接（如果适用）。利用Imgur和其他图像共享网站，并在描述中再次添加链接（如果适用）。播客以及其他音频网站。文档共享网站（如 Slideshare 和Web 2.0）的&amp;quot;中等&amp;quot;网站也一样。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最近流行的抓流量和反向链接的方法之一来自网站，如Quora和其他问答引擎。查找与业务和主题相关的问题，并提供简洁、清晰的问题的答案。令人惊讶的是， 有足够的参与度， Quora 上的无跟随反向链接可以跟随。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;避免过度优化关键字。如果您选择仅定位完全匹配的关键字，则链接构建中可能会遇到问题，因为它与您的排名相关。在我看来，90%左右应该是通用和品牌关键字，以及一些赤裸裸的网址。请记住，在构建链接时，尽可能自然地显示非常重要。只有大约 5% 的会针对选择定位的精确匹配短语。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于网站是实时和成长阶段头三个月，我将专注于通用和品牌词。瞄准尽可能多的品牌词，如搜索引擎，如品牌。使您的网站看起来像一个品牌。在此之后，我慢慢地开始添加裸网址、LSI 变体和完全匹配的关键字的组合。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;专注于页面优化页面&#34;&gt;专注于页面优化页面&lt;/h1&gt;
+&lt;p&gt;优化是指可以在您控制的网站属性的页面上进行的更改和增强。如果执行得当，页面 SEO 可以简单得多、更有效，并且需要的研究比页面外优化少得多。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;精确匹配词出现在标题&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搜索引擎需要知道您的网页是关于什么的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;确保您尝试排名的主要关键字位于文章的标题中，这一点至关重要。很少有搜索结果中缺少标题中的主关键字会排名该关键字或相关的 LSI 长尾&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;关键字之间 SEO 价值， 哪些是最好标题中的关键字&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在描述中是唯一的，使用主关键字&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;页面标题（搜索引擎看到）应不超过 50 到 60 个字符（如果可能）。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;同时，您不希望标题显示的信息太少，不会造成混淆。页面的元描述应限制大约 150个字符。这将确保您不会在搜索结果中被截断。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用关键字和 Lsi 变体在标题标签文本&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;标题标签告诉搜索引擎您的内容概述。它们从 H1（最大，通常是标题标签）到 H6。文章和帖子中最常用的标签是 H2 和 H3。如果完全不使用标题标记，则爬虫很识别您的文章内容，并且您的帖子结构将遭受人类访问者的影响。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最佳做法是考虑 H1 标题，H2 主节标题，然后 H3 考虑子节标题。在这些标题标记中使用 LSI 关键字的变体非常重要。LSI 代表潜在的语义索引，这是一个系统搜索引擎，用于分析人们围绕给定主题使用的其他词。LSIGraph 是一个可靠的免费工具，用于发现 LSI 关键字，这些关键字与目标关键字类似，但更集中且搜索量较低。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;网站速度的重要性是至关重要的，页面搜索引擎优化最关键的部分之一是网站加载速度。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;提高网站速度的一些最佳方法包括： 提高网站速度的一些最佳方法包括：&lt;br&gt;
+使用 Gzip 等工具在现场启用压缩。&lt;br&gt;
+优化ML和JavaScript。&lt;br&gt;
+减少站点上的重定向数。&lt;br&gt;
+删除呈现阻止 JavaScript。&lt;br&gt;
+利用浏览器的缓存。&lt;br&gt;
+提高服务器的响应时间。&lt;br&gt;
+利用 CDN 或内容分发网络。&lt;br&gt;
+执行高质量的图像优化。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+">页内和页外SEO技术</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/ZZXDhqj85/"" data-c="
+          &lt;p&gt;如何在同一个虚拟主机空间优雅地安装多个网站&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; &amp;lt;?php
+    switch ($_SERVER[&amp;quot;HTTP_HOST&amp;quot;])
+    {
+        case &amp;quot;www.uselys.com&amp;quot;:
+                            header(&amp;quot;location:.com&amp;quot;);
+        break;
+        case &amp;quot;www.uselys.cn&amp;quot;:
+                            header(&amp;quot;location:.cn&amp;quot;);
+        break;
+        case &amp;quot;www.panyh.net&amp;quot;:
+                            header(&amp;quot;location:panyh&amp;quot;);
+        break;
+    }
+    ?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;也就是在根目录 / 下放一个 index.php，然后根据域名分别跳转到对应的子目录下，实现同一个空间安装多个网站的办法。&lt;/p&gt;
+&lt;p&gt;但这种方法毕竟有点拖沓，于是有了另一段代码：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;RewriteEngine on
+
+DirectoryIndex index.html index.htm index.php default.php index.cgi
+
+# 条件：如果所访问的目标既不是文件，也不是目录
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# 那么：
+
+###########################  第一段 ########################
+# 把 /uselys.cn/ 作为 www.uselys.cn 的根目录
+# 如果主机为 www.uselys.cn 并且 uri 不以 /uselys.cn/ 作为开头
+RewriteCond %{HTTP_HOST} www.uselys.cn
+RewriteCond %{REQUEST_URI} !^/uselys.cn/
+#那么，就把网址里所有的文件都跳转到 /uselys.cn/下对应的内容：
+RewriteRule ^(.*)$ /uselys.cn/$1
+# 如果主机为 www.uselys.cn
+RewriteCond %{HTTP_HOST} www.uselys.cn
+#那么，就把默认首页 / 跳转到 /uselys.cn/index.php文件，并结束跳转
+RewriteRule ^(/)?$ uselys.cn/index.php [L]
+
+###########################  第二段 ########################
+
+RewriteCond %{HTTP_HOST} ^www.uselys.com$
+RewriteCond %{REQUEST_URI} !^/uselys.com/
+RewriteRule ^(.*)$ /uselys.com/$1
+RewriteCond %{HTTP_HOST} ^www.uselys.com$
+RewriteRule ^(/)?$ uselys.com/index.php [L]
+
+###########################  第三段 ########################
+
+RewriteCond %{HTTP_HOST} ^www.panyh.net$
+RewriteCond %{REQUEST_URI} !^/panyh.net/
+RewriteRule ^(.*)$ /panyh.net/$1
+RewriteCond %{HTTP_HOST} ^www.panyh.net$
+RewriteRule ^(/)?$ panyh.net/ [L]
+
+# ... 以此类推
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这是一段 apache的配置文件。当前所有Linux虚拟空间和全能空间都会支持 .htaccess 配置吧。&lt;/p&gt;
+">如何在同一个虚拟主机空间优雅地安装多个网站</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/gsDFY9Jro/"" data-c="
+          &lt;p&gt;最近看了几个服务器自建邮局的方案，很多程序服务器要求2G内存起步，搭建也比较复杂，还要各种设置避免进垃圾箱，是个技术活，害怕那步出问题搞的自己心态爆炸，感觉不太适合自己。想想还是第三方的好，之前我已经尝试过yandex/zoho/腾讯企业邮，最后选择了yandex，一直再使用感觉良好。前几天开发者试用的E5订阅又续订，于是就试了一下，设置邮局功能按照后台引导设置没有任何难度，主要是设置catch-all邮箱，这里分享一下过程。&lt;/p&gt;
+&lt;p&gt;提示：文中E5订阅是指开发者试用订阅，保持活跃能自动续费。网上有很多调用api保持活跃的方法，但是博主申请完一直没使用也续费了，如何才算活跃没有具体的说法。如果没有自动续费，订阅会被取消但是数据不是马上删除，会有时间可以迁移 。&lt;/p&gt;
+&lt;p&gt;（本文搭建邮局不是开发行为，只是正常使用。）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;catch-all邮箱&lt;/strong&gt;：又叫全收邮件，就是把发给邮件服务器上不存在账户的邮件都重定向到某个邮箱，而不是直接退信。正常情况下，如发邮件给服务器上不存在的账户会直接退信给发件人。E5开发者订阅只用25用户，利用catch-all功能可以实现无限别名收邮件。&lt;/p&gt;
+&lt;h1 id=&#34;一添加域名到microsoft-365&#34;&gt;一，添加域名到Microsoft 365&lt;/h1&gt;
+&lt;p&gt;打开：https://admin.microsoft.com/Adminportal/Home?source=applauncher#/Domains&lt;br&gt;
+添加并验证域名，前两步我就不截图了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/46231593341187.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/74411593341187.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/38461593341187.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/77251593341187.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/79951593341187.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;二添加两个用户用于测试&#34;&gt;二，添加两个用户用于测试&lt;/h1&gt;
+&lt;p&gt;添加用户：https://admin.microsoft.com/Adminportal/Home?source=applauncher#/users&lt;/p&gt;
+&lt;p&gt;添加了i@9mail.club和aaa@9mail.club&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/70031593341187.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/25201593341187.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;三向i9mailclub和i29mailclub不存在的用户发送邮件&#34;&gt;三，向i@9mail.club和i2@9mail.club（不存在的用户）发送邮件&lt;/h1&gt;
+&lt;p&gt;可见i2@9mail.club是退信了。&lt;br&gt;
+&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/30121593341188.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/81921593341188.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;四设置catch-all功能&#34;&gt;四，设置Catch-all功能。&lt;/h1&gt;
+&lt;p&gt;1）打开Exchange 管理中心：https://outlook.office365.com/ecp/&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/32321593341188.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;2）修改域类型&lt;/p&gt;
+&lt;p&gt;邮件流——接受的域，把域类型改为内部中继。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/48211593341188.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/86391593341188.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;3）创建一个动态通讯组，用于存放已有的用户。&lt;/p&gt;
+&lt;p&gt;收件人——组——新建Office 365组——动态通讯组列表——仅以下收件人类型——具有Exchange邮箱用户&lt;/p&gt;
+&lt;p&gt;（我这里动态通讯组名称设置为 exchange）&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/68331593341188.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/63721593341188.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;4）创建规则，用于把不存在有的邮件重定向到指定邮箱&lt;/p&gt;
+&lt;p&gt;邮件流——规则——创建新规则&lt;/p&gt;
+&lt;p&gt;名称:随意——规则：发件人位于 组织外部 ——执行：邮件重定向 指定邮箱（i@9mail.club）&lt;/p&gt;
+&lt;p&gt;除非：收件人为以下组成员 exchange（第三步设置的动态通讯组） PS：如果看不到除非选项，请滑动到底部点击下面的高级&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/35851593341188.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;5&#34;&gt;&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/60301593341188.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;五测试&#34;&gt;五，测试&lt;/h1&gt;
+&lt;p&gt;向aaa@9mail.club和xxx@9mail.club（不存在）发送邮件&lt;/p&gt;
+&lt;p&gt;aaa@9mail.club正常收到邮件&lt;/p&gt;
+&lt;p&gt;xxx@9mail.club的邮件重定向到了i@9mail.club&lt;/p&gt;
+&lt;p&gt;设置成功。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;6&#34;&gt;&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/1401593341188.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;7&#34;&gt;&lt;img src=&#34;http://blog.jialezi.net/admin/editor/php/upload/14001593341189.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;转自:&lt;a href=&#34;http://blog.jialezi.net/?post=158&#34; title=&#34;http://blog.jialezi.net/?post=158&#34;&gt;http://blog.jialezi.net/?post=158&lt;/a&gt;&lt;/p&gt;
+">利用Microsoft 365 E5开发者订阅搭建自己的邮局|设置catch-all邮箱</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/KB2M1bDsU/"" data-c="
+          &lt;p&gt;&lt;strong&gt;网站下载链接直接是xxx.com/abc.jpg，没有302跳到微软xxx.sharepoint.com，也没有反代xxx.sharepoint.com那样后面一长串。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;准备工作&#34;&gt;准备工作：&lt;/h1&gt;
+&lt;p&gt;1，        Onedrive，或Sharepoint&lt;br&gt;
+这个大家有的，各种A1，E3，E5，世纪。（Sharepoint默认25T）&lt;br&gt;
+2，        OneManager，Github地址：https://github.com/qkqpttgf/OneManager-php&lt;br&gt;
+基于各种无服务器的平台，比如Heroku、腾讯SCF、阿里FC、华为FG、百度CFC，配置都保存在其环境变量中，当然也可以装在VPS与空间里，不过为了一致，程序不固定储存onedrive的目录结构，缓存最多1小时&lt;br&gt;
+3，        Heroku，最好需要注册2个帐号，注册与登录时需要魔法，平时操作时不需要&lt;br&gt;
+OneManager配置是保存在环境变量中的，所以不需要一直监控保活，Heroku免费套餐每月550小时，550小时/30天=18.33小时，每天只要访问时间段空出来24-18=6小时没有人访问，这一个月其实就足够使用了，但有些人的网站可能访问人比较多所以还没到月底就用光了。&lt;br&gt;
+当然，heroku也可绑卡达到1000小时，同时还能自定义域名。但，SSL却比较麻烦。&lt;br&gt;
+4，        CF workers，免费的就好&lt;/p&gt;
+&lt;h1 id=&#34;部署程序-安装程序-绑定网盘&#34;&gt;部署程序、安装程序、绑定网盘：&lt;/h1&gt;
+&lt;p&gt;1，        将OneManager一键部署到Heroku&lt;br&gt;
+2，        访问给定的herokuapp域名，正式安装好程序&lt;br&gt;
+3，        安装好后登录，在设置中绑定Onedrive或Sharepoint&lt;br&gt;
+4，        在设置中做些设定&lt;br&gt;
+5，        换一个Heroku帐号再安装一次（时长够用就无所谓）&lt;/p&gt;
+&lt;h1 id=&#34;重点&#34;&gt;重点：&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;在CF Workers中填入以下代码&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;pre&gt;&lt;code&gt;// 单日
+const SingleDay = &#39;111.herokuapp.com&#39;
+// 双日
+const DoubleDay = &#39;222.herokuapp.com&#39;
+// 一切给CF代理，true/false
+const CFproxy = true
+
+// 由于heroku不绑卡不能自定义域名，就算绑卡后https也不方便
+// 另外免费套餐每月550小时，有些人不够用
+// 于是在CF Workers使用此代码，分单双日拉取不同heroku帐号下的相同网页
+// 只改上面，下面不用动
+
+addEventListener(&#39;fetch&#39;, event =&amp;gt; {
+    let nd = new Date();
+    if (nd.getDate()%2) {
+        host = SingleDay
+    } else {
+        host = DoubleDay
+    }
+    if (!CFproxy) {
+        let url=new URL(event.request.url);
+        if (url.protocol == &#39;http:&#39;) {
+            url.protocol = &#39;https:&#39;
+            response = Response.redirect(url.href);
+            event.respondWith( response );
+        } else {
+            url.hostname=host;
+            let request=new Request(url,event.request);
+            event.respondWith( fetch(request) )
+        }
+    } else {
+        event.respondWith( fetchAndApply(event.request) );
+    }
+})
+
+async function fetchAndApply(request) {
+    let response = null;
+    let url = new URL(request.url);
+    if (url.protocol == &#39;http:&#39;) {
+        url.protocol = &#39;https:&#39;
+        response = Response.redirect(url.href);
+        return response;
+    }
+    url.host = host;
+
+    let method = request.method;
+    let body = request.body;
+    let request_headers = request.headers;
+    let new_request_headers = new Headers(request_headers);
+
+    new_request_headers.set(&#39;Host&#39;, url.host);
+    new_request_headers.set(&#39;Referer&#39;, request.url);
+
+    let original_response = await fetch(url.href, {
+        method: method,
+        body: body,
+        headers: new_request_headers
+    });
+
+    response = new Response(original_response.body, {
+        status: original_response.status,
+        headers: original_response.headers
+    })
+
+    return response;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;单双日分别填入不同的heroku帐号下的网站（当然2个网站要设置得一模一样），这样每个heroku帐号每个月都只访问15或16天，就算24小时有人访问也才360或384小时。&lt;br&gt;
+最后，给workers加上自定义域名的路由！&lt;/p&gt;
+&lt;p&gt;从头到尾都可以是Free的，不看网站页面，光从下载过程来看，可以完全假装CF套在了大盘鸡上,谁也看不出我没服务器。&lt;/p&gt;
+">Onedrive+OneManager+Heroku+CFWorkers免费的OD列表</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/UM09GDy1m/"" data-c="
+          &lt;p&gt;&lt;strong&gt;一个神奇的工具箱，拿回你的个人信息。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;what-is-info-spider&#34;&gt;What is INFO-SPIDER&lt;/h1&gt;
+&lt;p&gt;INFO-SPIDER 是一个集众多数据源于一身的爬虫工具箱，旨在安全快捷的帮助用户拿回自己的数据，工具代码开源，流程透明。并提供数据分析功能，基于用户数据生成图表文件，使得用户更直观、深入了解自己的信息。 目前支持数据源包括GitHub、QQ邮箱、网易邮箱、阿里邮箱、新浪邮箱、Hotmail邮箱、Outlook邮箱、京东、淘宝、支付宝、中国移动、中国联通、中国电信、知乎、哔哩哔哩、网易云音乐、QQ好友、QQ群、生成朋友圈相册、浏览器浏览历史、12306、博客园、CSDN博客、开源中国博客、简书。&lt;/p&gt;
+&lt;h1 id=&#34;features&#34;&gt;Features&lt;/h1&gt;
+&lt;p&gt;安全可靠：本项目为开源项目，代码简洁，所有源码可见，本地运行，安全可靠。&lt;br&gt;
+使用简单：提供 GUI 界面，只需点击所需获取的数据源并根据提示操作即可。&lt;br&gt;
+结构清晰：本项目的所有数据源相互独立，可移植性高，所有爬虫脚本在项目的 Spiders 文件下。&lt;br&gt;
+数据源丰富：本项目目前支持多达24+个数据源，持续更新。&lt;br&gt;
+数据格式统一：爬取的所有数据都将存储为json格式。&lt;br&gt;
+个人数据丰富：本项目将尽可能多地为你爬取个人数据，后期数据处理可根据需要删减。&lt;br&gt;
+数据分析：本项目提供个人数据的可视化分析，目前仅部分支持。&lt;br&gt;
+文档丰富：本项目包含完整全面的使用说明文档和视频教程&lt;/p&gt;
+&lt;h1 id=&#34;quickstart&#34;&gt;QuickStart&lt;/h1&gt;
+&lt;h2 id=&#34;依赖安装&#34;&gt;依赖安装&lt;/h2&gt;
+&lt;p&gt;安装python3和Chrome浏览器&lt;/p&gt;
+&lt;p&gt;安装与Chrome浏览器相同版本的&lt;a href=&#34;http://chromedriver.storage.googleapis.com/index.html&#34; title=&#34;驱动&#34;&gt;驱动&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装依赖库 pip install -r requirements.txt&lt;/p&gt;
+&lt;h2 id=&#34;工具运行&#34;&gt;工具运行&lt;/h2&gt;
+&lt;p&gt;进入 tools 目录&lt;/p&gt;
+&lt;p&gt;运行 python3 main.py&lt;/p&gt;
+&lt;p&gt;在打开的窗口点击数据源按钮, 根据提示选择数据保存路径&lt;/p&gt;
+&lt;p&gt;弹出的浏览器输入用户密码后会自动开始爬取数据, 爬取完成浏览器会自动关闭.&lt;/p&gt;
+&lt;p&gt;在对应的目录下可以查看下载下来的数据(xxx.json), 数据分析图表(xxx.html)&lt;/p&gt;
+&lt;h1 id=&#34;数据源&#34;&gt;数据源&lt;/h1&gt;
+&lt;p&gt;GitHub&lt;br&gt;
+QQ邮箱&lt;br&gt;
+网易邮箱&lt;br&gt;
+阿里邮箱&lt;br&gt;
+新浪邮箱&lt;br&gt;
+Hotmail邮箱&lt;br&gt;
+Outlook邮箱&lt;br&gt;
+京东&lt;br&gt;
+淘宝&lt;br&gt;
+支付宝&lt;br&gt;
+中国移动&lt;br&gt;
+中国联通&lt;br&gt;
+中国电信&lt;br&gt;
+知乎&lt;br&gt;
+哔哩哔哩&lt;br&gt;
+网易云音乐&lt;br&gt;
+QQ好友&lt;br&gt;
+QQ群&lt;br&gt;
+生成朋友圈相册&lt;br&gt;
+浏览器浏览历史&lt;br&gt;
+12306&lt;br&gt;
+博客园&lt;br&gt;
+CSDN博客&lt;br&gt;
+开源中国博客&lt;br&gt;
+简书&lt;/p&gt;
+&lt;h1 id=&#34;数据分析&#34;&gt;数据分析&lt;/h1&gt;
+&lt;p&gt;博客园&lt;/p&gt;
+&lt;p&gt;CSDN博客&lt;/p&gt;
+&lt;p&gt;开源中国博客&lt;/p&gt;
+&lt;p&gt;简书&lt;/p&gt;
+&lt;h1 id=&#34;计划&#34;&gt;计划&lt;/h1&gt;
+&lt;p&gt;提供web界面操作，适应多平台&lt;/p&gt;
+&lt;p&gt;对爬取的个人数据进行统计分析&lt;/p&gt;
+&lt;p&gt;融合机器学习技术、自然语言处理技术等对数据深入分析&lt;/p&gt;
+&lt;p&gt;把分析结果绘制图表直观展示&lt;/p&gt;
+&lt;p&gt;添加更多数据源...&lt;/p&gt;
+&lt;p&gt;Visitors&lt;/p&gt;
+&lt;h1 id=&#34;developers-want-to-say&#34;&gt;Developers want to say&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;该项目解决了个人数据分散在各种各样的公司之间，经常形成数据孤岛，多维数据无法融合的痛点。&lt;/li&gt;
+&lt;li&gt;作者认为该项目的最大潜力在于能把多维数据进行融合并对个人数据进行分析，是个人数据效益最大化。&lt;/li&gt;
+&lt;li&gt;该项目使用爬虫手段获取数据，所以程序存在时效问题（需要持续维护，根据网站的更新做出修改）。&lt;/li&gt;
+&lt;li&gt;该项目的结构清晰，所有数据源相互独立，可移植性高，所有爬虫脚本在项目的Spiders文件下，可移植到你的程序中。&lt;/li&gt;
+&lt;li&gt;目前该项目v1.0版本仅在Windows平台上测试，Python 3.7，未适配多平台。&lt;/li&gt;
+&lt;li&gt;计划在v2.0版本对项目进行重构，提供web端操作与数据可视化，以适配多平台。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;本项目&lt;a href=&#34;https://github.com/kangvcar/InfoSpider&#34; title=&#34;INFO-SPIDER&#34;&gt;INFO-SPIDER&lt;/a&gt;代码已开源，欢迎star支持。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+">INFO-SPIDER 是一个帮助用户拿回自己的数据的爬虫工具箱</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/E-ilBDDMb/"" data-c="
+          &lt;h1 id=&#34;使用方法&#34;&gt;使用方法:&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget vpstest.cn/it &amp;amp;&amp;amp; bash it
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget git.io/vpstest &amp;amp;&amp;amp; bash vpstest
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget -O it vpstest.cn &amp;amp;&amp;amp; bash it
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;效果图&#34;&gt;效果图&lt;/h1&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://s1.ax1x.com/2020/08/25/d2msj1.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code&gt;整合了
+1. bench.sh
+2. LemonBench
+3. superspeed
+4. superbench修复版
+5. 91yuntest
+6. ZBench
+7. superbench修复+多节点版
+8. UnixBench
+9. GeekBench5
+10.kos回程测试
+11.超内存测试
+12.sysbench测试---感谢云筏大佬的分享
+路由测试
+（注：脚本收集自互联网）
+已修复kos测试
+已更新删除残留文件
+修复了一些已知bug
+已经修复脚本4、7（有待测试）
+请删除脚本残余文件
+添加sysbench-cpu测试
+&lt;/code&gt;&lt;/pre&gt;
+">vps测速整合脚本</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/uxQvbeATH/"" data-c="
+          &lt;h1 id=&#34;监测ip是否被阻断&#34;&gt;监测IP是否被阻断&lt;/h1&gt;
+&lt;p&gt;利用 PHP socket 去监测指定 域名/IP 的 TCP 和 ICMP 是否开放.&lt;/p&gt;
+&lt;p&gt;请开启 exec() 函数.&lt;/p&gt;
+&lt;p&gt;测试环境为:宝塔面板 PHP7.0+ nginx1.15&lt;/p&gt;
+&lt;p&gt;请安装 PHP socket 扩展(宝塔面板默认是安装的),否则无法使用哦&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;已知问题在Linux下 socket 检测 icmp,会没有权限.现只能用 exec() 函数
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;部署方法&#34;&gt;部署方法&lt;/h1&gt;
+&lt;p&gt;把 check.php 分别放到国内服务器和国外服务器.&lt;/p&gt;
+&lt;p&gt;修改 index.html 的GET 请求地址即可.&lt;br&gt;
+&lt;img src=&#34;https://mjj.today/temp/1910/ec034efc07983847.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;预览&#34;&gt;预览&lt;/h1&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://cdn.u1.huluxia.com/g3/M01/E9/0A/wKgBOV2b8heARHU7AAAvxkpyM1M813.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;项目地址&#34;&gt;&lt;a href=&#34;https://gitee.com/KIENG_S/jianchaipshifouzuduan&#34; title=&#34;项目地址&#34;&gt;项目地址&lt;/a&gt;&lt;/h1&gt;
+">监测IP是否被阻断</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/ZfBq1liZd/"" data-c="
+          &lt;p&gt;&lt;strong&gt;本文简单介绍了Github Action的用法，并使用Gihub Action定时重启IBM cloud foundry容器。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;摘要&#34;&gt;摘要&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;GitHub Actions是GitHub自家的持续集成及自动化工作流服务，它使用起来非常简单，只要在你的仓库根目录建立.github/workflows文件夹，将你的工作流配置(YML文件)放到这个目录下，就能启用GitHub Actions服务。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;关键字&#34;&gt;关键字&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Github Action，IBM cloud foundry&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;yml配置文件&#34;&gt;yml配置文件&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;name: IBM Cloud Auto Restart
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  schedule:
+    - cron: &#39;0 0 * * *&#39;      # 根据自己的需要设置何时重启
+
+jobs:
+  ibm-cloud-restart:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Init
+      run: |
+        wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+        echo &amp;quot;deb https://packages.cloudfoundry.org/debian stable main&amp;quot; | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+        sudo apt-get update
+        sudo apt-get install cf-cli
+    - name: Login IBM Cloud
+      env:
+        IBM_ACCOUNT: ${{ secrets.IBM_ACCOUNT }}
+        IBM_PASSWORD: ${{ secrets.IBM_PASSWORD }}
+      run: |
+        cf login -a https://api.us-south.cf.cloud.ibm.com -u $IBM_ACCOUNT &amp;lt;&amp;lt; EOF
+        $IBM_PASSWORD
+        EOF
+    - name: Get IBM Cloud Apps
+      run: |
+        cf a
+    - name: Restart IBM Cloud
+      env:
+        IBM_APP_NAME: ${{ secrets.IBM_APP_NAME }}
+      run: |
+        cf restart $IBM_APP_NAME
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;使用方法&#34;&gt;使用方法&lt;/h1&gt;
+&lt;p&gt;fork仓库：https://github.com/wf09/IBMWorkflow&lt;/p&gt;
+&lt;h1 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;IBM_ACCOUNT：账户邮箱
+
+IBM_APP_NAME：app的名字
+
+IBM_PASSWORD：密码
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;设置完环境变量以后记得commit一下yml文件触发Action。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;效果图&#34;&gt;效果图&lt;/h1&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://ftp.fly97.cn/image/image-20200827193322808.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">使用Github Action定时重启IBM cloud foundry</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/2Zg9OkH6z/"" data-c="
+          &lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://www.moec.top/wp-content/uploads/2020/08/1598170539-b984e330f41792e6.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;请提前安装curl&#34;&gt;请提前安装curl&lt;/h1&gt;
+&lt;h1 id=&#34;一键变傻&#34;&gt;一键变傻&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;wget https://raw.githubusercontent.com/laoxong/lxongOther/master/Bash/bt.sh | bash
+
+sh bt.sh
+&lt;/code&gt;&lt;/pre&gt;
+">BT 一键脚本</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/qOGDU8Zke/"" data-c="
+          &lt;h1 id=&#34;前提概要&#34;&gt;前提概要&lt;/h1&gt;
+&lt;p&gt;这几年，人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾越来越凸显&lt;/p&gt;
+&lt;p&gt;人民日益增长的上网需求需要和不平衡不充分的出入境国际带宽的矛盾也越来越凸显&lt;/p&gt;
+&lt;p&gt;加上功夫网的大力打击封锁，以L2TP为首的旧版虚拟专用网和以酸酸为首的新虚拟专用网程序被识别+大力打击封锁&lt;/p&gt;
+&lt;p&gt;越来越多人开始使用由某些无证非法经营的国际联网业务，我们一般称之为鸡场&lt;/p&gt;
+&lt;p&gt;国际联网，由于某些不可描述的原因，常常需要使用一些不可描述的工具，简称魔法上网，可以访问一些被咔嚓的违法网站&lt;/p&gt;
+&lt;p&gt;而在这其中，有某些商家是拥有合法牌照，但是大部分相关业者都是无牌无证非法经营&lt;/p&gt;
+&lt;p&gt;近期，全国各地都展开了新一轮净网行动，大量无牌无证非法经营业者被喝茶处罚&lt;/p&gt;
+&lt;p&gt;技术相关，肯定是一般人学不会，也很难在短时间内让人理解的&lt;/p&gt;
+&lt;p&gt;但是魔法上网的成本，却是一团雾，蒙在小白的眼前，从而打信息不对称来牟取不当的非法利益&lt;/p&gt;
+&lt;p&gt;本文要旨不是建议/推广使用个人经营或者其他方法的魔法上网服务&lt;/p&gt;
+&lt;p&gt;只是揭露行业成本内幕&lt;/p&gt;
+&lt;p&gt;为了您的生命健康安全和人身自由，请使用合法渠道对境外联网&lt;/p&gt;
+&lt;p&gt;由于目前国际形势恶化，大部分线路都是采用国内中转国外的多机流玩法&lt;/p&gt;
+&lt;h1 id=&#34;常用境外服务器&#34;&gt;常用境外服务器&lt;/h1&gt;
+&lt;p&gt;魔法上网业，常用的商家（境外服务器）如下&lt;/p&gt;
+&lt;h2 id=&#34;微软azure&#34;&gt;微软Azure&lt;/h2&gt;
+&lt;p&gt;AZ是目前最最主流的团伙作案工具&lt;/p&gt;
+&lt;p&gt;当然，没几个业者会正价购买服务&lt;/p&gt;
+&lt;p&gt;首先需要知道原价是多少&lt;/p&gt;
+&lt;h3 id=&#34;az流量价格&#34;&gt;AZ流量价格&lt;/h3&gt;
+&lt;p&gt;$120/T （香港/新加坡/日本/韩国等）&lt;/p&gt;
+&lt;p&gt;$87/T （美国英国等）&lt;/p&gt;
+&lt;p&gt;另外还有德国瑞士等地区，但是基本没人用，但是基本在100刀/T的价格波动&lt;/p&gt;
+&lt;p&gt;常用的渠道有各种订阅，一个号可以免费开2台机器&lt;/p&gt;
+&lt;h3 id=&#34;az订阅套餐价格&#34;&gt;AZ订阅套餐价格&lt;/h3&gt;
+&lt;p&gt;AZ100：来自学生订阅，一般不可欠费，有效期1年，市场价约20-80&lt;/p&gt;
+&lt;p&gt;AZ200：来自常规体验订阅，通常可欠费，魔法主力，有效期1个月，市场价约30-80&lt;/p&gt;
+&lt;p&gt;AZ3500：来自企业商务订阅，通常不可欠费，魔法主力，有效期1年，市场价约为1000-1800&lt;/p&gt;
+&lt;p&gt;AZ7000：AZ3500升级版，比较少见&lt;/p&gt;
+&lt;h3 id=&#34;为什么选择az&#34;&gt;为什么选择AZ&lt;/h3&gt;
+&lt;p&gt;作为世界上最值钱的公司之一，财大气粗的微软，网络质量，机器稳定都是上好，机器带宽大于1G&lt;/p&gt;
+&lt;p&gt;而广东移动-香港AZ是目前最主流的线路，成本低速度快，同时速度稳，不受高峰期而有明显差距&lt;/p&gt;
+&lt;p&gt;同时还有多地区可选，常用的地区都有，包括新加坡韩国日本美国等等，但是值得注意的是，都不是原生IP&lt;/p&gt;
+&lt;h2 id=&#34;亚马逊aws&#34;&gt;亚马逊AWS&lt;/h2&gt;
+&lt;p&gt;作为巨头之一的亚马逊，自然也不输微软&lt;/p&gt;
+&lt;p&gt;目前来说，AWS主要是有2种，一种轻量，一个常规的云服务器&lt;/p&gt;
+&lt;p&gt;AWS的产品线就比较多了&lt;/p&gt;
+&lt;p&gt;首先轻量，正价购买即可，最常用的是日本，联通-日本AWS也是品质一流的线路&lt;/p&gt;
+&lt;p&gt;其次云服务器，一般有月抛机和代金券两种玩法&lt;/p&gt;
+&lt;p&gt;月抛机主要是小馒头和大厂云为首的商家，具体怎么月抛，这个就是商业机密，不便描述&lt;/p&gt;
+&lt;p&gt;总之大体价格为10-15R/月，可选日本香港等地区，机器带宽大于1G，流量不限&lt;/p&gt;
+&lt;p&gt;AWS的部分低配机有限速到250M左右好像&lt;/p&gt;
+&lt;p&gt;代金券就是类似之前AZ的各种订阅，主要是骗企业使用，开发使用来获得，常见的有40刀，100刀，1000刀等等&lt;/p&gt;
+&lt;p&gt;大体换算价格相当于1刀=1.4-2人民币&lt;/p&gt;
+&lt;p&gt;具体流量费用我就研究不多，可以自行去官网查阅，目前一般都用月抛而不是代金券了&lt;/p&gt;
+&lt;p&gt;不过，值得一提的是，AWS近期还有一种十分强大的东西，就是AGA&lt;/p&gt;
+&lt;p&gt;AGA对于电信用户非常友好，速度和延迟都是秒天秒地的水平&lt;/p&gt;
+&lt;p&gt;各种大小月抛卖家也打起他们的主意，但是由于近期的滥用和风控收紧&lt;/p&gt;
+&lt;p&gt;价格波动和稳定性也差距很大，无法给出比较合适的参考值&lt;/p&gt;
+&lt;h3 id=&#34;谷歌云gcp&#34;&gt;谷歌云GCP&lt;/h3&gt;
+&lt;p&gt;谷歌作为巨头之一，本身实力也很强劲&lt;/p&gt;
+&lt;p&gt;主要撸点就是300刀了（约大陆1T流量）&lt;/p&gt;
+&lt;p&gt;之前是一年有效，近期改为3个月有效&lt;/p&gt;
+&lt;p&gt;由于流量少，一般作为个人用，不适合团伙作案&lt;/p&gt;
+&lt;h3 id=&#34;vultr&#34;&gt;Vultr&lt;/h3&gt;
+&lt;p&gt;作为VPS业的大厂，主要活动是免费1个月的100刀体验，成本约5/10美元&lt;/p&gt;
+&lt;p&gt;主要机器价格为5刀/月-1T流量&lt;/p&gt;
+&lt;p&gt;不清楚玩VU的玩不玩欠费&lt;/p&gt;
+&lt;p&gt;月抛机器一般单机价格为10块钱/月左右&lt;/p&gt;
+&lt;p&gt;VU的日本和美西对联通比较友好&lt;/p&gt;
+&lt;h3 id=&#34;do&#34;&gt;DO&lt;/h3&gt;
+&lt;p&gt;作为VLD三兄弟之一的DO，大部分网络质量都不行（到大陆）&lt;/p&gt;
+&lt;p&gt;唯一可行的就是新加坡DO-移动商宽了&lt;/p&gt;
+&lt;p&gt;主要玩法是5刀然后体验2个月的100刀，或者使用GitHub学生包，有效期1年50刀&lt;/p&gt;
+&lt;p&gt;主要机器价格为5刀/月-1T流量&lt;/p&gt;
+&lt;p&gt;还有个优点是共享流量池&lt;/p&gt;
+&lt;h3 id=&#34;linode&#34;&gt;Linode&lt;/h3&gt;
+&lt;p&gt;作为VLD三兄弟之一的Linode&lt;/p&gt;
+&lt;p&gt;撸法价格都差不多&lt;/p&gt;
+&lt;p&gt;主要节点也是日本美西，跟VU比较相近，不过多描述&lt;/p&gt;
+&lt;p&gt;也是共享流量池&lt;/p&gt;
+&lt;h3 id=&#34;hinet&#34;&gt;Hinet&lt;/h3&gt;
+&lt;p&gt;台湾本土运营商&lt;/p&gt;
+&lt;p&gt;一般用的都是分销小鸡，包含VDSVPSNAT等&lt;/p&gt;
+&lt;p&gt;Hinet的典型特征就是5/600M无限流量&lt;/p&gt;
+&lt;p&gt;同时起步价比较高&lt;/p&gt;
+&lt;p&gt;也有商宽家宽之分&lt;/p&gt;
+&lt;p&gt;最近也有“月抛”&lt;/p&gt;
+&lt;p&gt;大体价格为200-400块钱单人车&lt;/p&gt;
+&lt;p&gt;主要用途是台湾原生IP，解锁流媒体&lt;/p&gt;
+&lt;p&gt;得益于无限流量，你懂的&lt;/p&gt;
+&lt;p&gt;当然也有些商家卖的是有限流量的&lt;/p&gt;
+&lt;h3 id=&#34;hkt&#34;&gt;HKT&lt;/h3&gt;
+&lt;p&gt;香港本土运营商&lt;/p&gt;
+&lt;p&gt;一般用的都是分销小鸡，包含VDSVPSNAT等&lt;/p&gt;
+&lt;p&gt;HKT的典型特征就是无限流量&lt;/p&gt;
+&lt;p&gt;口子有小到一两百的，也有G口&lt;/p&gt;
+&lt;p&gt;同时起步价比较高&lt;/p&gt;
+&lt;p&gt;也有商宽家宽之分&lt;/p&gt;
+&lt;p&gt;大体价格为400-1000块钱单人车&lt;/p&gt;
+&lt;p&gt;主要用途是香港原生IP，解锁流媒体&lt;/p&gt;
+&lt;p&gt;得益于无限流量，你懂的&lt;/p&gt;
+&lt;p&gt;当然也有些商家卖的是有限流量的&lt;/p&gt;
+&lt;p&gt;以一篇不知名的商家在7月15日的广告为例：&lt;/p&gt;
+&lt;p&gt;HKT VDS 家宽打机&lt;br&gt;
+8 vCPU Cores&lt;br&gt;
+8G RAM&lt;br&gt;
+32G SSD&lt;br&gt;
+1Gbps 峰值带宽&lt;br&gt;
+无限制流量&lt;/p&gt;
+&lt;p&gt;家庭宽频 附带打机神线&lt;br&gt;
+Proxmox控制面板&lt;br&gt;
+DHCP动态ip&lt;br&gt;
+测试IP 203.218.243.1/42.3.54.1&lt;br&gt;
+手动开通，付款后24小时内交付&lt;/p&gt;
+&lt;p&gt;优惠码 10OFF&lt;/p&gt;
+&lt;p&gt;950￥/月 折后855￥/月&lt;/p&gt;
+&lt;h2 id=&#34;阿里云&#34;&gt;阿里云&lt;/h2&gt;
+&lt;p&gt;被称为套路云，阿里曾经的新手套餐，电信是GIA线路&lt;/p&gt;
+&lt;p&gt;主要特征是30M，流量为TB级&lt;/p&gt;
+&lt;p&gt;香港7刀1T，新加坡是2.5刀&lt;/p&gt;
+&lt;p&gt;目前已经没了&lt;/p&gt;
+&lt;p&gt;只剩下轻量服务器&lt;/p&gt;
+&lt;p&gt;也是30M，价格为24块钱一个月左右&lt;/p&gt;
+&lt;p&gt;电信联通去程日本NTT回程联通，移动直连&lt;/p&gt;
+&lt;p&gt;个人感觉还行，但是基本没人用了&lt;/p&gt;
+&lt;h2 id=&#34;腾讯云&#34;&gt;腾讯云&lt;/h2&gt;
+&lt;p&gt;阿里云的继任者，被称为良心云&lt;/p&gt;
+&lt;p&gt;最近也出了轻量服务器&lt;/p&gt;
+&lt;p&gt;更牛逼的是香港新加坡硅谷都是电信GIA&lt;/p&gt;
+&lt;p&gt;同时代理还能8折，原价起步24r&lt;/p&gt;
+&lt;p&gt;也是30M+流量TB级&lt;/p&gt;
+&lt;p&gt;同时解锁功能也很强&lt;/p&gt;
+&lt;p&gt;但是要求实名，导致很多团伙没上车&lt;/p&gt;
+&lt;h2 id=&#34;俄罗斯机器&#34;&gt;俄罗斯机器&lt;/h2&gt;
+&lt;p&gt;还有很多俄罗斯机器包括Gcore，JustHost等等&lt;/p&gt;
+&lt;p&gt;主要是联通使用，速度一般，价格一般&lt;/p&gt;
+&lt;h2 id=&#34;gia机器&#34;&gt;GIA机器&lt;/h2&gt;
+&lt;p&gt;主要有搬瓦工，安畅，CERA等大厂和水墨云，桔子数据等国人商家运营&lt;/p&gt;
+&lt;p&gt;大部分都是价格较高，一般仅个人使用，基本没见团伙使用&lt;/p&gt;
+&lt;h1 id=&#34;常用国内服务器&#34;&gt;常用国内服务器&lt;/h1&gt;
+&lt;h2 id=&#34;广东移动&#34;&gt;广东移动&lt;/h2&gt;
+&lt;p&gt;广东移动是目前最主流最强大的国内机器，和东南亚互联极强，其他地区也不差&lt;/p&gt;
+&lt;p&gt;常见商家包括百度云加速，碳云，修罗云&lt;/p&gt;
+&lt;p&gt;常用地区包括广州，深圳，佛山，中山等&lt;/p&gt;
+&lt;p&gt;常用线路包括东南方向的香港新加坡AZ，新加坡DO，新加坡Linode，香港HKT，台湾Hinet等等&lt;/p&gt;
+&lt;p&gt;以修罗云为例，一篇7.20的广告如下：&lt;/p&gt;
+&lt;p&gt;广州移动VDS&lt;/p&gt;
+&lt;p&gt;2 vCpus&lt;br&gt;
+2GB 内存&lt;br&gt;
+15 GB SSD&lt;br&gt;
+300 Mbps 峰值带宽&lt;br&gt;
+10TB 单向流量&lt;br&gt;
+1 IPv4 - 移动&lt;br&gt;
+广州移动&lt;br&gt;
+人工审核后开通&lt;br&gt;
+提供基础保修服务&lt;br&gt;
+赠送一个手动快照&lt;/p&gt;
+&lt;p&gt;月付352元，优惠码：hello-gz&lt;/p&gt;
+&lt;p&gt;可以估算出大体价格为35块钱/T（单向计算）&lt;/p&gt;
+&lt;p&gt;【不同商家和产品价格差距不同】&lt;/p&gt;
+&lt;h2 id=&#34;东部联通&#34;&gt;东部联通&lt;/h2&gt;
+&lt;p&gt;作为老牌出境大哥，东部联通在俄罗斯日本美国台湾方向都很强大&lt;/p&gt;
+&lt;p&gt;常用地区包括宿迁，镇江，枣庄等&lt;/p&gt;
+&lt;p&gt;联通的商家就很多了&lt;/p&gt;
+&lt;p&gt;以Hostmsu为例&lt;/p&gt;
+&lt;p&gt;江苏宿迁-联通500M（血赚版）PLUS&lt;/p&gt;
+&lt;p&gt;核心：1vCPU&lt;br&gt;
+内存：256MB&lt;br&gt;
+硬盘：5GB SSD&lt;br&gt;
+IP：1IPv4位址（共享）&lt;br&gt;
+流量：1.5T 单向流量&lt;br&gt;
+端口转发数：21个（自选，预设一个SSH端口）&lt;br&gt;
+带宽：500Mbps&lt;br&gt;
+机房：江苏宿迁&lt;/p&gt;
+&lt;p&gt;价格为35R/月&lt;/p&gt;
+&lt;p&gt;可以估算出大体价格为23块钱/T（单向计算）&lt;/p&gt;
+&lt;p&gt;【不同商家和产品价格差距不同】&lt;/p&gt;
+&lt;h2 id=&#34;电信cn2&#34;&gt;电信CN2&lt;/h2&gt;
+&lt;p&gt;本地CN2可以强拉其他各种机器走5943精品网络&lt;/p&gt;
+&lt;p&gt;号称垃圾拯救机&lt;/p&gt;
+&lt;p&gt;但是成本高昂&lt;/p&gt;
+&lt;p&gt;常用地区包括上海，厦门，泉州&lt;/p&gt;
+&lt;p&gt;常见商家包括修罗云，碳云，PQS，小伞云等&lt;/p&gt;
+&lt;p&gt;以修罗云在6月2日的一篇广告为例：&lt;/p&gt;
+&lt;p&gt;上海CN2，现货&lt;/p&gt;
+&lt;p&gt;9折优惠码：shcn2&lt;/p&gt;
+&lt;p&gt;SH-CN2-1C05 共享IP&lt;br&gt;
+vCPU：1&lt;br&gt;
+内存：512 MB&lt;br&gt;
+空间：6 GB&lt;br&gt;
+流量：1000 GB / 月（70 Mbps上传 / 200Mbps下载，单向计算）&lt;br&gt;
+IPv4：共享，11个转发端口&lt;br&gt;
+80元/月&lt;/p&gt;
+&lt;p&gt;可以估算出大体价格为80块钱/T（单向计算）&lt;/p&gt;
+&lt;p&gt;【不同商家和产品价格差距不同】&lt;/p&gt;
+&lt;h2 id=&#34;vds&#34;&gt;VDS&lt;/h2&gt;
+&lt;p&gt;实际上，根据经验，常规小鸡中转成本在30元左右（CN2为80左右）&lt;/p&gt;
+&lt;p&gt;但是这个是流量计费的小鸡，还有一些大流量（甚至无限)的VDS&lt;/p&gt;
+&lt;p&gt;或者是高速流量多少后限速&lt;/p&gt;
+&lt;p&gt;以碳云的8月2日的一篇广告为例：&lt;/p&gt;
+&lt;p&gt;CoalCloud 郑州-联通 新品上线&lt;br&gt;
+郑州-中原数据中心 联通国内九大基地之一&lt;br&gt;
+百度云郑州节点同段&lt;br&gt;
+测试IP：42.236.89.1&lt;/p&gt;
+&lt;p&gt;VDS套餐2:郑州-联通 VDS 500M&lt;br&gt;
+CPU:4 vCPU|E5-2678v3&lt;br&gt;
+内存:4 GB|DDR4&lt;br&gt;
+硬盘:20 GB|SSD&lt;br&gt;
+地址:IPv4*1&lt;br&gt;
+流量:40 TB|峰值流量&lt;br&gt;
+带宽:500 Mbps&lt;br&gt;
+月付:768元&lt;/p&gt;
+&lt;p&gt;（峰值流量是高速流量的意思，达量限速）&lt;/p&gt;
+&lt;p&gt;可以估算出大体价格为19块钱/T（单向计算）&lt;/p&gt;
+&lt;p&gt;【不同商家和产品价格差距不同】&lt;/p&gt;
+&lt;p&gt;成本一下子就下去了，同时还能超了继续用&lt;/p&gt;
+&lt;h2 id=&#34;线路组成&#34;&gt;线路组成&lt;/h2&gt;
+&lt;p&gt;说完了国内外机器，大家也知道机器一般都是国内外多机器组成线路&lt;/p&gt;
+&lt;p&gt;为什么是多机器而不是双机器，这是因为有叠加中转的玩法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;中转叠加（链式中转）&lt;br&gt;
+举个例子&lt;/p&gt;
+&lt;p&gt;广州移动-香港AZ，广州移动-台湾Hinet就是双机组合&lt;/p&gt;
+&lt;p&gt;但是，这种组建法，如果台湾hinet用广州移动中转效果不好，那就会很影响效果&lt;/p&gt;
+&lt;p&gt;为此，很多人使用了多机组合：广州移动-香港AZ-台湾Hinet&lt;/p&gt;
+&lt;p&gt;这样就通过强大的AZ移动出境，然后用AZ连海外&lt;/p&gt;
+&lt;p&gt;众所周知海外的互联都很OK，所以你懂的&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;中转复用&lt;br&gt;
+由于成本原因，很多商家用一台机器中转多机器，会导致受到中转共用影响明显，比如抢带宽，断流丢包加剧，中转升天死一群，但是看上去节点多&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;落地复用&lt;br&gt;
+由于成本原因，很多商家用多台机器中转一个机器，会导致受到中转共用影响明显，比如抢带宽，断流丢包加剧，落地升天死一群，但是看上去节点多&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;双重复用&lt;br&gt;
+落地+中转都复用，经常死一群，但是看上去节点多&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;自营成本&#34;&gt;自营成本&lt;/h3&gt;
+&lt;p&gt;部分小白可能好奇自营成本&lt;/p&gt;
+&lt;p&gt;大体来说，广东移动在6-8R/M，各地联通大约是4R/M，个别贫困地区冲业绩可能更便宜，还有卖家宽摸鱼的&lt;/p&gt;
+&lt;h3 id=&#34;gia&#34;&gt;GIA&lt;/h3&gt;
+&lt;p&gt;香港CN2GIA，80刀/M，新加坡日本韩国CN2GIA，40刀/M，美西CN2GIA，6-8刀/M&lt;/p&gt;
+&lt;p&gt;什么是GIA，什么是CN2，5943和CN2GT又是什么请自行搜索&lt;/p&gt;
+&lt;p&gt;个人认为判断是不是GIA请看走不走南京CN2，总有沙雕喜欢追究有没有20297&lt;/p&gt;
+&lt;h3 id=&#34;iplciepl&#34;&gt;IPLC/IEPL&lt;/h3&gt;
+&lt;p&gt;这玩意，水很深，大体意思就是不走传统公网，常用渠道包括阿里内网，运营商直购，还有各级分销&lt;/p&gt;
+&lt;p&gt;这个玩意跟传销一样，层层分销压迫，你转手次数越多，价格越高，质量越差，但资质要求越低&lt;/p&gt;
+&lt;p&gt;有的人成本25R/M，有的人可能要花400R/M&lt;/p&gt;
+&lt;p&gt;总之优点是不走传统公网，延迟低，不丢包，常用于打游戏，但是成本较高（但是没CN2GIA贵）&lt;/p&gt;
+&lt;p&gt;来源(Source)：&lt;a href=&#34;https://blog.000714.xyz/202008/2204.html&#34; title=&#34;苍穹の下&#34;&gt;苍穹の下&lt;/a&gt;&lt;/p&gt;
+">魔法上网业成本内幕揭秘</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/9oEjY-emU/"" data-c="
+          &lt;p&gt;今天，我们来介绍一下我自己写的一个一键shell脚本。使用此脚本，您可以在您的Linux服务器上一键搭建一个可以随时随地用浏览器访问的Linux桌面环境，让您便捷地管理服务器。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Har-Kuun/OneClickDesktop/&#34; title=&#34;Github项目地址&#34;&gt;Github项目地址&lt;/a&gt; 欢迎大家星星叉叉&lt;/p&gt;
+&lt;h1 id=&#34;1-脚本特色&#34;&gt;1, 脚本特色&lt;/h1&gt;
+&lt;p&gt;从源码编译安装Guacamole服务器&lt;br&gt;
+配置Guacamole Web APP&lt;br&gt;
+安装Tomcat 9, TigerVNC, XFCE4桌面环境，火狐浏览器&lt;br&gt;
+一键安装配置Let’s Encrypt安全证书，开启OCSP装订&lt;br&gt;
+安装Nginx反代Tomcat&lt;br&gt;
+安装完毕后，您可以使用任意浏览器访问远程桌面，无需再使用VNC客户端&lt;/p&gt;
+&lt;h1 id=&#34;2-安装系统需求&#34;&gt;2, 安装系统需求&lt;/h1&gt;
+&lt;p&gt;目前，本程序仅支持在Ubuntu 18.04/20.04 LTS以及Debian 10的64位操作系统上运行。您的服务器或者VPS最好是全新安装的系统，不带LAMP/LEMP等组件或cPanel/DirectAdmin/宝塔等用户面板。&lt;/p&gt;
+&lt;p&gt;您的服务器需要有外网IP地址。在安装之前，您需要解析一个域名（可以用三级域名或者一个免费域名）到您的服务器上。安装桌面环境需要至少1 GB的内存。&lt;/p&gt;
+&lt;h1 id=&#34;3-安装教程&#34;&gt;3, 安装教程&lt;/h1&gt;
+&lt;p&gt;您可以使用sudo权限用户或root用户(不建议)登录服务器SSH，然后执行下面的命令即可。&lt;/p&gt;
+&lt;p&gt;英文版：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/Har-Kuun/OneClickDesktop/master/OneClickDesktop.sh &amp;amp;&amp;amp; sudo bash OneClickDesktop.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;中文版：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/Har-Kuun/OneClickDesktop/master/OneClickDesktop_zh-CN.sh &amp;amp;&amp;amp; sudo bash OneClickDesktop_zh-CN.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;程序将自动安装需要的各部分组件，并引导您设置用户名，密码以及域名。&lt;/p&gt;
+&lt;p&gt;如果安装过程中有报错，您可以检查同目录下的OneClickDesktop.log日志文件。同时建议您在这里留言汇报一下错误信息，或者在Github上提交issue, 这样我就可以即时更新脚本，修复问题。&lt;/p&gt;
+&lt;p&gt;4, 安装示例&lt;br&gt;
+安装好后，我们可以可以直接从浏览器里访问服务器上搭建的桌面程序，如下图。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://qing.su/wp-content/uploads/2020/08/browser-1-1024x560.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;综上，使用OneClickDesktop一键脚本，您可以自由方便地在Linux服务器上搭建随时随地用浏览器即可访问的桌面环境，让您便捷地管理您的Linux服务器，无需再使用繁琐的命令行。&lt;/p&gt;
+&lt;p&gt;作者为香菇肥牛，&lt;a href=&#34;https://qing.su/article/oneclick-desktop.html&#34; title=&#34;原文链接&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注1：添加中文支持&lt;/strong&gt;&lt;br&gt;
+1, 重新配置系统locales&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo dpkg-reconfigure locales
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2, 安装亚洲语言包&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install language-pack-ja language-pack-zh* language-pack-ko
+sudo apt-get install japan* chinese* korean*
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3, 安装亚洲语言字体&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install fonts-arphic-ukai fonts-arphic-uming fonts-ipafont-mincho fonts-ipafon&lt;/code&gt;&lt;/pre&gt;
+">一键安装可以使用浏览器访问的Linux桌面环境</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/w1QhXJg1k/"" data-c="
+          &lt;p&gt;大家都知道，17ce.com是非常有名的测速网站。它在全国及世界其他地区拥有数百个测速节点，用户提交测速请求后，17ce就会并发地在这些节点上向待测的网址发送web请求。利用它的高并发性，我们可以用它来测试自己网站的压力响应能力。今天，就来介绍一下如何采用正确的姿势来对WordPress进行压力测试，避免缓存以及UA过滤等因素的影响。&lt;/p&gt;
+&lt;h1 id=&#34;1-绕过wordpress缓存&#34;&gt;1, 绕过WordPress缓存&lt;/h1&gt;
+&lt;p&gt;如果您直接使用17ce来测试WordPress的首页或者某个文章页面，那么大概率无法起到压力测试的效果，原因是大部分WordPress都会安装缓存，使得网站以静态的方式响应给前端，几乎没有数据库查询与CPU消耗。因此，如果要正确进行压力测试，则需要绕过WordPress缓存。&lt;/p&gt;
+&lt;p&gt;一个比较方便的方法是在WordPress链接后面加上?s=xxx小尾巴，比如https://example.com/?s=656j9f86y.  这个链接的作用是用GET方式搜索WordPress的内容。由于搜索内容没有办法被缓存，因此每一个节点的相应都会产生数据库查询。我们测试了一个随手搭建的测试站，发现测试这个搜索链接之后，产生了很多502响应。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://qing.su/wp-content/uploads/2020/06/1-w-1.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;类似地，您还可以对您的WordPress的登录页/wp-login.php构造post请求来测试。&lt;/p&gt;
+&lt;h1 id=&#34;2-绕过ua判断&#34;&gt;2, 绕过UA判断&lt;/h1&gt;
+&lt;p&gt;如果您的网站屏蔽了17ce的User Agent, 那么采用默认的设置就无法测试了。您可以看一下测试结果，如果网站响应状态那里都是“下载时间异常”，但是响应时间都很短（小于1秒），那说明您的网站屏蔽了17ce的User Agent.  我们可以修改UA来绕过UA判断。&lt;/p&gt;
+&lt;p&gt;在测试页面，点击右边Advanced, 然后下边找到User agent, 输入自定义的UA, 比如我们随便输一个Chrome的。&lt;/p&gt;
+&lt;p&gt;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://qing.su/wp-content/uploads/2020/06/2-w-1.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;3-关于typecho&#34;&gt;3, 关于Typecho&lt;/h1&gt;
+&lt;p&gt;Typecho和WordPress类似，只要构造一个搜索链接即可进行测试。Typecho的搜索链接格式为https://example.com/search/xxxxx 如果您使用的是Typecho, 则在17ce上提交这样的地址即可做到压力测试。&lt;/p&gt;
+&lt;p&gt;作者为香菇肥牛，&lt;a href=&#34;https://qing.su/article/162.html&#34; title=&#34;原文链接&#34;&gt;原文链接&lt;/a&gt;&lt;/p&gt;
+">如何正确使用17ce对WordPress进行压力测试</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/mZNa6VHVE/"" data-c="
+          &lt;p&gt;此项目是一个基于API的 Microsoft 365 管理平台, 支持订阅查询，用户管理（查询，新增，删除，分配许可证等），支持批量创建用户，批量删除用户. 支持多账户管理.&lt;/p&gt;
+&lt;p&gt;后端基于SpringBoot，使用 msal4j 和 microsoft-graph sdk 开发完成&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;支持 微软 A1/A1P/A3/E3/E5/E3Y等&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;系统功能&#34;&gt;系统功能&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;总览：订阅数，许可证数，可用许可证数，用户数，允许登陆用户数，禁止登陆用户数等信息展示
+许可查询：查询每个订阅的许可证信息
+用户管理：查询，新增，删除，分配许可证等
+多账户切换
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;注意：出现执行新增/删除账户，启用禁用账户，授权账户等操作后，查询结果不变，请右上角点击刷新缓存，或列表中搜索该用户&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;原因：调用微软API比较耗时，第一次查询时将需要的数据拉取到本地缓存（暂无自定义缓存失效功能，默认用户1天，域名1天，订阅30天）。&lt;/p&gt;
+&lt;p&gt;具体功能查看关于界面【操作教程】&lt;/p&gt;
+&lt;h1 id=&#34;运行&#34;&gt;运行&lt;/h1&gt;
+&lt;p&gt;下载最新版本的额jar包，然后在同目录新建config目录，下载 application-dev.yml文件放到该目录。&lt;/p&gt;
+&lt;p&gt;按照格式修改配置文件&lt;/p&gt;
+&lt;p&gt;java -jar microsoft-0.0.1-SNAPSHOT.jar 启动，端口：8099&lt;/p&gt;
+&lt;h1 id=&#34;界面&#34;&gt;界面&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&#34;https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E9%A6%96%E9%A1%B5.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E8%AE%A2%E9%98%85%E7%AE%A1%E7%90%86.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E5%85%B3%E4%BA%8E.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;api接口&#34;&gt;Api接口&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/6mb/Microsoft-365-Admin/blob/master/Microsoft%20365%20Admin.md&#34; title=&#34;接口文档&#34;&gt;接口文档&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Microsoft 365 首页&lt;br&gt;
+首页展示&lt;br&gt;
+刷新缓存&lt;/li&gt;
+&lt;li&gt;Microsoft 365 订阅管理&lt;br&gt;
+许可统计&lt;br&gt;
+许可证列表查询&lt;/li&gt;
+&lt;li&gt;Microsoft 365 用户管理&lt;br&gt;
+查询用户统计&lt;br&gt;
+查询用户信息列表&lt;br&gt;
+查询用户信息详情&lt;br&gt;
+查询绑定域名&lt;br&gt;
+添加账号&lt;br&gt;
+删除账户&lt;br&gt;
+添加订阅&lt;br&gt;
+取消订阅&lt;br&gt;
+启用账户&lt;br&gt;
+禁用账户&lt;br&gt;
+批量创建用户信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;postman-接口&#34;&gt;Postman 接口&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://raw.githubusercontent.com/6mb/Microsoft-365-Admin/master/.github/Microsoft%20365%20Admin.postman_collection.json&#34; title=&#34;点击下载&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;请自行设置 .evn {host} 和 {port}&lt;br&gt;
+&lt;img src=&#34;https://github.com/6mb/Microsoft-365-Admin/raw/master/.github/%E6%8E%A5%E5%8F%A3.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/6mb/Microsoft-365-Admin&#34; title=&#34;项目地址&#34;&gt;项目地址&lt;/a&gt;&lt;/p&gt;
+">微软 A1/A1P/A3/E3/E5/E3Y API管理面板</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/YiDh0GLhL/"" data-c="
+          &lt;p&gt;Backblaze前10 GB的存储空间是免费的，每天能下载1G以内文件免费，上传免费，并与cloudflare合作，只要套个cloudflareCDN即可无限免费下载&lt;/p&gt;
+&lt;p&gt;因此我们得到如下产品：&lt;/p&gt;
+&lt;p&gt;10G存储空间免费&lt;/p&gt;
+&lt;p&gt;上行免费&lt;/p&gt;
+&lt;p&gt;下行免费&lt;/p&gt;
+&lt;p&gt;全球最可靠的云存储服务之一&lt;/p&gt;
+&lt;p&gt;全球最强的CDN云分发服务之一&lt;br&gt;
+&lt;img src=&#34;https://cangshui.net/wp-content/uploads/2019/05/0190504003548.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://cangshui.net/wp-content/uploads/2019/05/20190504004004.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;链接&lt;br&gt;
+&lt;a href=&#34;https://www.backblaze.com/b2/cloud-storage.html&#34; title=&#34;backblaze云存储 &#34;&gt;backblaze云存储 &lt;/a&gt;注册一个账号&lt;/p&gt;
+&lt;p&gt;进入&lt;br&gt;
+&lt;a href=&#34;https://secure.backblaze.com/user_signin.htm&#34; title=&#34;backblaze的B2云存储控制面板&#34;&gt;backblaze的B2云存储控制面板&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://cangshui.net/wp-content/uploads/2019/05/20190503234926-1024x667.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://cangshui.net/wp-content/uploads/2019/05/20190503235043.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+然后随便上传一个文件，什么都行&lt;br&gt;
+&lt;img src=&#34;https://cangshui.net/wp-content/uploads/2019/05/20190503235157-1024x608.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击我们刚刚上传的图片，得到了一个链接&lt;br&gt;
+&lt;img src=&#34;https://cangshui.net/wp-content/uploads/2019/05/20190503235326.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;于是知道了backblaze给我们分配的域名是 f002.backblazeb2.com&lt;/p&gt;
+&lt;p&gt;注册一个cloudflare账号：传送门&lt;/p&gt;
+&lt;p&gt;已经有账户的接入自己的域名到cloudflare，然后添加dns，填上我们刚刚得到的&lt;br&gt;
+backblaze域名&lt;/p&gt;
+&lt;p&gt;由于 backblaze的域名是https的，因此我们需要将cloudflare的ssl设置为full&lt;br&gt;
+&lt;img src=&#34;https://cangshui.net/wp-content/uploads/2019/05/20190504000530-1024x501.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这样就可以用自己的域名走cloudflare的流量访问文件了:&lt;br&gt;
+&lt;img src=&#34;https://cangshui.net/wp-content/uploads/2019/05/20190504000845.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;当然你如果觉得文件链接不好看太长了，你也可以使用cloudflare自带的页面规则301&lt;br&gt;
+&lt;img src=&#34;https://cangshui.net/wp-content/uploads/2019/05/20190504002955-1024x656.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这个规则的效果：&lt;/p&gt;
+&lt;p&gt;打比方浏览器输入http://down.nicemail.ml/666.jpg，将会跳转到&lt;/p&gt;
+&lt;p&gt;https://down.nicemail.ml/file/down-cangshui-net/666.jpg&lt;/p&gt;
+&lt;p&gt;cloudflare的带正则参数的301规则&lt;/p&gt;
+&lt;p&gt;cloudflare并不是不允许https 301 https，而是同一个子域名无法互相301 ，你设为https://down.xxxx.com 跳转到 https://down1.xxxx.com 就行了&lt;/p&gt;
+">免费对象云存储Backblaze</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/s9y925myV/"" data-c="
+          &lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://xiu.pw/post-images/1596983474950.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;makeddwin 工具包，使用批处理制作，代码明文，以及在包里写明依赖文件来自那里，你完全可以替换，代码查阅。&lt;/p&gt;
+&lt;p&gt;不会还有杠精来喷吧？要不你写个更好的来？&lt;br&gt;
+至于你用上报毒与我无关！&lt;/p&gt;
+&lt;p&gt;说明：&lt;br&gt;
+【使用前，请把所需的文件放进相应文件夹！】&lt;br&gt;
+目录结构：&lt;br&gt;
+bin 文件夹，存放用来制作的依赖程序和文件。&lt;br&gt;
+iso 文件夹，存放Windows ISO 系统镜像(只能放1个)&lt;br&gt;
+packages 文件夹，存放Windows 补丁文件&lt;br&gt;
+driver 文件夹，存放其他驱动文件&lt;br&gt;
+virtio 文件夹，存放KVM virtio ISO 驱动镜像(只能放1个)&lt;br&gt;
+vhd 文件夹，存放 .vhd格式 虚拟硬盘(只能放1个)&lt;br&gt;
+export 文件夹，输出生成的.gz、.wim、和解压的.vhd文件。&lt;br&gt;
+注意，只能放一个的目录务必按要求，因为放多个会导致脚本无法判断。&lt;/p&gt;
+&lt;p&gt;步骤1：使用vhd.cmd批处理，生成一个大小20-30G左右的虚拟硬盘&lt;br&gt;
+生成后的虚拟硬盘文件会在vhd目录，虚拟硬盘大小视你安装系统后硬盘体积还剩多少。&lt;br&gt;
+一般安装系统后，虚拟硬盘最低要剩空闲有1G左右，后期可以再创建对应体积的虚拟硬盘作调整。&lt;/p&gt;
+&lt;p&gt;步骤2：使用install.cmd批处理，选择刚才创建的已挂载的虚拟硬盘分区，自行查看[我的电脑]，你虚拟硬盘生成多少G的分区，就选择那个分区，进行下一步安装系统等其他操作。&lt;/p&gt;
+&lt;p&gt;步骤3：使用dd.cmd批处理，对已经完成制作的.vhd虚拟硬盘文件进行压缩成可DD的文件或者wim文件。&lt;br&gt;
+压缩完成后，别忘了测试文件的完整性检查，否则是一个损坏的数据文件是无法使用的！&lt;br&gt;
+生成的.gz文件，可以在Linux系统下DD为此系统。&lt;br&gt;
+生成的.wim文件，可以在WinPE中安装到实体机系统，又或者添加生成为一个iso文件。&lt;br&gt;
+(注意，压缩比较慢通常是1-3小时，电脑配置越高越快！)&lt;/p&gt;
+&lt;p&gt;网址：nat.ee&lt;br&gt;
+批处理：荣耀&amp;amp;制作&lt;br&gt;
+本批处理工具仅适合Windows 7 sp1 以上的系统使用！&lt;br&gt;
+注意：不能放在带有空格路径的目录，否则出错。&lt;br&gt;
+TG交流群：https://t.me/dd_win&lt;br&gt;
+如在使用中有任何问题或者建议，欢迎加入交流。&lt;/p&gt;
+&lt;p&gt;下载链接：https://yyingc.lanzous.com/i72Wzfei7ba&lt;br&gt;
+视频教程下载：https://yyingc.lanzous.com/igExyfesota&lt;/p&gt;
+&lt;p&gt;视频教程：https://www.youtube.com/watch?v=LTVgPFWnnX8&lt;br&gt;
+哔哩哔哩：https://www.bilibili.com/video/BV1Pk4y1U7Zp/&lt;/p&gt;
+&lt;p&gt;转自:https://www.hostloc.com/thread-728111-1-1.html&lt;/p&gt;
+">一键制作DDWin，批处理!</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/MH86KLzkf/"" data-c="
+          &lt;p&gt;Github 提供了 Git.io 短网址服务，用于缩短 Github 上项目的网址。&lt;/p&gt;
+&lt;p&gt;官方文档：https://github.com/blog/985-git-io-github-url-shortener&lt;/p&gt;
+&lt;p&gt;自定义短链接&lt;br&gt;
+依据官方文档，生成短链接有两个参数&lt;/p&gt;
+&lt;p&gt;| 参数名  | 参数值  | 是否必须  |&lt;br&gt;
+|  url	源 | URL 链接  | 是  |&lt;br&gt;
+|  code | 自定义短链  |  否 |&lt;/p&gt;
+&lt;p&gt;命令模板&lt;br&gt;
+&lt;code&gt;curl -i &amp;quot;https://git.io&amp;quot; -F &amp;quot;url=长链接&amp;quot; -F &amp;quot;code=短链接&amp;quot;&lt;/code&gt;&lt;br&gt;
+使用示例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ curl -i &amp;quot;https://git.io&amp;quot; -F &amp;quot;url=https://github.com/baoyun-site&amp;quot; -F &amp;quot;code=baoyunsite&amp;quot;
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Tue, 14 Jul 2020 08:22:52 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/baoyunsite
+Content-Length: 30
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.026588
+X-Node: 7fa64432-805f-49cf-a4d4-6f19c50ae8f3
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur$ curl -i &amp;quot;https://git.io&amp;quot; -F &amp;quot;url=https://github.com/baoyun-site&amp;quot; -F &amp;quot;code=baoyunsite&amp;quot;
+HTTP/1.1 201 Created
+Server: Cowboy
+Connection: keep-alive
+Date: Tue, 14 Jul 2020 08:22:52 GMT
+Status: 201 Created
+Content-Type: text/html;charset=utf-8
+Location: https://git.io/baoyunsite
+Content-Length: 30
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Runtime: 0.026588
+X-Node: 7fa64432-805f-49cf-a4d4-6f19c50ae8f3
+X-Revision: 392798d237fc1aa5cd55cada10d2945773e741a8
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+Via: 1.1 vegur
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;https://github.com/baoyun-site&lt;br&gt;
+绕过链接生成限制&lt;br&gt;
+原理&lt;br&gt;
+通过使用 Github Pages 中放置静态页面的功能，来进行跳转。&lt;/p&gt;
+&lt;p&gt;实现&lt;br&gt;
+请查看 Github 仓库 renbaoshuo/git.io ，内含代码与说明。&lt;/p&gt;
+&lt;p&gt;版权声明&lt;br&gt;
+本文作者： 宝硕&lt;br&gt;
+本文链接： https://baoshuo.blog/post/oKnaKLcDb/&lt;/p&gt;
+">自定义 git.io 短链接地址与绕过链接生成限制</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/S2lYVWimz/"" data-c="
+          &lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://xiu.pw/post-images/1596850275326.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;如果只能搭建bot推荐使用docker版&lt;/p&gt;
+&lt;p&gt;准备：&lt;br&gt;
+1.SA配置文件（xxx.json）此步骤忽略参考（http://blog.jialezi.net/?post=153 ）&lt;br&gt;
+2.tgbot的api t.me/BotFather 创建即可见&lt;br&gt;
+3.一个可解析的域名&lt;br&gt;
+4.GoogleDrive文件夹的id&lt;br&gt;
+5.docker镜像&lt;br&gt;
+（我自用的小修改版 https://hub.docker.com/r/jialezi/gd-utils）&lt;br&gt;
+原版：https://github.com/gdtool/gd-utils-docker/&lt;/p&gt;
+&lt;p&gt;搭建&lt;br&gt;
+示例：&lt;br&gt;
+域名为abc.com&lt;br&gt;
+GoogleDrive文件夹的id为1hhDZw2SKjNeuwWroHSenoY-TXiFZyDoM&lt;br&gt;
+bot api为13xxxx2380:AAGDPL_2-LPIA0iQ6RxxxxM9bBOFjtErFGE&lt;/p&gt;
+&lt;p&gt;提前解析abc.com到你的服务器ip（用于申请ssl）&lt;br&gt;
+然后&lt;/p&gt;
+&lt;p&gt;1.下载配置文件，按要求修改里面的参数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;`wget https://raw.githubusercontent.com/gdtool/gd-utils-docker/master/config.example.js -O config.js`
+##用SA的修改以下三项即可，其他按需修改
+const DEFAULT_TARGET = &#39;&#39; ,// 必填，拷贝默认目的地ID，如果不指定target，则会复制到此处，建议填写团队盘ID
+tg_token: &#39;&#39;, // 你的 telegram robot 的 token，获取方法参见 https://core.telegram.org/bots#6-botfather
+tg_whitelist: [&#39;&#39;] // 你的tg username(t.me/username)，bot只会执行这个列表里的用户所发送的指令
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;2.创建sa文件夹上传sa文件到sa文件夹（你也可以运行后再用web端的filebrowser上传）&lt;/p&gt;
+&lt;p&gt;3.运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;docker run --restart=always -idt -e USERPWD=123qwe -p 443:443 -p 80:80 -e Domain=abc.com -v ${PWD}/sa:/gd-utils/sa -v ${PWD}/config.js:/gd-utils/config.js --name gd-utils jialezi/gd-utils
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;申请ssl需要80端口&lt;br&gt;
+USERPWD为shellinabox密码 || Domain=abc.com 为自己域名，要提前解析，由caddy自动申请ssl&lt;/p&gt;
+&lt;p&gt;4.对接telegram bot&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -F &amp;quot;url=[YOUR_WEBSITE]/api/gdurl/tgbot&amp;quot; &#39;https://api.telegram.org/bot[YOUR_BOT_TOKEN]/setWebhook&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -F &amp;quot;url=https://abc.com/api/gdurl/tgbot&amp;quot; &#39;https://api.telegram.org/bot1394xxx380:AAGDPL_2-LPIA0iQ6xxxxM9bBOFjtErFGE/setWebhook&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;返回true ok&lt;/p&gt;
+&lt;p&gt;访问:&lt;/p&gt;
+&lt;p&gt;1）https://abc.com #gd-utils地址&lt;/p&gt;
+&lt;p&gt;2）https://abc.com/shell #shellinabox地址，使用root需要先使用gd用登录，再切换root&lt;br&gt;
+账号gd，密码自设 USERPWD=123qwe || su root切换到root 密码自设 USERPWD=123qwe&lt;/p&gt;
+&lt;p&gt;3）https://abc.com/file #filebrowser 账号密码admin&lt;/p&gt;
+&lt;p&gt;如果觉得不够快，可以去使用fclone，超级暴力的项目&lt;/p&gt;
+">【gd-utils】 Docker快速搭建GoogleDrive转存Bot  </a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/yzEb8qOIh/"" data-c="
+          &lt;p&gt;方便国内使用&lt;br&gt;
+不卸载内核&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;wget -N --no-check-certificate &amp;quot;https://github.000060000.xyz/tcpx.sh&amp;quot; &amp;amp;&amp;amp; chmod +x tcpx.sh &amp;amp;&amp;amp; ./tcpx.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;wget -N &amp;quot;https://github.000060000.xyz/tcpx.sh&amp;quot; &amp;amp;&amp;amp; chmod +x tcpx.sh &amp;amp;&amp;amp; ./tcpx.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;卸载内核&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;wget -N --no-check-certificate &amp;quot;https://github.000060000.xyz/tcp.sh&amp;quot; &amp;amp;&amp;amp; chmod +x tcp.sh &amp;amp;&amp;amp; ./tcp.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-shell&#34;&gt;wget -N &amp;quot;https://github.000060000.xyz/tcp.sh&amp;quot; &amp;amp;&amp;amp; chmod +x tcp.sh &amp;amp;&amp;amp; ./tcp.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;bbr内核更新为5.5/5.4&lt;/p&gt;
+&lt;p&gt;bbrplus降级到4.14.129 安装方法和安装的内核均和原作者一致 彻底甩锅&lt;br&gt;
+维持原来的支持版本 不再支持c6,c8;debian和ubuntu各版本安装问题和我无关&lt;/p&gt;
+&lt;p&gt;不支持32位系统&lt;br&gt;
+锐速内核稍微更新&lt;/p&gt;
+&lt;p&gt;去掉魔改版 增加xanmod 5.5.1版本&lt;br&gt;
+xanmod 只添加了centos7,8 debian9,10&lt;/p&gt;
+&lt;p&gt;5.5内核支持cake队列 5.4未测试&lt;/p&gt;
+&lt;p&gt;测试版本，建议先用不卸载内核版本测试，然后再用正常版本&lt;br&gt;
+不卸载内核表示不会去卸载现有的内核&lt;/p&gt;
+&lt;p&gt;测试分支&lt;br&gt;
+https://github.com/ylx2016/Linux-NetSpeed/tree/2020.2.3&lt;br&gt;
+https://github.com/ylx2016/Linux-NetSpeed/releases&lt;/p&gt;
+&lt;p&gt;原作者&lt;br&gt;
+https://github.com/cx9208/Linux-NetSpeed&lt;br&gt;
+https://github.com/chiakge/Linux-NetSpeed&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://xiu.pw/post-images/1596850093008.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">bbr/bbrplus/bbr2/锐速内核安装脚本更新测试版</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/NbSNPnGXz/"" data-c="
+          &lt;p&gt;简介&lt;br&gt;
+因为论坛和部分网站需要发送邀请码邀请注册，人工发码又太慢，于是想到tg机器人发码，但是找了很多项目都没有找到类似的开源项目，偶然间看到了teelebot开源的tgAPi框架 于是参考着示例 ，用我学了半个月的半吊子python 写出了这个暂时能用不会报错的telegram邀请码机器人&lt;/p&gt;
+&lt;p&gt;目前已经到我理想状态，短期内不会进行功能更新，学习比较重要。&lt;/p&gt;
+&lt;p&gt;增加功能&lt;br&gt;
+1.邀请码自动发码模块 并且限制领取数量（邀请码添加在invite_code目录下的code.txt 一行一个） 用户信息存储在usertext.txt文件内&lt;/p&gt;
+&lt;p&gt;2.邀请码数量统计，如果邀请码用完自动给管理员发消息（需自行修改len_invite.py里面的发送id）&lt;/p&gt;
+&lt;p&gt;3.补码模块已经添加 目前并不是很理想的状态但是可以用使用方法&lt;/p&gt;
+&lt;p&gt;/add_code邀请码&lt;br&gt;
+邀请码&lt;br&gt;
+注意：一行一个注意换行&lt;/p&gt;
+&lt;p&gt;4.删除用户信息模块，删除后用户可以再次获取邀请码指令/del用户id目前只能删除单个用户&lt;/p&gt;
+&lt;p&gt;5.mps的自动补码模块 请在/plugins/updatacode/updatacode.py文件内填写网站登录信息，目前只会抓取两页邀请码，需要手动更新，后期会添加自动执行进去。&lt;/p&gt;
+&lt;p&gt;开发计划&lt;br&gt;
+1.增加管理员添加邀请码模块&lt;/p&gt;
+&lt;p&gt;2.多类邀请码模块支持&lt;/p&gt;
+&lt;p&gt;3.统计需改成json数据 目前统计方式过于简易(已完成)&lt;/p&gt;
+&lt;p&gt;4.管理员补码：暂定计划1，发送补码指令并跟随邀请码，格式为一行一个，然后剔除指令文本，后使用write写入code.txt文件中。 计划2:用户发送指令后开始监听，将用户发送的后续文本写入文件中，需发送特定指令来结束输入&lt;/p&gt;
+&lt;p&gt;环境要求&lt;br&gt;
+Python版本&lt;br&gt;
+teelebot 只支持 Python3.x，不支持Python2.x。&lt;/p&gt;
+&lt;p&gt;使用&lt;br&gt;
+一、源码运行&lt;br&gt;
+1.克隆或点击下载本项目到本地，保证本机安装有Python3.x版本和包requests（删除了多余模块不需要了）；&lt;/p&gt;
+&lt;p&gt;2.config.cfg 配置文件&lt;/p&gt;
+&lt;p&gt;配置文件格式:&lt;/p&gt;
+&lt;p&gt;[config]&lt;br&gt;
+key=your key&lt;br&gt;
+root=your user id&lt;br&gt;
+debug=False&lt;br&gt;
+timeout=60&lt;br&gt;
+plugin_dir=your plugin dir   //[Optional]&lt;br&gt;
+Linux&lt;br&gt;
+在 /root 目录下创建文件夹 .teelebot ,并在其内新建配置文件 config.cfg ,按照上面的格式填写配置文件&lt;/p&gt;
+&lt;p&gt;Windows&lt;br&gt;
+在 C:\Users&amp;lt;username&amp;gt; 目录下创建文件夹 .teelebot ,并在其内新建配置文件 config.cfg ,按照上面的格式填写配置文件&lt;/p&gt;
+&lt;p&gt;指定配置文件&lt;br&gt;
+Linux 和 Windows 都可在命令行通过参数手动指定配置文件路径，命令格式：&lt;/p&gt;
+&lt;p&gt;python -m teelebot -c/-C &lt;configure file path&gt;&lt;br&gt;
+路径必须为绝对路径。&lt;/p&gt;
+&lt;p&gt;3.运行&lt;/p&gt;
+&lt;p&gt;终端下进入teelebot文件夹所在目录。&lt;/p&gt;
+&lt;p&gt;对于使用程序配置文件默认路径的：输入python -m teelebot 回车,正常情况下你应该能看见屏幕提示机器人开始运行。&lt;br&gt;
+对于命令行手动指定配置文件路径的：输入python -m teelebot -c/-C &lt;configure file path&gt; 回车,正常情况下你应该能看见屏幕提示机器人开始运行。&lt;br&gt;
+tg邀请码机器人源码 自动发码 数量统计 无码提醒&lt;/p&gt;
+">tg邀请码机器人源码 自动发码 数量统计 无码提醒</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/G7OkD-Cag/"" data-c="
+          &lt;p&gt;首先推荐两种程序&lt;/p&gt;
+&lt;p&gt;1.php的OneIndex修改版&lt;/p&gt;
+&lt;p&gt;2.萌咖的GO版OneList&lt;/p&gt;
+&lt;p&gt;这两种程序都能够直接将sharepoint域名替换为你反代的域名或者是CDN域名&lt;/p&gt;
+&lt;p&gt;程序地址：&lt;/p&gt;
+&lt;p&gt;OneIndex：https://github.com/caippx/oneindex-j&lt;/p&gt;
+&lt;p&gt;OneList：https://github.com/MoeClub/OneList/tree/master/Rewrite&lt;/p&gt;
+&lt;p&gt;使用方法&lt;br&gt;
+OneList：&lt;/p&gt;
+&lt;p&gt;这个就很简单了，根据github中的教程 配置好配置文件之后&lt;/p&gt;
+&lt;p&gt;在运行的时候使用&lt;/p&gt;
+&lt;p&gt;OneList -bind 0.0.0.0 -port 80 -P &amp;quot;xxxxx-my.sharepoint.com|domain.com&amp;quot;&lt;br&gt;
+即可将你的sharepoint域名替换成domain.con&lt;/p&gt;
+&lt;p&gt;OneIndex：&lt;/p&gt;
+&lt;p&gt;这个版本是经过我修改的版本，在安装完成之后 直接在后台设置里面可以看到替换sharepoint域名的选项&lt;/p&gt;
+&lt;p&gt;填上即可 如果留空 则不使用该功能&lt;/p&gt;
+&lt;p&gt;注：sharepoint域名为你在网页版onedrive首页时的那个域名xxxxx-my.sharepoint.com&lt;/p&gt;
+">为Onedrive套上CDN加速下载</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/CZWvLVqdV/"" data-c="
+          &lt;p&gt;反代OneDrive域名&lt;br&gt;
+利用Caddy反代OneDrive&lt;br&gt;
+Caddy安装方法请自行搜索&lt;/p&gt;
+&lt;p&gt;domain.com {&lt;br&gt;
+tls admin@domain.com&lt;br&gt;
+timeouts none&lt;br&gt;
+gzip&lt;br&gt;
+proxy / https://xxx-my.sharepoint.com {&lt;br&gt;
+header_upstream Host xxx-my.sharepoint.com&lt;br&gt;
+header_upstream Referer https://xxx-my.sharepoint.com&lt;br&gt;
+header_upstream -X-Forwarded-For {remote}&lt;br&gt;
+header_upstream X-Real-IP {remote}&lt;br&gt;
+header_upstream User-Agent {&amp;gt;User-Agent}&lt;br&gt;
+header_upstream Accept-Encoding identity&lt;br&gt;
+}&lt;/p&gt;
+&lt;p&gt;写入如下配置&lt;br&gt;
+重启caddy然后按照上一篇文章运行onelist或者修改oneindex配置即可&lt;/p&gt;
+&lt;p&gt;用CDN加速OneDrive&lt;br&gt;
+本文只介绍nodecache 其他CDN 操作基本差不多&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://xiu.pw/post-images/1596848948187.jpg&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;像上面这样填写点击确认创建并修改加速域名cname至nodecache生成的xxxxxxxxx.ncname.com域名&lt;/p&gt;
+&lt;p&gt;之后选择回源管理，将回源HOST 修改为xxx-my.sharepoint.com （必须&lt;/p&gt;
+&lt;p&gt;再到HTTPS 栏 添加加速域名的SSL证书&lt;/p&gt;
+&lt;p&gt;然后隐身模式访问加速域名 如果跳转到office登录页面 则说明成功&lt;/p&gt;
+">如何反代-加速OneDrive域名</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/ppkASNJMF/"" data-c="
+          &lt;p&gt;注：E5保活皆是玄学，能不能成功谁能知道呢？&lt;/p&gt;
+&lt;p&gt;使用方法&lt;br&gt;
+零、打开Github项目地址&lt;br&gt;
+https://github.com/peng4740/E5-Rclone-Actions&lt;/p&gt;
+&lt;p&gt;一、Fork此仓库&lt;br&gt;
+&lt;img src=&#34;https://xiu.pw/post-images/1596848323726.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;二、设置Rclone配置&lt;br&gt;
+添加名为RCLONE_CONFIG的变量&lt;br&gt;
+值为Rclone的配置，需要你本地先生成配置，之后打开Rclone配置文件复制出OneDrive的配置&lt;br&gt;
+配置最前面的[od]需要改成&lt;a href=&#34;%22od%22%E6%98%AF%E5%9C%A8%E7%94%A8Rclone%E6%B7%BB%E5%8A%A0OneDrive%E6%97%B6%E8%AE%BE%E7%BD%AE%E7%9A%84&#34;&gt;e5&lt;/a&gt;&lt;br&gt;
+&lt;img src=&#34;https://xiu.pw/post-images/1596848342263.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;三、启用Actions&lt;br&gt;
+如图所示开启Actions，之后再对你自己Fork后的仓库点击Star(不要漏看了这一句)&lt;br&gt;
+&lt;img src=&#34;https://xiu.pw/post-images/1596848354441.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;https://xiu.pw/post-images/1596848373311.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/p&gt;
+&lt;p&gt;四、查看运行结果&lt;br&gt;
+Actions &amp;gt; E5-Rclone-Actions&lt;/p&gt;
+&lt;p&gt;五、Rclone使用自己的API&lt;br&gt;
+不长篇大论一大堆了，只提基本的几个点&lt;/p&gt;
+&lt;p&gt;到Azure新注册一个应用：https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade&lt;/p&gt;
+&lt;p&gt;名称：随意&lt;br&gt;
+重定向URI：http://localhost&lt;/p&gt;
+&lt;p&gt;创建完成的页面(概述)可以看到Client_ID，也就是应用程序(客户端)ID，记录下来&lt;/p&gt;
+&lt;p&gt;到API权限页面添加权限：Files.Read、Files.ReadWrite、Files.Read.All、Files.ReadWrite.All、offline_access、User.Read&lt;/p&gt;
+&lt;p&gt;到证书和密码页面，添加客户端密码，一年还是长期，都可以。这个就是Client_secret，也要记录下来&lt;/p&gt;
+&lt;p&gt;rclone config添加配置时，填写自己的Client_ID和Client_secret按提示操作即可&lt;/p&gt;
+">用Actions每天自动使用Rclone调用OneDrive使Office E5订阅保持活跃</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/PVphxlRBy/"" data-c="
+          &lt;p&gt;🔍 预览&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://xiu.pw/post-images/1596771304759.gif&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;br&gt;
+✨ 特性&lt;br&gt;
+阻止本地消息被服务器撤回。&lt;br&gt;
+被撤回的消息将被标记上 “已删除” 。&lt;br&gt;
+插件具有极好的兼容性。&lt;br&gt;
+标记的内容支持多语言自动识别。&lt;br&gt;
+目前已支持自动识别：&lt;br&gt;
+英语、简体中文语、繁体中文语、日语、韩语&lt;br&gt;
+🍅 兼容性&lt;br&gt;
+目前仅兼容 Windows Telegram v1.9.0 ~ v2.2.0 或更高。&lt;br&gt;
+如果您正在使用 Telegram beta，请下载最新预览版本。&lt;/p&gt;
+&lt;p&gt;🍔 用法&lt;br&gt;
+1.前往 发行页面 下载最新版本插件。&lt;br&gt;
+2.关闭正在运行的 Telegram 进程。&lt;br&gt;
+3.复制 version.dll 文件到 Telegram 根目录。&lt;br&gt;
+4.运行 Telegram 程序。&lt;/p&gt;
+">Telegram 本地消息防撤回插件</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/bkZunUpHG/"" data-c="
+          &lt;p&gt;前言&lt;br&gt;
+对于新入手或重装后的 VPS 配置密钥登录需要创建 ~/.ssh 目录、把公钥写入到 ~/.ssh/authorized_keys、设置权限、禁用密码登录等操作，虽然都是很简单的基础操作，但过程麻烦且枯燥：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir -p ~/.ssh
+curl -fsSL https://github.com/P3TERX.keys &amp;gt;&amp;gt; ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+sudo sed -i &amp;quot;s@.*\(PasswordAuthentication \).*@\1no@&amp;quot; /etc/ssh/sshd_config
+sudo service sshd restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;SSH 密钥一键配置脚本是一套用于简化 SSH 密钥配置过程的解决方案。使用它以上操作只需要一行命令：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -g P3TERX -d&lt;/code&gt;&lt;br&gt;
+语法及选项说明&lt;br&gt;
+bash &amp;lt;(curl -fsSL git.io/key.sh) [选项...] &amp;lt;参数&amp;gt;&lt;br&gt;
+-o – 覆盖模式，必须写在最前面才会生效&lt;br&gt;
+-g – 从 GitHub 获取公钥，参数为 GitHub 用户名&lt;br&gt;
+-u – 从 URL 获取公钥，参数为 URL&lt;br&gt;
+-l – 从本地文件获取公钥，参数为本地文件路径&lt;br&gt;
+-p – 修改 SSH 端口，参数为端口号&lt;br&gt;
+-d – 禁用密码登录&lt;br&gt;
+使用方法&lt;br&gt;
+生成 SSH 密钥对&lt;br&gt;
+如果没有密钥需要先生成，执行以下命令后一路回车即可。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen -t ecdsa -b 521&lt;/code&gt;&lt;br&gt;
+TIPS： 此方法适用于 Win­dows 10 (1803后)的 Pow­er­Shell 或 WSL，Linux 发行版和 ma­cOS 自带的终端，但不仅限于这些环境。科普： 521 位的 ECDSA 密钥比起 RSA 密钥更安全且验证速度更快。&lt;/p&gt;
+&lt;p&gt;操作完后会在 ~/.ssh 目录中生两个密钥文件，id_ecdsa 为私钥，id_ecdsa.pub 为公钥。公钥就是我们需要安装在远程主机上的。&lt;/p&gt;
+&lt;p&gt;科普：~符号代表用户主目录，俗称家目录。其路径与当前登陆的用户有关，在 Linux 中普通用户家目录的路径是/home/用户名，而 root 用户是/root。Win­dowd 10 中路径是C:\Users\用户名。在 ma­cOS 中路径是/Users/用户名。&lt;/p&gt;
+&lt;p&gt;安装公钥&lt;br&gt;
+从 GitHub 获取公钥&lt;br&gt;
+在 GitHub 密钥管理页面 添加公钥，比如我的用户名是 P3TERX，那么在主机上输入以下命令即可：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -g P3TERX&lt;/code&gt;&lt;br&gt;
+从 URL 获取公钥&lt;br&gt;
+把公钥上传到网盘，通过网盘链接获取公钥：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -u https://p3terx.com/key.pub&lt;/code&gt;&lt;br&gt;
+从本地文件获取公钥&lt;br&gt;
+通过 FTP 的方式把公钥传到 VPS 上，然后指定公钥路径：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -f ~/key.pub&lt;/code&gt;&lt;br&gt;
+覆盖模式&lt;br&gt;
+使用覆盖模式（-o）将覆盖 /.ssh/authorized_keys 文件，之前的密钥会被完全替换掉，选项必须写在最前面才会生效，比如：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -o -g P3TERX&lt;/code&gt;&lt;br&gt;
+或者&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -og P3TERX&lt;/code&gt;&lt;br&gt;
+禁用密码登录&lt;br&gt;
+在确定使用密钥能正常登录后禁用密码登录：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -d&lt;/code&gt;&lt;br&gt;
+修改 SSH 端口&lt;br&gt;
+把 SSH 端口修改为 2222：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -p 2222&lt;/code&gt;&lt;br&gt;
+一键操作&lt;br&gt;
+安装密钥、修改端口、禁用密码登录一键操作：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;bash &amp;lt;(curl -fsSL git.io/key.sh) -og P3TERX -p 2222 -d&lt;/code&gt;&lt;/p&gt;
+">SSH 密钥一键配置脚本 使用教程</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/yjgxn/"" data-c="
+          &lt;p&gt;1, 系统环境要求&lt;br&gt;
+目前支持Ubuntu 20.04 LTS, Debian 10, CentOS 7/8操作系统。&lt;/p&gt;
+&lt;p&gt;CDN服务器正常运行时仅需要系统有500MB的内存。但是，程序第一次编译安装的时候需要1500MB左右的内存。若您的VPS内存不够，可以加一些Swap.&lt;/p&gt;
+&lt;p&gt;需要注意的是，该脚本需要安装在新装的操作系统中。该程序和其他面板（比如宝塔，cPanel, Directadmin）等不兼容。毕竟，装CDN程序的节点上也不应该搭建其他程序的。&lt;/p&gt;
+&lt;p&gt;2, 使用方法&lt;br&gt;
+因为是一键脚本，所以使用起来非常简单，只需要一行命令就可以啦！&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/Har-Kuun/OneClickCDN/master/OneClickCDN.sh &amp;amp;&amp;amp; sudo bash OneClickCDN.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一次运行时，程序会提示自动编译安装Traffic Server.  安装完毕后，程序会引导新建CDN网站，自动签发SSL, 等等。您需要将您网站的域名设置A记录解析到这台VPS的IP地址上。&lt;/p&gt;
+&lt;p&gt;您也可以随时重新运行该脚本，用来管理您的服务器上部署的CDN网站，查看网站统计，等等。&lt;/p&gt;
+&lt;p&gt;3, 管理面板&lt;br&gt;
+脚本执行后拥有功能丰富但简单易用的后台管理界面。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://xiu.pw/post-images/1596765735341.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;4, 实现的功能&lt;br&gt;
+首先，最基本的功能就是CDN.  安装后，程序就会将您的VPS变成一个高性能CDN节点，用来加速和缓存您的网站。&lt;/p&gt;
+&lt;p&gt;同时，脚本支持一键设置SSL, 您可以提供您自己的SSL证书，或者也可以一键签发免费的Let’s Encrypt证书，并且开启OCSP装订。&lt;/p&gt;
+&lt;p&gt;脚本还支持随时增添新的CDN网站。您只需要根据脚本引导，输入网址和源站IP地址，即可分分钟添加CDN网址。您可以使用脚本管理CDN网站，查看网站数据，清除缓存，等等。&lt;/p&gt;
+&lt;p&gt;Github项目地址：https://github.com/Har-Kuun/OneClickCDN 欢迎大家加星星加叉叉&lt;br&gt;
+本文及程序作者为香菇肥牛，原文链接https://qing.su/article/oneclick-cdn.html, 转载需注明原文链接。谢谢！&lt;/p&gt;
+&lt;p&gt;小彩蛋：稍微修改一下脚本（脚本开头有说明，可以开启反代模式）可以一键反代hostloc哦 &lt;sup&gt;.&lt;/sup&gt;&lt;/p&gt;
+">一键安装配置高性能的CDN节点</a>
+      </div>
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/1.html/"" data-c="
+          &lt;p&gt;支持重装的系统：&lt;br&gt;
+Debian 9/10&lt;br&gt;
+Ubuntu 18.04/16.04&lt;br&gt;
+CentOS 6/7&lt;br&gt;
+自定义DD镜像&lt;/p&gt;
+&lt;p&gt;特性/优化：&lt;br&gt;
+自动获取IP地址、网关、子网掩码&lt;br&gt;
+自动判断网络环境，选择国内/外镜像，再也不用担心卡半天了&lt;br&gt;
+超级懒人一键化，无需复杂的命令&lt;br&gt;
+解决萌咖脚本中一些导致安装错误的问题&lt;br&gt;
+CentOS 7 镜像抛弃LVM，回归ext4，减少不稳定因素&lt;/p&gt;
+&lt;p&gt;使用方法：非常简单&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget --no-check-certificate -O AutoReinstall.sh https://git.io/AutoReinstall.sh &amp;amp;&amp;amp; bash AutoReinstall.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://xiu.pw/post-images/1596765505850.webp&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+">一键重装脚本/一键DD脚本</a>
+      </div>
+      
+    </div>
+    <div class="page">
+      <div id="page_ul"></div>
+    </div>
+  </div>
+</div>
+<script>
+  !function () {
+    let searchMask = document.querySelector('#search_mask');
+    let result = document.querySelector('#result');
+    let items = document.querySelectorAll('.item');
+    let searchBox = document.querySelector('#search');
+    let statCount = document.querySelector('#stat_count');
+    let statTimes = document.querySelector('#stat_times');
+    let pageUl = document.querySelector('#page_ul');
+    let close = document.querySelector('#close');
+    
+    close.addEventListener('click', function() {
+      searchMask.style = 'display: none;'
+    })
+
+    let finds = [];
+    let contents = [];
+    let pageSize = 10;
+    items.forEach(item => {
+      let a = item.querySelector('a');
+      contents.push({
+        title: a.innerText,
+        details: a.dataset.c,
+        link: a.href
+      })
+      item.remove();
+    })
+
+    function insertStr(soure, start, count) {
+      let newStr = soure.substr(start, count);
+      return soure.slice(0, start) + '<em>' + newStr + '</em>' + soure.slice(start + count);
+    }
+
+    pageUl.addEventListener('click', function(event) {
+      let target = event.target;
+      if (target.__proto__ === HTMLSpanElement.prototype) {
+        appendResults(parseInt(target.dataset.i));
+      }
+    })
+
+    function appendResults(index) {
+      let htmlResult = '';
+      let start = index || 0;
+      let end = Math.min(start + pageSize, finds.length);
+      for (let i = start; i < end; i++) {
+        const current = finds[i];
+        let html = current.title;
+        let sum = 0;
+        let positions = current.positions;
+        positions.forEach(position => {
+          html = insertStr(html, position.start + sum, position.count);
+          sum += 9;
+        })
+        htmlResult += `<div class="item"><a class="result-title" href="${current.link}">${html}</a></div>`;
+      }
+      result.innerHTML = htmlResult;
+      pageUl.innerHTML = '';
+      let count = finds.length / pageSize;
+      let lis = '';
+      if (start !== 0) {
+        lis += `<span class="fa fa-angle-left" data-i='${start - 1}'></span>`;
+      }
+      for (let i = 0; i < count; i++) {
+        lis += `<span class='${i === start?'current':''}' data-i='${i}'>${i+1}</span>`;     
+      }
+      if (start+1 < count) {
+        lis += `<span class="fa fa-angle-right" data-i='${start+1}'></span>`;  
+      }
+      pageUl.innerHTML = lis;
+    }
+
+    function search(delay) {
+      let timer = null
+      return function () {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
+          let start = Date.now();
+          let segments = searchBox.value.split(' ').filter(c => c != '');
+          if (segments.length <= 0) {
+            return;
+          }
+          finds = [];
+          let htmlResult = '';
+          contents.forEach(content => {
+            let title = content.title;
+            let positions = [];
+            let find = false;
+            segments.forEach((segment) => {
+              if (content.title.includes(segment)) {
+                find = true;
+                positions.push({
+                  start: content.title.indexOf(segment),
+                  count: segment.length
+                })
+              } else if (content.details.includes(segment)) {
+                find = true;
+              }
+            });
+            if (find) {
+              finds.push({
+                title: content.title,
+                link: content.link,
+                positions
+              });
+            }
+          })
+          appendResults(0);
+          statCount.textContent = finds.length;
+          statTimes.textContent = Date.now() - start;
+        }, delay)
+      }
+    }
+    searchBox.addEventListener('input', search(200));
+  }()
+</script>
+
+<input hidden id="copy" />
+<script>
+  !function () {
+    let times = document.querySelectorAll('.publish-time');
+    for (let i = 0; i < times.length; i++) {
+      let date = times[i].dataset.t;
+      let time = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
+      if (time < 60) {
+        str = time + '秒之前';
+      } else if (time < 3600) {
+        str = Math.floor(time / 60) + '分钟之前';
+      } else if (time >= 3600 && time < 86400) {
+        str = Math.floor(time / 3600) + '小时之前';
+      } else if (time >= 86400 && time < 259200) {
+        str = Math.floor(time / 86400) + '天之前';
+      } else {
+        str = times[i].textContent;
+      }
+      times[i].textContent = str;
+    }
+  }();
+</script>
+
+<script>
+  let language = '';
+  if (language !== '') {
+    let map = new Map();
+    if (language === 'en') {
+      map.set('search', 'Search');
+      map.set('category', 'Categories');
+      map.set('article', 'Articles');
+      map.set('tag', 'Tags');
+      map.set('top', 'Top');
+      map.set('publish', 'published');
+      map.set('minute', ' minutes');
+      map.set('read-more', 'Read More');
+      map.set('view', 'View');
+      map.set('words', ' words');
+      map.set('category-in', 'category in');
+      map.set('preview', 'Meta');
+      map.set('index', 'Toc');
+      map.set('no-archives', "You haven't created yet");
+      map.set('archives', " articles in total");
+      map.set('cloud-tags', " tags in total");
+      map.set('copyright', "Copyright: ");
+      map.set('author', "Author: ");
+      map.set('link', "Link: ");
+      map.set('leave-message', "Leave a message");
+      map.set('format', "Links Format");
+      map.set('site-name', "Name: ");
+      map.set('site-link', "Link: ");
+      map.set('site-desc', "Desc: ");
+      map.set('stat', " related results, taking ");
+      map.set('stat-time', " ms");
+      map.set('site-img', "Image: ");
+    }
+
+    if (map.size > 0) {
+      let lanElems = document.querySelectorAll('.language');
+      lanElems.forEach(elem => {
+        let lan = elem.dataset.lan, text = map.get(lan);
+        if (elem.__proto__ === HTMLInputElement.prototype) {
+          elem.placeholder = text
+        } else {
+          if (elem.dataset.count) {
+            text = elem.dataset.count + text;
+          }
+          elem.textContent = text;
+        }
+      })
+    }
+  }
+  //拿来主义(真香)^_^，Clipboard 实现摘自掘金 https://juejin.im/post/5aefeb6e6fb9a07aa43c20af
+  window.Clipboard = (function (window, document, navigator) {
+    var textArea,
+      copy;
+
+    // 判断是不是ios端
+    function isOS() {
+      return navigator.userAgent.match(/ipad|iphone/i);
+    }
+    //创建文本元素
+    function createTextArea(text) {
+      textArea = document.createElement('textArea');
+      textArea.value = text;
+      textArea.style.width = 0;
+      textArea.style.height = 0;
+      textArea.clientHeight = 0;
+      textArea.clientWidth = 0;
+      document.body.appendChild(textArea);
+    }
+    //选择内容
+    function selectText() {
+      var range,
+        selection;
+
+      if (isOS()) {
+        range = document.createRange();
+        range.selectNodeContents(textArea);
+        selection = window.getSelection();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        textArea.setSelectionRange(0, 999999);
+      } else {
+        textArea.select();
+      }
+    }
+
+    //复制到剪贴板
+    function copyToClipboard() {
+      try {
+        document.execCommand("Copy")
+      } catch (err) {
+        alert("复制错误！请手动复制！")
+      }
+      document.body.removeChild(textArea);
+    }
+
+    copy = function (text) {
+      createTextArea(text);
+      selectText();
+      copyToClipboard();
+    };
+
+    return {
+      copy: copy
+    };
+  })(window, document, navigator);
+
+  function copyCode(e) {
+    if (e.srcElement.tagName === 'SPAN' && e.srcElement.classList.contains('copy-code')) {
+      let code = e.currentTarget.querySelector('code');
+      var text = code.innerText;
+      if (e.srcElement.textContent === '复制成功') {
+        return;
+      }
+      e.srcElement.textContent = '复制成功';
+      (function (elem) {
+        setTimeout(() => {
+          if (elem.textContent === '复制成功') {
+            elem.textContent = '复制代码'
+          }
+        }, 1000);
+      })(e.srcElement)
+      Clipboard.copy(text);
+    }
+  }
+
+  let pres = document.querySelectorAll('pre');
+  pres.forEach(pre => {
+    let code = pre.querySelector('code');
+    let copyElem = document.createElement('span');
+    copyElem.classList.add('copy-code');
+    copyElem.textContent = '复制代码';
+    pre.appendChild(copyElem);
+    pre.onclick = copyCode
+  })
+
+</script>
+<script src="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/js/motion.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+<script>
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 200
+  });
+</script>
+
+
+<script src="/media/js/mouse/love.js"></script>
+
+
+
+
+
+</html>
