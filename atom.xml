@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-09-19T11:55:47.173Z</updated>
+    <updated>2020-09-20T03:44:35.129Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,41 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[screen运行rclone挂载]]></title>
+        <id>https://xiu.pw/GSfwPi2fH/</id>
+        <link href="https://xiu.pw/GSfwPi2fH/">
+        </link>
+        <updated>2020-09-20T03:42:33.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="screen命令可以用于多任务同时操作功能可进行任务间的切换">screen命令可以用于多任务同时操作功能（可进行任务间的切换）</h1>
+<h2 id="1-安装screen">1、安装screen</h2>
+<h3 id="centos下安装">centos下安装：</h3>
+<pre><code class="language-bash">yum install screen
+</code></pre>
+<h3 id="debian或者ubuntu下安装">Debian或者Ubuntu下安装：</h3>
+<pre><code class="language-bash">apt-get install screen
+</code></pre>
+<h2 id="2-安装完成后创建一个会话">2、安装完成后，创建一个会话</h2>
+<pre><code class="language-bash">screen -S 会话名
+</code></pre>
+<h2 id="3-就能进入运行你想运行的程序本文以rclone挂载onedrive为例挂载googledeive方法也差不多运行挂载命令-演示name为od本地文件为rootonedrive网盘目录为根目录的情况">3、就能进入，运行你想运行的程序，本文以rclone挂载onedrive为例，挂载googledeive方法也差不多，运行挂载命令。演示name为od，本地文件为/root/onedrive，网盘目录为根目录/的情况</h2>
+<pre><code class="language-bash">rclone mount od:/ /root/onedrive --copy-links --no-gzip-encoding --no-check-certificate --allow-other --allow-non-empty --umask 000
+</code></pre>
+<h2 id="4-回车后会运行切换会主操作界面用ctrlad">4、回车后会运行，切换会主操作界面用ctrl+a+d</h2>
+<pre><code class="language-bash">其他命令：
+
+显示所有会话：
+screen -ls
+
+恢复一个会话：
+screen -r 会话名
+
+如果上面的无法恢复，使用
+screen -d -r 会话名
+</code></pre>
+<p><strong>注：如在会话中输入exit，将会退出，会话将不存在</strong></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[DD Windows 一键脚本（包含GCP谷歌云Oracle甲骨文）]]></title>
         <id>https://xiu.pw/TtlfXDfto/</id>
@@ -818,104 +853,6 @@ RewriteRule ^(/)?$ panyh.net/ [L]
 <figure data-type="image" tabindex="6"><img src="http://blog.jialezi.net/admin/editor/php/upload/1401593341188.png" alt="" loading="lazy"></figure>
 <figure data-type="image" tabindex="7"><img src="http://blog.jialezi.net/admin/editor/php/upload/14001593341189.png" alt="" loading="lazy"></figure>
 <p>转自:<a href="http://blog.jialezi.net/?post=158" title="http://blog.jialezi.net/?post=158">http://blog.jialezi.net/?post=158</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Onedrive+OneManager+Heroku+CFWorkers免费的OD列表]]></title>
-        <id>https://xiu.pw/KB2M1bDsU/</id>
-        <link href="https://xiu.pw/KB2M1bDsU/">
-        </link>
-        <updated>2020-08-30T01:39:37.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>网站下载链接直接是xxx.com/abc.jpg，没有302跳到微软xxx.sharepoint.com，也没有反代xxx.sharepoint.com那样后面一长串。</strong></p>
-<h1 id="准备工作">准备工作：</h1>
-<p>1，        Onedrive，或Sharepoint<br>
-这个大家有的，各种A1，E3，E5，世纪。（Sharepoint默认25T）<br>
-2，        OneManager，Github地址：https://github.com/qkqpttgf/OneManager-php<br>
-基于各种无服务器的平台，比如Heroku、腾讯SCF、阿里FC、华为FG、百度CFC，配置都保存在其环境变量中，当然也可以装在VPS与空间里，不过为了一致，程序不固定储存onedrive的目录结构，缓存最多1小时<br>
-3，        Heroku，最好需要注册2个帐号，注册与登录时需要魔法，平时操作时不需要<br>
-OneManager配置是保存在环境变量中的，所以不需要一直监控保活，Heroku免费套餐每月550小时，550小时/30天=18.33小时，每天只要访问时间段空出来24-18=6小时没有人访问，这一个月其实就足够使用了，但有些人的网站可能访问人比较多所以还没到月底就用光了。<br>
-当然，heroku也可绑卡达到1000小时，同时还能自定义域名。但，SSL却比较麻烦。<br>
-4，        CF workers，免费的就好</p>
-<h1 id="部署程序-安装程序-绑定网盘">部署程序、安装程序、绑定网盘：</h1>
-<p>1，        将OneManager一键部署到Heroku<br>
-2，        访问给定的herokuapp域名，正式安装好程序<br>
-3，        安装好后登录，在设置中绑定Onedrive或Sharepoint<br>
-4，        在设置中做些设定<br>
-5，        换一个Heroku帐号再安装一次（时长够用就无所谓）</p>
-<h1 id="重点">重点：</h1>
-<p><strong>在CF Workers中填入以下代码</strong></p>
-<hr>
-<pre><code>// 单日
-const SingleDay = '111.herokuapp.com'
-// 双日
-const DoubleDay = '222.herokuapp.com'
-// 一切给CF代理，true/false
-const CFproxy = true
-
-// 由于heroku不绑卡不能自定义域名，就算绑卡后https也不方便
-// 另外免费套餐每月550小时，有些人不够用
-// 于是在CF Workers使用此代码，分单双日拉取不同heroku帐号下的相同网页
-// 只改上面，下面不用动
-
-addEventListener('fetch', event =&gt; {
-    let nd = new Date();
-    if (nd.getDate()%2) {
-        host = SingleDay
-    } else {
-        host = DoubleDay
-    }
-    if (!CFproxy) {
-        let url=new URL(event.request.url);
-        if (url.protocol == 'http:') {
-            url.protocol = 'https:'
-            response = Response.redirect(url.href);
-            event.respondWith( response );
-        } else {
-            url.hostname=host;
-            let request=new Request(url,event.request);
-            event.respondWith( fetch(request) )
-        }
-    } else {
-        event.respondWith( fetchAndApply(event.request) );
-    }
-})
-
-async function fetchAndApply(request) {
-    let response = null;
-    let url = new URL(request.url);
-    if (url.protocol == 'http:') {
-        url.protocol = 'https:'
-        response = Response.redirect(url.href);
-        return response;
-    }
-    url.host = host;
-
-    let method = request.method;
-    let body = request.body;
-    let request_headers = request.headers;
-    let new_request_headers = new Headers(request_headers);
-
-    new_request_headers.set('Host', url.host);
-    new_request_headers.set('Referer', request.url);
-
-    let original_response = await fetch(url.href, {
-        method: method,
-        body: body,
-        headers: new_request_headers
-    });
-
-    response = new Response(original_response.body, {
-        status: original_response.status,
-        headers: original_response.headers
-    })
-
-    return response;
-}
-</code></pre>
-<hr>
-<p>单双日分别填入不同的heroku帐号下的网站（当然2个网站要设置得一模一样），这样每个heroku帐号每个月都只访问15或16天，就算24小时有人访问也才360或384小时。<br>
-最后，给workers加上自定义域名的路由！</p>
-<p>从头到尾都可以是Free的，不看网站页面，光从下载过程来看，可以完全假装CF套在了大盘鸡上,谁也看不出我没服务器。</p>
 ]]></content>
     </entry>
 </feed>
