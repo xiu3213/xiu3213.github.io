@@ -9,7 +9,7 @@
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
 <title>CloudFront扫段Pyhon脚本 | 秀儿</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1601172948440">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1601407579829">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -200,19 +200,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">33</span>
+        <span class="site-item-stat-count">34</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">65</span>
+        <span class="site-item-stat-count">66</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">65</span>
+        <span class="site-item-stat-count">66</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -1056,6 +1056,82 @@ if __name__ == '__main__':
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/YHapp3sOT/"" data-c="
+          &lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;在有些页面不想让用户访问F12的情况下我们需要如何去处理,要如何实现用户访问F12关闭网页或进行跳转。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下面具体贴上代码 复制到你的网页代码中即可&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+//判断F12审查元素
+function fuckyou() {
+window.close(); //关闭当前窗口(防抽)
+window.location = &amp;quot;about:blank&amp;quot;; //将当前窗口跳转置空白页
+}
+
+function ck() {
+console.profile();
+console.profileEnd();
+//我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！
+if(console.clear) {
+console.clear()
+};
+if(typeof console.profiles == &amp;quot;object&amp;quot;) {
+return console.profiles.length &amp;gt; 0;
+}
+}
+
+function hehe() {
+if((window.console &amp;amp;&amp;amp; (console.firebug || console.table &amp;amp;&amp;amp; /firebug/i.test(console.table()))) || (typeof opera == &#39;object&#39; &amp;amp;&amp;amp; typeof opera.postError == &#39;function&#39; &amp;amp;&amp;amp; console.profile.length &amp;gt; 0)) {
+fuckyou();
+}
+if(typeof console.profiles == &amp;quot;object&amp;quot; &amp;amp;&amp;amp; console.profiles.length &amp;gt; 0) {
+fuckyou();
+}
+}
+hehe();
+window.onresize = function() {
+if((window.outerHeight - window.innerHeight) &amp;gt; 200)
+//判断当前窗口内页高度和窗口高度，如果差值大于200，那么呵呵
+fuckyou();
+}
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;f12-网页跳转js&#34;&gt;F12-网页跳转JS&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;function collect() {
+    //开始javascript执行过程的数据收集
+    console.profile();
+    //配合profile方法，作为数据收集的结束
+    console.profileEnd();
+    //我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！  
+    if (console.clear) {
+        //清空控制台
+        console.clear()
+    };
+    if (typeof console.profiles == &amp;quot;object&amp;quot;) {
+        return console.profiles.length &amp;gt; 0;
+    }
+}
+function check() {
+    if ((window.console &amp;amp;&amp;amp; (console.firebug || console.table &amp;amp;&amp;amp; /firebug/i.test(console.table()))) || (typeof opera == &#39;object&#39; &amp;amp;&amp;amp; typeof opera.postError == &#39;function&#39; &amp;amp;&amp;amp; console.profile.length &amp;gt; 0)) {
+        jump();
+    }
+    if (typeof console.profiles == &amp;quot;object&amp;quot; &amp;amp;&amp;amp; console.profiles.length &amp;gt; 0) {
+        jump();
+    }
+}
+check();
+window.onresize = function() {
+    //判断当前窗口内页高度和窗口高度
+    if ((window.outerHeight - window.innerHeight) &amp;gt; 200)
+    jump();
+}
+function jump() {
+    window.location = &amp;quot;https://72.rs&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+">网页防止调试按f12关闭网页或跳转方法</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://xiu.pw/GSfwPi2fH/"" data-c="

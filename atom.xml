@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-09-27T02:16:24.108Z</updated>
+    <updated>2020-09-29T19:26:32.092Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,85 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[网页防止调试按f12关闭网页或跳转方法]]></title>
+        <id>https://xiu.pw/YHapp3sOT/</id>
+        <link href="https://xiu.pw/YHapp3sOT/">
+        </link>
+        <updated>2020-09-29T19:25:23.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="简介">简介</h2>
+<p><strong>在有些页面不想让用户访问F12的情况下我们需要如何去处理,要如何实现用户访问F12关闭网页或进行跳转。</strong></p>
+<p><strong>下面具体贴上代码 复制到你的网页代码中即可</strong></p>
+<pre><code class="language-php">&lt;script type=&quot;text/javascript&quot;&gt;
+//判断F12审查元素
+function fuckyou() {
+window.close(); //关闭当前窗口(防抽)
+window.location = &quot;about:blank&quot;; //将当前窗口跳转置空白页
+}
+
+function ck() {
+console.profile();
+console.profileEnd();
+//我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！
+if(console.clear) {
+console.clear()
+};
+if(typeof console.profiles == &quot;object&quot;) {
+return console.profiles.length &gt; 0;
+}
+}
+
+function hehe() {
+if((window.console &amp;&amp; (console.firebug || console.table &amp;&amp; /firebug/i.test(console.table()))) || (typeof opera == 'object' &amp;&amp; typeof opera.postError == 'function' &amp;&amp; console.profile.length &gt; 0)) {
+fuckyou();
+}
+if(typeof console.profiles == &quot;object&quot; &amp;&amp; console.profiles.length &gt; 0) {
+fuckyou();
+}
+}
+hehe();
+window.onresize = function() {
+if((window.outerHeight - window.innerHeight) &gt; 200)
+//判断当前窗口内页高度和窗口高度，如果差值大于200，那么呵呵
+fuckyou();
+}
+&lt;/script&gt;
+</code></pre>
+<h2 id="f12-网页跳转js">F12-网页跳转JS</h2>
+<pre><code class="language-javascript">function collect() {
+    //开始javascript执行过程的数据收集
+    console.profile();
+    //配合profile方法，作为数据收集的结束
+    console.profileEnd();
+    //我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！  
+    if (console.clear) {
+        //清空控制台
+        console.clear()
+    };
+    if (typeof console.profiles == &quot;object&quot;) {
+        return console.profiles.length &gt; 0;
+    }
+}
+function check() {
+    if ((window.console &amp;&amp; (console.firebug || console.table &amp;&amp; /firebug/i.test(console.table()))) || (typeof opera == 'object' &amp;&amp; typeof opera.postError == 'function' &amp;&amp; console.profile.length &gt; 0)) {
+        jump();
+    }
+    if (typeof console.profiles == &quot;object&quot; &amp;&amp; console.profiles.length &gt; 0) {
+        jump();
+    }
+}
+check();
+window.onresize = function() {
+    //判断当前窗口内页高度和窗口高度
+    if ((window.outerHeight - window.innerHeight) &gt; 200)
+    jump();
+}
+function jump() {
+    window.location = &quot;https://72.rs&quot;;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[screen运行rclone挂载]]></title>
         <id>https://xiu.pw/GSfwPi2fH/</id>
@@ -798,61 +877,6 @@ RewriteRule ^(/)?$ panyh.net/ [L]
 # ... 以此类推
 </code></pre>
 <p>这是一段 apache的配置文件。当前所有Linux虚拟空间和全能空间都会支持 .htaccess 配置吧。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[利用Microsoft 365 E5开发者订阅搭建自己的邮局|设置catch-all邮箱]]></title>
-        <id>https://xiu.pw/gsDFY9Jro/</id>
-        <link href="https://xiu.pw/gsDFY9Jro/">
-        </link>
-        <updated>2020-08-30T15:55:27.000Z</updated>
-        <content type="html"><![CDATA[<p>最近看了几个服务器自建邮局的方案，很多程序服务器要求2G内存起步，搭建也比较复杂，还要各种设置避免进垃圾箱，是个技术活，害怕那步出问题搞的自己心态爆炸，感觉不太适合自己。想想还是第三方的好，之前我已经尝试过yandex/zoho/腾讯企业邮，最后选择了yandex，一直再使用感觉良好。前几天开发者试用的E5订阅又续订，于是就试了一下，设置邮局功能按照后台引导设置没有任何难度，主要是设置catch-all邮箱，这里分享一下过程。</p>
-<p>提示：文中E5订阅是指开发者试用订阅，保持活跃能自动续费。网上有很多调用api保持活跃的方法，但是博主申请完一直没使用也续费了，如何才算活跃没有具体的说法。如果没有自动续费，订阅会被取消但是数据不是马上删除，会有时间可以迁移 。</p>
-<p>（本文搭建邮局不是开发行为，只是正常使用。）</p>
-<p><strong>catch-all邮箱</strong>：又叫全收邮件，就是把发给邮件服务器上不存在账户的邮件都重定向到某个邮箱，而不是直接退信。正常情况下，如发邮件给服务器上不存在的账户会直接退信给发件人。E5开发者订阅只用25用户，利用catch-all功能可以实现无限别名收邮件。</p>
-<h1 id="一添加域名到microsoft-365">一，添加域名到Microsoft 365</h1>
-<p>打开：https://admin.microsoft.com/Adminportal/Home?source=applauncher#/Domains<br>
-添加并验证域名，前两步我就不截图了。</p>
-<p><img src="http://blog.jialezi.net/admin/editor/php/upload/46231593341187.png" alt="" loading="lazy"><br>
-<img src="http://blog.jialezi.net/admin/editor/php/upload/74411593341187.png" alt="" loading="lazy"><br>
-<img src="http://blog.jialezi.net/admin/editor/php/upload/38461593341187.png" alt="" loading="lazy"><br>
-<img src="http://blog.jialezi.net/admin/editor/php/upload/77251593341187.png" alt="" loading="lazy"><br>
-<img src="http://blog.jialezi.net/admin/editor/php/upload/79951593341187.png" alt="" loading="lazy"></p>
-<h1 id="二添加两个用户用于测试">二，添加两个用户用于测试</h1>
-<p>添加用户：https://admin.microsoft.com/Adminportal/Home?source=applauncher#/users</p>
-<p>添加了i@9mail.club和aaa@9mail.club</p>
-<p><img src="http://blog.jialezi.net/admin/editor/php/upload/70031593341187.png" alt="" loading="lazy"><br>
-<img src="http://blog.jialezi.net/admin/editor/php/upload/25201593341187.png" alt="" loading="lazy"></p>
-<h1 id="三向i9mailclub和i29mailclub不存在的用户发送邮件">三，向i@9mail.club和i2@9mail.club（不存在的用户）发送邮件</h1>
-<p>可见i2@9mail.club是退信了。<br>
-<img src="http://blog.jialezi.net/admin/editor/php/upload/30121593341188.png" alt="" loading="lazy"><br>
-<img src="http://blog.jialezi.net/admin/editor/php/upload/81921593341188.png" alt="" loading="lazy"></p>
-<h1 id="四设置catch-all功能">四，设置Catch-all功能。</h1>
-<p>1）打开Exchange 管理中心：https://outlook.office365.com/ecp/</p>
-<figure data-type="image" tabindex="1"><img src="http://blog.jialezi.net/admin/editor/php/upload/32321593341188.png" alt="" loading="lazy"></figure>
-<p>2）修改域类型</p>
-<p>邮件流——接受的域，把域类型改为内部中继。</p>
-<p><img src="http://blog.jialezi.net/admin/editor/php/upload/48211593341188.png" alt="" loading="lazy"><br>
-<img src="http://blog.jialezi.net/admin/editor/php/upload/86391593341188.png" alt="" loading="lazy"></p>
-<p>3）创建一个动态通讯组，用于存放已有的用户。</p>
-<p>收件人——组——新建Office 365组——动态通讯组列表——仅以下收件人类型——具有Exchange邮箱用户</p>
-<p>（我这里动态通讯组名称设置为 exchange）</p>
-<figure data-type="image" tabindex="2"><img src="http://blog.jialezi.net/admin/editor/php/upload/68331593341188.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="http://blog.jialezi.net/admin/editor/php/upload/63721593341188.png" alt="" loading="lazy"></figure>
-<p>4）创建规则，用于把不存在有的邮件重定向到指定邮箱</p>
-<p>邮件流——规则——创建新规则</p>
-<p>名称:随意——规则：发件人位于 组织外部 ——执行：邮件重定向 指定邮箱（i@9mail.club）</p>
-<p>除非：收件人为以下组成员 exchange（第三步设置的动态通讯组） PS：如果看不到除非选项，请滑动到底部点击下面的高级</p>
-<figure data-type="image" tabindex="4"><img src="http://blog.jialezi.net/admin/editor/php/upload/35851593341188.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="5"><img src="http://blog.jialezi.net/admin/editor/php/upload/60301593341188.png" alt="" loading="lazy"></figure>
-<h1 id="五测试">五，测试</h1>
-<p>向aaa@9mail.club和xxx@9mail.club（不存在）发送邮件</p>
-<p>aaa@9mail.club正常收到邮件</p>
-<p>xxx@9mail.club的邮件重定向到了i@9mail.club</p>
-<p>设置成功。</p>
-<figure data-type="image" tabindex="6"><img src="http://blog.jialezi.net/admin/editor/php/upload/1401593341188.png" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="7"><img src="http://blog.jialezi.net/admin/editor/php/upload/14001593341189.png" alt="" loading="lazy"></figure>
-<p>转自:<a href="http://blog.jialezi.net/?post=158" title="http://blog.jialezi.net/?post=158">http://blog.jialezi.net/?post=158</a></p>
 ]]></content>
     </entry>
 </feed>
