@@ -9,7 +9,7 @@
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
 <title>如何正确使用17ce对WordPress进行压力测试 | 秀儿</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1601407579829">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1602554568357">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -200,19 +200,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">34</span>
+        <span class="site-item-stat-count">35</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">66</span>
+        <span class="site-item-stat-count">71</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">66</span>
+        <span class="site-item-stat-count">71</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -980,6 +980,109 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/o5UTHhSIn/"" data-c="
+          &lt;h1 id=&#34;1-apache-traffic-server简介&#34;&gt;1, Apache Traffic Server简介&lt;/h1&gt;
+&lt;p&gt;Apache Traffic Server由Yahoo于2009年开源，经过现在已经成为了非常成熟的代理/缓存/CDN系统。早在2009年，雅虎使用Traffic Server就可以用150台服务器实现每天400 TB的高速流量分发。经过多年的发展，ATS已经用于非常多的商业CDN分发与大型网络。Traffic Server与Nginx, Varnish三者几乎称霸了世界上所有CDN运营商，而Traffic Server又是这三者之中使用量最大的。与Nginx相比，Traffic Server拥有同样优异的性能显著的更多的功能，更丰富的接口，以及高度自定义的配置。与Varnish相比，Traffic Server对于高并发高负载的处理更为出色。&lt;/p&gt;
+&lt;p&gt;使用Traffic Server的CDN/大型网络有Apple, Comcast, Yahoo, Akamai, 以及国内的又拍云等。Traffic Server, Nginx, Varnish各自的优缺点可以查看这个讨论：https://www.bizety.com/2016/01/07/nginx-vs-varnish-vs-apache-traffic-server-high-level-comparison/&lt;/p&gt;
+&lt;h1 id=&#34;2-安装traffic-server&#34;&gt;2, 安装Traffic Server&lt;/h1&gt;
+&lt;p&gt;安装Traffic Server之前，请确保您的VPS/独服上没有安装其他的Web服务器程序，否则会发生冲突。本文的操作环境为Ubuntu 20.04 LTS 64 bit.  其他操作系统的安装与配置方法类似。Traffic Server将使用编译方式安装，当前版本为8.0.8。若您使用系统自带的包管理器安装，则版本可能较老，请注意设置上可能会有所差异。&lt;/p&gt;
+&lt;p&gt;请前往https://www.apache.org/dyn/closer.cgi/trafficserver下载最新版本的安装包。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://mirrors.ocf.berkeley.edu/apache/trafficserver/trafficserver-8.0.8.tar.bz2
+tar xjf trafficserver-8.0.8.tar.bz2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;安装必要的依赖环境与编译器&#34;&gt;安装必要的依赖环境与编译器：&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;apt install automake libtool pkg-config libmodule-install-perl gcc g++ libssl-dev tcl-dev libpcre3-dev libcap-dev libhwloc-dev libncurses5-dev libcurl4-openssl-dev flex autotools-dev bison debhelper dh-apparmor gettext intltool-debian libbison-dev libexpat1-dev libfl-dev libsigsegv2 libsqlite3-dev m4 po-debconf tcl8.6-dev zlib1g-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;编译安装traffic-server&#34;&gt;编译安装Traffic Server:&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd trafficserver-8.0.8
+./configure --enable-experimental-plugins
+make
+make install
+其中，–enable-experimental-plugins参数这里可以不加。
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装完毕后，为配置文件创建一个符号链接，便于管理：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ln -s /usr/local/etc/trafficserver /etc/trafficserver
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&#34;执行完毕后所有的traffic-server配置文件都在etctrafficserver目录中-我们接下来需要配置这个目录中的多个文件&#34;&gt;执行完毕后，所有的Traffic Server配置文件都在/etc/trafficserver目录中。我们接下来需要配置这个目录中的多个文件。&lt;/h5&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://qing.su/wp-content/uploads/2020/07/configs.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;3-配置url映射规则&#34;&gt;3, 配置URL映射规则&lt;/h1&gt;
+&lt;p&gt;为了实现反代，我们需要配置URL映射规则，这样Traffic Server就能按照我们的指令来进行替换。&lt;/p&gt;
+&lt;p&gt;下面我们将用proxy.qing.su和origin.qing.su这两个域名为例。假设源站域名为origin.qing.su, 源站在另一台服务器上。我们想用proxy.qing.su这个域名来反代源站origin.qing.su.&lt;/p&gt;
+&lt;h5 id=&#34;编辑文件-recordsconfig-找到下面这行&#34;&gt;编辑文件 records.config, 找到下面这行：&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;CONFIG proxy.config.http.server_ports STRING 8080 8080:ipv6
+将其修改为：
+CONFIG proxy.config.http.server_ports STRING 80 443:ssl
+如下图所示。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://qing.su/wp-content/uploads/2020/07/records1.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;再找到下面这行，将0改为1：
+CONFIG proxy.config.url_remap.pristine_host_hdr INT 0
+如下图所示。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;3&#34;&gt;&lt;img src=&#34;https://qing.su/wp-content/uploads/2020/07/records2.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h5 id=&#34;然后编辑文件remapconfig-所有的反代映射规则都写在这个文件中-在文件末尾添加下面的行&#34;&gt;然后编辑文件remap.config.  所有的反代/映射规则都写在这个文件中。在文件末尾添加下面的行：&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;redirect http://proxy.qing.su/ https://proxy.qing.su/
+map https://proxy.qing.su/ https://origin.qing.su/
+reverse_map https://origin.qing.su/ https://proxy.qing.su/
+map / https://origin.qing.su/
+保存退出即可。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;4-配置缓存规则&#34;&gt;4, 配置缓存规则&lt;/h1&gt;
+&lt;p&gt;通过缓存的配置，我们能够节省服务器资源，且使得访问速度得到提升。编辑文件records.config, 设置下面的行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;CONFIG proxy.config.http.cache.http INT 1
+CONFIG proxy.config.http.cache.ignore_client_cc_max_age INT 1
+CONFIG proxy.config.http.normalize_ae_gzip INT 1
+CONFIG proxy.config.http.cache.cache_responses_to_cookies INT 1
+CONFIG proxy.config.http.cache.cache_urls_that_look_dynamic INT 1
+CONFIG proxy.config.http.cache.when_to_revalidate INT 0
+CONFIG proxy.config.http.cache.required_headers INT 2
+CONFIG proxy.config.http.cache.ignore_client_no_cache INT 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中的参数设置我将在下一篇搭建CDN的教程中具体介绍。对于一个简单高效的反向代理实例，上面这些设置一般能够满足需求。&lt;/p&gt;
+&lt;h5 id=&#34;再编辑文件storageconfig-在这里我们可以设置分配给服务器用来储存缓存内容的空间-我们这里设置为2-gb&#34;&gt;再编辑文件storage.config.  在这里我们可以设置分配给服务器用来储存缓存内容的空间。我们这里设置为2 GB.&lt;/h5&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;var/trafficserver 2048M
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;5-配置ssl证书&#34;&gt;5, 配置SSL证书&lt;/h1&gt;
+&lt;p&gt;我们可以在Traffic Server中配置SSL证书，实现网站的安全访问。如果您反代的是自己的源站，那么我建议您去掉源站的SSL证书，这样可以减轻源站的负载。源站是否配置SSL对于前端反代站的设置没有任何影响。&lt;/p&gt;
+&lt;p&gt;首先，我们新建一个目录，用于储存所有的SSL证书。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir /etc/trafficserver/ssl
+chown nobody /etc/trafficserver/ssl
+chmod 0760 /etc/trafficserver/ssl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后，将对应域名的私钥和证书放在这个文件夹中。如果您的反代站域名和源站域名一样（比如CDN），您可以直接复制源站的证书。如果不一样，您需要为反代站的域名申请SSL证书。我们假设反代站私钥地址为/etc/trafficserver/ssl/proxy.qing.su.key, 反代站证书地址为/etc/trafficserver/ssl/proxy.qing.su.crt.&lt;/p&gt;
+&lt;p&gt;编辑文件records.config, 指明SSL证书存放目录。添加下面的行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;CONFIG proxy.config.ssl.server.cert.path STRING /etc/trafficserver/ssl/
+CONFIG proxy.config.ssl.server.private_key.path STRING /etc/trafficserver/ssl/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存退出。然后编辑文件ssl_multicert.config.  添加下面的行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;dest_ip=88.88.88.88 ssl_cert_name=proxy.qing.su.crt ssl_key_name=proxy.qing.su.key
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中，88.88.88.88为源站IP.  如果您有多个源站IP, 就添加多行。如果想要匹配所有IP, 可以用通配符*来匹配。这样，我们就指明了每个源站对应的SSL证书的文件名。&lt;/p&gt;
+&lt;h1 id=&#34;6-运行traffic-server&#34;&gt;6, 运行Traffic Server&lt;/h1&gt;
+&lt;p&gt;每次修改配置文件后，需要重新载入配置文件，使得Traffic Server启用我们对配置文件做出的修改。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;traffic_ctl config reload
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;载入配置文件的过程中您可能遇到下面这样的报错：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;traffic_ctl: error while loading shared libraries: libtsmgmt.so.8: cannot open shared object file: No such file or directory
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;执行下面的命令即可：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ldconfig
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果载入配置文件的过程中遇到了下面这样的错误：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;traffic_ctl: server start failed: [5] Error establishing socket connection.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这种情况一般是Traffic Server没有启用。您可以执行traffic_manager运行Traffic Server, 或者使用下面的命令运行：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;trafficserver start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行Traffic Server之后，访问我们的反代站网址，应该已经可以正常显示源站内容了。如果是一个动态网站，那么该站点的交互功能，比如表单、用户登录、评论等功能都应该可以正常使用了。比如，我随手用域名yaofan.shop反代了一下全球主机交流论坛的网站hostloc.com,  反代的站点和源站完全一样，可以正常注册，登录和评论。&lt;/p&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;4&#34;&gt;&lt;img src=&#34;https://qing.su/wp-content/uploads/2020/07/3-1-1024x678.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;p&gt;综上，我们使用Apache Traffic Server轻松实现了对源站的反向代理，并配置了缓存系统和SSL证书。&lt;br&gt;
+本文作者为香菇肥牛，&lt;a href=&#34;https://qing.su/article/traffic-server-reverse-proxy.html&#34; title=&#34;原文链接&#34;&gt;原文链接&lt;/a&gt;, 转载需注明原文链接。谢谢！&lt;/p&gt;
+">使用Traffic Server实现高性能反向代理</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://xiu.pw/YHapp3sOT/"" data-c="
