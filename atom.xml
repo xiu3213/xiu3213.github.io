@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-10-13T02:03:00.292Z</updated>
+    <updated>2020-10-14T01:42:22.341Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,89 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[宝塔5.9开心版 原理与脚本]]></title>
+        <id>https://xiu.pw/TRwY3drs5/</id>
+        <link href="https://xiu.pw/TRwY3drs5/">
+        </link>
+        <updated>2020-10-14T01:37:35.000Z</updated>
+        <content type="html"><![CDATA[<p><em>如果不想看过程、原理，直接到最底下的一键脚本</em></p>
+<h1 id="方法1">方法1</h1>
+<p>安装bt5.9</p>
+<pre><code class="language-bash">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; echo y | sh install.sh
+</code></pre>
+<p>升级到专业版</p>
+<pre><code class="language-bash">wget -O update.sh http://download.bt.cn/install/update_pro.sh &amp;&amp; bash update.sh pro
+</code></pre>
+<p>开心</p>
+<pre><code class="language-bash">&gt;/www/server/panel/data/userInfo.json
+/etc/init.d/bt restart
+</code></pre>
+<p>反正就这样就可以装付费插件了，到期时间显示当天</p>
+<figure data-type="image" tabindex="1"><img src="https://developer-forum-online.cdn.bcebos.com/cb360baf-7b8d-49d3-b8a5-03a082efb6c6.png" alt="" loading="lazy"></figure>
+<h1 id="方法2">方法2</h1>
+<pre><code>还有一种方法(方法2)，先正常安装5.9.2专业版，然后用5.9.0的common.py替换5.9.2的，再按照网上流传的修改方法(164行修改为[data = {'status' : True,'msg' : {'endtime' : 32503651199 }};])
+</code></pre>
+<p>安装bt5.9</p>
+<pre><code class="language-bash">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; echo y | sh install.sh
+</code></pre>
+<p>升级到专业版</p>
+<pre><code class="language-bash">wget -O update.sh http://download.bt.cn/install/update_pro.sh &amp;&amp; bash update.sh pro
+</code></pre>
+<pre><code class="language-bash">替换common.py
+cd /www/server &amp;&amp; cp -r panel panel-bak
+wget http://download.bt.cn/install/update/LinuxPanel-5.9.0_pro.zip
+unzip -o LinuxPanel-5.9.0_pro.zip panel/class/common.py
+rm -f LinuxPanel-5.9.0_pro.zip
+</code></pre>
+<p>开心</p>
+<pre><code class="language-bash">sed -i &quot;s/data = panelAuth.panelAuth().get_order_status(None);/data = {'status' : True,'msg' : {'endtime' : 32503651199 }};/&quot; /www/server/panel/class/common.py
+&gt;/www/server/panel/data/userInfo.json
+/etc/init.d/bt restart
+</code></pre>
+<p>这样的话，就是显示2099年到期了</p>
+<p>————————————————</p>
+<p>不管你用不用的上，建议把这几个老版本下载保存一份</p>
+<p>脚本<br>
+http://download.bt.cn/install/install.sh<br>
+http://download.bt.cn/install/update_pro.sh</p>
+<p>面板文件<br>
+http://download.bt.cn/install/update/LinuxPanel-5.9.0.zip<br>
+http://download.bt.cn/install/update/LinuxPanel-5.9.1.zip<br>
+http://download.bt.cn/install/update/LinuxPanel-5.9.2.zip<br>
+http://download.bt.cn/install/update/LinuxPanel-5.9.0_pro.zip<br>
+http://download.bt.cn/install/update/LinuxPanel-5.9.1_pro.zip<br>
+http://download.bt.cn/install/update/LinuxPanel-5.9.2_pro.zip</p>
+<p>主要是安装脚本和5.9.0和5.9.2这三个<br>
+http://download.bt.cn/install/install.sh<br>
+http://download.bt.cn/install/update/LinuxPanel-5.9.0_pro.zip<br>
+http://download.bt.cn/install/update/LinuxPanel-5.9.2_pro.zip</p>
+<p>——————————————————————————————</p>
+<h1 id="一键脚本">一键脚本</h1>
+<h3 id="确保有wget和unzip">确保有wget和unzip</h3>
+<pre><code class="language-bash">yum install -y wget unzip
+apt install -y wget unzip
+</code></pre>
+<h2 id="方法1-2">方法1</h2>
+<p><strong>以下代码一起复制粘贴回车</strong></p>
+<pre><code class="language-bash">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; echo y | sh install.sh &amp;&amp; \
+wget -O update.sh http://download.bt.cn/install/update_pro.sh &amp;&amp; bash update.sh pro &amp;&amp; \
+&gt;/www/server/panel/data/userInfo.json &amp;&amp; \
+/etc/init.d/bt restart &amp;&amp; /etc/init.d/bt default
+</code></pre>
+<h2 id="方法2-2">方法2</h2>
+<p><strong>以下代码一起复制粘贴回车</strong></p>
+<pre><code class="language-bash">wget -O install.sh http://download.bt.cn/install/install.sh &amp;&amp; echo y | sh install.sh &amp;&amp; \
+wget -O update.sh http://download.bt.cn/install/update_pro.sh &amp;&amp; bash update.sh pro &amp;&amp; \
+cd /www/server &amp;&amp; cp -r panel panel-bak &amp;&amp; \
+wget http://download.bt.cn/install/update/LinuxPanel-5.9.0_pro.zip &amp;&amp; \
+unzip -o LinuxPanel-5.9.0_pro.zip panel/class/common.py &amp;&amp; rm -f LinuxPanel-5.9.0_pro.zip &amp;&amp; \
+sed -i &quot;s/data = panelAuth.panelAuth().get_order_status(None);/data = {'status' : True,'msg' : {'endtime' : 32503651199 }};/&quot; /www/server/panel/class/common.py &amp;&amp; \
+&gt;/www/server/panel/data/userInfo.json &amp;&amp; \
+/etc/init.d/bt restart &amp;&amp; /etc/init.d/bt default
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[使用Traffic Server实现高性能反向代理]]></title>
         <id>https://xiu.pw/o5UTHhSIn/</id>
@@ -827,95 +910,6 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print 'Keyboard Interrupt!'
         sys.exit()</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[页内和页外SEO技术]]></title>
-        <id>https://xiu.pw/73lF-bANp/</id>
-        <link href="https://xiu.pw/73lF-bANp/">
-        </link>
-        <updated>2020-09-03T04:48:14.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="搜索引擎优化不会消失-随着搜索越来越根深蒂固地融入到人们兴趣的问题和信息答案的方式中-但seo是很棘手的游戏总是改变从来没有简单-那么当涉及到排名时如何保持领先呢">搜索引擎优化不会消失。随着搜索越来越根深蒂固地融入到人们兴趣的问题和信息答案的方式中。但SEO是很棘手的游戏，总是改变，从来没有简单。那么，当涉及到排名时，如何保持领先呢？</h2>
-<h2 id="seo-由两个部门组成页面外和页面">SEO 由两个部门组成：页面外和页面。</h2>
-<ul>
-<li><strong>页面外SEO是指您的网站在搜索引擎眼中拥有的权威</strong></li>
-<li><strong>网页SEO是指网站本身的内容和结构</strong></li>
-</ul>
-<p><em>对非页面和页面搜索引擎优化的强烈关注将在网站的排名和流量方面，并将直接影响收入、销售、转化和客户的获取</em>。</p>
-<h1 id="页面外seo优化">页面外SEO优化</h1>
-<ul>
-<li>
-<p>技巧开发的内容，很容易共享。内容是 SEO 的王道。开发高质量内容，方便推荐网页的实际人员中自然生成反向链接。</p>
-</li>
-<li>
-<p>尽可能经常外联。从他们的博客中留言并申请反向链接。</p>
-</li>
-<li>
-<p>你可以从社交媒体渠道获得很多的社交信息和自然链接，以及增加来自社交引用来源的流量。</p>
-</li>
-<li>
-<p>多媒体来源的链接也是实现链接配置文件多样化的一个很好的方式。利用YouTube和其他视频共享网站，并在描述中添加链接（如果适用）。利用Imgur和其他图像共享网站，并在描述中再次添加链接（如果适用）。播客以及其他音频网站。文档共享网站（如 Slideshare 和Web 2.0）的&quot;中等&quot;网站也一样。</p>
-</li>
-<li>
-<p>最近流行的抓流量和反向链接的方法之一来自网站，如Quora和其他问答引擎。查找与业务和主题相关的问题，并提供简洁、清晰的问题的答案。令人惊讶的是， 有足够的参与度， Quora 上的无跟随反向链接可以跟随。</p>
-</li>
-<li>
-<p>避免过度优化关键字。如果您选择仅定位完全匹配的关键字，则链接构建中可能会遇到问题，因为它与您的排名相关。在我看来，90%左右应该是通用和品牌关键字，以及一些赤裸裸的网址。请记住，在构建链接时，尽可能自然地显示非常重要。只有大约 5% 的会针对选择定位的精确匹配短语。</p>
-</li>
-<li>
-<p>对于网站是实时和成长阶段头三个月，我将专注于通用和品牌词。瞄准尽可能多的品牌词，如搜索引擎，如品牌。使您的网站看起来像一个品牌。在此之后，我慢慢地开始添加裸网址、LSI 变体和完全匹配的关键字的组合。</p>
-</li>
-</ul>
-<h1 id="专注于页面优化页面">专注于页面优化页面</h1>
-<p>优化是指可以在您控制的网站属性的页面上进行的更改和增强。如果执行得当，页面 SEO 可以简单得多、更有效，并且需要的研究比页面外优化少得多。</p>
-<ul>
-<li>
-<p>精确匹配词出现在标题</p>
-</li>
-<li>
-<p>搜索引擎需要知道您的网页是关于什么的</p>
-</li>
-<li>
-<p>确保您尝试排名的主要关键字位于文章的标题中，这一点至关重要。很少有搜索结果中缺少标题中的主关键字会排名该关键字或相关的 LSI 长尾</p>
-</li>
-<li>
-<p>关键字之间 SEO 价值， 哪些是最好标题中的关键字</p>
-</li>
-<li>
-<p>在描述中是唯一的，使用主关键字</p>
-</li>
-<li>
-<p>页面标题（搜索引擎看到）应不超过 50 到 60 个字符（如果可能）。</p>
-</li>
-<li>
-<p>同时，您不希望标题显示的信息太少，不会造成混淆。页面的元描述应限制大约 150个字符。这将确保您不会在搜索结果中被截断。</p>
-</li>
-<li>
-<p>使用关键字和 Lsi 变体在标题标签文本</p>
-</li>
-<li>
-<p>标题标签告诉搜索引擎您的内容概述。它们从 H1（最大，通常是标题标签）到 H6。文章和帖子中最常用的标签是 H2 和 H3。如果完全不使用标题标记，则爬虫很识别您的文章内容，并且您的帖子结构将遭受人类访问者的影响。</p>
-</li>
-<li>
-<p>最佳做法是考虑 H1 标题，H2 主节标题，然后 H3 考虑子节标题。在这些标题标记中使用 LSI 关键字的变体非常重要。LSI 代表潜在的语义索引，这是一个系统搜索引擎，用于分析人们围绕给定主题使用的其他词。LSIGraph 是一个可靠的免费工具，用于发现 LSI 关键字，这些关键字与目标关键字类似，但更集中且搜索量较低。</p>
-</li>
-<li>
-<p>网站速度的重要性是至关重要的，页面搜索引擎优化最关键的部分之一是网站加载速度。</p>
-</li>
-<li>
-<ul>
-<li>提高网站速度的一些最佳方法包括： 提高网站速度的一些最佳方法包括：<br>
-使用 Gzip 等工具在现场启用压缩。<br>
-优化ML和JavaScript。<br>
-减少站点上的重定向数。<br>
-删除呈现阻止 JavaScript。<br>
-利用浏览器的缓存。<br>
-提高服务器的响应时间。<br>
-利用 CDN 或内容分发网络。<br>
-执行高质量的图像优化。</li>
-</ul>
-</li>
-</ul>
 ]]></content>
     </entry>
 </feed>
