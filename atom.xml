@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-10-20T01:20:09.145Z</updated>
+    <updated>2020-10-25T00:32:44.788Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,79 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[哪吒面板：小鸡们的最佳探针]]></title>
+        <id>https://xiu.pw/9fOCL0iHG/</id>
+        <link href="https://xiu.pw/9fOCL0iHG/">
+        </link>
+        <updated>2020-10-25T00:30:21.000Z</updated>
+        <content type="html"><![CDATA[<p>哪吒开源探针：https://github.com/p14yground/nezha</p>
+<p>演示地址：https://ops.naibahq.com/</p>
+<p>探针分为dashboard面板和agent客户端，只需要简单编译即可获得。</p>
+<p>安装编译所需依赖：</p>
+<pre><code class="language-bash">yum -y install wget git gcc make
+</code></pre>
+<p>安装go编译环境：</p>
+<pre><code class="language-bash">wget https://golang.org/dl/go1.15.3.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.15.3.linux-amd64.tar.gz
+echo “export PATH=$PATH:/usr/local/go/bin” &gt;&gt;/etc/profile
+source /etc/profile
+</code></pre>
+<p>编译dashboard：</p>
+<pre><code class="language-bash">git clone https://github.com/p14yground/nezha.git
+cd nezha
+go mod tidy -v
+go build cmd/dashboard/main.go
+</code></pre>
+<p>然后主目录会生成一个main的可执行文件，在/root下创建两个目录用于存放编译好的dashboard和agent，并把编译好的dashboard移动到对应目录。</p>
+<pre><code class="language-bash">mkdir -p /root/{dashboard,agent}
+mv main /root/dashboard/
+</code></pre>
+<p>编译agent，一句话就好了，生成的二进制文件也移动到agent目录方便以后直接用：</p>
+<pre><code class="language-bash">go build cmd/agent/main.go
+mv main /root/agent/agent
+</code></pre>
+<p>编写dashboard配置文件：</p>
+<pre><code class="language-bash">cp -ra resource /root/dashboard/
+mkdir /root/dashboard/data/
+vi /root/dashboard/data/config.yaml
+debug: true
+httpport: 80
+github:
+admin:
+– 7113412 #github id
+clientid: e34j4bjk34h34vh42k #创建OAuth Apps获取
+clientsecret: ea28bbe4e4jk34b34vdsa9b3b4hk4d5 ##创建OAuth Apps获取
+site:
+brand: 监控面板名称
+cookiename: tulong #Cookie 名
+</code></pre>
+<p>其中github id、clientid和clientsecret需要在GitHub获取，具体方法如下：</p>
+<p>在设置中找到oauth apps创建一个新的应用：<br>
+<img src="https://www.zhujizixun.com/wp-content/uploads/2020/10/oauth-1024x460.png" alt="" loading="lazy"></p>
+<p>填写站点名称和URL信息：<br>
+<img src="https://www.zhujizixun.com/wp-content/uploads/2020/10/regapps-1024x623.png" alt="" loading="lazy"></p>
+<p>复制头像url地址，在地址中获取github的id：<br>
+<img src="https://www.zhujizixun.com/wp-content/uploads/2020/10/getgithubid-1024x578.png" alt="" loading="lazy"></p>
+<p>复制client id和client secret：<br>
+<img src="https://www.zhujizixun.com/wp-content/uploads/2020/10/getclientid-1024x568.png" alt="" loading="lazy"></p>
+<p>配置完毕后，启动监控面板，然后用github账号登陆即可。</p>
+<pre><code class="language-bash">cd /root/dashboard/
+./main
+</code></pre>
+<p>启动后访问自己配置的域名和端口，登录github账号然后添加需要监控的服务器，这里我们就以监控本机为例：<br>
+<img src="https://www.zhujizixun.com/wp-content/uploads/2020/10/addserver-1024x570.png" alt="" loading="lazy"></p>
+<p>记录下面板生成的ID和密钥：<br>
+<img src="https://www.zhujizixun.com/wp-content/uploads/2020/10/mainkey-1024x478.png" alt="" loading="lazy"></p>
+<p>然后我们运行agent，-i参数接面板上生成的id，-p参数接密钥即可：</p>
+<pre><code class="language-bash">cd /root/agent/
+./agent -i 2 -s localhost:5555 -p 52a1c9abbe -d
+</code></pre>
+<p>然后我们来看看效果，很赞有木有：<br>
+<img src="https://www.zhujizixun.com/wp-content/uploads/2020/10/showus-1024x559.png" alt="" loading="lazy"></p>
+<p>这个探针没有复杂的配置，要监控其他小鸡直接把编译好的agent文件复制过去运行就行了。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[宝塔5.9开心版 原理与脚本]]></title>
         <id>https://xiu.pw/TRwY3drs5/</id>
@@ -804,112 +877,6 @@ e/n/d/r/c/s/q&gt; q   # 输入q回车，保存配置退出</code></pre>
 <p>（可选）然后在宝塔管理界面，选择mysql管理界面。里面有个性能调整。根据你的实际使用情况调整相关参数。</p>
 <figure data-type="image" tabindex="1"><img src="https://loukky.com/wp-content/uploads/2020/08/082615014568_0QQ%E6%88%AA%E5%9B%BE20200826150049.png" alt="" loading="lazy"></figure>
 <p>通过上面设置与调整过后，那么现在你的WordPress应该是可以明显感觉到速度提升了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[CloudFront扫段Pyhon脚本]]></title>
-        <id>https://xiu.pw/iNkGyc0K_/</id>
-        <link href="https://xiu.pw/iNkGyc0K_/">
-        </link>
-        <updated>2020-09-10T02:45:12.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="使用方法">使用方法：</h1>
-<pre><code>python cfscan.py 183.201.1.1-183.201.255.255 800
-
-cfscan.py = 你保存的文件名
-
-183.201.1.1-183.201.255.255 = 你要扫的起始IP-结尾IP
-
-800 = 线程数
-</code></pre>
-<h1 id="运行截图">运行截图：</h1>
-<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/09/10/aK6zJFCNrY4Ah9m.png" alt="" loading="lazy"></figure>
-<h1 id="结果截图">结果截图：</h1>
-<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/09/10/ipcu5gzH1LDn6WY.png" alt="" loading="lazy"></figure>
-<h1 id="脚本代码">脚本代码：</h1>
-<pre><code>#!/usr/bin/env python
-# coding=utf-8
-# python2.7 only
-
-import threading
-import requests
-import Queue
-import sys
-import re
-
-#ip to num
-def ip2num(ip):
-    ip = [int(x) for x in ip.split('.')]
-    return ip[0] &lt;&lt; 24 | ip[1] &lt;&lt; 16 | ip[2] &lt;&lt; 8 | ip[3]
-
-#num to ip
-def num2ip(num):
-    return '%s.%s.%s.%s' % ((num &amp; 0xff000000) &gt;&gt; 24,(num &amp; 0x00ff0000) &gt;&gt; 16,(num &amp; 0x0000ff00) &gt;&gt; 8,num &amp; 0x000000ff)
-
-#
-def ip_range(start, end):
-    return [num2ip(num) for num in range(ip2num(start), ip2num(end) + 1) if num &amp; 0xff]
-
-#
-def bThread(iplist):
-   
-    threadl = []
-    queue = Queue.Queue()
-    for host in iplist:
-        queue.put(host)
-
-    for x in xrange(0, int(SETTHREAD)):
-        threadl.append(tThread(queue))
-        
-    for t in threadl:
-        t.start()
-    for t in threadl:
-        t.join()        
-
-#create thread
-class tThread(threading.Thread):
-    def __init__(self, queue):
-        threading.Thread.__init__(self)
-        self.queue = queue
-
-    def run(self):
-        
-        while not self.queue.empty():
-            host = self.queue.get()
-            try:
-                checkServer(host)
-            except:
-                continue
-
-def checkServer(host):
-    header ={'user-agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36'}
-    aimurl = &quot;http://&quot;+host+&quot;:443&quot;
-    response = requests.get(url=aimurl,headers=header,timeout=10)
-    serverText = response.headers['server']
-
-    if len(serverText) &gt; 0:
-        print  &quot;-&quot;*50+&quot;\n&quot;+aimurl +&quot;\nServer: &quot;+serverText
-        if (serverText == &quot;CloudFront&quot;):
-            f.write(host+&quot;\n&quot;)
-
-
-if __name__ == '__main__':
-    print '\n############# Cloud Front Scan  ################'
-    print '                Author hostloc.com'
-    print '################################################\n'
-
-    global SETTHREAD
-
-    try:
-        SETTHREAD = sys.argv[2]
-        f = open(&quot;result.txt&quot;, &quot;w&quot;)
-        iplist = ip_range(sys.argv[1].split('-')[0], sys.argv[1].split('-')[1])
-        
-        print '\n[Note] Will scan '+str(len(iplist))+&quot; host...\n&quot;
-
-        bThread(iplist)
-    except KeyboardInterrupt:
-        print 'Keyboard Interrupt!'
-        sys.exit()</code></pre>
 ]]></content>
     </entry>
 </feed>
