@@ -9,7 +9,7 @@
 <meta name="description" content="知难而退">
 <meta name="theme-color" content="#000">
 <title>监测IP是否被阻断 | 秀儿</title>
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1603585906164">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/favicon.ico?v=1604832585097">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/css/gemini.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xiu3213/xiu3213.github.io@master/media/fonts/font-awesome.css">
 <link
@@ -200,19 +200,19 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">37</span>
+        <span class="site-item-stat-count">38</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="">
-        <span class="site-item-stat-count">73</span>
+        <span class="site-item-stat-count">77</span>
         <span class="site-item-stat-name language" data-lan="category">分类</span>
       </a>
     </div>
     <div class="sidebar-item-box">
       <a href="/tags/">
-        <span class="site-item-stat-count">73</span>
+        <span class="site-item-stat-count">77</span>
         <span class="site-item-stat-name language" data-lan="tag">标签</span>
       </a>
     </div>
@@ -964,6 +964,126 @@
       <hr>
     </div>
     <div class="result" id="result">
+      
+      <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://xiu.pw/HHRC2cOcg/"" data-c="
+          &lt;p&gt;基于 Docker 容器架构的 Trojan-Go/VLESS/VMess-TCP/WS-TLS 分流部署&amp;amp;管理脚本&lt;/p&gt;
+&lt;p&gt;本方案采用 TSP 进行 TLS 前置分流，后端使用 Trojan-Go、V2Ray 容器与 WatchTower、Portainer 维护组件配合，实现快速部署、易用易维护的极致体验。&lt;/p&gt;
+&lt;p&gt;特别提示 在脚本部署过程中，除引用必要的官方源外，其他所有配置操作、数据处理皆为本地执行，无任何外部连接参与数据交换。&lt;/p&gt;
+&lt;h1 id=&#34;使用简介&#34;&gt;使用简介&lt;/h1&gt;
+&lt;h4 id=&#34;安装-wget当检测到已经安装时会跳过请继续执行第二步&#34;&gt;安装 Wget（当检测到已经安装时，会跳过，请继续执行第二步）&lt;/h4&gt;
+&lt;p&gt;Centos 7+&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;command -v wget &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || sudo yum -y install wget
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Debian 9+ | Ubuntu 16+&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;command -v wget &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || sudo apt -y install wget
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;下载并执行脚本&#34;&gt;下载并执行脚本&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;wget -N --no-check-certificate -q https://cdn.jsdelivr.net/gh/h31105/trojan_v2_docker_onekey/deploy.sh &amp;amp;&amp;amp; \
+chmod +x deploy.sh &amp;amp;&amp;amp; bash deploy.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;1&#34;&gt;&lt;img src=&#34;https://kyun.ltyuanfang.cn/tc/2020/11/08/cc4c0ad23e663.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;协议-cdn-及客户端支持状况&#34;&gt;协议、CDN 及客户端支持状况&lt;/h1&gt;
+&lt;figure data-type=&#34;image&#34; tabindex=&#34;2&#34;&gt;&lt;img src=&#34;https://kyun.ltyuanfang.cn/tc/2020/11/08/19a606c98a486.png&#34; alt=&#34;&#34; loading=&#34;lazy&#34;&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;部署建议&#34;&gt;部署建议&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;TLS-Shunt-Proxy 负责证书全自动管理和网站服务（HTTPS 默认 443 HTTP 80 自动跳转）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Trojan-Go 容器化部署 (支持 WebSocket)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;V2Ray 容器化部署（VLESS/VMess 协议）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;容器的镜像由 WatchTower 监控并自动更新（建议安装）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;*WatchTower 无需额外配置，已配置为自动更新容器并清理过期镜像&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Portainer 基于 Web 的 Docker 管理服务（可选）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;*Portainer 安装后，请尽快访问管理地址设置管理帐号和密码。HTTP://ServerDomainName:9080 （非 HTTPS）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;由于 TSP 的 SNI 分流特性，若需配置 CDN 建议使用 A 记录方式，CNAME 方式不被支持。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CDN 配置：域名 -- A 记录 --&amp;gt; VPS IP #这里的域名与脚本部署时填写的 TLS 域名相同&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;注意 本脚本为单用户配置，部署后可以自行按需修改代理配置文件内容，但修改后不要使用脚本菜单中的修改选项，否则将会重置相关配置信息。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意 请根据部署情况调整开启防火墙端口，例如 HTTP 80、9080 及 HTTPS 443 端口。&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;开启-cdn-加速需要注意&#34;&gt;开启 CDN 加速需要注意&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;仅需在直连线路状况不太理想的情况下开启，否则开启 CDN 并不一定会带来加速效果。仅需在直连线路状况不太理想的情况下开启，否则开启 CDN 并不一定会带来加速效果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CDN 加速开启后，TSP 所管理的证书可能无法完成自动续签，应对办法：&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;*请在证书过期前 30 天内，手动暂停 CDN 加速后重启 TSP 完成证书续签。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#重启 TSP 触发证书续签
+systemctl restart tls-shunt-proxy
+#查看日志，观察证书续签结果
+journalctl -u tls-shunt-proxy.service --since today
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;*如果您的域名解析服务支持分线路设置 DNS 记录（例如 Aliyun、DNSpod），可通过设置境外线路解析为 VPS IP，其他线路解析为 CDN 记录来解决此问题。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;由于 CDN 仅支持 加速 WebSocket 模式代理，在开启 CDN 加速后，为确保所有模式代理均可正常使用，客户端需要根据脚本生成的配置信息做相应调整。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过客户端服务器地址的不同配置，来控制是否通过 CDN 加速：&lt;/p&gt;
+&lt;p&gt;*TCP 模式代理客户端（不通过 CDN 加速）服务器地址 (ServerAddress) 设置为VPS IP 地址 或 任意指向该 IP 地址的域名（其他配置不变）&lt;/p&gt;
+&lt;p&gt;*WebSocket 模式代理客户端（通过 CDN 加速）服务器地址 (ServerAddress) 设置为域名 或 任意支持 Anycast 的 CDN 节点 IP（其他配置不变）&lt;/p&gt;
+&lt;h1 id=&#34;日志查看&#34;&gt;日志查看&lt;/h1&gt;
+&lt;h3 id=&#34;tls-shunt-proxy-日志查看&#34;&gt;TLS-Shunt-Proxy 日志查看&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;查看所有日志：
+journalctl -u tls-shunt-proxy.service
+
+查看当天日志：
+journalctl -u tls-shunt-proxy.service --since today
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;容器日志查看&#34;&gt;容器日志查看&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;查看 Trojan-Go 日志
+
+最近 30 分钟日志：
+docker logs --since 30m Trojan-Go
+
+
+查看 V2Ray 日志
+
+最近 100 行日志：
+docker logs --tail=100 V2Ray
+
+
+查看 WatchTower 日志
+
+指定时间后日志：
+docker logs --since=&amp;quot;2020-09-01T10:10:00&amp;quot; WatchTower
+
+
+查看 Portainer 日志
+
+指定时间段日志：
+docker logs --since=&amp;quot;2020-09-05T10:10:00&amp;quot; --until &amp;quot;2020-09-05T12:00:00&amp;quot; Portainer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;自定义配置以及容器重启&#34;&gt;自定义配置以及容器重启&lt;/h1&gt;
+&lt;p&gt;在某些情况下，我们可能需要自定义修改代理配置文件（非脚本方式修改配置），我们需要在修改后，重启代理容器使配置生效。&lt;/p&gt;
+&lt;p&gt;例如：重启 V2Ray 容器：docker restart V2Ray&lt;/p&gt;
+&lt;p&gt;注意 请确认您对 TLS-Shunt-Proxy 以及 Trojan-Go/V2Ray 代理的配置方式、工作原理足够了解，否则不要自定义修改相关配置文件。&lt;/p&gt;
+&lt;h1 id=&#34;配置文件&#34;&gt;配置文件&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;WebSite：/home/wwwroot/&lt;/li&gt;
+&lt;li&gt;TLS-Shunt-Proxy：/etc/tls-shunt-proxy/config.yaml&lt;/li&gt;
+&lt;li&gt;Trojan-Go：/etc/trojan-go/config.json&lt;/li&gt;
+&lt;li&gt;V2Ray：/etc/v2ray/config.json&lt;/li&gt;
+&lt;/ul&gt;
+">TSP & Trojan-Go / V2Ray 容器化管理部署脚本</a>
+      </div>
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://xiu.pw/9fOCL0iHG/"" data-c="

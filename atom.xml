@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-10-25T00:32:44.788Z</updated>
+    <updated>2020-11-08T10:49:53.120Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -10,6 +10,129 @@
     <logo>https://xiu.pw/images/avatar.png</logo>
     <icon>https://xiu.pw/favicon.ico</icon>
     <rights>All rights reserved 2020, 秀儿</rights>
+    <entry>
+        <title type="html"><![CDATA[TSP & Trojan-Go / V2Ray 容器化管理部署脚本]]></title>
+        <id>https://xiu.pw/HHRC2cOcg/</id>
+        <link href="https://xiu.pw/HHRC2cOcg/">
+        </link>
+        <updated>2020-11-08T10:39:08.000Z</updated>
+        <content type="html"><![CDATA[<p>基于 Docker 容器架构的 Trojan-Go/VLESS/VMess-TCP/WS-TLS 分流部署&amp;管理脚本</p>
+<p>本方案采用 TSP 进行 TLS 前置分流，后端使用 Trojan-Go、V2Ray 容器与 WatchTower、Portainer 维护组件配合，实现快速部署、易用易维护的极致体验。</p>
+<p>特别提示 在脚本部署过程中，除引用必要的官方源外，其他所有配置操作、数据处理皆为本地执行，无任何外部连接参与数据交换。</p>
+<h1 id="使用简介">使用简介</h1>
+<h4 id="安装-wget当检测到已经安装时会跳过请继续执行第二步">安装 Wget（当检测到已经安装时，会跳过，请继续执行第二步）</h4>
+<p>Centos 7+</p>
+<pre><code class="language-bash">command -v wget &gt;/dev/null 2&gt;&amp;1 || sudo yum -y install wget
+</code></pre>
+<p>Debian 9+ | Ubuntu 16+</p>
+<pre><code class="language-bash">command -v wget &gt;/dev/null 2&gt;&amp;1 || sudo apt -y install wget
+</code></pre>
+<h4 id="下载并执行脚本">下载并执行脚本</h4>
+<pre><code class="language-bash">wget -N --no-check-certificate -q https://cdn.jsdelivr.net/gh/h31105/trojan_v2_docker_onekey/deploy.sh &amp;&amp; \
+chmod +x deploy.sh &amp;&amp; bash deploy.sh
+</code></pre>
+<figure data-type="image" tabindex="1"><img src="https://kyun.ltyuanfang.cn/tc/2020/11/08/cc4c0ad23e663.png" alt="" loading="lazy"></figure>
+<h1 id="协议-cdn-及客户端支持状况">协议、CDN 及客户端支持状况</h1>
+<figure data-type="image" tabindex="2"><img src="https://kyun.ltyuanfang.cn/tc/2020/11/08/19a606c98a486.png" alt="" loading="lazy"></figure>
+<h1 id="部署建议">部署建议</h1>
+<ul>
+<li>
+<p>TLS-Shunt-Proxy 负责证书全自动管理和网站服务（HTTPS 默认 443 HTTP 80 自动跳转）</p>
+</li>
+<li>
+<p>Trojan-Go 容器化部署 (支持 WebSocket)</p>
+</li>
+<li>
+<p>V2Ray 容器化部署（VLESS/VMess 协议）</p>
+</li>
+<li>
+<p>容器的镜像由 WatchTower 监控并自动更新（建议安装）</p>
+</li>
+<li>
+<p>*WatchTower 无需额外配置，已配置为自动更新容器并清理过期镜像</p>
+</li>
+<li>
+<p>Portainer 基于 Web 的 Docker 管理服务（可选）</p>
+</li>
+<li>
+<p>*Portainer 安装后，请尽快访问管理地址设置管理帐号和密码。HTTP://ServerDomainName:9080 （非 HTTPS）</p>
+</li>
+<li>
+<p>由于 TSP 的 SNI 分流特性，若需配置 CDN 建议使用 A 记录方式，CNAME 方式不被支持。</p>
+</li>
+<li>
+<p>CDN 配置：域名 -- A 记录 --&gt; VPS IP #这里的域名与脚本部署时填写的 TLS 域名相同</p>
+</li>
+</ul>
+<p><strong>注意 本脚本为单用户配置，部署后可以自行按需修改代理配置文件内容，但修改后不要使用脚本菜单中的修改选项，否则将会重置相关配置信息。</strong></p>
+<p><strong>注意 请根据部署情况调整开启防火墙端口，例如 HTTP 80、9080 及 HTTPS 443 端口。</strong></p>
+<h1 id="开启-cdn-加速需要注意">开启 CDN 加速需要注意</h1>
+<ol>
+<li>
+<p>仅需在直连线路状况不太理想的情况下开启，否则开启 CDN 并不一定会带来加速效果。仅需在直连线路状况不太理想的情况下开启，否则开启 CDN 并不一定会带来加速效果。</p>
+</li>
+<li>
+<p>CDN 加速开启后，TSP 所管理的证书可能无法完成自动续签，应对办法：</p>
+</li>
+</ol>
+<p>*请在证书过期前 30 天内，手动暂停 CDN 加速后重启 TSP 完成证书续签。</p>
+<pre><code class="language-bash">#重启 TSP 触发证书续签
+systemctl restart tls-shunt-proxy
+#查看日志，观察证书续签结果
+journalctl -u tls-shunt-proxy.service --since today
+</code></pre>
+<p>*如果您的域名解析服务支持分线路设置 DNS 记录（例如 Aliyun、DNSpod），可通过设置境外线路解析为 VPS IP，其他线路解析为 CDN 记录来解决此问题。</p>
+<ol>
+<li>由于 CDN 仅支持 加速 WebSocket 模式代理，在开启 CDN 加速后，为确保所有模式代理均可正常使用，客户端需要根据脚本生成的配置信息做相应调整。</li>
+</ol>
+<p>通过客户端服务器地址的不同配置，来控制是否通过 CDN 加速：</p>
+<p>*TCP 模式代理客户端（不通过 CDN 加速）服务器地址 (ServerAddress) 设置为VPS IP 地址 或 任意指向该 IP 地址的域名（其他配置不变）</p>
+<p>*WebSocket 模式代理客户端（通过 CDN 加速）服务器地址 (ServerAddress) 设置为域名 或 任意支持 Anycast 的 CDN 节点 IP（其他配置不变）</p>
+<h1 id="日志查看">日志查看</h1>
+<h3 id="tls-shunt-proxy-日志查看">TLS-Shunt-Proxy 日志查看</h3>
+<pre><code class="language-bash">查看所有日志：
+journalctl -u tls-shunt-proxy.service
+
+查看当天日志：
+journalctl -u tls-shunt-proxy.service --since today
+</code></pre>
+<h3 id="容器日志查看">容器日志查看</h3>
+<pre><code class="language-bash">查看 Trojan-Go 日志
+
+最近 30 分钟日志：
+docker logs --since 30m Trojan-Go
+
+
+查看 V2Ray 日志
+
+最近 100 行日志：
+docker logs --tail=100 V2Ray
+
+
+查看 WatchTower 日志
+
+指定时间后日志：
+docker logs --since=&quot;2020-09-01T10:10:00&quot; WatchTower
+
+
+查看 Portainer 日志
+
+指定时间段日志：
+docker logs --since=&quot;2020-09-05T10:10:00&quot; --until &quot;2020-09-05T12:00:00&quot; Portainer
+</code></pre>
+<h1 id="自定义配置以及容器重启">自定义配置以及容器重启</h1>
+<p>在某些情况下，我们可能需要自定义修改代理配置文件（非脚本方式修改配置），我们需要在修改后，重启代理容器使配置生效。</p>
+<p>例如：重启 V2Ray 容器：docker restart V2Ray</p>
+<p>注意 请确认您对 TLS-Shunt-Proxy 以及 Trojan-Go/V2Ray 代理的配置方式、工作原理足够了解，否则不要自定义修改相关配置文件。</p>
+<h1 id="配置文件">配置文件</h1>
+<ul>
+<li>WebSite：/home/wwwroot/</li>
+<li>TLS-Shunt-Proxy：/etc/tls-shunt-proxy/config.yaml</li>
+<li>Trojan-Go：/etc/trojan-go/config.json</li>
+<li>V2Ray：/etc/v2ray/config.json</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[哪吒面板：小鸡们的最佳探针]]></title>
         <id>https://xiu.pw/9fOCL0iHG/</id>
@@ -816,67 +939,6 @@ c) Copy remote
 s) Set configuration password
 q) Quit config
 e/n/d/r/c/s/q&gt; q   # 输入q回车，保存配置退出</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[优化Wordpress速度——前端使用国内免费Cdn加速Js/Css文件，后端数据库缓存]]></title>
-        <id>https://xiu.pw/NiGGt4ZIu/</id>
-        <link href="https://xiu.pw/NiGGt4ZIu/">
-        </link>
-        <updated>2020-09-11T13:44:25.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>WordPress是一个以PHP和MySQL为平台的自由开源的博客软件和内容管理系统。WordPress具有插件架构和模板系统。截至2018年4月，排名前1000万的网站中超过30.6%使用WordPress。WordPress是最受欢迎的网站内容管理系统。全球有大约30%的网站(7亿5000个)都是使用WordPress架设网站的。WordPress是目前因特网上最流行的博客系统。WordPress在最著名的网络发布阶段中脱颖而出。如今，它被使用在超过7000万个站点上。WordPress是一个以PHP和MySQL为平台的自由开源的博客软件和内容管理系统。WordPress具有插件架构和模板系统。截至2018年4月，排名前1000万的网站中超过30.6%使用WordPress。WordPress是最受欢迎的网站内容管理系统。全球有大约30%的网站(7亿5000个)都是使用WordPress架设网站的。WordPress是目前因特网上最流行的博客系统。WordPress在最著名的网络发布阶段中脱颖而出。如今，它被使用在超过7000万个站点上。</p>
-</blockquote>
-<p>虽然wordpress很优秀，但是当正式使用这个CMS以后，却发现很吃资源，明明博客没有多少内容，但是只要访问量一大以后，就导致WordPress打开巨慢，同时主机的使用率非常高。</p>
-<p>这里就分享一些博主优化WordPress的方法。</p>
-<h1 id="分离wordpress的cssjs文件">·分离WordPress的CSS/JS文件</h1>
-<p>由于WordPress主要是基于PHP，同时又有大量的css/js文件需要加载。每次打开的时候都需要实时生成需要显示的网页内容，所以会比较吃主机资源。</p>
-<p>这里博主推荐一款WordPress插件：commonWP</p>
-<p>该插件将WordPress与大部分安装插件所需要的css/js文件通过jsdelivr分发。</p>
-<p>jsdelivr目前国内是走网宿的CDN节点，国外走的CloudFlare的节点。加速效果非常明显。强烈建议该插件必备！！</p>
-<p>直接WordPress后台插件安装界面搜索commonWP安装其他用即可，不用其他设定。</p>
-<p>启用该插件以后，你可能会发现大部分的css/js文件都通过了jsdelivr分发，但是仍然还是有部分文件没有走jsdelivr。</p>
-<p>那么这种情况下就需要你手动修改没有走jsdelivr相关的主题/插件文件了。</p>
-<p><code>不建议没有动手能力的站长修改！</code></p>
-<h1 id="博主这里简单说下如何修改又如何通过jsdelivr分发">博主这里简单说下如何修改，又如何通过jsdelivr分发。</h1>
-<h2 id="1-修改主题或者插件引用的cssjs文件地址">1、修改主题或者插件引用的css/js文件地址</h2>
-<p>首先你需要确定你要分发的内容是那个插件所需要使用的css/js文件，然后在主机上找到该插件的文件，通过分析源码，找到加载该css/js文件的内容，修改引用链接。修改后的链接后面会说如何获取。</p>
-<p>例如本站有使用auto-highslide，该插件就不会自动被commonWP修改成jsdelivr的地址，那么通过分析该插件的文件，找到是通过auto-highslide.php加载的相关css/js文件。</p>
-<p>在auto-highslide.php文件里面，发现</p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;'.get_bloginfo('wpurl').'/wp-content/plugins/auto-highslide/highslide/highslide.css&quot; type=&quot;text/css&quot; /&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;'.get_bloginfo('wpurl').'/wp-content/plugins/auto-highslide/highslide/highslide-with-html.packed.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-</code></pre>
-<p>那么需要修改的就是</p>
-<pre><code>href=&quot;'.get_bloginfo('wpurl').'/wp-content/plugins/auto-highslide/highslide/highslide.css&quot;
-</code></pre>
-<p>和</p>
-<pre><code class="language-javascript">src=&quot;'.get_bloginfo('wpurl').'/wp-content/plugins/auto-highslide/highslide/highslide-with-html.packed.js&quot;
-</code></pre>
-<p>修改成</p>
-<pre><code>href=&quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@40028ba1e2ff8193194f9c1474d81ed5d26c52eb/themes/highslide.css&quot;
-</code></pre>
-<p>和</p>
-<pre><code>src=&quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@249a403710b0739bf5173cd9d7afeefd04b12eb0/themes/highslide-with-html.packed.js&quot;
-</code></pre>
-<p>那么完整的代码就是：</p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@40028ba1e2ff8193194f9c1474d81ed5d26c52eb/themes/highslide.css&quot; type=&quot;text/css&quot; /&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/gh/Loukky/wpcdn@249a403710b0739bf5173cd9d7afeefd04b12eb0/themes/highslide-with-html.packed.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-</code></pre>
-<p>其他的插件与主题修改方法与之类似，另外WP自带的函数是通过 wp_enqueue_style和wp_enqueue_scripts加载CSS和JS文件的，如果是修改主题的话，注意这两个函数。</p>
-<h2 id="2-手动通过jsdelivr分发文件">2、手动通过jsdelivr分发文件</h2>
-<p>该方法需要通过github来操作，在GitHub上面新建一个仓库，注意仓库设置成public。上传你需要分发的内容，然后通过jsdelivr来分发，具体操作这里不多说。</p>
-<p>jsdelivr分发github文件的规则这里说下。</p>
-<p>https://cdn.jsdelivr.net/gh/GitHub用户名/仓库名/文件.后缀</p>
-<p>注意GitHub区分大小写，其他仓库名后面可以通过@来指定具体的某个release版本或者修订版本。</p>
-<h1 id="缓存数据库">·缓存数据库</h1>
-<p>一般现在用得较多的数据库缓存是memcached和redis，博主使用的是redis，以redis为例，由于博主是通过宝塔安装的php，所以这里也以宝塔为例。</p>
-<p>在宝塔的php管理界面，找到安装扩展，里面有个redis，通过该路径来安装redis，然后wp后台安装上redis相关的插件。博主这里使用的是Redis Object Cache</p>
-<p>安装好以后就启用插件，简单设置下就可以了。</p>
-<p>（可选）然后在宝塔管理界面，选择mysql管理界面。里面有个性能调整。根据你的实际使用情况调整相关参数。</p>
-<figure data-type="image" tabindex="1"><img src="https://loukky.com/wp-content/uploads/2020/08/082615014568_0QQ%E6%88%AA%E5%9B%BE20200826150049.png" alt="" loading="lazy"></figure>
-<p>通过上面设置与调整过后，那么现在你的WordPress应该是可以明显感觉到速度提升了。</p>
 ]]></content>
     </entry>
 </feed>
