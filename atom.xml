@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xiu.pw</id>
     <title>秀儿</title>
-    <updated>2020-11-11T05:17:28.936Z</updated>
+    <updated>2020-11-14T04:37:37.456Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xiu.pw"/>
     <link rel="self" href="https://xiu.pw/atom.xml"/>
@@ -31,9 +31,9 @@
 <pre><code class="language-bash">wget -N --no-check-certificate -q https://cdn.jsdelivr.net/gh/h31105/trojan_v2_docker_onekey/deploy.sh &amp;&amp; \
 chmod +x deploy.sh &amp;&amp; bash deploy.sh
 </code></pre>
-<figure data-type="image" tabindex="1"><img src="https://kcdn.ltyuanfang.cn/yun/79/5fab6d7c3ba01CLSUFF1.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="1"><img src="https://p.pstatp.com/origin/fe5c0003499fa83734b3" alt="" loading="lazy"></figure>
 <h1 id="协议-cdn-及客户端支持状况">协议、CDN 及客户端支持状况</h1>
-<figure data-type="image" tabindex="2"><img src="https://kcdn.ltyuanfang.cn/yun/79/5fab6d8e57110CLSUFF2.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://p.pstatp.com/origin/1388c0000511f26a41718" alt="" loading="lazy"></figure>
 <h1 id="部署建议">部署建议</h1>
 <ul>
 <li>
